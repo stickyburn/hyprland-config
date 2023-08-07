@@ -4,8 +4,9 @@ protonvpn
 Signal Beta
 weechat
 systemd
+mimeapps.list
+pavucontrol.ini
 zsh/.zhistory
 zsh/.zsh_history
 zsh/.zcompdump
 zsh/history
-toolstate
