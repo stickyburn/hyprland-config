@@ -35,8 +35,3 @@ zstyle ':vcs_info:git:*' formats '🪐 %b'
 export RPROMPT='%F{085}%D{%L:%M}%f'
 export PROMPT='%F{085}%1d ${vcs_info_msg_0_}
 ->%f '
-
-# bun completions
-[ -s "/home/yas/.local/.bun/_bun" ] && source "/home/yas/.local/.bun/_bun"
-export BUN_INSTALL="/home/yas/.local/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
