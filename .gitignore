@@ -9,6 +9,7 @@ weechat
 systemd
 mimeapps.list
 pavucontrol.ini
+pulse
 zsh/.z
 zsh/.zhistory
 zsh/.zsh_history
