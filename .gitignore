@@ -8,6 +8,7 @@ weechat
 systemd
 mimeapps.list
 pavucontrol.ini
+zsh/.z
 zsh/.zhistory
 zsh/.zsh_history
 zsh/.zcompdump
