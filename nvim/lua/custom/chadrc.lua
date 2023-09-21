@@ -6,7 +6,7 @@ local highlights = require "custom.highlights"
 
 M.ui = {
   theme = "tundra",
-  theme_toggle = { "tundra", "one_light" },
+  theme_toggle = { "tundra", "rosepine" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
