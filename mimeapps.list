@@ -9,6 +9,7 @@ application/x-extension-shtml=userapp-Firefox-UYOV81.desktop
 application/xhtml+xml=userapp-Firefox-UYOV81.desktop
 application/x-extension-xhtml=userapp-Firefox-UYOV81.desktop
 application/x-extension-xht=userapp-Firefox-UYOV81.desktop
+x-scheme-handler/mailto=brave-browser.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Firefox-3GEU61.desktop;userapp-Firefox-UYOV81.desktop;
