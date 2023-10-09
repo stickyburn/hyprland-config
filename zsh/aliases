@@ -25,3 +25,5 @@ alias gra='git restore .'
 alias l='ls -1a'
 alias n='nnn -eH'
 alias nc='nvim ~/.config/nvim/lua/custom/'
+
+alias ob='obsidian --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --disable-gpu'
