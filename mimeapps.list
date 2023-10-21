@@ -1,8 +1,8 @@
 [Default Applications]
-x-scheme-handler/http=userapp-Firefox-UYOV81.desktop
-x-scheme-handler/https=userapp-Firefox-UYOV81.desktop
+x-scheme-handler/http=thorium-browser.desktop
+x-scheme-handler/https=thorium-browser.desktop
 x-scheme-handler/chrome=userapp-Firefox-UYOV81.desktop
-text/html=userapp-Firefox-UYOV81.desktop
+text/html=thorium-browser.desktop
 application/x-extension-htm=userapp-Firefox-UYOV81.desktop
 application/x-extension-html=userapp-Firefox-UYOV81.desktop
 application/x-extension-shtml=userapp-Firefox-UYOV81.desktop
@@ -10,6 +10,8 @@ application/xhtml+xml=userapp-Firefox-UYOV81.desktop
 application/x-extension-xhtml=userapp-Firefox-UYOV81.desktop
 application/x-extension-xht=userapp-Firefox-UYOV81.desktop
 x-scheme-handler/mailto=brave-browser.desktop
+x-scheme-handler/about=thorium-browser.desktop
+x-scheme-handler/unknown=thorium-browser.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Firefox-3GEU61.desktop;userapp-Firefox-UYOV81.desktop;
