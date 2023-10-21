@@ -6,11 +6,14 @@ obsidian
 protonvpn
 github-copilot
 Signal Beta
-sublime-text
-gtk-3.0
+sublime-text/*
+!sublime-text/Packages/
+sublime-text/Packages/*
+!sublime-text/Packages/User/
 weechat
 mimeapps.list
 pavucontrol.ini
+gtk-3.0
 pulse
 zsh/.z
 zsh/.zhistory

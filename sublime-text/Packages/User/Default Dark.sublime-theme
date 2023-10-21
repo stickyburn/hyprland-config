@@ -1,0 +1,18 @@
+// Documentation at https://www.sublimetext.com/docs/themes.html
+{
+  "variables":
+  {
+    "font_face": "iA Writer Quattro S",
+    "font_size_sm": 14,
+    "font_size": 16,
+    "font_size_lg": 16,
+    "ui_bg": "hsl(246, 24%, 17%)",
+    "sidebar_bg": "hsl(246, 24%, 17%)",
+    "base_hue": "hsl(246, 24%, 17%)",
+    "button_bg": "hsl(246, 24%, 17%)"
+  },
+  "rules":
+  [
+    
+  ]
+}

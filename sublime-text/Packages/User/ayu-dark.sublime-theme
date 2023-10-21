@@ -1,0 +1,33 @@
+// Documentation at https://www.sublimetext.com/docs/themes.html
+[
+  {
+    "class": "sidebar_label",
+    "font.face": "iA Writer Quattro S",
+    "font.size": 16
+  },
+  {
+    "class": "sidebar_heading",
+    "font.face": "iA Writer Quattro S",
+    "font.size": 16
+  },
+  {
+    "class": "tab_label",
+    "font.face": "iA Writer Quattro S",
+    "font.size": 16
+  },
+  {
+    "class": "label_control",
+    "font.face": "iA Writer Quattro S",
+    "font.size": 16
+  },
+  {
+    "class": "quick_panel_label",
+    "font.face": "iA Writer Quattro S",
+    "font.size": 16
+  },
+  {
+    "class": "quick_panel_path_label",
+    "font.face": "iA Writer Quattro S",
+    "font.size": 16
+  }
+]

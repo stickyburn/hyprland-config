@@ -1,0 +1,26 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	"font_size": 14,
+	"font_face": "Zed Mono",
+	"folder_exclude_patterns": ["dist", "node_modules"],
+	"theme": "Default Dark.sublime-theme",
+	"color_scheme": "ayu-dark.sublime-color-scheme",
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"line_numbers": false,
+	"gutter": false,
+	"draw_indent_guides": false,
+	"caret_style": "solid",
+	"caret_extra_top": 0,
+	"caret_extra_bottom": 0,
+	"caret_extra_width": 0,
+	"auto_hide_tabs": true,
+	"auto_hide_status_bar": true,
+	"show_indentation": false,
+	"hardware_acceleration": "opengl",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+}

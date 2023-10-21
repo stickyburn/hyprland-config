@@ -1,0 +1,14 @@
+// Settings in here override those in "ESLint-Formatter/ESLint-Formatter.sublime-settings",
+
+{
+  "format_on_save": true,
+  "format_on_save_extensions": [
+    "js",
+    "jsx",
+    "ts",
+    "tsx"
+  ],
+  "node_path": {
+    "linux": "/usr/bin/node"
+  }
+}
