@@ -9,10 +9,9 @@
     "ui_bg": "hsl(246, 24%, 17%)",
     "sidebar_bg": "hsl(246, 24%, 17%)",
     "base_hue": "hsl(246, 24%, 17%)",
-    "button_bg": "hsl(246, 24%, 17%)"
+    "button_bg": "hsl(246, 24%, 17%)",
+    "tabset_dark_bg": "hsl(246, 24%, 17%)"
   },
   "rules":
-  [
-    
-  ]
+  []
 }
