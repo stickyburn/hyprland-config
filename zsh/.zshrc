@@ -37,9 +37,9 @@ export PROMPT='%F{085}%1d ${vcs_info_msg_0_}
 ->%f '
 
 # pnpm
-#export PNPM_HOME="/home/yas/.local/share/pnpm"
-#case ":$PATH:" in
-#  *":$PNPM_HOME:"*) ;;
-#  *) export PATH="$PNPM_HOME:$PATH" ;;
-#esac
+export PNPM_HOME="/home/yas/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 # pnpm end

@@ -16,6 +16,7 @@ mimeapps.list
 pavucontrol.ini
 gtk-3.0
 pulse
+systemd
 zsh/.z
 zsh/.zhistory
 zsh/.zsh_history
