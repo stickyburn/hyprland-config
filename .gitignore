@@ -13,6 +13,7 @@ sublime-text/Packages/*
 !sublime-text/Packages/User/
 weechat
 mimeapps.list
+nnn
 pavucontrol.ini
 gtk-3.0
 pulse

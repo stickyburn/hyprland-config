@@ -2,7 +2,7 @@
 // and are overridden in turn by syntax-specific settings.
 {
 	"font_size": 13.2,
-	"font_face": "Zed Mono",
+	"font_face": "CommitMono",
 	"folder_exclude_patterns": ["dist", "node_modules"],
 	"theme": "Default Dark.sublime-theme",
 	"color_scheme": "ayu-dark.sublime-color-scheme",
