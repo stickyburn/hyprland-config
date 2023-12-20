@@ -6,11 +6,12 @@
     "font_size_sm": 14,
     "font_size": 16,
     "font_size_lg": 16,
-    "ui_bg": "hsl(246, 24%, 17%)",
-    "sidebar_bg": "hsl(246, 24%, 17%)",
-    "base_hue": "hsl(246, 24%, 17%)",
-    "button_bg": "hsl(246, 24%, 17%)",
-    "tabset_dark_bg": "hsl(246, 24%, 17%)"
+    // "ui_bg": "hsl(246, 24%, 17%)",
+    "ui_bg": "hsl(249,22%,12%)",
+    "sidebar_bg": "hsl(249,22%,12%)",
+    "base_hue": "hsl(249,22%,12%)",
+    "button_bg": "hsl(249,22%,12%)",
+    "tabset_dark_bg": "hsl(249,22%,12%)"
   },
   "rules":
   []
