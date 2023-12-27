@@ -1,9 +1,0 @@
-[
-  { "keys": ["ctrl+e"], "command": "focus_side_bar" },
-  { "keys": ["ctrl+t"], "command": "toggle_terminus_panel" },
-  { 
-    "keys": ["ctrl+shift+t"], "command": "terminus_open", "args": {
-    "cwd": "${folder}" 
-    },
-  }
-]
