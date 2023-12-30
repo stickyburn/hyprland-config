@@ -27,3 +27,4 @@ alias n='nnn -eH'
 alias nc='nvim ~/.config/nvim/lua/custom/'
 
 alias ob='obsidian --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --disable-gpu'
+alias gotop='gotop --nvidia'
