@@ -44,6 +44,4 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-export MOZ_DISABLE_RDD_SANDBOX=1
-export LIBVA_DRIVER_NAME=nvidia
-
+export BROWSER=firefox-beta
