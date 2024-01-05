@@ -1,8 +1,8 @@
 max-visible=10
 layer=top
-background-color=#191724
-text-color=#FFD5CD
-border-color=#FFD5CD
+background-color=#1f2425
+text-color=#FFCCDD
+border-color=#FFCCDD
 border-radius=7
 max-icon-size=48
 default-timeout=5000
