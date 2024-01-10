@@ -27,6 +27,7 @@ precmd() {
   }
 }
 
+export BROWSER=firefox-beta
 export NNN_COLORS='77ff'
 export NNN_FCOLORS='c1e2552eab6033f7c6d6abc4'
 
@@ -35,13 +36,3 @@ zstyle ':vcs_info:git:*' formats '🪐 %b'
 export RPROMPT='%F{085}%D{%L:%M}%f'
 export PROMPT='%F{085}%1d ${vcs_info_msg_0_}
 ->%f '
-
-# pnpm
-export PNPM_HOME="/home/yas/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-export BROWSER=firefox-beta
