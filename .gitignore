@@ -1,14 +1,15 @@
+Code - OSS/*
+Code - OSS/User/History
+Code - OSS/User/globalStorage
+Code - OSS/User/workspaceStorage
+!Code - OSS/User/
 cache
-Code
 dconf
 obsidian
 protonvpn
 github-copilot
 Signal Beta
-sublime-text/*
-!sublime-text/Packages/
-sublime-text/Packages/*
-!sublime-text/Packages/User/
+TabNine
 weechat
 mimeapps.list
 nnn
