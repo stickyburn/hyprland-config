@@ -1,10 +1,10 @@
-max-visible=10
+max-visible=2
 layer=top
 background-color=#112327
 text-color=#FFCCDD
 border-color=#FFCCDD
 border-radius=7
-max-icon-size=48
+max-icon-size=42
 default-timeout=5000
 anchor=top-right
-margin=20
+margin=18
