@@ -16,6 +16,9 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "[rust]": {
+    "editor.formatOnSave": true,
+  },
   "editor.minimap.enabled": false,
   "editor.glyphMargin": false,
   "editor.folding": false,
@@ -41,8 +44,7 @@
     "strings": "on"
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "breadcrumbs.enabled": false,
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "top",
   "workbench.sideBar.location": "right",
   "window.titleBarStyle": "custom",
   "window.menuBarVisibility": "compact",
