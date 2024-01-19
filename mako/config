@@ -1,5 +1,5 @@
 max-visible=2
-layer=top
+layer=overlay
 background-color=#112327
 text-color=#FFCCDD
 border-color=#FFCCDD
@@ -7,4 +7,6 @@ border-radius=7
 max-icon-size=42
 default-timeout=5000
 anchor=top-right
-margin=18
+margin=6
+width=200
+height=140
