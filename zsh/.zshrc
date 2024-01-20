@@ -33,6 +33,8 @@ export NNN_FCOLORS='c1e2552eab6033f7c6d6abc4'
 
 export CARGO_HOME="$HOME/.local/.cargo"
 export RUSTUP_HOME="$HOME/.local/.rustup"
+export PNPM_HOME="$HOME/.local/pnpm"
+export PNPM_STORE_DIR="$PNPM_HOME/store"
 
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '🪐 %b'
