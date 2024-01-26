@@ -9,7 +9,7 @@
   "files.exclude": {
     "**/dist": true,
     "**/node_modules": true,
-    "**/static": true
+    // "**/static": true
   },
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
@@ -46,6 +46,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.activityBar.location": "top",
   "workbench.sideBar.location": "right",
+  "breadcrumbs.enabled": false,
   "window.titleBarStyle": "custom",
   "window.menuBarVisibility": "compact",
   "workbench.colorCustomizations": {
