@@ -9,7 +9,7 @@ obsidian
 protonvpn
 github-copilot
 Signal Beta
-TabNine
+shuttle
 weechat
 mimeapps.list
 nnn
@@ -22,5 +22,4 @@ zsh/.zhistory
 zsh/.zsh_history
 zsh/.zcompdump
 zsh/history
-go
 ngrok
