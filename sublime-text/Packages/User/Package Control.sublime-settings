@@ -1,0 +1,18 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"GitGutter",
+		"LSP",
+		"LSP-css",
+		"LSP-eslint",
+		"LSP-json",
+		"LSP-rust-analyzer",
+		"LSP-typescript",
+		"Package Control",
+		"Terminus",
+	],
+}

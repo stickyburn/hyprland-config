@@ -1,0 +1,7 @@
+{
+  "theme": "user",
+  "user_theme_colors": {
+    "background": "#282433"
+  },
+  "scrollback_history_size": 500,
+}

@@ -1,0 +1,8 @@
+// Settings in here override those in "LSP/LSP.sublime-settings"
+{
+  "show_view_status": false,
+  "lsp_format_on_save": true,
+  "lsp_code_actions_on_save": {
+    "source.fixAll": true,
+  }
+}
