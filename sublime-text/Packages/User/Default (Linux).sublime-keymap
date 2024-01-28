@@ -13,6 +13,16 @@
   },
   {
     "keys": [
+      "ctrl+o"
+    ],
+    "command": "show_overlay",
+    "args": {
+      "overlay": "goto",
+      "show_files": true
+    }
+  },
+  {
+    "keys": [
       "ctrl+t"
     ],
     "command": "toggle_terminus_panel"

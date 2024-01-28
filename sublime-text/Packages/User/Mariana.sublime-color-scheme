@@ -1,6 +1,5 @@
 {
-  "globals":
-    {
-        "background": "hsl(256, 17.24%, 17.06%)",
-    }
+  "globals": {
+    "background": "#342c47",
+  }
 }

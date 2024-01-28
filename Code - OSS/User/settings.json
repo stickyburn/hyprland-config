@@ -23,7 +23,7 @@
   "editor.foldingHighlight": false,
   "editor.lineNumbers": "off",
   "editor.tabSize": 2,
-  "editor.cursorStyle": "underline-thin",
+  "editor.cursorStyle": "line-thin",
   "editor.cursorBlinking": "solid",
   "terminal.integrated.cursorStyle": "underline",
   "git.decorations.enabled": false,
@@ -47,6 +47,7 @@
   "breadcrumbs.enabled": false,
   "window.titleBarStyle": "custom",
   "window.menuBarVisibility": "compact",
+  "workbench.colorTheme": "Monokai",
   "workbench.colorCustomizations": {
     "editor.background": "#282433",
     "activityBar.background": "#282433",
@@ -64,10 +65,17 @@
     "scrollbarSlider.background": "#282433",
     "scrollbarSlider.activeBackground": "#282433",
     "scrollbarSlider.hoverBackground": "#282433",
+    "titleBar.activeBackground": "#282433",
     "editorSuggestWidget.selectedBackground": "#433c56",
     "tab.inactiveForeground": "#646476",
     "editor.selectionBackground": "#433c56",
     "editor.lineHighlightBackground": "#433c56"
   },
-  "workbench.colorTheme": "Tomorrow Night Blue",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
 }

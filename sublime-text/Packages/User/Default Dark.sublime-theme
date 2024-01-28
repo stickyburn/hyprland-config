@@ -1,16 +1,14 @@
 {
-  "variables":
-  {
+  "variables": {
     "font_face": "CommitMono",
     "font_size_sm": 10,
     "font_size": 12,
     "font_size_lg": 12,
-    "base_hue": "hsl(256, 17.24%, 17.06%)",
+    "base_hue": "#342c47",
     "ui_bg": "var(base_hue)",
     "sidebar_bg": "var(base_hue)",
     "button_bg": "var(base_hue)",
     "tabset_dark_bg": "var(base_hue)"
   },
-  "rules":
-  []
+  "rules": []
 }
