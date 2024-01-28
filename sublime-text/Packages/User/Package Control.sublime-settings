@@ -7,6 +7,7 @@
 	[
 		"GitGutter",
 		"LSP",
+		"LSP-copilot",
 		"LSP-css",
 		"LSP-eslint",
 		"LSP-json",

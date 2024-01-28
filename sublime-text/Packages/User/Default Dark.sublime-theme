@@ -4,7 +4,7 @@
     "font_size_sm": 10,
     "font_size": 12,
     "font_size_lg": 12,
-    "base_hue": "#342c47",
+    "base_hue": "#2d273a",
     "ui_bg": "var(base_hue)",
     "sidebar_bg": "var(base_hue)",
     "button_bg": "var(base_hue)",

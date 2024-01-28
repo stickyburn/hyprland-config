@@ -27,4 +27,24 @@
     ],
     "command": "toggle_terminus_panel"
   },
+  {
+    "keys": [
+      "ctrl+r"
+    ],
+    "command": "goto_reference",
+    "args": {
+      "side_by_side": true,
+      "clear_to_right": true
+    }
+  },
+  {
+    "keys": [
+      "ctrl+d"
+    ],
+    "command": "goto_definition",
+    "args": {
+      "side_by_side": true,
+      "clear_to_right": true
+    }
+  },
 ]
