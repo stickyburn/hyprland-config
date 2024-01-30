@@ -1,6 +1,6 @@
 {
-  "editor.fontFamily": "CommitMono",
-  "editor.fontSize": 12.6,
+  "editor.fontFamily": "Zed Mono",
+  "editor.fontSize": 12,
   "editor.fontLigatures": true,
   "editor.inlineSuggest.enabled": true,
   "extensions.ignoreRecommendations": true,
@@ -14,8 +14,17 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "[rust]": {
-    "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "editor.minimap.enabled": false,
   "editor.glyphMargin": false,
@@ -44,12 +53,17 @@
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "rust": false
   },
   "diffEditor.ignoreTrimWhitespace": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.activityBar.location": "top",
   "workbench.sideBar.location": "right",
   "breadcrumbs.enabled": false,
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "window.titleBarStyle": "custom",
   "window.menuBarVisibility": "compact",
   "workbench.colorTheme": "Tomorrow Night Blue",
@@ -82,6 +96,7 @@
     "quickInput.background": "#362e45",
     "editorPane.background": "#362e45",
     "editorHoverWidget.background": "#362e45",
+    "titleBar.inactiveBackground": "#362e45",
     "peekView.border": "#433c56",
     "editorSuggestWidget.selectedBackground": "#433c56",
     "tab.inactiveForeground": "#646476",
