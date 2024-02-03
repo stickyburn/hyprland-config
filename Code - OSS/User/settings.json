@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "Zed Mono",
+  "editor.fontFamily": "MonaspiceRn Nerd Font",
   "editor.fontSize": 12,
   "editor.fontLigatures": true,
   "editor.inlineSuggest.enabled": true,
@@ -40,7 +40,6 @@
   "workbench.editor.decorations.colors": false,
   "explorer.decorations.colors": false,
   "editor.guides.indentation": false,
-  "terminal.integrated.fontFamily": "CommitMono",
   "terminal.integrated.fontSize": 13,
   "window.commandCenter": false,
   "explorer.confirmDelete": false,
@@ -87,8 +86,6 @@
     "editorWidget.background": "#362e45",
     "editorWidget.border": "#362e45",
     "titleBar.activeBackground": "#362e45",
-    "editor.hoverHighlightBackground": "#362e45",
-    "editor.selectionHighlightBackground": "#362e45",
     "peekViewEditor.background": "#362e45",
     "peekViewResult.background": "#362e45",
     "editorInlayHint.background": "#362e45",
