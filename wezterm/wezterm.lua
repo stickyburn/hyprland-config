@@ -1,7 +1,9 @@
 local wezterm = require 'wezterm'
 local config = {}
 
-config.font = wezterm.font 'ZedMono Nerd Font'
+config.font = wezterm.font_with_fallback {
+	'Liga Comic Shanns',
+}
 config.font_size = 11.0
 config.colors = {
 	background = '#362E45',
