@@ -4,12 +4,13 @@ local config = {}
 config.font = wezterm.font_with_fallback({
 	"Liga Comic Shanns",
 })
-config.font_size = 11.0
+config.font_size = 10.0
 config.colors = {
 	background = "#362E45",
 	foreground = "#FFCCDD",
 }
-config.enable_tab_bar = false
+-- config.enable_tab_bar = false
 config.default_cursor_style = "SteadyUnderline"
+config.hide_tab_bar_if_only_one_tab = true
 
 return config
