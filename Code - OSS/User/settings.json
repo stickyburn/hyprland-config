@@ -1,6 +1,6 @@
 {
   "editor.fontFamily": "Liga Comic Shanns",
-  "editor.fontSize": 12.5,
+  "editor.fontSize": 13,
   "editor.fontLigatures": true,
   "editor.inlineSuggest.enabled": true,
   "extensions.ignoreRecommendations": true,
@@ -14,6 +14,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "editor.stickyScroll.enabled": true,
+  "eslint.format.enable": true,
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   },
@@ -65,7 +67,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "window.titleBarStyle": "custom",
   "window.menuBarVisibility": "compact",
-  "workbench.colorTheme": "Tomorrow Night Blue",
+  "workbench.colorTheme": "Default Dark+",
   "workbench.colorCustomizations": {
     "editor.background": "#362e45",
     "activityBar.background": "#362e45",
