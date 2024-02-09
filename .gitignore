@@ -15,11 +15,8 @@ weechat
 mimeapps.list
 nnn
 nvim
-nwg-look
 pavucontrol.ini
 pulse
-sublime-text/*
-!sublime-text/Packages/
 systemd
 zsh/.z
 zsh/.zhistory

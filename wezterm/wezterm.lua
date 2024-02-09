@@ -3,6 +3,7 @@ local config = {}
 
 config.font = wezterm.font_with_fallback({
 	"Liga Comic Shanns",
+	"Symbols Nerd Font Mono",
 })
 config.font_size = 10.0
 config.colors = {
