@@ -16,7 +16,6 @@
     "source.fixAll.eslint": "explicit"
   },
   "editor.stickyScroll.enabled": true,
-  "eslint.format.enable": true,
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
@@ -52,14 +51,6 @@
   "editor.quickSuggestions": {
     "strings": "on"
   },
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false,
-    "rust": false,
-    "typescriptreact": true
-  },
   "diffEditor.ignoreTrimWhitespace": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.activityBar.location": "top",
@@ -68,7 +59,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "breadcrumbs.enabled": false,
   "window.menuBarVisibility": "compact",
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "Tomorrow Night Blue",
   "terminal.integrated.scrollback": 5000,
   "workbench.colorCustomizations": {
     "editor.background": "#30293d",
@@ -104,4 +95,6 @@
     "editor.selectionBackground": "#433c56",
     "editor.lineHighlightBackground": "#433c56"
   },
+  "eslint.format.enable": true,
+  "git.openRepositoryInParentFolders": "always",
 }
