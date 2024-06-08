@@ -3,14 +3,15 @@ local act = wezterm.action
 
 local config = {}
 
--- "#362E45",
+config.enable_wayland = false
+
 config.font = wezterm.font_with_fallback({
-	"Liga Comic Shanns",
+	"Zed Mono",
 	"JoyPixels",
 })
 config.font_size = 10.0
 config.colors = {
-	background = "#30293d",
+	background = "#30293D",
 	foreground = "#FFCCDD",
 }
 config.default_cursor_style = "SteadyUnderline"

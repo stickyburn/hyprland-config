@@ -1,9 +1,9 @@
 bottom
-Code - OSS/*
-Code - OSS/User/History
-Code - OSS/User/globalStorage
-Code - OSS/User/workspaceStorage
-!Code - OSS/User/
+Code/*
+Code/User/History
+Code/User/globalStorage
+Code/User/workspaceStorage
+!Code/User/
 cache
 dconf
 obsidian

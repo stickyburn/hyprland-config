@@ -1,0 +1,102 @@
+{
+  "editor.fontFamily": "Zed Mono",
+  "editor.fontSize": 12.3,
+  "editor.fontLigatures": true,
+  
+  "editor.inlineSuggest.enabled": true,
+  "extensions.ignoreRecommendations": true,
+  "workbench.startupEditor": "none",
+  "files.exclude": {
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/static": true
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.minimap.enabled": false,
+  "editor.glyphMargin": false,
+  "editor.folding": false,
+  "editor.foldingHighlight": false,
+  "editor.lineNumbers": "off",
+  "editor.tabSize": 2,
+  "editor.cursorStyle": "line-thin",
+  "editor.cursorBlinking": "solid",
+  "terminal.integrated.cursorStyle": "underline",
+  "git.decorations.enabled": false,
+  "workbench.editor.decorations.badges": false,
+  "workbench.editor.decorations.colors": false,
+  "explorer.decorations.colors": false,
+  "editor.guides.indentation": false,
+  "terminal.integrated.fontFamily": "Zed Mono",
+  "terminal.integrated.fontSize": 16,
+  "window.commandCenter": false,
+  "explorer.confirmDelete": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.colorTheme": "Visual Studio Dark - C++",
+  "workbench.activityBar.location": "top",
+  "workbench.sideBar.location": "right",
+  "workbench.colorCustomizations": {
+    "editor.background": "#0f1419",
+    "activityBar.background": "#0f1419",
+    "statusBar.background": "#0f1419",
+    "sideBar.background": "#0f1419",
+    "tab.inactiveBackground": "#0f1419",
+    "tab.border": "#0f1419",
+    "editorOverviewRuler.border": "#0f1419",
+    "editorGroupHeader.tabsBackground": "#0f1419",
+    "menu.background": "#0f1419",
+    "input.background": "#0f1419",
+    "editorSuggestWidget.background": "#0f1419",
+    "editorSuggestWidget.border": "#0f1419",
+    "scrollbar.shadow": "#0f1419",
+    "scrollbarSlider.background": "#0f1419",
+    "scrollbarSlider.activeBackground": "#0f1419",
+    "scrollbarSlider.hoverBackground": "#0f1419",
+    "titleBar.activeBackground": "#0f1419",
+    "editorSuggestWidget.selectedBackground": "#0f1419",
+    "tab.inactiveForeground": "#6d8aa8",
+    "editor.selectionBackground": "#2f3637",
+    "editor.lineHighlightBackground": "#2f3637",
+  },
+  "editor.tokenColorCustomizations": {
+   "textMateRules": [
+      {
+         "scope": [
+            "keyword.control",
+         ],
+         "settings": {
+            "fontStyle": ""
+         }
+      }   
+   ]
+},
+  "settingsSync.ignoredSettings": [
+    "terminal.integrated.fontFamily",
+    "terminal.integrated.fontSize",
+    "editor.fontSize",
+    "-window.zoomLevel"
+  ],
+  "github.copilot.editor.enableAutoCompletions": true,
+  "window.menuBarVisibility": "toggle",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "cmake.showOptionsMovedNotification": false,
+  "cmake.configureOnOpen": true,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "workbench.statusBar.visible": false,
+}
