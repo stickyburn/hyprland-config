@@ -93,6 +93,4 @@
     "scminput": false
   },
   "v-analyzer.serverPath": "~/.local/v-analyzer/bin/v-analyzer"
-  // "v-analyzer.customVrootPath": "/home/Yas/.local/v/bin",
-  // "v-analyzer.serverPath": "/home/Yas/.local/v-analyzer/bin/v-analyzer",
 }

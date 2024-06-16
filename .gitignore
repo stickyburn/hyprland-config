@@ -15,7 +15,7 @@ protonvpn
 github-copilot
 Signal Beta
 shuttle
-weechat
+weechat/*
 !weechat/irc.conf
 mimeapps.list
 nnn
