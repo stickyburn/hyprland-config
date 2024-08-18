@@ -27,7 +27,6 @@ precmd() {
   }
 }
 
-export BROWSER=firefox-beta
 export EDITOR=vim
 export NNN_COLORS='77ff'
 export NNN_FCOLORS='c1e2552eab6033f7c6d6abc4'
@@ -35,13 +34,19 @@ export NNN_FCOLORS='c1e2552eab6033f7c6d6abc4'
 export PNPM_HOME="$HOME/.local/pnpm"
 export PNPM_STORE_DIR="$PNPM_HOME/store"
 export NVM_DIR="$HOME/.local/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-export PATH="$PATH:$HOME/.local/v"
-export PATH="$PATH:$HOME/.local/v-analyzer/bin"
+
+export GOROOT=/usr/lib/go
+export GOPATH=$HOME/.local/go
+export GOBIN=$GOPATH/bin
+export GOCACHE=$HOME/.config/cache/go-build
+export GOMODCACHE=$HOME/.config/cache/go/pkg/mod
+
+export PATH=$GOBIN:$PATH
 
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '🐙 %b'
 export RPROMPT='%F{085}%D{%L:%M}%f'
 export PROMPT='%F{085}%1d ${vcs_info_msg_0_}
-%f '
+>%f '

@@ -8,5 +8,6 @@ max-icon-size=42
 default-timeout=5000
 anchor=top-right
 margin=6
-width=200
+width=210
 height=140
+padding=8
