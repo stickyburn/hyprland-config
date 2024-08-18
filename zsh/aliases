@@ -29,3 +29,6 @@ alias gras='git restore --staged .'
 alias l='exa -a'
 alias n='nnn -eH'
 alias f='fzf'
+
+alias yt='yarn test --maxWorkers=60%'
+alias ytw='yarn test --maxWorkers=60% --watch'
