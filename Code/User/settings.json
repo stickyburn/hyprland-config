@@ -1,6 +1,7 @@
 {
   "editor.fontFamily": "Zed Mono",
-  "editor.fontSize": 12.5,
+  "editor.fontSize": 13,
+  "window.zoomLevel": 0.3,
   "editor.fontLigatures": true,
   "editor.inlineSuggest.enabled": true,
   "extensions.ignoreRecommendations": true,
@@ -11,10 +12,16 @@
     "**/static": true
   },
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.menuBarVisibility": "toggle",
   "editor.minimap.enabled": false,
   "editor.glyphMargin": false,
   "editor.folding": false,
@@ -34,7 +41,8 @@
   "terminal.integrated.fontSize": 16,
   "window.commandCenter": false,
   "explorer.confirmDelete": false,
-  // "editor.acceptSuggestionOnEnter": "off",
+  "editor.acceptSuggestionOnEnter": "smart",
+  "github.copilot.editor.enableCodeActions": false,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "files.associations": {
     "*.css": "tailwindcss"
@@ -46,45 +54,39 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Tomorrow Night Blue",
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "top",
   "workbench.sideBar.location": "right",
   "workbench.colorCustomizations": {
-    "editor.background": "#0f1419",
-    "activityBar.background": "#0f1419",
-    "statusBar.background": "#0f1419",
-    "sideBar.background": "#0f1419",
-    "tab.inactiveBackground": "#0f1419",
-    "tab.border": "#0f1419",
-    "editorOverviewRuler.border": "#0f1419",
-    "editorGroupHeader.tabsBackground": "#0f1419",
-    "menu.background": "#0f1419",
-    "input.background": "#0f1419",
-    "editorSuggestWidget.background": "#0f1419",
-    "editorSuggestWidget.border": "#0f1419",
-    "scrollbar.shadow": "#0f1419",
-    "scrollbarSlider.background": "#0f1419",
-    "scrollbarSlider.activeBackground": "#0f1419",
-    "scrollbarSlider.hoverBackground": "#0f1419",
-    "titleBar.activeBackground": "#0f1419",
-    "editorSuggestWidget.selectedBackground": "#0f1419",
-    "editor.selectionBackground": "#2f313c",
-    "editor.lineHighlightBackground": "#26282f",
-    "tab.inactiveForeground": "#6d8aa8",
-    "editorHoverWidget.background": "#10131e",
-    "quickInput.background": "#10131e"
+    "editor.background": "#120f24",
+    "activityBar.background": "#120f24",
+    "statusBar.background": "#120f24",
+    "sideBar.background": "#120f24",
+    "tab.inactiveBackground": "#120f24",
+    "tab.border": "#120f24",
+    "editorOverviewRuler.border": "#120f24",
+    "editorGroupHeader.tabsBackground": "#120f24",
+    "menu.background": "#120f24",
+    "input.background": "#120f24",
+    "editorSuggestWidget.background": "#120f24",
+    "editorSuggestWidget.border": "#120f24",
+    "scrollbar.shadow": "#120f24",
+    "scrollbarSlider.background": "#120f24",
+    "scrollbarSlider.activeBackground": "#120f24",
+    "scrollbarSlider.hoverBackground": "#120f24",
+    "titleBar.activeBackground": "#120f24",
+    "editorSuggestWidget.selectedBackground": "#120f24",
+    "quickInput.background": "#120f24",
+    "editor.selectionBackground": "#0b071f",
+    "editor.lineHighlightBackground": "#0b071f",
+    "editorHoverWidget.background": "#0b071f",
+    "tab.inactiveForeground": "#444157",
   },
   "settingsSync.ignoredSettings": [
     "terminal.integrated.fontFamily",
     "terminal.integrated.fontSize",
     "editor.fontSize",
-    "-window.zoomLevel"
-  ],
-  "window.menuBarVisibility": "toggle",
-  "cmake.showOptionsMovedNotification": false,
-  "cmake.configureOnOpen": true,
-  "cmake.pinnedCommands": [
-    "workbench.action.tasks.configureTaskRunner",
-    "workbench.action.tasks.runTask"
+    "-window.zoomLevel",
+    "window.zoomPerWindow"
   ],
   "github.copilot.enable": {
     "*": false,
@@ -92,5 +94,5 @@
     "markdown": false,
     "scminput": false
   },
-  "v-analyzer.serverPath": "~/.local/v-analyzer/bin/v-analyzer"
+  "workbench.statusBar.visible": false
 }
