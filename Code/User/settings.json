@@ -1,27 +1,55 @@
 {
-  "editor.fontFamily": "Zed Mono",
-  "editor.fontSize": 13,
-  "window.zoomLevel": 0.3,
+"editor.fontFamily": "Zed Sans",
+"editor.fontSize": 12.6,
+  "window.zoomLevel": -0.2,
   "editor.fontLigatures": true,
   "editor.inlineSuggest.enabled": true,
   "extensions.ignoreRecommendations": true,
-  "workbench.startupEditor": "none",
   "files.exclude": {
+    "**/node_modules": true,
+  },
+  "search.exclude": {
     "**/dist": true,
     "**/node_modules": true,
-    "**/static": true
+    "**/static": true,
+    "**/.next": true,
+    "**/@remote-types": true,
+    ".yarnrc.yml": true,
+    "yarn.lock": true,
+    "Cargo.lock": true,
+    "*.md": true,
+    "**/dependabot.yml": true,
+    "**/commit-msg": true,
+    "**/*.cjs": true,
+    "**/*.svg": true
   },
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "eslint.format.enable": true,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "window.menuBarVisibility": "toggle",
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "npm.packageManager": "pnpm",
   "editor.minimap.enabled": false,
   "editor.glyphMargin": false,
   "editor.folding": false,
@@ -42,44 +70,42 @@
   "window.commandCenter": false,
   "explorer.confirmDelete": false,
   "editor.acceptSuggestionOnEnter": "smart",
-  "github.copilot.editor.enableCodeActions": false,
   "editor.inlayHints.enabled": "offUnlessPressed",
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
-  "editor.quickSuggestions": {
-    "strings": "on"
-  },
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Tomorrow Night Blue",
-  "workbench.activityBar.location": "top",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.renderSideBySide": false,
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "hidden",
   "workbench.sideBar.location": "right",
+  "terminal.integrated.scrollback": 100000,
+  "workbench.colorTheme": "Tomorrow Night Blue",
   "workbench.colorCustomizations": {
-    "editor.background": "#120f24",
-    "activityBar.background": "#120f24",
-    "statusBar.background": "#120f24",
-    "sideBar.background": "#120f24",
-    "tab.inactiveBackground": "#120f24",
-    "tab.border": "#120f24",
-    "editorOverviewRuler.border": "#120f24",
-    "editorGroupHeader.tabsBackground": "#120f24",
-    "menu.background": "#120f24",
-    "input.background": "#120f24",
-    "editorSuggestWidget.background": "#120f24",
-    "editorSuggestWidget.border": "#120f24",
-    "scrollbar.shadow": "#120f24",
-    "scrollbarSlider.background": "#120f24",
-    "scrollbarSlider.activeBackground": "#120f24",
-    "scrollbarSlider.hoverBackground": "#120f24",
-    "titleBar.activeBackground": "#120f24",
-    "editorSuggestWidget.selectedBackground": "#120f24",
-    "quickInput.background": "#120f24",
-    "editor.selectionBackground": "#0b071f",
-    "editor.lineHighlightBackground": "#0b071f",
-    "editorHoverWidget.background": "#0b071f",
-    "tab.inactiveForeground": "#444157",
+    "editor.background": "#261230",
+    "activityBar.background": "#261230",
+    "statusBar.background": "#261230",
+    "sideBar.background": "#261230",
+    "tab.inactiveBackground": "#261230",
+    "tab.border": "#261230",
+    "editorOverviewRuler.border": "#261230",
+    "editorGroupHeader.tabsBackground": "#261230",
+    "menu.background": "#261230",
+    "input.background": "#261230",
+    "editorSuggestWidget.background": "#261230",
+    "editorSuggestWidget.border": "#261230",
+    "scrollbar.shadow": "#261230",
+    "scrollbarSlider.background": "#261230",
+    "scrollbarSlider.activeBackground": "#261230",
+    "scrollbarSlider.hoverBackground": "#261230",
+    "titleBar.activeBackground": "#261230",
+    "editorSuggestWidget.selectedBackground": "#261230",
+    "quickInput.background": "#261230",
+    "editor.selectionBackground": "#100715",
+    "editor.lineHighlightBackground": "#100715",
+    "editorHoverWidget.background": "#100715",
+    "editorSuggestWidget.selectedForeground": "#6a6367",
+    "tab.inactiveForeground": "#6a6367"
   },
   "settingsSync.ignoredSettings": [
     "terminal.integrated.fontFamily",
@@ -88,11 +114,5 @@
     "-window.zoomLevel",
     "window.zoomPerWindow"
   ],
-  "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  },
-  "workbench.statusBar.visible": false
+  "editor.inlineSuggest.edits.showCollapsed": true,
 }

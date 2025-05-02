@@ -6,6 +6,7 @@ Code/User/sync
 Code/User/globalStorage
 Code/User/workspaceStorage
 !Code/User/
+Cursor
 cache
 vcache
 dconf
