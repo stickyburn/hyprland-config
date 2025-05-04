@@ -26,7 +26,7 @@ alias gpsu='git push --set-upstream origin'
 alias gra='git restore .'
 alias gras='git restore --staged .'
 
-alias l='exa -a'
+alias l='ls -a'
 alias n='nnn -eH'
 alias f='fzf'
 
