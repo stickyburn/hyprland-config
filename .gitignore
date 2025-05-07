@@ -7,7 +7,13 @@ Code/User/sync
 Code/User/globalStorage
 Code/User/workspaceStorage
 !Code/User/
-Cursor
+Cursor/*
+Cursor/User/History
+Cursor/User/snippets
+Cursor/User/sync
+Cursor/User/globalStorage
+Cursor/User/workspaceStorage
+!Cursor/User/
 cache
 dconf
 protonvpn

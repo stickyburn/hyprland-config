@@ -1,0 +1,117 @@
+{
+    "editor.fontFamily": "Zed Sans",
+    "editor.fontSize": 11.6,
+    "terminal.integrated.fontSize": 12.5,
+    "window.zoomLevel": -0.5,
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "Zed Mono",
+    "editor.inlineSuggest.enabled": true,
+    "extensions.ignoreRecommendations": true,
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/static": true,
+      "**/.next": true,
+      "**/@remote-types": true,
+      ".yarnrc.yml": true,
+      "yarn.lock": true,
+      "*.md": true,
+      "**/dependabot.yml": true,
+      "**/commit-msg": true,
+      "**/*.cjs": true,
+      "**/*.svg": true,
+      "**-lock.yaml": true,
+    },
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "eslint.format.enable": true,
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "files.associations": {
+      "*.css": "tailwindcss"
+    },
+    "editor.quickSuggestions": {
+      "strings": "on"
+    },
+    "npm.packageManager": "pnpm",
+    "zig.zls.enabled": "on",
+    "editor.minimap.enabled": false,
+    "editor.glyphMargin": false,
+    "editor.folding": false,
+    "editor.foldingHighlight": false,
+    "editor.lineNumbers": "off",
+    "editor.tabSize": 2,
+    "editor.cursorStyle": "line-thin",
+    "editor.cursorBlinking": "solid",
+    "terminal.integrated.cursorStyle": "underline",
+    "git.decorations.enabled": false,
+    "workbench.editor.decorations.badges": false,
+    "workbench.editor.decorations.colors": false,
+    "explorer.decorations.colors": false,
+    "editor.guides.indentation": false,
+    "breadcrumbs.enabled": false,
+    "window.commandCenter": false,
+    "explorer.confirmDelete": false,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "explorer.confirmDragAndDrop": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.renderSideBySide": true,
+    "workbench.activityBar.location": "hidden",
+    "workbench.sideBar.location": "right",
+    "terminal.integrated.scrollback": 50000,
+    "workbench.colorTheme": "Tomorrow Night Blue",
+    "workbench.colorCustomizations": {
+      "editor.background": "#1A0E20",
+      "activityBar.background": "#1A0E20",
+      "statusBar.background": "#1A0E20",
+      "sideBar.background": "#1A0E20",
+      "tab.inactiveBackground": "#1A0E20",
+      "tab.border": "#1A0E20",
+      "editorOverviewRuler.border": "#1A0E20",
+      "editorGroupHeader.tabsBackground": "#1A0E20",
+      "menu.background": "#1A0E20",
+      "input.background": "#1A0E20",
+      "editorSuggestWidget.background": "#1A0E20",
+      "editorSuggestWidget.border": "#1A0E20",
+      "scrollbar.shadow": "#1A0E20",
+      "scrollbarSlider.background": "#1A0E20",
+      "scrollbarSlider.activeBackground": "#1A0E20",
+      "scrollbarSlider.hoverBackground": "#1A0E20",
+      "titleBar.activeBackground": "#1A0E20",
+      "editorSuggestWidget.selectedBackground": "#1A0E20",
+      "quickInput.background": "#1A0E20",
+      "editor.selectionBackground": "#2f133d",
+      "editor.lineHighlightBackground": "#2f133d",
+      "editorHoverWidget.background": "#2f133d",
+      "editorSuggestWidget.selectedForeground": "#6a6367",
+      "tab.inactiveForeground": "#6a6367"
+    },
+    "settingsSync.ignoredSettings": [
+      "terminal.integrated.fontFamily",
+      "terminal.integrated.fontSize",
+      "editor.fontSize",
+      "-window.zoomLevel",
+      "window.zoomPerWindow"
+    ],
+    "workbench.startupEditor": "none",
+    "window.menuBarVisibility": "toggle",
+    "workbench.statusBar.visible": false,
+}
