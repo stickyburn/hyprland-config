@@ -16,18 +16,15 @@ Cursor/User/workspaceStorage
 !Cursor/User/
 cache
 dconf
-protonvpn
 Signal Beta
-shuttle
 weechat/*
-!weechat/irc.conf
+!weechat/weechat.conf
 mimeapps.list
 nnn
-nvim
 pavucontrol.ini
 pulse
 systemd
-vivaldi-snapshot
+vivaldi
 zsh/.z
 zsh/.zhistory
 zsh/.zsh_history

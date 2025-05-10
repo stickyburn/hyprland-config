@@ -28,7 +28,9 @@ alias gras='git restore --staged .'
 
 alias l='ls -a'
 alias n='nnn -eH'
-alias f='fzf'
+alias f='fzf \
+  --preview 'bat --style=numbers --color=always {}' \
+  --bind "enter:execute(${EDITOR:-vim} {})+abort"'
 
 alias yt='yarn test --maxWorkers=60%'
 alias ytw='yarn test --maxWorkers=60% --watch'
