@@ -209,9 +209,5 @@
   {
     "key": "ctrl+l",
     "command": "-aichat.newchataction"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.panel.aichat.3f4b2537-13cb-4379-ab4f-02835bed05eb"
   }
 ]

@@ -1,8 +1,8 @@
 {
     "editor.fontFamily": "Zed Sans",
-    "editor.fontSize": 11.6,
-    "terminal.integrated.fontSize": 12.5,
-    "window.zoomLevel": -0.5,
+    "editor.fontSize": 12,
+    "terminal.integrated.fontSize": 13,
+    "window.zoomLevel": -1,
     "editor.fontLigatures": true,
     "terminal.integrated.fontFamily": "Zed Mono",
     "editor.inlineSuggest.enabled": true,
@@ -112,6 +112,4 @@
       "window.zoomPerWindow"
     ],
     "workbench.startupEditor": "none",
-    "window.menuBarVisibility": "toggle",
-    "workbench.statusBar.visible": false,
 }
