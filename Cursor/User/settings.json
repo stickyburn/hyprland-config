@@ -49,7 +49,6 @@
       "strings": "on"
     },
     "npm.packageManager": "pnpm",
-    "zig.zls.enabled": "on",
     "editor.minimap.enabled": false,
     "editor.glyphMargin": false,
     "editor.folding": false,
