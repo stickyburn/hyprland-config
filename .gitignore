@@ -32,3 +32,5 @@ zsh/.zcompdump
 zsh/history
 bookmarks
 settings.ini
+gemini-cli.json
+uv-receipt.json
