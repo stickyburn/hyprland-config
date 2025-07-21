@@ -33,20 +33,25 @@ export NNN_FCOLORS='c1e2552eab6033f7c6d6abc4'
 
 export PNPM_HOME="$HOME/.local/pnpm"
 export PNPM_STORE_DIR="$PNPM_HOME/store"
-export NVM_DIR="$HOME/.local/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-
-export GOROOT=/usr/lib/go
-export GOPATH=$HOME/.local/go
-export GOBIN=$GOPATH/bin
-export GOCACHE=$HOME/.config/cache/go-build
-export GOMODCACHE=$HOME/.config/cache/go/pkg/mod
-
-export PATH=$GOBIN:$PATH
+path=("$PNPM_HOME" $path)
 
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '🐙 %b'
 export RPROMPT='%F{085}%D{%L:%M}%f'
 export PROMPT='%F{085}%1d ${vcs_info_msg_0_}
 >%f '
+
+# uv and fly deployments
+. "$HOME/.local/bin/env"
+export FLYCTL_INSTALL="/home/Yas/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/Yas/.local/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# opencode
+export PATH=/home/Yas/.opencode/bin:$PATH
