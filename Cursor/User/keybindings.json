@@ -198,16 +198,42 @@
   },
   {
     "key": "ctrl+l",
-    "command": "-workbench.action.chat.newEditSession",
-    "when": "chatEditingParticipantRegistered && chatIsEnabled && inChat && chatLocation == 'editing-session'"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "-workbench.action.chat.newChat",
-    "when": "chatIsEnabled && inChat && chatLocation != 'editing-session'"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "-aichat.newchataction"
-  }
+    "command": "-composer.sendToAgent",
+    "when": "editorHasPromptBar && editorPromptBarFocused"
+},
+{
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+        "text": "\\\r\n"
+    },
+    "when": "terminalFocus"
+},
+{
+  "key": "ctrl+l",
+  "command": "-aichat.newchataction"
+},
+{
+  "key": "ctrl+l",
+  "command": "roo-cline.focusInput"
+},
+{
+  "key": "ctrl+i",
+  "command": "composerMode.agent"
+},
+{
+  "key": "ctrl+l",
+  "command": "-kilo-code.ghost.generateSuggestions",
+  "when": "editorTextFocus && !editorTabMovesFocus && !inSnippetMode"
+},
+{
+  "key": "ctrl+l",
+  "command": "kilo-code.focusChatInput",
+  "when": "true"
+},
+{
+  "key": "ctrl+shift+a",
+  "command": "-kilo-code.focusChatInput",
+  "when": "true"
+}
 ]
