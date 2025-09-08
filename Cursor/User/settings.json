@@ -1,124 +1,130 @@
 {
-    "editor.fontFamily": "Zed Sans",
-    "editor.fontSize": 12,
-    "terminal.integrated.fontSize": 12,
-    "window.zoomLevel": -1.2,
-    "editor.fontLigatures": true,
-    "terminal.integrated.fontFamily": "Zed Mono",
-    "editor.inlineSuggest.enabled": true,
-    "extensions.ignoreRecommendations": true,
-    "search.exclude": {
-      "**/node_modules": true,
-      "**/dist": true,
-      "**/static": true,
-      "**/.next": true,
-      "**/@remote-types": true,
-      ".yarnrc.yml": true,
-      "yarn.lock": true,
-      "*.md": true,
-      "**/dependabot.yml": true,
-      "**/commit-msg": true,
-      "**/*.cjs": true,
-      "**/*.svg": true,
-      "**-lock.yaml": true,
-    },
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit"
-    },
-    "eslint.format.enable": true,
-    "[json]": {
-      "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[typescriptreact]": {
-      "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[typescript]": {
-      "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[jsonc]": {
-      "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[javascript]": {
-      "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "files.associations": {
-      "*.css": "tailwindcss"
-    },
-    "editor.quickSuggestions": {
-      "strings": "on"
-    },
-    "npm.packageManager": "pnpm",
-    "editor.minimap.enabled": false,
-    "editor.glyphMargin": false,
-    "editor.folding": false,
-    "editor.foldingHighlight": false,
-    "editor.lineNumbers": "off",
-    "editor.tabSize": 2,
-    "editor.cursorStyle": "line-thin",
-    "editor.cursorBlinking": "solid",
-    "terminal.integrated.cursorStyle": "underline",
-    "git.decorations.enabled": false,
-    "workbench.editor.decorations.badges": false,
-    "workbench.editor.decorations.colors": false,
-    "explorer.decorations.colors": false,
-    "editor.guides.indentation": false,
-    "breadcrumbs.enabled": false,
-    "window.commandCenter": true,
-    "explorer.confirmDelete": false,
-    "editor.acceptSuggestionOnEnter": "smart",
-    "editor.inlayHints.enabled": "offUnlessPressed",
-    "explorer.confirmDragAndDrop": false,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "diffEditor.ignoreTrimWhitespace": true,
-    "diffEditor.renderSideBySide": false,
-    "workbench.activityBar.location": "hidden",
-    "workbench.sideBar.location": "right",
-    "terminal.integrated.scrollback": 50000,
-    "workbench.colorTheme": "Tomorrow Night Blue",
-    "workbench.colorCustomizations": {
-      "editor.background": "#18152b",
-      "activityBar.background": "#18152b",
-      "statusBar.background": "#18152b",
-      "sideBar.background": "#18152b",
-      "tab.inactiveBackground": "#18152b",
-      "tab.border": "#18152b",
-      "editorOverviewRuler.border": "#18152b",
-      "editorGroupHeader.tabsBackground": "#18152b",
-      "menu.background": "#18152b",
-      "input.background": "#18152b",
-      "editorSuggestWidget.background": "#18152b",
-      "editorSuggestWidget.border": "#18152b",
-      "scrollbar.shadow": "#18152b",
-      "scrollbarSlider.background": "#18152b",
-      "scrollbarSlider.activeBackground": "#18152b",
-      "scrollbarSlider.hoverBackground": "#18152b",
-      "titleBar.activeBackground": "#18152b",
-      "editorSuggestWidget.selectedBackground": "#18152b",
-      "quickInput.background": "#18152b",
-      "editor.selectionBackground": "#0a071e",
-      "editor.lineHighlightBackground": "#0a071e",
-      "editorHoverWidget.background": "#0a071e",
-      "editorSuggestWidget.selectedForeground": "#6a6367",
-      "tab.inactiveForeground": "#6a6367"
-    },
-    "settingsSync.ignoredSettings": [
-      "terminal.integrated.fontFamily",
-      "terminal.integrated.fontSize",
-      "editor.fontSize",
-      "-window.zoomLevel",
-      "window.zoomPerWindow"
-    ],
-    "workbench.startupEditor": "none",
-    "kilo-code.allowedCommands": [
-      "npm test",
-      "npm install",
-      "tsc",
-      "git log",
-      "git diff",
-      "git show"
-    ],
-    "terminal.integrated.tabs.enabled": false,
-    "workbench.statusBar.visible": false,
+  "window.zoomLevel": -0.3,
+  "editor.fontFamily": "Zed Sans",
+  "editor.fontSize": 11,
+  "terminal.integrated.fontSize": 11.5,
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "Zed Mono",
+  "editor.inlineSuggest.enabled": true,
+  "extensions.ignoreRecommendations": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/static": true,
+    "**/.next": true,
+    "**/@remote-types": true,
+    ".yarnrc.yml": true,
+    "yarn.lock": true,
+    "*.md": true,
+    "**/dependabot.yml": true,
+    "**/commit-msg": true,
+    "**/*.cjs": true,
+    "**/*.svg": true,
+    "**-lock.yaml": true,
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.format.enable": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "npm.packageManager": "pnpm",
+  "editor.minimap.enabled": false,
+  "editor.glyphMargin": false,
+  "editor.folding": false,
+  "editor.foldingHighlight": false,
+  "editor.lineNumbers": "off",
+  "editor.tabSize": 2,
+  "editor.cursorStyle": "line-thin",
+  "editor.cursorBlinking": "solid",
+  "terminal.integrated.cursorStyle": "underline",
+  "git.decorations.enabled": false,
+  "workbench.editor.decorations.badges": false,
+  "workbench.editor.decorations.colors": false,
+  "explorer.decorations.colors": false,
+  "editor.guides.indentation": false,
+  "breadcrumbs.enabled": false,
+  "window.commandCenter": true,
+  "explorer.confirmDelete": false,
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.renderSideBySide": true,
+  "workbench.activityBar.location": "hidden",
+  "workbench.sideBar.location": "right",
+  "terminal.integrated.scrollback": 50000,
+  "workbench.colorTheme": "Tomorrow Night Blue",
+  "workbench.colorCustomizations": {
+    "editor.background": "#1A0E20",
+    "activityBar.background": "#1A0E20",
+    "statusBar.background": "#1A0E20",
+    "sideBar.background": "#1A0E20",
+    "tab.inactiveBackground": "#1A0E20",
+    "tab.border": "#1A0E20",
+    "editorOverviewRuler.border": "#1A0E20",
+    "editorGroupHeader.tabsBackground": "#1A0E20",
+    "menu.background": "#1A0E20",
+    "input.background": "#1A0E20",
+    "editorSuggestWidget.background": "#1A0E20",
+    "editorSuggestWidget.border": "#1A0E20",
+    "scrollbar.shadow": "#1A0E20",
+    "scrollbarSlider.background": "#1A0E20",
+    "scrollbarSlider.activeBackground": "#1A0E20",
+    "scrollbarSlider.hoverBackground": "#1A0E20",
+    "titleBar.activeBackground": "#1A0E20",
+    "editorSuggestWidget.selectedBackground": "#1A0E20",
+    "quickInput.background": "#1A0E20",
+    "editor.selectionBackground": "#0e0413",
+    "editor.lineHighlightBackground": "#0e0413",
+    "editorHoverWidget.background": "#0e0413",
+    "editorSuggestWidget.selectedForeground": "#6a6367",
+    "tab.inactiveForeground": "#6a6367"
+  },
+  "settingsSync.ignoredSettings": [
+    "terminal.integrated.fontFamily",
+    "terminal.integrated.fontSize",
+    "editor.fontSize",
+    "-window.zoomLevel",
+    "window.zoomPerWindow"
+  ],
+  "workbench.startupEditor": "none",
+  "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+  "terminal.integrated.tabs.enabled": false,
+  "kilo-code.allowedCommands": [
+    "pnpm build",
+    "pnpm lint",
+    "git show"
+  ],
+  "kilo-code.deniedCommands": [],
+  "roo-cline.allowedCommands": [
+    "git log",
+    "git diff",
+    "git show",
+    "pnpm build"
+  ],
+  "roo-cline.deniedCommands": [],
+  "workbench.statusBar.visible": false
 }

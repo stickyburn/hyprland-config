@@ -1,239 +1,242 @@
-// Place your key bindings in this file to override the defaultsauto[]
+// Place your key bindings in this file to override the defaults
 [
-  {
-    "key": "ctrl+shift+b",
-    "command": "workbench.action.toggleActivityBarVisibility"
-  },
-  {
-    "key": "ctrl+,",
-    "command": "workbench.action.openApplicationSettingsJson"
-  },
-  {
-    "key": "ctrl+shift+,",
-    "command": "workbench.action.openSettings2"
-  },
-  {
-    "key": "ctrl+1",
-    "command": "workbench.action.openEditorAtIndex1"
-  },
-  {
-    "key": "alt+1",
-    "command": "-workbench.action.openEditorAtIndex1"
-  },
-  {
-    "key": "ctrl+2",
-    "command": "workbench.action.openEditorAtIndex2"
-  },
-  {
-    "key": "alt+2",
-    "command": "-workbench.action.openEditorAtIndex2"
-  },
-  {
-    "key": "ctrl+3",
-    "command": "workbench.action.openEditorAtIndex3"
-  },
-  {
-    "key": "alt+3",
-    "command": "-workbench.action.openEditorAtIndex3"
-  },
-  {
-    "key": "ctrl+4",
-    "command": "workbench.action.openEditorAtIndex4"
-  },
-  {
-    "key": "alt+4",
-    "command": "-workbench.action.openEditorAtIndex4"
-  },
-  {
-    "key": "ctrl+t",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "ctrl+`",
-    "command": "-workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "ctrl+t",
-    "command": "-workbench.action.showAllSymbols"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "-workbench.action.quickOpen"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "-editor.action.toggleScreenReaderAccessibilityMode",
-    "when": "accessibilityHelpIsShown"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
-    "when": "inFilesPicker && inQuickOpen"
-  },
-  {
-    "key": "ctrl+0",
-    "command": "-workbench.action.focusSideBar"
-  },
-  {
-    "key": "ctrl+o",
-    "command": "workbench.action.quickOpen"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "-workbench.action.quickOpen"
-  },
-  {
-    "key": "ctrl+o",
-    "command": "-workbench.action.files.openFolderViaWorkspace",
-    "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
-  },
-  {
-    "key": "ctrl+o",
-    "command": "-workbench.action.files.openFileFolder",
-    "when": "isMacNative && openFolderWorkspaceSupport"
-  },
-  {
-    "key": "ctrl+shift+o",
-    "command": "workbench.action.openRecent"
-  },
-  {
-    "key": "ctrl+r",
-    "command": "-workbench.action.openRecent"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+k ctrl+i",
-    "command": "-editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+m",
-    "command": "editor.action.addSelectionToNextFindMatch",
-    "when": "editorFocus"
-  },
-  {
-    "key": "ctrl+d",
-    "command": "-editor.action.addSelectionToNextFindMatch",
-    "when": "editorFocus"
-  },
-  {
-    "key": "ctrl+d",
-    "command": "editor.action.revealDefinition",
-    "when": "editorHasDefinitionProvider && editorTextFocus"
-  },
-  {
-    "key": "f12",
-    "command": "-editor.action.revealDefinition",
-    "when": "editorHasDefinitionProvider && editorTextFocus"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "workbench.view.explorer",
-    "when": "!explorerViewletVisible"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "-workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
-  },
-  {
-    "key": "ctrl+shift+h",
-    "command": "-workbench.action.replaceInFiles"
-  },
-  {
-    "key": "ctrl+shift+b",
-    "command": "workbench.action.toggleStatusbarVisibility"
-  },
-  {
-    "key": "ctrl+b",
-    "command": "-workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "ctrl+b",
-    "command": "-workbench.action.tasks.build",
-    "when": "taskCommandsRegistered"
-  },
-  {
-    "key": "ctrl+`",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-  },
-  {
-    "key": "ctrl+shift+`",
-    "command": "-workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
-  },
-  {
-    "key": "ctrl+shift+e",
-    "command": "-workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
-  },
-  {
-    "key": "ctrl+shift+b",
-    "command": "-workbench.action.tasks.build",
-    "when": "taskCommandsRegistered"
-  },
-  {
-    "key": "ctrl+shift+l",
-    "command": "workbench.action.toggleAuxiliaryBar"
-  },
-  {
-    "key": "ctrl+alt+b",
-    "command": "-workbench.action.toggleAuxiliaryBar"
-  },
-  {
-    "key": "ctrl+shift+e",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "-composer.sendToAgent",
-    "when": "editorHasPromptBar && editorPromptBarFocused"
-},
-{
-    "key": "shift+enter",
-    "command": "workbench.action.terminal.sendSequence",
-    "args": {
-        "text": "\\\r\n"
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.toggleActivityBarVisibility"
     },
-    "when": "terminalFocus"
-},
-{
-  "key": "ctrl+l",
-  "command": "-aichat.newchataction"
-},
-{
-  "key": "ctrl+l",
-  "command": "roo-cline.focusInput"
-},
-{
-  "key": "ctrl+i",
-  "command": "composerMode.agent"
-},
-{
-  "key": "ctrl+l",
-  "command": "-kilo-code.ghost.generateSuggestions",
-  "when": "editorTextFocus && !editorTabMovesFocus && !inSnippetMode"
-},
-{
-  "key": "ctrl+l",
-  "command": "kilo-code.focusChatInput",
-  "when": "true"
-},
-{
-  "key": "ctrl+shift+a",
-  "command": "-kilo-code.focusChatInput",
-  "when": "true"
-}
+    {
+        "key": "ctrl+,",
+        "command": "workbench.action.openApplicationSettingsJson"
+    },
+    {
+        "key": "ctrl+shift+,",
+        "command": "workbench.action.openSettings2"
+    },
+    {
+        "key": "ctrl+1",
+        "command": "workbench.action.openEditorAtIndex1"
+    },
+    {
+        "key": "alt+1",
+        "command": "-workbench.action.openEditorAtIndex1"
+    },
+    {
+        "key": "ctrl+2",
+        "command": "workbench.action.openEditorAtIndex2"
+    },
+    {
+        "key": "alt+2",
+        "command": "-workbench.action.openEditorAtIndex2"
+    },
+    {
+        "key": "ctrl+3",
+        "command": "workbench.action.openEditorAtIndex3"
+    },
+    {
+        "key": "alt+3",
+        "command": "-workbench.action.openEditorAtIndex3"
+    },
+    {
+        "key": "ctrl+4",
+        "command": "workbench.action.openEditorAtIndex4"
+    },
+    {
+        "key": "alt+4",
+        "command": "-workbench.action.openEditorAtIndex4"
+    },
+    {
+        "key": "ctrl+5",
+        "command": "workbench.action.openEditorAtIndex5"
+    },
+    {
+        "key": "alt+5",
+        "command": "-workbench.action.openEditorAtIndex5"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-editor.action.toggleScreenReaderAccessibilityMode",
+        "when": "accessibilityHelpIsShown"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "-workbench.action.focusSideBar"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openFolderViaWorkspace",
+        "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openFileFolder",
+        "when": "isMacNative && openFolderWorkspaceSupport"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+i",
+        "command": "-editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.view.explorer",
+        "when": "!explorerViewletVisible"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "-workbench.action.replaceInFiles"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.toggleStatusbarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.tasks.build",
+        "when": "taskCommandsRegistered"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "-workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "-workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build",
+        "when": "taskCommandsRegistered"
+    },
+    {
+        "key": "ctrl+alt+b",
+        "command": "-workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-composer.sendToAgent",
+        "when": "editorHasPromptBar && editorPromptBarFocused"
+    },
+    {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\\\r\n"
+        },
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-aichat.newchataction"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "composerMode.agent"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-composer.newAgentChat"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "composer.startComposerPrompt",
+        "when": "cursor.appLayout != 'agent'"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-composer.startComposerPrompt",
+        "when": "cursor.appLayout != 'agent'"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "roo-cline.focusInput"
+    }
 ]
