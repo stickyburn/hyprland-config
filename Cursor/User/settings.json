@@ -1,10 +1,10 @@
 {
   "window.zoomLevel": -0.3,
   "editor.fontFamily": "Zed Sans",
+  "terminal.integrated.fontFamily": "ZedMono Nerd Font",
   "editor.fontSize": 11,
   "terminal.integrated.fontSize": 11.5,
   "editor.fontLigatures": true,
-  "terminal.integrated.fontFamily": "Zed Mono",
   "editor.inlineSuggest.enabled": true,
   "extensions.ignoreRecommendations": true,
   "search.exclude": {
@@ -23,24 +23,40 @@
     "**-lock.yaml": true,
   },
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.codeActionsOnSave.mode": "all",
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
   "eslint.format.enable": true,
+  "eslint.run": "onSave",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "jsonc"
+  ],
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "files.associations": {
     "*.css": "tailwindcss"
@@ -78,28 +94,28 @@
   "terminal.integrated.scrollback": 50000,
   "workbench.colorTheme": "Tomorrow Night Blue",
   "workbench.colorCustomizations": {
-    "editor.background": "#1A0E20",
-    "activityBar.background": "#1A0E20",
-    "statusBar.background": "#1A0E20",
-    "sideBar.background": "#1A0E20",
-    "tab.inactiveBackground": "#1A0E20",
-    "tab.border": "#1A0E20",
-    "editorOverviewRuler.border": "#1A0E20",
-    "editorGroupHeader.tabsBackground": "#1A0E20",
-    "menu.background": "#1A0E20",
-    "input.background": "#1A0E20",
-    "editorSuggestWidget.background": "#1A0E20",
-    "editorSuggestWidget.border": "#1A0E20",
-    "scrollbar.shadow": "#1A0E20",
-    "scrollbarSlider.background": "#1A0E20",
-    "scrollbarSlider.activeBackground": "#1A0E20",
-    "scrollbarSlider.hoverBackground": "#1A0E20",
-    "titleBar.activeBackground": "#1A0E20",
-    "editorSuggestWidget.selectedBackground": "#1A0E20",
-    "quickInput.background": "#1A0E20",
-    "editor.selectionBackground": "#0e0413",
-    "editor.lineHighlightBackground": "#0e0413",
-    "editorHoverWidget.background": "#0e0413",
+    "editor.background": "#261230",
+    "activityBar.background": "#261230",
+    "statusBar.background": "#261230",
+    "sideBar.background": "#261230",
+    "tab.inactiveBackground": "#261230",
+    "tab.border": "#261230",
+    "editorOverviewRuler.border": "#261230",
+    "editorGroupHeader.tabsBackground": "#261230",
+    "menu.background": "#261230",
+    "input.background": "#261230",
+    "editorSuggestWidget.background": "#261230",
+    "editorSuggestWidget.border": "#261230",
+    "scrollbar.shadow": "#261230",
+    "scrollbarSlider.background": "#261230",
+    "scrollbarSlider.activeBackground": "#261230",
+    "scrollbarSlider.hoverBackground": "#261230",
+    "titleBar.activeBackground": "#261230",
+    "editorSuggestWidget.selectedBackground": "#261230",
+    "quickInput.background": "#261230",
+    "editor.selectionBackground": "#0f0215",
+    "editor.lineHighlightBackground": "#0f0215",
+    "editorHoverWidget.background": "#0f0215",
     "editorSuggestWidget.selectedForeground": "#6a6367",
     "tab.inactiveForeground": "#6a6367"
   },
@@ -113,12 +129,6 @@
   "workbench.startupEditor": "none",
   "diffEditor.useInlineViewWhenSpaceIsLimited": false,
   "terminal.integrated.tabs.enabled": false,
-  "kilo-code.allowedCommands": [
-    "pnpm build",
-    "pnpm lint",
-    "git show"
-  ],
-  "kilo-code.deniedCommands": [],
   "roo-cline.allowedCommands": [
     "git log",
     "git diff",
@@ -126,5 +136,5 @@
     "pnpm build"
   ],
   "roo-cline.deniedCommands": [],
-  "workbench.statusBar.visible": false
+  "workbench.statusBar.visible": false,
 }
