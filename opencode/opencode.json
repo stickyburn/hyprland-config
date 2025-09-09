@@ -1,0 +1,44 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "chutes": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Chutes AI",
+      "options": {
+        "baseURL": "https://llm.chutes.ai/v1",
+        "headers": {
+          "X-Enable-Thinking": "true"
+        }
+      },
+      "models": {
+        "zai-org/GLM-4.5-FP8": {
+          "name": "GLM 4.5"
+        },
+        "zai-org/GLM-4.5-Air": {
+          "name": "GLM 4.5 Air"
+        },
+        "deepseek-ai/DeepSeek-V3.1": {
+          "name": "DeepSeek V3.1"
+        },
+        "moonshotai/Kimi-K2-Instruct-0905": {
+          "name": "Kimi K2 0905"
+        }
+      }
+    }
+  },
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "pnpx",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": true
+    }
+  }
+}
