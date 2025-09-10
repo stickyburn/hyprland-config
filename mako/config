@@ -1,9 +1,9 @@
 max-visible=2
 layer=overlay
 background-color=#1A0E20
-font=RH Phonic 10
-text-color=#F7E8EA
-border-color=#FF338F
+font=Funnel Sans 10
+text-color=#DFFFF8
+border-color=#DFFFF8
 border-radius=7
 max-icon-size=42
 default-timeout=5000

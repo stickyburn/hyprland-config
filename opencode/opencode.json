@@ -36,7 +36,10 @@
       "type": "local",
       "command": [
         "pnpx",
-        "@playwright/mcp@latest"
+        "@playwright/mcp@latest",
+        "--executable-path=/usr/bin/vivaldi-snapshot",
+        "--no-sandbox",
+        "--headless"
       ],
       "enabled": true
     }

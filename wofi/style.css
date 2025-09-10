@@ -3,25 +3,25 @@
 }
 
 window {
-    background-color: #3B4252;
+    background-color: #1A0E20;
 }
 
 #input {
     margin: 5px;
     border-radius: 0px;
-    border: none;
-    background-color: #3B4252;
+    border: 1px solid #4C566A;
+    background-color: #1A0E20;
     color: white;
 }
 
 #inner-box {
-    background-color: #383C4A;
+    background-color: #1A0E20;
 }
 
 #outer-box {
     margin: 2px;
     padding: 10px;
-    background-color: #383C4A;
+    background-color: #1A0E20;
 }
 
 #scroll {
@@ -34,7 +34,7 @@ window {
 }
 
 #entry:nth-child(even){
-    background-color: #404552;
+    background-color: #261230;
 }
 
 #entry:selected {
