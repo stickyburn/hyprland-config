@@ -218,10 +218,6 @@
         "command": "-aichat.newchataction"
     },
     {
-        "key": "ctrl+i",
-        "command": "composerMode.agent"
-    },
-    {
         "key": "ctrl+shift+i",
         "command": "-composer.newAgentChat"
     },
@@ -238,5 +234,15 @@
     {
         "key": "ctrl+i",
         "command": "roo-cline.focusInput"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-workbench.action.terminal.chat.start",
+        "when": "chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-inlineChat2.reveal",
+        "when": "inlineChatHasEditsAgent && !chatEdits.isGlobalEditingSession && chatEdits.requestCount >= 1"
     }
 ]

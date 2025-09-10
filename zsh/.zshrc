@@ -38,7 +38,7 @@ export NNN_COLORS='77ff'
 export NNN_FCOLORS='c1e2552eab6033f7c6d6abc4'
 
 # pnpm
-export PNPM_HOME="/home/Yas/.local/pnpm"
+export PNPM_HOME="/home/lemonaid/.local/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
