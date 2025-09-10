@@ -3,7 +3,7 @@ local act = wezterm.action
 
 return {
   font = wezterm.font 'ZedMono Nerd Font',
-  font_size = 8,
+  font_size = 11,
   hide_tab_bar_if_only_one_tab = true,
   default_cursor_style = 'SteadyUnderline',
   adjust_window_size_when_changing_font_size = false,
