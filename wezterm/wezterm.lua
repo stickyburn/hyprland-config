@@ -9,7 +9,7 @@ return {
   adjust_window_size_when_changing_font_size = false,
   window_decorations = "NONE",
   colors = {
-    background = "#261230",
+    background = "#1A0E20",
     -- "#261230"
     -- "#1A0E20"
     -- "#1A1526"
@@ -20,7 +20,7 @@ return {
     -- "#F7E8EA"
     -- "#FF338F"
     tab_bar = {
-      background = "#261230",
+      background = "#1A0E20",
       active_tab = {
         bg_color = "#1A0E20",
         fg_color = "#DFFFF8",
