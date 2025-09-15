@@ -8,10 +8,9 @@ return {
   default_cursor_style = 'SteadyUnderline',
   adjust_window_size_when_changing_font_size = false,
   window_decorations = "NONE",
+  dpi = 360,
   colors = {
-    background = "#1A0E20",
-    -- "#261230"
-    -- "#1A0E20"
+    background = "#221124",
     -- "#1A1526"
     -- "#120F24"
     foreground = "#DFFFF8",
@@ -20,25 +19,25 @@ return {
     -- "#F7E8EA"
     -- "#FF338F"
     tab_bar = {
-      background = "#1A0E20",
+      background = "#221124",
       active_tab = {
         bg_color = "#1A0E20",
         fg_color = "#DFFFF8",
       },
       inactive_tab = {
-        bg_color = "#261230",
+        bg_color = "#221124",
         fg_color = "#DFFFF8",
       },
       inactive_tab_hover = {
-        bg_color = "#261230",
+        bg_color = "#221124",
         fg_color = "#DFFFF8",
       },
       new_tab = {
-        bg_color = "#261230",
+        bg_color = "#221124",
         fg_color = "#DFFFF8",
       },
       new_tab_hover = {
-        bg_color = "#261230",
+        bg_color = "#221124",
         fg_color = "#DFFFF8",
       },
     },

@@ -22,17 +22,25 @@
         },
         "moonshotai/Kimi-K2-Instruct-0905": {
           "name": "Kimi K2 0905"
+        },
+        "meituan-longcat/LongCat-Flash-Chat-FP8": {
+          "name": "LongCat Flash"
+        },
+        "LLM360/K2-Think": {
+          "name": "K2 Think"
         }
       }
     }
   },
   "mcp": {
     "context7": {
+      "enabled": true,
       "type": "remote",
       "url": "https://mcp.context7.com/mcp",
       "enabled": true
     },
     "playwright": {
+      "enabled": true,
       "type": "local",
       "command": [
         "pnpx",
@@ -41,7 +49,7 @@
         "--no-sandbox",
         "--headless"
       ],
-      "enabled": true
+      "timeout": 30
     }
   }
 }
