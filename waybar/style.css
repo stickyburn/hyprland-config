@@ -4,9 +4,6 @@
     font-family: "ZedMono Nerd Font", monospace;
     font-size: 13px;
     min-height: 0;
-    
-    /* reusable background */
-    --module-bg: rgba(29, 27, 40, 0.9);
 }
 
 window#waybar {
@@ -22,7 +19,7 @@ window#waybar.hidden {
 }
 
 .modules-left {
-    background: var(--module-bg);
+    background: rgba(29, 27, 40, 0.9);
     border-radius: 16px;
     padding: 0 12px;
     margin: 8px 12px 2px 12px;
@@ -73,7 +70,7 @@ window#waybar.hidden {
 }
 
 .modules-center {
-    background: var(--module-bg);
+    background: rgba(29, 27, 40, 0.9);
     border-radius: 16px;
     padding: 0 16px;
     margin: 8px 12px 2px 12px;
@@ -102,7 +99,7 @@ window#waybar.hidden {
 }
 
 .modules-right {
-    background: var(--module-bg);
+    background: rgba(29, 27, 40, 0.9);
     border-radius: 16px;
     padding: 0 12px;
     margin: 8px 12px 2px 12px;
