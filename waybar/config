@@ -1,0 +1,73 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "prefer-dark-theme": true,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/weather"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "custom/calendar-panel",
+        "custom/idle",
+        "tray"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "○",
+            "active": "●"
+        },
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+    "clock": {
+        "format": "{:%d %b %H:%M}",
+        "format-alt": "{:%A, %B %d, %Y (%R)}",
+        "tooltip-format": "{:%A, %B %d, %Y (%R)}"
+    },
+    "custom/weather": {
+        "format": "{}",
+        "interval": 1800,
+        "exec": "~/.config/waybar/scripts/weather.sh"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false,
+        "interval": 2,
+        "on-click": "~/.config/waybar/scripts/launch_btop.sh"
+    },
+    "memory": {
+        "format": " {percentage}%",
+        "tooltip": false,
+        "interval": 2,
+        "on-click": "~/.config/waybar/scripts/launch_btop.sh"
+    },
+    "custom/idle": {
+        "format": "󰒲",
+        "tooltip": "Idle",
+        "on-click": "hyprctl dispatch dpms off",
+        "interval": 3600
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+    "custom/calendar-panel": {
+        "format": " {}",
+        "exec": "date '+%d %b'",
+        "interval": 60,
+        "on-click": "notify-send \"Calendar\" \"$(cal -n 2)\"",
+        "tooltip": "Calendar"
+    }
+}
