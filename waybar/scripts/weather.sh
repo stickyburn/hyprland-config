@@ -23,15 +23,19 @@ fi
 
 # Map weather conditions to Nerd Font icons
 case "${CONDITION,,}" in
-    "clear"|"sunny") ICON="" ;;
-    "partly cloudy"|"cloudy") ICON="" ;;
-    "overcast") ICON="" ;;
-    "rain"|"shower") ICON="" ;;
-    "thunderstorm") ICON="" ;;
-    "snow") ICON="" ;;
-    "haze") ICON="" ;;
-    "mist"|"fog") ICON="" ;;
-    *) ICON="" ;;  # Default icon
+    "clear"|"sunny") ICON="☀️" ;;
+    "partly cloudy") ICON="⛅" ;;
+    "cloudy"|"overcast") ICON="☁️" ;;
+    "rain"|"light rain"|"shower") ICON="🌧️" ;;
+    "heavy rain") ICON="⛈️" ;;
+    "thunderstorm") ICON="🌩️" ;;
+    "snow"|"light snow") ICON="❄️" ;;
+    "heavy snow") ICON="🌨️" ;;
+    "haze"|"mist") ICON="" ;;
+    "fog") ICON="🌁" ;;
+    "drizzle") ICON="🌦️" ;;
+    "sleet") ICON="🧊" ;;
+    *) ICON="🌡️" ;;  # Default icon
 esac
 
 # Simple text output with Nerd Font icons

@@ -32,9 +32,8 @@
         "sort-by-number": true
     },
     "clock": {
-        "format": "{:%d %b %H:%M}",
-        "format-alt": "{:%A, %B %d, %Y (%R)}",
-        "tooltip-format": "{:%A, %B %d, %Y (%R)}"
+        "format": "{:%A, %B %d  %R}",
+        "tooltip-format": "{:%A, %B %d (%R)}"
     },
     "custom/weather": {
         "format": "{}",
