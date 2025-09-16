@@ -10,7 +10,7 @@ return {
   window_decorations = "NONE",
   dpi = 382,
   colors = {
-    background = "#221124",
+    background = "#1D1B28",
     -- "#221124"
     -- "#1D1B28"
     -- "#1A1526"
