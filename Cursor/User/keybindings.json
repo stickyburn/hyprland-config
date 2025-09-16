@@ -244,5 +244,5 @@
         "key": "ctrl+i",
         "command": "-inlineChat2.reveal",
         "when": "inlineChatHasEditsAgent && !chatEdits.isGlobalEditingSession && chatEdits.requestCount >= 1"
-    }
+    },
 ]
