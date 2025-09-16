@@ -1,0 +1,219 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "ZedMono Nerd Font", monospace;
+    font-size: 13px;
+    min-height: 0;
+    
+    /* reusable background */
+    --module-bg: rgba(29, 27, 40, 0.9);
+}
+
+window#waybar {
+    background: transparent;
+    color: #cdd6f4;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+.modules-left {
+    background: var(--module-bg);
+    border-radius: 16px;
+    padding: 0 12px;
+    margin: 8px 12px 2px 12px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+#workspaces {
+    background: transparent;
+}
+
+#workspaces button {
+    padding: 0;
+    background: transparent;
+    color: #6c7086;
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 4px 3px;
+    font-size: 10px;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #cdd6f4;
+}
+
+#workspaces button.active {
+    color: #f5c2e7;
+    background: rgba(245, 194, 231, 0.15);
+    box-shadow: 0 2px 8px rgba(245, 194, 231, 0.2);
+    padding: 0;
+    margin: 4px 3px;
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.15);
+    box-shadow: 0 2px 8px rgba(243, 139, 168, 0.2);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.modules-center {
+    background: var(--module-bg);
+    border-radius: 16px;
+    padding: 0 16px;
+    margin: 8px 12px 2px 12px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+#clock {
+    background: transparent;
+    color: #cba6f7;
+    padding: 0 8px;
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#custom-weather {
+    background: transparent;
+    color: #89b4fa;
+    padding: 0 8px;
+    transition: all 0.2s ease;
+}
+
+#custom-weather:hover {
+    color: #74c7ec;
+}
+
+.modules-right {
+    background: var(--module-bg);
+    border-radius: 16px;
+    padding: 0 12px;
+    margin: 8px 12px 2px 12px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+#cpu {
+    background: transparent;
+    color: #f9e2af;
+    padding: 0 8px;
+    transition: all 0.2s ease;
+}
+
+#cpu:hover {
+    color: #fab387;
+}
+
+#memory {
+    background: transparent;
+    color: #a6e3a1;
+    padding: 0 8px;
+    transition: all 0.2s ease;
+}
+
+#memory:hover {
+    color: #94e2d5;
+}
+
+#custom-idle {
+    background: transparent;
+    color: #74c0ec;
+    padding: 0 8px;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+}
+
+#custom-idle:hover {
+    background: rgba(116, 192, 236, 0.15);
+    color: #89dceb;
+}
+
+#custom-lock {
+    background: transparent;
+    color: #eba0ac;
+    padding: 0 10px;
+}
+
+#tray {
+    background: transparent;
+    padding: 0 8px;
+    transition: all 0.2s ease;
+}
+
+#tray:hover {
+    opacity: 0.8;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background: rgba(243, 139, 168, 0.2);
+}
+
+tooltip {
+    background-color: rgba(30, 30, 46, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #cdd6f4;
+}
+
+/* Calendar styles */
+#clock calendar {
+    color: #cdd6f4;
+    background-color: rgba(30, 30, 46, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#clock calendar:selected {
+    color: #1e1e2e;
+    background-color: #f5c2e7;
+    border-radius: 4px;
+}
+
+#clock calendar.header {
+    color: #cba6f7;
+    font-weight: bold;
+}
+
+#clock calendar.highlight {
+    color: #f9e2af;
+    font-weight: bold;
+}
+
+#clock calendar:indeterminate {
+    color: #6c7086;
+}
+
+#custom-calendar-panel {
+    background: transparent;
+    color: #a6e3a1;
+    padding: 0 8px;
+    transition: all 0.2s ease;
+}
+
+#custom-calendar-panel:hover {
+    color: #94e2d5;
+}

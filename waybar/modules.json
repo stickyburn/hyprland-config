@@ -1,0 +1,9 @@
+{
+    "custom/calendar-panel": {
+        "format": " {}",
+        "exec": "date '+%d %b'",
+        "interval": 60,
+        "on-click": "notify-send \"Calendar\" \"$(cal -n 2)\"",
+        "tooltip": "Calendar"
+    }
+}
