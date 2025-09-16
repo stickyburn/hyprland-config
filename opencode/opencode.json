@@ -37,7 +37,9 @@
       "enabled": true,
       "type": "remote",
       "url": "https://mcp.context7.com/mcp",
-      "enabled": true
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+      }
     },
     "playwright": {
       "enabled": true,
@@ -45,11 +47,8 @@
       "command": [
         "pnpx",
         "@playwright/mcp@latest",
-        "--executable-path=/usr/bin/vivaldi-snapshot",
-        "--no-sandbox",
-        "--headless"
-      ],
-      "timeout": 30
+        "--executable-path=/usr/bin/vivaldi-snapshot"
+      ]
     }
   }
 }
