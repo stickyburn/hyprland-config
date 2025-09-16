@@ -8,9 +8,11 @@ return {
   default_cursor_style = 'SteadyUnderline',
   adjust_window_size_when_changing_font_size = false,
   window_decorations = "NONE",
-  dpi = 360,
+  dpi = 382,
   colors = {
     background = "#221124",
+    -- "#221124"
+    -- "#1D1B28"
     -- "#1A1526"
     -- "#120F24"
     foreground = "#DFFFF8",
