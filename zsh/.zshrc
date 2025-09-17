@@ -28,7 +28,7 @@ precmd() {
 }
 
 setopt prompt_subst
-zstyle ':vcs_info:git:*' formats '🐙 %b'
+zstyle ':vcs_info:git:*' formats ' %b'
 export RPROMPT='%F{085}%D{%L:%M}%f'
 export PROMPT='%F{085}%1d ${vcs_info_msg_0_}
 %f '

@@ -1,0 +1,20 @@
+{
+  "cities": [
+    {
+      "weather_name": "Ghaziabad, UP",
+      "timezone": "Asia/Kolkata",
+      "display_name": "India",
+      "short_code": "IND",
+      "latitude": "28.67",
+      "longitude": "77.42"
+    },
+    {
+      "weather_name": "Greer, SC",
+      "timezone": "America/New_York",
+      "display_name": "South Carolina",
+      "short_code": "USA",
+      "latitude": "34.85",
+      "longitude": "-82.39"
+    }
+  ]
+}

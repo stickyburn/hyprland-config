@@ -4,19 +4,40 @@
     "height": 30,
     "prefer-dark-theme": true,
     "modules-left": [
-        "hyprland/workspaces"
+        "custom/city-selector",
+        "custom/multi-clock",
+        "custom/multi-weather"
     ],
     "modules-center": [
-        "clock",
-        "custom/weather"
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "cpu",
         "memory",
-        "custom/calendar-panel",
-        "custom/idle",
-        "tray"
+        "custom/vpn",
+        "custom/idle"
     ],
+    "custom/city-selector": {
+        "format": "{}",
+        "interval": 30,
+        "exec": "~/.config/waybar/scripts/city_selector.sh",
+        "return-type": "json",
+        "on-click": "~/.config/waybar/scripts/city_selector.sh next"
+    },
+    "custom/multi-clock": {
+        "format": "{}",
+        "interval": 30,
+        "exec": "~/.config/waybar/scripts/multi_city_clock.sh",
+        "return-type": "json",
+        "signal": 10
+    },
+    "custom/multi-weather": {
+        "format": "{}",
+        "interval": 1800,
+        "exec": "~/.config/waybar/scripts/multi_city_weather.sh",
+        "return-type": "json",
+        "signal": 10
+    },
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -31,15 +52,6 @@
         "on-click": "activate",
         "sort-by-number": true
     },
-    "clock": {
-        "format": "{:%A, %B %d  %R}",
-        "tooltip-format": "{:%A, %B %d (%R)}"
-    },
-    "custom/weather": {
-        "format": "{}",
-        "interval": 1800,
-        "exec": "~/.config/waybar/scripts/weather.sh"
-    },
     "cpu": {
         "format": " {usage}%",
         "tooltip": false,
@@ -52,21 +64,17 @@
         "interval": 2,
         "on-click": "~/.config/waybar/scripts/launch_btop.sh"
     },
+    "custom/vpn": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/vpn_status.sh",
+        "interval": 5,
+        "return-type": "json",
+        "signal": 10
+    },
     "custom/idle": {
-        "format": "󰒲",
-        "tooltip": "Idle",
+        "format": "",
+        "tooltip": "Sleep",
         "on-click": "hyprctl dispatch dpms off",
         "interval": 3600
-    },
-    "tray": {
-        "icon-size": 16,
-        "spacing": 8
-    },
-    "custom/calendar-panel": {
-        "format": " {}",
-        "exec": "date '+%d %b'",
-        "interval": 60,
-        "on-click": "notify-send \"Calendar\" \"$(cal -n 2)\"",
-        "tooltip": "Calendar"
     }
 }
