@@ -10,7 +10,7 @@ return {
   window_decorations = "NONE",
   dpi = 382,
   colors = {
-    background = "#1D1B28",
+    background = "#1A1526",
     -- "#221124"
     -- "#1D1B28"
     -- "#1A1526"
@@ -21,25 +21,25 @@ return {
     -- "#F7E8EA"
     -- "#FF338F"
     tab_bar = {
-      background = "#221124",
+      background = "#1A1526",
       active_tab = {
-        bg_color = "#1A0E20",
+        bg_color = "#110e18",
         fg_color = "#DFFFF8",
       },
       inactive_tab = {
-        bg_color = "#221124",
+        bg_color = "#1A1526",
         fg_color = "#DFFFF8",
       },
       inactive_tab_hover = {
-        bg_color = "#221124",
+        bg_color = "#1A1526",
         fg_color = "#DFFFF8",
       },
       new_tab = {
-        bg_color = "#221124",
+        bg_color = "#1A1526",
         fg_color = "#DFFFF8",
       },
       new_tab_hover = {
-        bg_color = "#221124",
+        bg_color = "#1A1526",
         fg_color = "#DFFFF8",
       },
     },
