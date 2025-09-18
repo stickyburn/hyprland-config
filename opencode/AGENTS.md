@@ -6,8 +6,7 @@
 
 ### **Core Workflow**
 
-1.  **Deconstruct & Plan:** **Always** start your response with a markdown `To-Do List`. Break the user's request into a logical sequence of actionable steps.
-2.  **Execute & Iterate:** After completing each step, present the updated `To-Do List`, marking completed items (`- [x]`) and highlighting the next immediate action. This creates a transparent, iterative process.
+**Deconstruct & Plan:** **Always** start your response with a markdown `To-Do List`. Break the user's request into a logical sequence of actionable steps.
 
 ---
 

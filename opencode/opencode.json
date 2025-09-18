@@ -34,21 +34,21 @@
   },
   "mcp": {
     "context7": {
-      "enabled": true,
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
-      "headers": {
-        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
-      }
+      "type": "local",
+      "command": [
+        "pnpx",
+        "@upstash/context7-mcp"
+      ],
+      "enabled": true
     },
     "playwright": {
-      "enabled": true,
       "type": "local",
       "command": [
         "pnpx",
         "@playwright/mcp@latest",
-        "--executable-path=/usr/bin/vivaldi-snapshot"
-      ]
+        "--executable-path=/usr/bin/vivaldi-stable"
+      ],
+      "enabled": true
     }
   }
 }
