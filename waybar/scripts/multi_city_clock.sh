@@ -28,11 +28,11 @@ CURRENT_TIMEZONE="${TIMEZONES[$CURRENT_INDEX]}"
 CURRENT_SHORT_CODE="${SHORT_CODES[$CURRENT_INDEX]}"
 
 # Get current time for the selected timezone
-CURRENT_TIME=$(TZ="$CURRENT_TIMEZONE" date "+%H:%M")
+CURRENT_TIME=$(TZ="$CURRENT_TIMEZONE" date "+%I:%M%p")
 CURRENT_DAY=$(TZ="$CURRENT_TIMEZONE" date "+%a")
 
 # Get local time for tooltip
-LOCAL_TIME=$(date "+%H:%M")
+LOCAL_TIME=$(date "+%I:%M%p")
 LOCAL_DAY=$(date "+%a")
 LOCAL_DATE=$(date "+%d %b")
 

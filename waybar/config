@@ -67,7 +67,7 @@
     "custom/vpn": {
         "format": "{}",
         "exec": "~/.config/waybar/scripts/vpn_status.sh",
-        "interval": 5,
+        "interval": 10,
         "return-type": "json",
         "signal": 10
     },
