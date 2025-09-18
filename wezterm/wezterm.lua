@@ -10,16 +10,16 @@ return {
   window_decorations = "NONE",
   dpi = 382,
   colors = {
-    background = "#1A1526",
+    background = "#201A2F",
     -- "#221124"
+    -- "#201A2F"
     -- "#1D1B28"
-    -- "#1A1526"
     -- "#120F24"
-    foreground = "#DFFFF8",
+    foreground = "#EDEEFA",
     -- "#DFFFF8"
     -- "#EDEEFA"
-    -- "#F7E8EA"
     -- "#FF338F"
+    cursor_bg = "#D7AFFF",
     tab_bar = {
       background = "#1A1526",
       active_tab = {
