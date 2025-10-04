@@ -1,6 +1,6 @@
 {
   "window.zoomLevel": 0,
-  "editor.fontFamily": "ZedMono Nerd Font",
+  "editor.fontFamily": "Zed Sans",
   "terminal.integrated.fontFamily": "ZedMono Nerd Font",
   "editor.fontSize": 12,
   "terminal.integrated.fontSize": 12,
@@ -21,6 +21,14 @@
     "**/*.cjs": true,
     "**/*.svg": true,
     "**-lock.yaml": true,
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
@@ -47,16 +55,16 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "files.associations": {
     "*.css": "tailwindcss"
@@ -96,25 +104,25 @@
   "diffEditor.useInlineViewWhenSpaceIsLimited": false,
   "workbench.colorTheme": "Tomorrow Night Blue",
   "workbench.colorCustomizations": {
-    "editor.background": "#201A2F",
-    "activityBar.background": "#201A2F",
-    "statusBar.background": "#201A2F",
-    "sideBar.background": "#201A2F",
-    "tab.inactiveBackground": "#201A2F",
-    "tab.border": "#201A2F",
-    "editorOverviewRuler.border": "#201A2F",
-    "editorGroupHeader.tabsBackground": "#201A2F",
-    "menu.background": "#201A2F",
-    "input.background": "#201A2F",
-    "editorSuggestWidget.background": "#201A2F",
-    "editorSuggestWidget.border": "#201A2F",
-    "scrollbar.shadow": "#201A2F",
-    "scrollbarSlider.background": "#201A2F",
-    "scrollbarSlider.activeBackground": "#201A2F",
-    "scrollbarSlider.hoverBackground": "#201A2F",
-    "titleBar.activeBackground": "#201A2F",
-    "editorSuggestWidget.selectedBackground": "#201A2F",
-    "quickInput.background": "#201A2F",
+    "editor.background": "#1F1A2C",
+    "activityBar.background": "#1F1A2C",
+    "statusBar.background": "#1F1A2C",
+    "sideBar.background": "#1F1A2C",
+    "tab.inactiveBackground": "#1F1A2C",
+    "tab.border": "#1F1A2C",
+    "editorOverviewRuler.border": "#1F1A2C",
+    "editorGroupHeader.tabsBackground": "#1F1A2C",
+    "menu.background": "#1F1A2C",
+    "input.background": "#1F1A2C",
+    "editorSuggestWidget.background": "#1F1A2C",
+    "editorSuggestWidget.border": "#1F1A2C",
+    "scrollbar.shadow": "#1F1A2C",
+    "scrollbarSlider.background": "#1F1A2C",
+    "scrollbarSlider.activeBackground": "#1F1A2C",
+    "scrollbarSlider.hoverBackground": "#1F1A2C",
+    "titleBar.activeBackground": "#1F1A2C",
+    "editorSuggestWidget.selectedBackground": "#1F1A2C",
+    "quickInput.background": "#1F1A2C",
     "editor.selectionBackground": "#110e18",
     "editor.lineHighlightBackground": "#110e18",
     "editorHoverWidget.background": "#110e18",

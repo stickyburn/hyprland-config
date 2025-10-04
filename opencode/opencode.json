@@ -11,23 +11,17 @@
         }
       },
       "models": {
-        "zai-org/GLM-4.5-FP8": {
-          "name": "GLM 4.5"
+        "meituan-longcat/LongCat-Flash-Thinking-FP8": {
+          "name": "LongCat Flash Thinking"
         },
-        "zai-org/GLM-4.5-Air": {
-          "name": "GLM 4.5 Air"
+        "Qwen/Qwen3-Next-80B-A3B-Instruct": {
+          "name": "Qwen3 Next 80B A3B Instruct"
         },
-        "deepseek-ai/DeepSeek-V3.1": {
-          "name": "DeepSeek V3.1"
+        "zai-org/GLM-4.6-FP8": {
+          "name": "GLM 4.6"
         },
-        "moonshotai/Kimi-K2-Instruct-0905": {
-          "name": "Kimi K2 0905"
-        },
-        "meituan-longcat/LongCat-Flash-Chat-FP8": {
-          "name": "LongCat Flash"
-        },
-        "LLM360/K2-Think": {
-          "name": "K2 Think"
+        "deepseek-ai/DeepSeek-V3.1-Terminus": {
+          "name": "DeepSeek V3.1 Terminus"
         }
       }
     }
