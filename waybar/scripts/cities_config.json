@@ -9,14 +9,6 @@
       "longitude": "77.42"
     },
     {
-      "weather_name": "London, UK",
-      "timezone": "Europe/London",
-      "display_name": "United Kingdom",
-      "short_code": "UK",
-      "latitude": "51.50",
-      "longitude": "-0.12"
-    },
-    {
       "weather_name": "Greer, SC",
       "timezone": "America/New_York",
       "display_name": "South Carolina",

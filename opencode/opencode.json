@@ -34,15 +34,6 @@
         "@upstash/context7-mcp"
       ],
       "enabled": true
-    },
-    "playwright": {
-      "type": "local",
-      "command": [
-        "pnpx",
-        "@playwright/mcp@latest",
-        "--executable-path=/usr/bin/vivaldi-stable"
-      ],
-      "enabled": true
     }
   }
 }
