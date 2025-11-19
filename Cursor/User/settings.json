@@ -1,9 +1,9 @@
 {
   "window.zoomLevel": 0,
-  "editor.fontFamily": "Zed Sans",
+  "editor.fontFamily": "ZedMono Nerd Font",
   "terminal.integrated.fontFamily": "ZedMono Nerd Font",
-  "editor.fontSize": 12,
-  "terminal.integrated.fontSize": 12,
+  "editor.fontSize": 13,
+  "terminal.integrated.fontSize": 13,
   "editor.fontLigatures": true,
   "editor.inlineSuggest.enabled": true,
   "extensions.ignoreRecommendations": true,
@@ -15,20 +15,11 @@
     "**/@remote-types": true,
     ".yarnrc.yml": true,
     "yarn.lock": true,
-    "*.md": true,
     "**/dependabot.yml": true,
     "**/commit-msg": true,
     "**/*.cjs": true,
     "**/*.svg": true,
     "**-lock.yaml": true,
-  },
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
-    "**/node_modules": true
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
@@ -43,19 +34,11 @@
   "editor.formatOnType": true,
   "eslint.format.enable": true,
   "eslint.run": "onSave",
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "jsonc"
-  ],
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -65,6 +48,12 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "files.associations": {
     "*.css": "tailwindcss"
