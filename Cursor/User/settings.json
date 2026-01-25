@@ -1,6 +1,6 @@
 {
   "window.zoomLevel": 0,
-  "editor.fontFamily": "ZedMono Nerd Font",
+  "editor.fontFamily": "Zed Sans",
   "terminal.integrated.fontFamily": "ZedMono Nerd Font",
   "editor.fontSize": 13,
   "terminal.integrated.fontSize": 13,
@@ -21,19 +21,17 @@
     "**/*.svg": true,
     "**-lock.yaml": true,
   },
+  "eslint.format.enable": true,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll": "always"
   },
+  "eslint.run": "onSave",
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
-  "eslint.codeActionsOnSave.mode": "all",
-  "editor.formatOnPaste": true,
-  "editor.formatOnType": true,
-  "eslint.format.enable": true,
-  "eslint.run": "onSave",
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
@@ -48,9 +46,6 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[go]": {
-    "editor.defaultFormatter": "golang.go"
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
@@ -93,45 +88,35 @@
   "diffEditor.useInlineViewWhenSpaceIsLimited": false,
   "workbench.colorTheme": "Tomorrow Night Blue",
   "workbench.colorCustomizations": {
-    "editor.background": "#1F1A2C",
-    "activityBar.background": "#1F1A2C",
-    "statusBar.background": "#1F1A2C",
-    "sideBar.background": "#1F1A2C",
-    "tab.inactiveBackground": "#1F1A2C",
-    "tab.border": "#1F1A2C",
-    "editorOverviewRuler.border": "#1F1A2C",
-    "editorGroupHeader.tabsBackground": "#1F1A2C",
-    "menu.background": "#1F1A2C",
-    "input.background": "#1F1A2C",
-    "editorSuggestWidget.background": "#1F1A2C",
-    "editorSuggestWidget.border": "#1F1A2C",
-    "scrollbar.shadow": "#1F1A2C",
-    "scrollbarSlider.background": "#1F1A2C",
-    "scrollbarSlider.activeBackground": "#1F1A2C",
-    "scrollbarSlider.hoverBackground": "#1F1A2C",
-    "titleBar.activeBackground": "#1F1A2C",
-    "editorSuggestWidget.selectedBackground": "#1F1A2C",
-    "quickInput.background": "#1F1A2C",
+    "editor.background": "#201A2F",
+    "activityBar.background": "#201A2F",
+    "statusBar.background": "#201A2F",
+    "sideBar.background": "#201A2F",
+    "tab.inactiveBackground": "#201A2F",
+    "tab.border": "#201A2F",
+    "editorOverviewRuler.border": "#201A2F",
+    "editorGroupHeader.tabsBackground": "#201A2F",
+    "menu.background": "#201A2F",
+    "input.background": "#201A2F",
+    "editorSuggestWidget.background": "#201A2F",
+    "editorSuggestWidget.border": "#201A2F",
+    "scrollbar.shadow": "#201A2F",
+    "scrollbarSlider.background": "#201A2F",
+    "scrollbarSlider.activeBackground": "#201A2F",
+    "scrollbarSlider.hoverBackground": "#201A2F",
+    "titleBar.activeBackground": "#201A2F",
+    "editorSuggestWidget.selectedBackground": "#201A2F",
+    "quickInput.background": "#201A2F",
     "editor.selectionBackground": "#110e18",
     "editor.lineHighlightBackground": "#110e18",
     "editorHoverWidget.background": "#110e18",
     "editorSuggestWidget.selectedForeground": "#6a6367",
     "tab.inactiveForeground": "#6a6367"
   },
-  "settingsSync.ignoredSettings": [
-    "terminal.integrated.fontFamily",
-    "terminal.integrated.fontSize",
-    "editor.fontSize",
-    "-window.zoomLevel",
-    "window.zoomPerWindow"
-  ],
-  "terminal.integrated.tabs.enabled": false,
-  "roo-cline.allowedCommands": [
+  "kilo-code.allowedCommands": [
     "git log",
     "git diff",
-    "git show",
-    "pnpm build"
+    "git show"
   ],
-  "roo-cline.deniedCommands": [],
-  "workbench.statusBar.visible": false,
+  "kilo-code.deniedCommands": []
 }
