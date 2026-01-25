@@ -1,0 +1,35 @@
+font-family = "ZedMono Nerd Font"
+font-size = 14
+
+title = "Terminal"
+shell-integration-features = no-cursor
+cursor-style = underline
+cursor-style-blink = false
+cursor-color = #D7AFFF
+
+window-padding-x = 2
+window-padding-y = 2
+
+macos-titlebar-style = tabs
+window-step-resize = false
+
+background = #201A2F
+# --- 201A2F ---
+# --- 1A0E20 ---
+# --- 221124 ---
+# --- 1D1B28 ---
+# --- 120F24 ---
+
+foreground = #EDEEFA
+# --- DFFFF8 ---
+# --- EDEEFA ---
+# --- FF338F ---
+
+selection-background = #1A1526
+selection-foreground = #DFFFF8
+
+background-opacity = 0.9
+background-blur-radius = 20
+
+copy-on-select = clipboard
+keybind = cmd+x=text:\x03
