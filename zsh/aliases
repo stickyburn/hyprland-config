@@ -6,7 +6,7 @@ alias gc='git commit -v'
 alias gca='git add . && git commit -v'
 alias gcl='git clone'
 alias gcb='git checkout -b'
-alias gcm='git checkout master'
+alias gcm='git checkout main'
 alias gcd='git checkout develop'
 alias gco='git checkout'
 alias gcf='git config --list'
@@ -31,6 +31,3 @@ alias n='nnn -eH'
 alias f='fzf \
   --preview 'bat --style=numbers --color=always {}' \
   --bind "enter:execute(${EDITOR:-vim} {})+abort"'
-
-alias yt='yarn test --maxWorkers=60%'
-alias ytw='yarn test --maxWorkers=60% --watch'
