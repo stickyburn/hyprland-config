@@ -1,39 +1,15 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "provider": {
-    "chutes": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Chutes AI",
-      "options": {
-        "baseURL": "https://llm.chutes.ai/v1",
-        "headers": {
-          "X-Enable-Thinking": "true"
-        }
-      },
-      "models": {
-        "meituan-longcat/LongCat-Flash-Thinking-FP8": {
-          "name": "LongCat Flash Thinking"
-        },
-        "Qwen/Qwen3-Next-80B-A3B-Instruct": {
-          "name": "Qwen3 Next 80B A3B Instruct"
-        },
-        "zai-org/GLM-4.6-FP8": {
-          "name": "GLM 4.6"
-        },
-        "deepseek-ai/DeepSeek-V3.1-Terminus": {
-          "name": "DeepSeek V3.1 Terminus"
-        }
-      }
-    }
+  "permission": {
+    "read": "allow",
+    "external_directory": "allow",
+    "edit": "ask"
   },
   "mcp": {
-    "context7": {
-      "type": "local",
-      "command": [
-        "pnpx",
-        "@upstash/context7-mcp"
-      ],
-      "enabled": true
+    "deepwiki": {
+      "enabled": true,
+      "url": "https://mcp.deepwiki.com/sse",
+      "type": "remote"
     }
-  }
+  },
 }
