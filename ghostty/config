@@ -1,35 +1,40 @@
 font-family = "ZedMono Nerd Font"
-font-size = 14
+font-size = 13
 
 title = "Terminal"
-shell-integration-features = no-cursor
-cursor-style = underline
-cursor-style-blink = false
-cursor-color = #D7AFFF
-
-window-padding-x = 2
-window-padding-y = 2
-
-macos-titlebar-style = tabs
-window-step-resize = false
-
-background = #201A2F
-# --- 201A2F ---
-# --- 1A0E20 ---
-# --- 221124 ---
-# --- 1D1B28 ---
-# --- 120F24 ---
-
-foreground = #EDEEFA
-# --- DFFFF8 ---
-# --- EDEEFA ---
-# --- FF338F ---
-
-selection-background = #1A1526
-selection-foreground = #DFFFF8
 
 background-opacity = 0.9
 background-blur-radius = 20
 
+shell-integration-features = no-cursor
+cursor-style = underline
+cursor-style-blink = false
+
+window-padding-x = 8,0
+window-padding-y = 4,0
+
+macos-titlebar-style = tabs
+window-step-resize = false
+quit-after-last-window-closed = true
 copy-on-select = clipboard
 keybind = cmd+x=text:\x03
+keybind = cmd+shift+v=paste_from_clipboard
+keybind = opt+delete=text:\x17
+
+cursor-color = #D7AFFF
+
+background = #1D1A2A
+# --- 201A2F ---
+# --- 1A0E20 ---
+# --- 221124 ---
+# --- 1D1A2A ---
+# --- 120F24 ---
+
+foreground = #FFF7F9
+# --- DFFFF8 ---
+# --- EDEEFA ---
+# --- FF338F ---
+# --- FFF7F9 ---
+
+selection-background = #1A1526
+selection-foreground = #DFFFF8
