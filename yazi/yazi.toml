@@ -2,29 +2,27 @@
 show_hidden = true
 
 [opener]
+opencode = [
+  { run = 'kitty @ launch --type=tab --cwd="$@" -- opencode', desc = "Opencode" },
+]
+code = [{ run = '/usr/local/bin/cursor "$@"', block = true, desc = "Cursor" }]
+terminal = [{ run = 'kitty @ launch --type=tab --cwd="$@"', desc = "Terminal" }]
 edit = [{ run = 'vim "$@"', block = true, desc = "Vim" }]
-code = [{ run = 'cursor "$@"', block = true, desc = "Cursor IDE" }]
 reveal = [
   { run = 'open -R "$@"', for = "macos", desc = "Finder" },
   { run = 'xdg-open "$(dirname "$@")"', for = "linux", desc = "File Manager" },
-]
-terminal = [
-  { run = 'open -a ghostty --new -- "$@"', for = "macos", desc = "Terminal" },
-  { run = 'cd "$@" && "$SHELL"', for = "linux", desc = "Terminal" },
 ]
 
 [open]
 rules = [
   { url = "*", use = [
-    "terminal",
     "code",
     "edit",
-    "reveal",
   ] },
   { url = "*/", use = [
-    "terminal",
+    "opencode",
     "code",
-    "edit",
+    "terminal",
     "reveal",
   ] },
 ]
