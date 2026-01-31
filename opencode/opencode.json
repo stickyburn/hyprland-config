@@ -1,15 +1,31 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "autoupdate": true,
+  "theme": "system",
+  "default_agent": "plan",
   "permission": {
     "read": "allow",
     "external_directory": "allow",
-    "edit": "ask"
+    "edit": "ask",
+    "create": "ask",
+    "delete": "ask",
+    "rename": "ask",
+    "move": "ask",
+    "bash": "ask",
+    "task": "ask"
   },
   "mcp": {
     "deepwiki": {
       "enabled": true,
-      "url": "https://mcp.deepwiki.com/sse",
+      "url": "https://mcp.deepwiki.com/mcp",
       "type": "remote"
     }
   },
+  "keybinds": {
+    "leader": "super+g",
+    "command_list": "super+p"
+  },
+  "instructions": [
+    "SYSTEM.md"
+  ]
 }
