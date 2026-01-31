@@ -3,7 +3,7 @@ show_hidden = true
 
 [opener]
 opencode = [
-  { run = 'kitty @ launch --type=tab --cwd="$@" -- opencode', desc = "Opencode" },
+  { run = 'kitty @ launch --type=tab --cwd="$@" -- zsh -i -c opencode', desc = "Opencode" },
 ]
 code = [{ run = '/usr/local/bin/cursor "$@"', block = true, desc = "Cursor" }]
 terminal = [{ run = 'kitty @ launch --type=tab --cwd="$@"', desc = "Terminal" }]
