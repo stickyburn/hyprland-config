@@ -39,7 +39,7 @@ function M:entry()
         }
     end
 
-    -- fzf with modal-like styling
+    -- fzf with modal-like styling matching kitty theme
     local fzf, err = Command("fzf")
         :arg({
             "--height=40%",
@@ -47,15 +47,18 @@ function M:entry()
             "--border=rounded",
             "--margin=15%,25%",
             "--padding=1",
-            "--prompt=   ",
-            "--pointer=▶",
-            "--header=  Change Directory",
+            "--prompt=» ",
+            "--header=Change directory",
             "--header-first",
             "--no-scrollbar",
-            "--color=spinner:#f4dbd6,hl:#ed8796",
-            "--color=fg:#cad3f5,header:#8aadf4,info:#c6a0f6,pointer:#f4dbd6",
-            "--color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796",
-            "--color=border:#6e738d,label:#cad3f5,query:#cad3f5"
+            "--color=bg+:#2A2340,bg:#201A2F",
+            "--color=fg:#FFF7F9,fg+:#FFF7F9",
+            "--color=hl:#D7AFFF,hl+:#D7AFFF",
+            "--color=header:#FF91C3:bold",
+            "--color=pointer:#D7AFFF",
+            "--color=spinner:#FF91C3,info:#D7AFFF",
+            "--color=border:#6B5B8A,prompt:#D7AFFF",
+            "--color=query:#FFF7F9,label:#FFF7F9"
         })
         :stdin(Command.PIPED)
         :stdout(Command.PIPED)
@@ -80,7 +83,9 @@ function M:entry()
     if output and output.status.success then
         local target = output.stdout:gsub("\n$", "")
         if target ~= "" then
-            ya.emit("cd", { target, raw = true })
+            local parent = target:match("(.+)/[^/]+$") or os.getenv("HOME")
+            ya.emit("cd", { parent, raw = true })
+            ya.emit("reveal", { target, raw = true })
         end
     end
 end
