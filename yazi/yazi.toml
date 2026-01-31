@@ -1,0 +1,30 @@
+[mgr]
+show_hidden = true
+
+[opener]
+edit = [{ run = 'vim "$@"', block = true, desc = "Vim" }]
+code = [{ run = 'cursor "$@"', block = true, desc = "Cursor IDE" }]
+reveal = [
+  { run = 'open -R "$@"', for = "macos", desc = "Finder" },
+  { run = 'xdg-open "$(dirname "$@")"', for = "linux", desc = "File Manager" },
+]
+terminal = [
+  { run = 'open -a ghostty --new -- "$@"', for = "macos", desc = "Terminal" },
+  { run = 'cd "$@" && "$SHELL"', for = "linux", desc = "Terminal" },
+]
+
+[open]
+rules = [
+  { url = "*", use = [
+    "terminal",
+    "code",
+    "edit",
+    "reveal",
+  ] },
+  { url = "*/", use = [
+    "terminal",
+    "code",
+    "edit",
+    "reveal",
+  ] },
+]
