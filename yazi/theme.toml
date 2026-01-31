@@ -1,5 +1,7 @@
 [indicator]
 preview = {}
+current = { fg = "#201A2F", bg = "#FFF7F9" }
+parent = { fg = "#201A2F", bg = "#FFF7F9" }
 
 [mgr]
 cwd = { fg = "#1D1A2A", bg = "#1D1A2A" }
