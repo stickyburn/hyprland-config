@@ -1,0 +1,39 @@
+[[mgr.prepend_keymap]]
+on = "<Enter>"
+run = "open --interactive"
+desc = "Open with"
+
+[[mgr.prepend_keymap]]
+on = "z"
+run = "plugin fzf-home"
+desc = "Fuzzy find directories"
+
+[[mgr.prepend_keymap]]
+on = "n"
+run = "leave"
+desc = "Go back"
+
+[[mgr.prepend_keymap]]
+on = "e"
+run = "arrow prev"
+desc = "Move up"
+
+[[mgr.prepend_keymap]]
+on = "i"
+run = "arrow next"
+desc = "Move down"
+
+[[mgr.prepend_keymap]]
+on = "o"
+run = "enter"
+desc = "Enter/Go right"
+
+[[pick.prepend_keymap]]
+on = "e"
+run = "arrow prev"
+desc = "Move up"
+
+[[pick.prepend_keymap]]
+on = "i"
+run = "arrow next"
+desc = "Move down"
