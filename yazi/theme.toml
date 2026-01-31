@@ -1,0 +1,5 @@
+[indicator]
+preview = {}
+
+[mgr]
+cwd = { fg = "#1D1A2A", bg = "#1D1A2A" }
