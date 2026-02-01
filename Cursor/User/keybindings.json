@@ -1,283 +1,122 @@
-// Place your key bindings in this file to override the defaults
-[
-  {
-    "key": "cmd+shift+b",
-    "command": "workbench.action.toggleActivityBarVisibility"
+{
+  "window.zoomLevel": 0,
+  "editor.fontFamily": "Zed Sans",
+  "terminal.integrated.fontFamily": "ZedMono Nerd Font",
+  "editor.fontSize": 13,
+  "terminal.integrated.fontSize": 13,
+  "editor.fontLigatures": true,
+  "terminal.external.osxExec": "/Applications/kitty.app",
+  "terminal.external.linuxExec": "kitty",
+  "terminal.integrated.scrollback": 50000,
+  "terminal.integrated.cursorStyle": "underline",
+  "editor.inlineSuggest.enabled": true,
+  "extensions.ignoreRecommendations": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/static": true,
+    "**/.next": true,
+    "**/@remote-types": true,
+    ".yarnrc.yml": true,
+    "yarn.lock": true,
+    "**/dependabot.yml": true,
+    "**/commit-msg": true,
+    "**/*.cjs": true,
+    "**/*.svg": true,
+    "**-lock.yaml": true,
+    "**/cache": true,
+    "**/.cache": true
   },
-  {
-    "key": "cmd+,",
-    "command": "workbench.action.openApplicationSettingsJson"
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
   },
-  {
-    "key": "cmd+shift+,",
-    "command": "workbench.action.openSettings2"
+  "eslint.run": "onSave",
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
   },
-  {
-    "key": "cmd+1",
-    "command": "workbench.action.openEditorAtIndex1"
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
-  {
-    "key": "alt+1",
-    "command": "-workbench.action.openEditorAtIndex1"
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  {
-    "key": "cmd+2",
-    "command": "workbench.action.openEditorAtIndex2"
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  {
-    "key": "alt+2",
-    "command": "-workbench.action.openEditorAtIndex2"
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
-  {
-    "key": "cmd+3",
-    "command": "workbench.action.openEditorAtIndex3"
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  {
-    "key": "alt+3",
-    "command": "-workbench.action.openEditorAtIndex3"
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
-  {
-    "key": "cmd+4",
-    "command": "workbench.action.openEditorAtIndex4"
+  "files.associations": {
+    "*.css": "tailwindcss"
   },
-  {
-    "key": "alt+4",
-    "command": "-workbench.action.openEditorAtIndex4"
+  "editor.quickSuggestions": {
+    "strings": "on"
   },
-  {
-    "key": "cmd+5",
-    "command": "workbench.action.openEditorAtIndex5"
-  },
-  {
-    "key": "alt+5",
-    "command": "-workbench.action.openEditorAtIndex5"
-  },
-  {
-    "key": "cmd+t",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "cmd+`",
-    "command": "-workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "cmd+t",
-    "command": "-workbench.action.showAllSymbols"
-  },
-  {
-    "key": "cmd+e",
-    "command": "-workbench.action.quickOpen"
-  },
-  {
-    "key": "cmd+e",
-    "command": "-editor.action.toggleScreenReaderAccessibilityMode",
-    "when": "accessibilityHelpIsShown"
-  },
-  {
-    "key": "cmd+e",
-    "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
-    "when": "inFilesPicker && inQuickOpen"
-  },
-  {
-    "key": "cmd+0",
-    "command": "-workbench.action.focusSideBar"
-  },
-  {
-    "key": "cmd+o",
-    "command": "workbench.action.quickOpen"
-  },
-  {
-    "key": "cmd+p",
-    "command": "-workbench.action.quickOpen"
-  },
-  {
-    "key": "cmd+o",
-    "command": "-workbench.action.files.openFolderViaWorkspace",
-    "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
-  },
-  {
-    "key": "cmd+o",
-    "command": "-workbench.action.files.openFileFolder",
-    "when": "isMacNative && openFolderWorkspaceSupport"
-  },
-  {
-    "key": "cmd+shift+o",
-    "command": "workbench.action.openRecent"
-  },
-  {
-    "key": "cmd+r",
-    "command": "-workbench.action.openRecent"
-  },
-  {
-    "key": "cmd+h",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "cmd+k cmd+i",
-    "command": "-editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "cmd+m",
-    "command": "editor.action.addSelectionToNextFindMatch",
-    "when": "editorFocus"
-  },
-  {
-    "key": "cmd+d",
-    "command": "-editor.action.addSelectionToNextFindMatch",
-    "when": "editorFocus"
-  },
-  {
-    "key": "cmd+d",
-    "command": "editor.action.revealDefinition",
-    "when": "editorHasDefinitionProvider && editorTextFocus"
-  },
-  {
-    "key": "f12",
-    "command": "-editor.action.revealDefinition",
-    "when": "editorHasDefinitionProvider && editorTextFocus"
-  },
-  {
-    "key": "cmd+e",
-    "command": "workbench.view.explorer",
-    "when": "!explorerViewletVisible"
-  },
-  {
-    "key": "cmd+e",
-    "command": "-workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
-  },
-  {
-    "key": "cmd+shift+h",
-    "command": "-workbench.action.replaceInFiles"
-  },
-  {
-    "key": "cmd+shift+b",
-    "command": "workbench.action.toggleStatusbarVisibility"
-  },
-  {
-    "key": "cmd+b",
-    "command": "-workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "cmd+b",
-    "command": "-workbench.action.tasks.build",
-    "when": "taskCommandsRegistered"
-  },
-  {
-    "key": "cmd+`",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-  },
-  {
-    "key": "cmd+shift+`",
-    "command": "-workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-  },
-  {
-    "key": "cmd+e",
-    "command": "workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
-  },
-  {
-    "key": "cmd+shift+e",
-    "command": "-workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
-  },
-  {
-    "key": "cmd+shift+b",
-    "command": "-workbench.action.tasks.build",
-    "when": "taskCommandsRegistered"
-  },
-  {
-    "key": "cmd+alt+b",
-    "command": "-workbench.action.toggleAuxiliaryBar"
-  },
-  {
-    "key": "cmd+shift+e",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "cmd+l",
-    "command": "-composer.sendToAgent",
-    "when": "editorHasPromptBar && editorPromptBarFocused"
-  },
-  {
-    "key": "shift+enter",
-    "command": "workbench.action.terminal.sendSequence",
-    "args": {
-      "text": "\\\r\n"
-    },
-    "when": "terminalFocus"
-  },
-  {
-    "key": "cmd+l",
-    "command": "-aichat.newchataction"
-  },
-  {
-    "key": "cmd+shift+i",
-    "command": "-composer.newAgentChat"
-  },
-  {
-    "key": "cmd+shift+i",
-    "command": "composer.startComposerPrompt",
-    "when": "cursor.appLayout != 'agent'"
-  },
-  {
-    "key": "cmd+i",
-    "command": "-composer.startComposerPrompt",
-    "when": "cursor.appLayout != 'agent'"
-  },
-  {
-    "key": "cmd+i",
-    "command": "-workbench.action.terminal.chat.start",
-    "when": "chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
-  },
-  {
-    "key": "cmd+i",
-    "command": "-inlineChat2.reveal",
-    "when": "inlineChatHasEditsAgent && !chatEdits.isGlobalEditingSession && chatEdits.requestCount >= 1"
-  },
-  {
-    "key": "cmd+c",
-    "command": "workbench.action.terminal.sendSequence",
-    "args": {
-      "text": "\u0003"
-    },
-    "when": "terminalFocus"
-  },
-  {
-    "key": "shift+cmd+g",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active"
-  },
-  {
-    "key": "ctrl+shift+g",
-    "command": "-workbench.view.scm",
-    "when": "workbench.scm.active"
-  },
-  {
-    "key": "cmd+i",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "!editorTextFocus && !editorFocus"
-  },
-  {
-    "key": "cmd+-",
-    "command": "workbench.action.navigateBack"
-  },
-  {
-    "key": "cmd+=",
-    "command": "workbench.action.navigateForward"
-  },
-  {
-    "key": "cmd+-",
-    "command": "-workbench.action.zoomOut"
-  },
-  {
-    "key": "cmd+=",
-    "command": "-workbench.action.zoomIn"
+  "npm.packageManager": "pnpm",
+  "editor.minimap.enabled": false,
+  "editor.glyphMargin": false,
+  "editor.folding": false,
+  "editor.foldingHighlight": false,
+  "editor.lineNumbers": "off",
+  "editor.tabSize": 2,
+  "editor.cursorStyle": "line-thin",
+  "editor.cursorBlinking": "solid",
+  "git.decorations.enabled": false,
+  "workbench.editor.decorations.badges": false,
+  "workbench.editor.decorations.colors": false,
+  "explorer.decorations.colors": false,
+  "editor.guides.indentation": false,
+  "breadcrumbs.enabled": false,
+  "window.commandCenter": true,
+  "explorer.confirmDelete": false,
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.renderSideBySide": true,
+  "workbench.activityBar.location": "hidden",
+  "workbench.sideBar.location": "right",
+  "json.schemaDownload.enable": true,
+  "workbench.statusBar.visible": false,
+  "workbench.startupEditor": "none",
+  "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+  "workbench.colorTheme": "Tomorrow Night Blue",
+  "workbench.colorCustomizations": {
+    "editor.background": "#201A2F",
+    "activityBar.background": "#201A2F",
+    "statusBar.background": "#201A2F",
+    "sideBar.background": "#201A2F",
+    "tab.inactiveBackground": "#201A2F",
+    "tab.border": "#201A2F",
+    "editorOverviewRuler.border": "#201A2F",
+    "editorGroupHeader.tabsBackground": "#201A2F",
+    "menu.background": "#201A2F",
+    "input.background": "#201A2F",
+    "editorSuggestWidget.background": "#201A2F",
+    "editorSuggestWidget.border": "#201A2F",
+    "scrollbar.shadow": "#201A2F",
+    "scrollbarSlider.background": "#201A2F",
+    "scrollbarSlider.activeBackground": "#201A2F",
+    "scrollbarSlider.hoverBackground": "#201A2F",
+    "titleBar.activeBackground": "#201A2F",
+    "editorSuggestWidget.selectedBackground": "#201A2F",
+    "quickInput.background": "#201A2F",
+    "editor.selectionBackground": "#181227",
+    "editor.lineHighlightBackground": "#181227",
+    "editorHoverWidget.background": "#181227",
+    "editorSuggestWidget.selectedForeground": "#6a6367",
+    "tab.inactiveForeground": "#6a6367"
   }
-]
+}
