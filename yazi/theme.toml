@@ -5,3 +5,27 @@ parent = { fg = "#201A2F", bg = "#FFF7F9" }
 
 [mgr]
 cwd = { fg = "#1D1A2A", bg = "#1D1A2A" }
+
+[pick]
+border = { fg = "#FF91C3" }
+
+[pick.active]
+fg = "#FFF7F9"
+bg = "#2A2340"
+
+[pick.inactive]
+fg = "#FFF7F9"
+
+[input]
+border = { fg = "#FF91C3" }
+title = { fg = "#FFF7F9" }
+value = { fg = "#FFF7F9" }
+selected = { reversed = true }
+
+[confirm]
+border = { fg = "#FF91C3" }
+title = { fg = "#FFF7F9" }
+body = { fg = "#FFF7F9" }
+list = { fg = "#FFF7F9" }
+btn_yes = { reversed = true }
+btn_no = { fg = "#FFF7F9" }
