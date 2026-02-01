@@ -1,3 +1,4 @@
+// Place your key bindings in this file to override the defaults
 [
   {
     "key": "cmd+shift+b",
@@ -260,18 +261,8 @@
   },
   {
     "key": "cmd+i",
-    "command": "kilo-code.focusChatInput",
-    "when": "editorTextFocus || editorFocus"
-  },
-  {
-    "key": "cmd+i",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "!editorTextFocus && !editorFocus"
-  },
-  {
-    "key": "shift+cmd+a",
-    "command": "-kilo-code.focusChatInput",
-    "when": "true"
   },
   {
     "key": "cmd+-",
