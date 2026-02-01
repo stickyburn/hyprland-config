@@ -7,7 +7,7 @@ parent = { fg = "#201A2F", bg = "#FFF7F9" }
 cwd = { fg = "#1D1A2A", bg = "#1D1A2A" }
 
 [pick]
-border = { fg = "#FF91C3" }
+border = { fg = "#D7AFFF" }
 
 [pick.active]
 fg = "#FFF7F9"
@@ -17,13 +17,13 @@ bg = "#2A2340"
 fg = "#FFF7F9"
 
 [input]
-border = { fg = "#FF91C3" }
+border = { fg = "#D7AFFF" }
 title = { fg = "#FFF7F9" }
 value = { fg = "#FFF7F9" }
 selected = { reversed = true }
 
 [confirm]
-border = { fg = "#FF91C3" }
+border = { fg = "#D7AFFF" }
 title = { fg = "#FFF7F9" }
 body = { fg = "#FFF7F9" }
 list = { fg = "#FFF7F9" }
