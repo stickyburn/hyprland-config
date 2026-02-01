@@ -21,6 +21,9 @@ setopt PUSHD_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 
+export HISTSIZE=500
+export SAVEHIST=500
+
 autoload -Uz vcs_info
 precmd() {
   precmd(){
