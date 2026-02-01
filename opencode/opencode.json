@@ -1,18 +1,28 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "autoupdate": true,
   "theme": "system",
   "default_agent": "plan",
   "permission": {
+    "*": "ask",
     "read": "allow",
     "external_directory": "allow",
-    "edit": "ask",
-    "create": "ask",
-    "delete": "ask",
-    "rename": "ask",
-    "move": "ask",
-    "bash": "ask",
-    "task": "ask"
+    "webfetch": "allow",
+    "deepwiki_*": "allow",
+    "bash": {
+      "ls *": "allow",
+      "grep *": "allow",
+      "find *": "allow",
+      "which *": "allow",
+      "brew list *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "cat *": "allow",
+      "pwd *": "allow"
+    },
+    "task": {
+      "*": "ask",
+      "explore": "allow"
+    }
   },
   "mcp": {
     "deepwiki": {
@@ -24,6 +34,14 @@
   "keybinds": {
     "leader": "super+g",
     "command_list": "super+p"
+  },
+  "agent": {
+    "build": {
+      "color": "#98E4A7"
+    },
+    "plan": {
+      "color": "#D7AFFF"
+    }
   },
   "instructions": [
     "SYSTEM.md"
