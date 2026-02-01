@@ -4,11 +4,6 @@ run = "open --interactive"
 desc = "Open with"
 
 [[mgr.prepend_keymap]]
-on = "z"
-run = "plugin fzf-home"
-desc = "Fuzzy find directories"
-
-[[mgr.prepend_keymap]]
 on = "n"
 run = "leave"
 desc = "Go back"
