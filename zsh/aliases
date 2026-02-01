@@ -26,8 +26,6 @@ alias gpsu='git push --set-upstream origin'
 alias gra='git restore .'
 alias gras='git restore --staged .'
 
+alias grep='rg'
 alias l='ls -a'
-alias n='nnn -eH'
-alias f='fzf \
-  --preview 'bat --style=numbers --color=always {}' \
-  --bind "enter:execute(${EDITOR:-vim} {})+abort"'
+alias e='yazi'
