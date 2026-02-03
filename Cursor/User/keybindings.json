@@ -226,21 +226,6 @@
     "when": "cursor.appLayout != 'agent'"
   },
   {
-    "key": "cmd+i",
-    "command": "-composer.startComposerPrompt",
-    "when": "cursor.appLayout != 'agent'"
-  },
-  {
-    "key": "cmd+i",
-    "command": "-workbench.action.terminal.chat.start",
-    "when": "chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
-  },
-  {
-    "key": "cmd+i",
-    "command": "-inlineChat2.reveal",
-    "when": "inlineChatHasEditsAgent && !chatEdits.isGlobalEditingSession && chatEdits.requestCount >= 1"
-  },
-  {
     "key": "cmd+c",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
@@ -257,11 +242,6 @@
     "key": "ctrl+shift+g",
     "command": "-workbench.view.scm",
     "when": "workbench.scm.active"
-  },
-  {
-    "key": "cmd+i",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "!editorTextFocus && !editorFocus"
   },
   {
     "key": "cmd+-",
