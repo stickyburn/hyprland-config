@@ -7,7 +7,7 @@
   "editor.fontLigatures": true,
   "terminal.external.osxExec": "/Applications/kitty.app",
   "terminal.external.linuxExec": "kitty",
-  "terminal.integrated.scrollback": 50000,
+  "terminal.integrated.scrollback": 20000,
   "terminal.integrated.cursorStyle": "underline",
   "editor.inlineSuggest.enabled": true,
   "extensions.ignoreRecommendations": true,
@@ -89,7 +89,6 @@
   "workbench.activityBar.location": "hidden",
   "workbench.sideBar.location": "right",
   "json.schemaDownload.enable": true,
-  "workbench.statusBar.visible": false,
   "workbench.startupEditor": "none",
   "diffEditor.useInlineViewWhenSpaceIsLimited": false,
   "workbench.colorTheme": "Tomorrow Night Blue",
@@ -118,5 +117,6 @@
     "editorHoverWidget.background": "#181227",
     "editorSuggestWidget.selectedForeground": "#6a6367",
     "tab.inactiveForeground": "#6a6367"
-  }
+  },
+  "workbench.statusBar.visible": false
 }
