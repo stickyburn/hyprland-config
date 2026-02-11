@@ -6,22 +6,53 @@
     "*": "ask",
     "read": "allow",
     "external_directory": "allow",
+    "todowrite": "allow",
+    "todoread": "allow",
     "webfetch": "allow",
     "deepwiki_*": "allow",
+    "brave_*": "allow",
+    "glob": "allow",
+    "grep": "allow",
     "bash": {
       "ls *": "allow",
+      "echo *": "allow",
       "grep *": "allow",
       "find *": "allow",
+      "sort *": "allow",
       "which *": "allow",
       "brew list *": "allow",
       "head *": "allow",
       "tail *": "allow",
       "cat *": "allow",
-      "pwd *": "allow"
+      "pwd *": "allow",
+      "git status": "allow",
+      "git diff *": "allow",
+      "git log *": "allow"
     },
     "task": {
-      "*": "ask",
-      "explore": "allow"
+      "explore": "allow",
+      "general": "allow",
+      "build": "allow",
+      "plan": "allow",
+      "compaction": "allow",
+      "title": "allow",
+      "summary": "allow",
+      "*": "ask"
+    }
+  },
+  "provider": {
+    "siliconflow": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "SiliconFlow",
+      "options": {
+        "baseURL": "https://api.siliconflow.com/v1",
+        "apiKey": "{env:SILICONFLOW_API_KEY}"
+      },
+      "models": {
+        "stepfun-ai/Step-3.5-Flash": {
+          "name": "Step-3.5-Flash"
+        }
+      }
     }
   },
   "mcp": {
@@ -29,18 +60,31 @@
       "enabled": true,
       "url": "https://mcp.deepwiki.com/mcp",
       "type": "remote"
+    },
+    "brave-search": {
+      "type": "local",
+      "command": [
+        "pnpm",
+	"dlx",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "environment": {
+        "BRAVE_API_KEY": "{env:BRAVE_API_KEY}"
+      },
+      "enabled": true
     }
   },
   "keybinds": {
     "leader": "super+g",
-    "command_list": "super+p"
+    "command_list": "super+p",
+    "sidebar_toggle": "super+shift+e"
   },
   "agent": {
     "build": {
       "color": "#98E4A7"
     },
     "plan": {
-      "color": "#D7AFFF"
+      "color": "#DCBAFF"
     }
   },
   "instructions": [
