@@ -2,15 +2,15 @@
   "$schema": "https://opencode.ai/config.json",
   "theme": "system",
   "default_agent": "plan",
-  "permission": {
-    "*": "ask",
-    "read": "allow",
-    "external_directory": "allow",
-    "todowrite": "allow",
-    "todoread": "allow",
-    "webfetch": "allow",
-    "deepwiki_*": "allow",
-    "brave_*": "allow",
+    "permission": {
+      "*": "ask",
+      "read": "allow",
+      "external_directory": "allow",
+      "todowrite": "allow",
+      "todoread": "allow",
+      "webfetch": "allow",
+      "deepwiki_*": "allow",
+      "exa_*": "allow",
     "glob": "allow",
     "grep": "allow",
     "bash": {
@@ -18,6 +18,7 @@
       "echo *": "allow",
       "grep *": "allow",
       "find *": "allow",
+      "file *": "allow",
       "sort *": "allow",
       "which *": "allow",
       "brew list *": "allow",
@@ -38,22 +39,7 @@
       "title": "allow",
       "summary": "allow",
       "*": "ask"
-    }
-  },
-  "provider": {
-    "siliconflow": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "SiliconFlow",
-      "options": {
-        "baseURL": "https://api.siliconflow.com/v1",
-        "apiKey": "{env:SILICONFLOW_API_KEY}"
-      },
-      "models": {
-        "stepfun-ai/Step-3.5-Flash": {
-          "name": "Step-3.5-Flash"
-        }
-      }
-    }
+    },
   },
   "mcp": {
     "deepwiki": {
@@ -61,19 +47,15 @@
       "url": "https://mcp.deepwiki.com/mcp",
       "type": "remote"
     },
-    "brave-search": {
-      "type": "local",
-      "command": [
-        "pnpm",
-	"dlx",
-        "@modelcontextprotocol/server-brave-search"
-      ],
-      "environment": {
-        "BRAVE_API_KEY": "{env:BRAVE_API_KEY}"
-      },
-      "enabled": true
+    "exa": {
+      "enabled": true,
+      "url": "https://mcp.exa.ai/mcp",
+      "type": "remote"
     }
   },
+  "instructions": [
+    "SYSTEM.md"
+  ],
   "keybinds": {
     "leader": "super+g",
     "command_list": "super+p",
@@ -84,10 +66,7 @@
       "color": "#98E4A7"
     },
     "plan": {
-      "color": "#DCBAFF"
+      "color": "#CFAAF3"
     }
-  },
-  "instructions": [
-    "SYSTEM.md"
-  ]
+  }
 }
