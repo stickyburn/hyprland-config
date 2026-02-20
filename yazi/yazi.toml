@@ -2,10 +2,10 @@
 show_hidden = true
 
 [opener]
-opencode = [
-  { run = 'kitty @ launch --type=tab --cwd="$@" -- zsh -i -c opencode', desc = "Opencode" },
-]
 code = [{ run = '/usr/local/bin/cursor "$@"', block = true, desc = "Cursor" }]
+opencode = [
+  { run = 'kitty @ launch --type=tab --cwd="$@" -- zsh -c opencode', desc = "Opencode" },
+]
 terminal = [{ run = 'kitty @ launch --type=tab --cwd="$@"', desc = "Terminal" }]
 edit = [{ run = 'vim "$@"', block = true, desc = "Vim" }]
 reveal = [
@@ -16,12 +16,12 @@ reveal = [
 [open]
 rules = [
   { url = "*", use = [
-    "code",
     "edit",
+    "code",
   ] },
   { url = "*/", use = [
-    "opencode",
     "code",
+    "opencode",
     "terminal",
     "reveal",
   ] },
