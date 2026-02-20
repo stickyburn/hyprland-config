@@ -7,7 +7,8 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 autoload -Uz compinit && compinit
-source ~/.config/zsh/aliases
+source ~/.config/zsh/aliases/git
+source ~/.config/zsh/aliases/system
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' +'l:|=* r:|=*'
@@ -34,6 +35,6 @@ precmd() {
 
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats ' %b'
-export RPROMPT='%F{183}%D{%L:%M}%f'
-export PROMPT='%F{183}%1d ${vcs_info_msg_0_}
+export RPROMPT='%F{219}%D{%L:%M}%f'
+export PROMPT='%F{219}%1d ${vcs_info_msg_0_}
 %f '
