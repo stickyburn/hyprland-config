@@ -1,31 +1,31 @@
 [indicator]
 preview = {}
-current = { fg = "#201A2F", bg = "#FFF7F9" }
-parent = { fg = "#201A2F", bg = "#FFF7F9" }
+current = { fg = "#221727", bg = "#eee9ff" }
+parent = { fg = "#221727", bg = "#eee9ff" }
 
 [mgr]
-cwd = { fg = "#1D1A2A", bg = "#1D1A2A" }
+cwd = { fg = "#221727", bg = "#221727" }
 
 [pick]
-border = { fg = "#D7AFFF" }
+border = { fg = "#CFAAF3" }
 
 [pick.active]
-fg = "#FFF7F9"
+fg = "#eee9ff"
 bg = "#2A2340"
 
 [pick.inactive]
-fg = "#FFF7F9"
+fg = "#eee9ff"
 
 [input]
-border = { fg = "#D7AFFF" }
-title = { fg = "#FFF7F9" }
-value = { fg = "#FFF7F9" }
+border = { fg = "#CFAAF3" }
+title = { fg = "#eee9ff" }
+value = { fg = "#eee9ff" }
 selected = { reversed = true }
 
 [confirm]
-border = { fg = "#D7AFFF" }
-title = { fg = "#FFF7F9" }
-body = { fg = "#FFF7F9" }
-list = { fg = "#FFF7F9" }
+border = { fg = "#CFAAF3" }
+title = { fg = "#eee9ff" }
+body = { fg = "#eee9ff" }
+list = { fg = "#eee9ff" }
 btn_yes = { reversed = true }
-btn_no = { fg = "#FFF7F9" }
+btn_no = { fg = "#eee9ff" }
