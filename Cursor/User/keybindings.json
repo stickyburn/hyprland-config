@@ -234,7 +234,7 @@
     "when": "terminalFocus"
   },
   {
-    "key": "shift+cmd+g",
+    "key": "cmd+shift+g",
     "command": "workbench.view.scm",
     "when": "workbench.scm.active"
   },
@@ -245,18 +245,18 @@
   },
   {
     "key": "cmd+-",
+    "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "cmd+-",
     "command": "workbench.action.navigateBack"
   },
   {
     "key": "cmd+=",
-    "command": "workbench.action.navigateForward"
-  },
-  {
-    "key": "cmd+-",
-    "command": "-workbench.action.zoomOut"
+    "command": "-workbench.action.zoomIn"
   },
   {
     "key": "cmd+=",
-    "command": "-workbench.action.zoomIn"
+    "command": "workbench.action.navigateForward"
   }
 ]
