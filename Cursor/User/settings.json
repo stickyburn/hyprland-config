@@ -1,53 +1,87 @@
 {
-  "window.zoomLevel": 0,
-  "editor.fontFamily": "Zed Mono",
+  // UI
+  "editor.fontFamily": "Zed Sans",
   "terminal.integrated.fontFamily": "Zed Mono",
   "editor.fontSize": 13,
   "terminal.integrated.fontSize": 13,
   "editor.fontLigatures": true,
-  "terminal.external.osxExec": "/Applications/kitty.app",
-  "terminal.external.linuxExec": "kitty",
-  "terminal.integrated.scrollback": 20000,
-  "terminal.integrated.cursorStyle": "underline",
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "line-thin",
   "editor.inlineSuggest.enabled": true,
-  "extensions.ignoreRecommendations": true,
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/dist": true,
-    "**/static": true,
-    "**/.next": true,
-    "**/@remote-types": true,
-    ".yarnrc.yml": true,
-    "yarn.lock": true,
-    "**/dependabot.yml": true,
-    "**/commit-msg": true,
-    "**/*.cjs": true,
-    "**/*.svg": true,
-    "**-lock.yaml": true,
-    "**/cache": true,
-    "**/.cache": true
+  "editor.lineNumbers": "off",
+  "editor.tabSize": 2,
+  "editor.folding": false,
+  "editor.foldingHighlight": false,
+  "editor.glyphMargin": false,
+  "editor.guides.indentation": false,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.minimap.enabled": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.decorations.colors": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
   },
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "editor.formatOnType": true,
+  // formatting
+  "editor.acceptSuggestionOnEnter": "smart",
   "editor.codeActionsOnSave": {
     "source.fixAll": "always"
   },
-  "svelte.enable-ts-plugin": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  // terminal
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.scrollback": 10000,
+  // search
+  "search.exclude": {
+    "**-lock.yaml": true,
+    "**/*.cjs": true,
+    "**/*.svg": true,
+    "**/.cache": true,
+    "**/.next": true,
+    "**/@remote-types": true,
+    "**/cache": true,
+    "**/commit-msg": true,
+    "**/dependabot.yml": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/static": true,
+    ".yarnrc.yml": true,
+    "yarn.lock": true
+  },
+  // git
+  "git.decorations.enabled": false,
+  // workspace
+  "breadcrumbs.enabled": false,
+  "extensions.ignoreRecommendations": true,
+  "json.schemaDownload.enable": true,
+  "npm.packageManager": "bun",
+  "window.commandCenter": true,
+  "window.zoomLevel": 0,
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorTheme": "Tomorrow Night Blue",
+  "workbench.editor.decorations.badges": false,
+  "workbench.editor.decorations.colors": false,
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.renderSideBySide": true,
+  "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+  // LSP
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
   "[json]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
   "[jsonc]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[svelte]": {
     "editor.defaultFormatter": "biomejs.biome"
@@ -55,105 +89,83 @@
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
-  "files.associations": {
-    "*.css": "tailwindcss"
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
   },
-  "editor.quickSuggestions": {
-    "strings": "on"
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
   },
-  "npm.packageManager": "bun",
-  "editor.minimap.enabled": false,
-  "editor.glyphMargin": false,
-  "editor.folding": false,
-  "editor.foldingHighlight": false,
-  "editor.lineNumbers": "off",
-  "editor.tabSize": 2,
-  "editor.cursorStyle": "line-thin",
-  "editor.cursorBlinking": "solid",
-  "breadcrumbs.enabled": false,
-  "git.decorations.enabled": false,
-  "workbench.editor.decorations.badges": false,
-  "workbench.editor.decorations.colors": false,
-  "explorer.decorations.colors": false,
-  "editor.guides.indentation": false,
-  "window.commandCenter": true,
-  "explorer.confirmDelete": false,
-  "editor.acceptSuggestionOnEnter": "smart",
-  "editor.inlayHints.enabled": "offUnlessPressed",
-  "explorer.confirmDragAndDrop": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "diffEditor.ignoreTrimWhitespace": true,
-  "diffEditor.renderSideBySide": true,
-  "workbench.activityBar.location": "hidden",
-  "workbench.sideBar.location": "right",
-  "json.schemaDownload.enable": true,
-  "workbench.startupEditor": "none",
-  "diffEditor.useInlineViewWhenSpaceIsLimited": false,
-  "workbench.colorTheme": "Tomorrow Night Blue",
+  "biome.lsp.bin": "/Users/lemonaid/.local/share/bun/bin/biome",
+  "ruff.nativeServer": "on",
+  "ruff.path": [
+    "/Users/lemonaid/.local/bin/ruff"
+  ],
+  // themes
   "workbench.colorCustomizations": {
-    "[Tomorrow Night Blue]": {
-    "editor.background": "#221727",
-    "editor.foreground": "#eee9ff",
-    "activityBar.background": "#221727",
-    "statusBar.background": "#221727",
-    "sideBar.background": "#221727",
-    "tab.activeBorder": "#221727",
-    "tab.inactiveBackground": "#221727",
-    "tab.border": "#221727",
-    "tab.activeBackground": "#221727",
-    "tab.activeBorderTop": "#221727",
-    "editorOverviewRuler.border": "#221727",
-    "editorGroupHeader.tabsBackground": "#221727",
-    "menu.background": "#221727",
-    "input.background": "#221727",
-    "editorSuggestWidget.background": "#221727",
-    "editorSuggestWidget.border": "#221727",
-    "scrollbar.shadow": "#221727",
-    "scrollbarSlider.background": "#221727",
-    "scrollbarSlider.activeBackground": "#221727",
-    "scrollbarSlider.hoverBackground": "#221727",
-    "titleBar.activeBackground": "#221727",
-    "editorSuggestWidget.selectedBackground": "#221727",
-    "quickInput.background": "#221727",
-    "editor.selectionBackground": "#0F0617",
-    "editor.lineHighlightBackground": "#0F0617",
-    "editorHoverWidget.background": "#0F0617",
-    "editorSuggestWidget.selectedForeground": "#6A6367",
-    "tab.inactiveForeground": "#6A6367"
-    },
     "[Default Light Modern]": {
-    "editor.background": "#eee9ff",
-    "editor.foreground": "#221727",
-    "activityBar.background": "#eee9ff",
-    "statusBar.background": "#eee9ff",
-    "sideBar.background": "#eee9ff",
-    "tab.inactiveBackground": "#eee9ff",
-    "tab.border": "#eee9ff",
-    "tab.activeBackground": "#eee9ff",
-    "tab.activeBorderTop": "#eee9ff",
-    "editorOverviewRuler.border": "#eee9ff",
-    "editorGroupHeader.tabsBackground": "#eee9ff",
-    "menu.background": "#eee9ff",
-    "input.background": "#eee9ff",
-    "editorSuggestWidget.background": "#eee9ff",
-    "editorSuggestWidget.border": "#eee9ff",
-    "scrollbar.shadow": "#eee9ff",
-    "scrollbarSlider.background": "#eee9ff",
-    "scrollbarSlider.activeBackground": "#eee9ff",
-    "scrollbarSlider.hoverBackground": "#eee9ff",
-    "titleBar.activeBackground": "#eee9ff",
-    "editorSuggestWidget.selectedBackground": "#eee9ff",
-    "quickInput.background": "#eee9ff",
-    "tab.activeBorder": "#eee9ff",
-    "editor.selectionBackground": "#d3c9f6",
-    "editor.lineHighlightBackground": "#d3c9f6",
-    "editorHoverWidget.background": "#d3c9f6",
-    "editorSuggestWidget.selectedForeground": "#6A6367",
-    "tab.inactiveForeground": "#6A6367"
+      "activityBar.background": "#eee9ff",
+      "editor.background": "#eee9ff",
+      "editor.foreground": "#221727",
+      "editor.lineHighlightBackground": "#d3c9f6",
+      "editor.selectionBackground": "#d3c9f6",
+      "editorGroupHeader.tabsBackground": "#eee9ff",
+      "editorHoverWidget.background": "#d3c9f6",
+      "editorOverviewRuler.border": "#eee9ff",
+      "editorSuggestWidget.background": "#eee9ff",
+      "editorSuggestWidget.border": "#eee9ff",
+      "editorSuggestWidget.selectedBackground": "#eee9ff",
+      "editorSuggestWidget.selectedForeground": "#6A6367",
+      "input.background": "#eee9ff",
+      "menu.background": "#eee9ff",
+      "quickInput.background": "#eee9ff",
+      "scrollbar.shadow": "#eee9ff",
+      "scrollbarSlider.activeBackground": "#eee9ff",
+      "scrollbarSlider.background": "#eee9ff",
+      "scrollbarSlider.hoverBackground": "#eee9ff",
+      "sideBar.background": "#eee9ff",
+      "statusBar.background": "#eee9ff",
+      "tab.activeBackground": "#eee9ff",
+      "tab.activeBorder": "#eee9ff",
+      "tab.activeBorderTop": "#eee9ff",
+      "tab.border": "#eee9ff",
+      "tab.inactiveBackground": "#eee9ff",
+      "tab.inactiveForeground": "#6A6367",
+      "titleBar.activeBackground": "#eee9ff"
     },
+    "[Tomorrow Night Blue]": {
+      "activityBar.background": "#221727",
+      "editor.background": "#221727",
+      "editor.foreground": "#eee9ff",
+      "editorGroupHeader.tabsBackground": "#221727",
+      "editorOverviewRuler.border": "#221727",
+      "editorSuggestWidget.background": "#221727",
+      "editorSuggestWidget.border": "#221727",
+      "editorSuggestWidget.selectedBackground": "#221727",
+      "input.background": "#221727",
+      "menu.background": "#221727",
+      "quickInput.background": "#221727",
+      "scrollbar.shadow": "#221727",
+      "scrollbarSlider.activeBackground": "#221727",
+      "scrollbarSlider.background": "#221727",
+      "scrollbarSlider.hoverBackground": "#221727",
+      "sideBar.background": "#221727",
+      "statusBar.background": "#221727",
+      "tab.activeBackground": "#221727",
+      "tab.activeBorder": "#221727",
+      "tab.activeBorderTop": "#221727",
+      "tab.border": "#221727",
+      "tab.inactiveBackground": "#221727",
+      "editor.lineHighlightBackground": "#0F0617",
+      "editor.selectionBackground": "#0F0617",
+      "editorHoverWidget.background": "#0F0617",
+      "titleBar.activeBackground": "#221727",
+      "editorSuggestWidget.selectedForeground": "#6A6367",
+      "tab.inactiveForeground": "#6A6367",
+    }
   },
+  // remote dev
   "remote.SSH.remotePlatform": {
-    "refyne": "linux"
-  }
+    "refyne": "linux",
+    "runpod": "linux"
+  },
 }
