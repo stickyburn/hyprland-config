@@ -1,72 +1,66 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "system",
-  "default_agent": "plan",
-    "permission": {
-      "*": "ask",
-      "read": "allow",
-      "external_directory": "allow",
-      "todowrite": "allow",
-      "todoread": "allow",
-      "webfetch": "allow",
-      "deepwiki_*": "allow",
-      "exa_*": "allow",
-    "glob": "allow",
-    "grep": "allow",
-    "bash": {
-      "ls *": "allow",
-      "echo *": "allow",
-      "grep *": "allow",
-      "find *": "allow",
-      "file *": "allow",
-      "sort *": "allow",
-      "which *": "allow",
-      "brew list *": "allow",
-      "head *": "allow",
-      "tail *": "allow",
-      "cat *": "allow",
-      "pwd *": "allow",
-      "git status": "allow",
-      "git diff *": "allow",
-      "git log *": "allow"
-    },
-    "task": {
-      "explore": "allow",
-      "general": "allow",
-      "build": "allow",
-      "plan": "allow",
-      "compaction": "allow",
-      "title": "allow",
-      "summary": "allow",
-      "*": "ask"
-    },
-  },
-  "mcp": {
-    "deepwiki": {
-      "enabled": true,
-      "url": "https://mcp.deepwiki.com/mcp",
-      "type": "remote"
-    },
+	"default_agent": "plan",
+	"permission": {
+		"*": "ask",
+		"read": "allow",
+		"external_directory": "allow",
+		"todowrite": "allow",
+		"todoread": "allow",
+		"webfetch": "allow",
+		"websearch": "allow",
+		"glob": "allow",
+		"grep": "allow",
+    "exa": "allow",
+		"deepwiki*": "allow",
+		"task": "allow",
+		"bash": {
+			"ls *": "allow",
+			"echo *": "allow",
+			"grep *": "allow",
+      "rg *" : "allow",
+			"find *": "allow",
+			"file *": "allow",
+			"sort *": "allow",
+			"which *": "allow",
+			"brew list *": "allow",
+			"head *": "allow",
+			"tail *": "allow",
+			"cat *": "allow",
+			"pwd *": "allow",
+			"git status": "allow",
+			"git diff *": "allow",
+			"git show *": "allow",
+			"git log *": "allow"
+		},
+	},
+	"mcp": {
+		"deepwiki": {
+			"enabled": true,
+			"url": "https://mcp.deepwiki.com/mcp",
+			"type": "remote"
+		},
     "exa": {
       "enabled": true,
       "url": "https://mcp.exa.ai/mcp",
       "type": "remote"
-    }
-  },
+    },
+	},
+	"plugin": [],
   "instructions": [
     "SYSTEM.md"
   ],
-  "keybinds": {
-    "leader": "super+g",
-    "command_list": "super+p",
-    "sidebar_toggle": "super+shift+e"
-  },
-  "agent": {
-    "build": {
-      "color": "#98E4A7"
-    },
-    "plan": {
-      "color": "#CFAAF3"
-    }
-  }
+	"agent": {
+		"explore": {
+			"permission": {
+				"*": "allow"
+			}
+		},
+		"build": {
+			"color": "#98E4A7"
+		},
+		"plan": {
+			"color": "#CFAAF3"
+		}
+	}
 }
