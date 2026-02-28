@@ -1,4 +1,5 @@
 .env.local
+.cache
 assets
 bottom
 Code/*
@@ -15,13 +16,11 @@ Cursor/User/sync
 Cursor/User/globalStorage
 Cursor/User/workspaceStorage
 !Cursor/User/
-cache
 dconf
 Signal Beta
 weechat/*
 !weechat/weechat.conf
 mimeapps.list
-nnn
 pavucontrol.ini
 pulse
 systemd
@@ -33,6 +32,4 @@ zsh/.zcompdump
 zsh/history
 bookmarks
 settings.ini
-gemini-cli.json
 uv-receipt.json
-nextjs-nodejs
