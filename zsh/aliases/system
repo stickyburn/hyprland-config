@@ -1,3 +1,7 @@
 alias grep='rg'
 alias l='ls -a'
 alias e='yazi'
+
+alias python='/opt/homebrew/bin/python3.13'
+alias python3='/opt/homebrew/bin/python3.13'
+alias pip='uv pip'
