@@ -33,3 +33,5 @@ zsh/history
 bookmarks
 settings.ini
 uv-receipt.json
+rclone/rclone.conf
+zsh/db.zo
