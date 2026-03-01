@@ -15,6 +15,12 @@ return {
         python = { "ruff" },
         toml = { "taplo" },
       },
+      formatters = {
+        biome = {
+          command = "bun",
+          args = { "/Users/lemonaid/.local/share/bun/bin/biome", "format", "--stdin-file-path", "$FILENAME" },
+        },
+      },
     },
   },
 }
