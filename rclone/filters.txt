@@ -1,0 +1,58 @@
+# Rclone exclude patterns
+# Use - prefix to exclude, + prefix to include
+
+# Exclude all hidden directories and files
+- .*/
+- .*
+
+# Exclude node modules
+- **/node_modules/
+
+# Exclude build outputs
+- **/dist/
+- **/build/
+- **/target/
+- **/.output/
+
+# Exclude cache directories
+- **/.cache/
+- **/__pycache__/
+- **/*.pyc
+- **/.pytest_cache/
+- **/.mypy_cache/
+- **/.ruff_cache/
+
+# Exclude logs and temp
+- **/*.log
+- **/*.tmp
+- **/tmp/
+- **/*.swp
+- **/*.swo
+- **/*~
+
+# Exclude macOS files
+- **/.DS_Store
+- **/.AppleDouble
+- **/.LSOverride
+
+# Exclude IDE/Editor
+- **/.idea/
+- **/.vscode/
+- **/*.code-workspace
+
+# Exclude package manager lock files (optional)
+- **/package-lock.json
+- **/yarn.lock
+- **/pnpm-lock.yaml
+- **/Pipfile.lock
+- **/poetry.lock
+- **/Cargo.lock
+- **/Gemfile.lock
+
+# Exclude environment files
+- **/.env.local
+- **/.env.*.local
+
+# Exclude Windows files
+- **/Thumbs.db
+- **/ehthumbs.db

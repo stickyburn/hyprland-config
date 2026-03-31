@@ -30,8 +30,9 @@ zsh/.zhistory
 zsh/.zsh_history
 zsh/.zcompdump
 zsh/history
+zsh/db.zo
 bookmarks
 settings.ini
 uv-receipt.json
 rclone/rclone.conf
-zsh/db.zo
+**/node_modules/
