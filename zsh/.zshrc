@@ -22,16 +22,17 @@ setopt PUSHD_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 
-export HISTSIZE=500
-export SAVEHIST=500
-
 autoload -Uz vcs_info
-precmd() {
-  precmd(){
-    vcs_info
+_skip_first_newline=1
+precmd_hooks() {
+  vcs_info
+  if [[ -n "$_skip_first_newline" ]]; then
+    unset _skip_first_newline
+  else
     echo
-  }
+  fi
 }
+precmd_functions+=(precmd_hooks)
 
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats ' %b'
