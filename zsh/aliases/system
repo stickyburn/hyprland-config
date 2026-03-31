@@ -5,3 +5,7 @@ alias e='yazi'
 alias python='/opt/homebrew/bin/python3.13'
 alias python3='/opt/homebrew/bin/python3.13'
 alias pip='uv pip'
+
+rpull() { rclone sync "$1" "$2" --filter-from ~/.config/rclone/filters.txt --progress; }
+rpush() { rclone copy "$1" "$2" --filter-from ~/.config/rclone/filters.txt --progress; }
+rcheck() { rclone check "$1" "$2" --filter-from ~/.config/rclone/filters.txt; }
