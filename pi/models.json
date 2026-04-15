@@ -1,0 +1,76 @@
+{
+	"providers": {
+		"ollama-cloud": {
+			"name": "Ollama Cloud",
+			"baseUrl": "https://ollama.com/v1",
+			"apiKey": "OLLAMA_API_KEY",
+			"api": "openai-responses",
+			"authHeader": true,
+			"models": [
+				{
+					"id": "qwen3-coder-next:cloud",
+					"name": "Qwen Coder",
+					"contextWindow": 262144,
+					"maxTokens": 65536,
+					"reasoning": false,
+					"input": ["text"],
+					"cost": {
+						"input": 0.36,
+						"output": 1.1,
+						"cacheRead": 0,
+						"cacheWrite": 0
+					}
+				},
+				{
+					"id": "gemini-3-flash-preview:cloud",
+					"name": "Gemini 3 Flash",
+					"contextWindow": 1000000,
+					"maxTokens": 65000,
+					"reasoning": true,
+					"input": ["text", "image"],
+					"cost": {
+						"input": 0.5,
+						"output": 3.0,
+						"cacheRead": 0.05,
+						"cacheWrite": 0.08
+					}
+				},
+				{
+					"id": "glm-5:cloud",
+					"name": "GLM",
+					"contextWindow": 200000,
+					"maxTokens": 120000,
+					"reasoning": true,
+					"input": ["text"],
+					"cost": {
+						"input": 1.2,
+						"output": 3.2,
+						"cacheRead": 0.2,
+						"cacheWrite": 0.0
+					}
+				},
+				{
+					"id": "kimi-k2.5:cloud",
+					"name": "Kimi",
+					"contextWindow": 260000,
+					"maxTokens": 260000,
+					"reasoning": true,
+					"input": ["text", "image"],
+					"cost": {
+						"input": 0.44,
+						"output": 2.2,
+						"cacheRead": 0.22,
+						"cacheWrite": 0.0
+					}
+				}
+			]
+		},
+		"zai": {
+			"name": "Z.AI",
+			"baseUrl": "https://api.z.ai/api/coding/paas/v4",
+			"apiKey": "ZAI_API_KEY",
+			"api": "openai-responses",
+			"authHeader": true
+		}
+	}
+}

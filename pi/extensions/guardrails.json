@@ -1,0 +1,129 @@
+{
+  "version": "0.9.0-20260327",
+  "permissionGate": {
+    "autoDenyPatterns": [
+      {
+        "pattern": "sudo",
+        "description": "disable sudo"
+      },
+      {
+        "pattern": "rm -rf /",
+        "description": "disable root deletion"
+      },
+      {
+        "pattern": "dd if=",
+        "description": "disable disk operations"
+      },
+      {
+        "pattern": "mkfs.",
+        "description": "disable formatting"
+      }
+    ],
+    "patterns": [
+      {
+        "pattern": "rm",
+        "description": "confirm delete"
+      },
+      {
+        "pattern": "mv",
+        "description": "confirm move"
+      },
+      {
+        "pattern": "cp",
+        "description": "confirm copy"
+      },
+      {
+        "pattern": "mkdir",
+        "description": "confirm create directory"
+      },
+      {
+        "pattern": "touch",
+        "description": "confirm create file"
+      },
+      {
+        "pattern": "curl",
+        "description": "confirm curl"
+      },
+      {
+        "pattern": "python",
+        "description": "confirm python"
+      },
+      {
+        "pattern": "node",
+        "description": "confirm node"
+      },
+      {
+        "pattern": "bun",
+        "description": "confirm bun"
+      },
+      {
+        "pattern": "npm",
+        "description": "confirm npm"
+      }
+    ],
+    "requireConfirmation": true,
+    "explainCommands": true
+  },
+  "policies": {
+    "rules": [
+      {
+        "id": "example-secret-env-files",
+        "name": "Secret env files",
+        "description": "disable secret env access",
+        "patterns": [
+          {
+            "pattern": ".env"
+          },
+          {
+            "pattern": ".env.*"
+          }
+        ],
+        "allowedPatterns": [
+          {
+            "pattern": ".env.example"
+          },
+          {
+            "pattern": "*.sample.env"
+          }
+        ],
+        "protection": "noAccess",
+        "onlyIfExists": true,
+        "enabled": true
+      },
+      {
+        "id": "example-ssh-keys",
+        "name": "SSH keys",
+        "description": "disable ssh key access",
+        "patterns": [
+          {
+            "pattern": "*.pem"
+          },
+          {
+            "pattern": "*_rsa"
+          },
+          {
+            "pattern": "*_ed25519"
+          }
+        ],
+        "allowedPatterns": [
+          {
+            "pattern": "*.pub"
+          }
+        ],
+        "protection": "noAccess",
+        "onlyIfExists": true,
+        "enabled": true
+      }
+    ]
+  },
+  "features": {
+    "permissionGate": true,
+    "policies": true
+  },
+  "applyBuiltinDefaults": true,
+  "onboarding": {
+    "completed": true,
+    "completedAt": "2026-04-10T11:29:46.748Z",
+    "version": "0.9.0-20260327"
+  }
+}
