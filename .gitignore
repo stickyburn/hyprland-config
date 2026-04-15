@@ -2,13 +2,6 @@
 .cache
 assets
 bottom
-Code/*
-Code/User/History
-Code/User/snippets
-Code/User/sync
-Code/User/globalStorage
-Code/User/workspaceStorage
-!Code/User/
 Cursor/*
 Cursor/User/History
 Cursor/User/snippets
@@ -33,6 +26,8 @@ zsh/history
 zsh/db.zo
 bookmarks
 settings.ini
-uv-receipt.json
 rclone/rclone.conf
 **/node_modules/
+pi/sessions
+/pi/extensions/pi-licky
+/pi/extensions/pi-exa-slim
