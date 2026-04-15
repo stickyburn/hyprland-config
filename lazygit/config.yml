@@ -1,0 +1,20 @@
+gui:
+  mainPanelSplitMode: horizontal
+  splitDiff: always
+  nerdFontsVersion: "3"
+  showNumstatInFilesView: true
+  scrollOffMargin: 2
+  scrollOffBehavior: margin
+  wrapLinesInStagingView: true
+  useHunkModeInStagingView: true
+quitOnTopLevelReturn: true
+
+git:
+  autoRefresh: true
+  autoStageResolvedConflicts: true
+  log:
+    showGraph: always
+    order: topo-order
+
+os:
+  editPreset: "nvim"
