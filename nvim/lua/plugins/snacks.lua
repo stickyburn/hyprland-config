@@ -27,10 +27,10 @@ return {
       callback = function()
         vim.api.nvim_set_hl(0, "SnacksPickerSelected", { bg = "#2a1d31" })
         vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { bg = "#2a1d31" })
-        vim.api.nvim_set_hl(0, "SnacksPickerBorder", { fg = "#cfaaf3" })
-        vim.api.nvim_set_hl(0, "SnacksInputBorder", { fg = "#cfaaf3" })
-        vim.api.nvim_set_hl(0, "SnacksNotifierBorder", { fg = "#cfaaf3" })
-        vim.api.nvim_set_hl(0, "SnacksDashboardBorder", { fg = "#cfaaf3" })
+        vim.api.nvim_set_hl(0, "SnacksPickerBorder", { fg = "#c79eff" })
+        vim.api.nvim_set_hl(0, "SnacksInputBorder", { fg = "#c79eff" })
+        vim.api.nvim_set_hl(0, "SnacksNotifierBorder", { fg = "#c79eff" })
+        vim.api.nvim_set_hl(0, "SnacksDashboardBorder", { fg = "#c79eff" })
       end,
     })
 

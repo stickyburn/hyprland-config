@@ -9,42 +9,22 @@ return {
         marksman = {},
 
         -- external bun
+        vtsls = {
+          mason = false,
+          cmd = { "bun", vim.env.HOME .. "/.local/share/bun/bin/vtsls", "--stdio" },
+        },
         biome = {
           mason = false,
-          cmd = { "bun", "/Users/lemonaid/.local/share/bun/bin/biome", "lsp-proxy" },
+          cmd = { "bun", vim.env.HOME .. "/.local/share/bun/bin/biome", "lsp-proxy" },
+          filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json", "jsonc", "css" },
         },
         cssls = {
           mason = false,
-          cmd = { "bun", "/Users/lemonaid/.local/share/bun/bin/css-language-server", "--stdio" },
+          cmd = { "bun", vim.env.HOME .. "/.local/share/bun/bin/css-language-server", "--stdio" },
         },
         tailwindcss = {
           mason = false,
-          cmd = { "bun", "/Users/lemonaid/.local/share/bun/bin/tailwindcss-language-server", "--stdio" },
-        },
-        ts_ls = {
-          mason = false,
-          cmd = { "bun", "/Users/lemonaid/.local/share/bun/bin/typescript-language-server", "--stdio" },
-        },
-
-        -- external uv
-        ruff = {
-          mason = false,
-          cmd = { "/Users/lemonaid/.local/bin/ruff", "server" },
-        },
-        basedpyright = {
-          mason = false,
-          cmd = { "/Users/lemonaid/.local/bin/basedpyright-langserver", "--stdio" },
-          settings = {
-            basedpyright = {
-              analysis = {
-                typeCheckingMode = "basic",
-                autoImportCompletions = true,
-                autoSearchPaths = true,
-                diagnosticMode = "openFilesOnly",
-                useLibraryCodeForTypes = true,
-              },
-            },
-          },
+          cmd = { "bun", vim.env.HOME .. "/.local/share/bun/bin/tailwindcss-language-server", "--stdio" },
         },
       },
     },

@@ -2,8 +2,8 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
--- paths for bun and uv, used for LSPs
-vim.env.PATH = vim.env.PATH .. ":/Users/lemonaid/.local/share/bun/bin:/Users/lemonaid/.local/bin"
+-- paths for bun, used for LSPs
+vim.env.PATH = vim.env.PATH .. ":" .. vim.env.HOME .. "/.local/share/bun/bin"
 
 -- line numbers
 vim.opt.number = false

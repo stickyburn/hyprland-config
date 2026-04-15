@@ -12,7 +12,7 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 --map("i", "jk", "<ESC>")
 
 -- <D> is the cmd key on macOS
-map("n", "<D-e>", function()
+map("n", "<D-o>", function()
   local pickers = Snacks.picker.get({ source = "explorer" })
   local explorer = pickers[1]
 

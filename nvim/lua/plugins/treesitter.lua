@@ -14,7 +14,6 @@ return {
         "toml",
         "markdown",
         "markdown_inline",
-        "python",
         "json",
         "jsonc",
       },
