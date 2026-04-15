@@ -1,5 +1,5 @@
 {
-  "$schema": "https://opencode.ai/config.json",
+	"$schema": "https://opencode.ai/config.json",
 	"default_agent": "plan",
 	"permission": {
 		"*": "ask",
@@ -11,14 +11,15 @@
 		"websearch": "allow",
 		"glob": "allow",
 		"grep": "allow",
-    "exa": "allow",
-		"deepwiki*": "allow",
+		"exa_*": "allow",
+		"Exa*": "allow",
+		"deepwiki_*": "allow",
 		"task": "allow",
 		"bash": {
 			"ls *": "allow",
 			"echo *": "allow",
 			"grep *": "allow",
-      "rg *" : "allow",
+			"rg *": "allow",
 			"find *": "allow",
 			"file *": "allow",
 			"sort *": "allow",
@@ -32,24 +33,21 @@
 			"git diff *": "allow",
 			"git show *": "allow",
 			"git log *": "allow"
-		},
+		}
 	},
 	"mcp": {
 		"deepwiki": {
 			"enabled": true,
-			"url": "https://mcp.deepwiki.com/mcp",
-			"type": "remote"
+			"type": "remote",
+			"url": "https://mcp.deepwiki.com/mcp"
 		},
-    "exa": {
-      "enabled": true,
-      "url": "https://mcp.exa.ai/mcp",
-      "type": "remote"
-    },
+		"exa": {
+			"enabled": true,
+			"type": "remote",
+			"url": "https://mcp.exa.ai/mcp"
+		}
 	},
-	"plugin": [],
-  "instructions": [
-    "SYSTEM.md"
-  ],
+	"instructions": ["SYSTEM.md"],
 	"agent": {
 		"explore": {
 			"permission": {
@@ -60,7 +58,10 @@
 			"color": "#98E4A7"
 		},
 		"plan": {
-			"color": "#CFAAF3"
+			"color": "#c79eff"
 		}
+	},
+	"experimental": {
+		"disable_paste_summary": true
 	}
 }

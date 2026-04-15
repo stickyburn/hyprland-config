@@ -1,0 +1,13 @@
+{
+	"$schema": "https://opencode.ai/tui.json",
+	"theme": "system",
+	"keybinds": {
+		"leader": "super+g",
+		"command_list": "super+p",
+		"sidebar_toggle": "super+shift+e"
+	},
+	"scroll_acceleration": {
+		"enabled": true
+	}
+}
+
