@@ -2,13 +2,6 @@
 .cache
 assets
 bottom
-Cursor/*
-Cursor/User/History
-Cursor/User/snippets
-Cursor/User/sync
-Cursor/User/globalStorage
-Cursor/User/workspaceStorage
-!Cursor/User/
 dconf
 Signal Beta
 weechat/*
