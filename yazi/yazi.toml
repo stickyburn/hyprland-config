@@ -2,27 +2,38 @@
 show_hidden = true
 
 [opener]
-code = [{ run = '/usr/local/bin/cursor "$@"', block = true, desc = "Cursor" }]
-opencode = [
-  { run = 'kitty @ launch --type=tab --cwd="$@" -- zsh -c opencode', desc = "Opencode" },
+pi = [
+  { run = 'kitty @ launch --type=tab -- zsh -c "cd \"$@\" && pi"', desc = "Pi" },
 ]
+
+nvim_file = [{ run = 'nvim "$@"', block = true, desc = "Nvim" }]
+
+nvim = [
+  { run = 'kitty @ launch --type=tab -- zsh -c "cd \"$@\" && nvim"', desc = "Nvim" },
+]
+
+codium = [
+  { run = 'open -a "VSCodium" "$@"', for = "macos", desc = "Codium" },
+  { run = 'zsh -c "cd \"$1\" && codium ." -- "$@"', for = "linux", desc = "Codium" },
+]
+
 terminal = [{ run = 'kitty @ launch --type=tab --cwd="$@"', desc = "Terminal" }]
-edit = [{ run = 'vim "$@"', block = true, desc = "Vim" }]
-reveal = [
+
+finder = [
   { run = 'open -R "$@"', for = "macos", desc = "Finder" },
-  { run = 'xdg-open "$(dirname "$@")"', for = "linux", desc = "File Manager" },
+  { run = 'xdg-open "$(dirname "$@")"', for = "linux", desc = "Finder" },
 ]
 
 [open]
 rules = [
   { url = "*", use = [
-    "edit",
-    "code",
+    "nvim_file",
   ] },
   { url = "*/", use = [
-    "code",
-    "opencode",
+    "pi",
+    "nvim",
+    "codium",
     "terminal",
-    "reveal",
+    "finder",
   ] },
 ]

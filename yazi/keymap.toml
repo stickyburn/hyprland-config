@@ -21,7 +21,7 @@ desc = "Move down"
 [[mgr.prepend_keymap]]
 on = "o"
 run = "enter"
-desc = "Enter/Go right"
+desc = "Enter"
 
 [[pick.prepend_keymap]]
 on = "e"
