@@ -6,6 +6,17 @@ return {
     notifier = { enabled = true },
     scroll = { enabled = true },
     picker = {
+      win = {
+        list = {
+          keys = {
+            -- Colemak: up/down/open/focus-input for all pickers
+            ["e"] = "list_up",
+            ["i"] = "list_down",
+            ["l"] = "focus_input",
+            ["o"] = "confirm",
+          },
+        },
+      },
       sources = {
         explorer = {
           layout = {
@@ -14,6 +25,18 @@ return {
           },
           auto_close = false,
           jump = { close = true },
+          win = {
+            list = {
+              keys = {
+                -- Colemak tree navigation
+                ["n"] = "explorer_close", -- left: collapse / parent
+                ["e"] = "list_up",        -- up
+                ["i"] = "list_down",      -- down
+                ["o"] = "confirm",        -- right: expand / open
+                ["l"] = "focus_input",    -- filter / insert mode
+              },
+            },
+          },
         },
       },
     },
@@ -25,8 +48,8 @@ return {
     vim.api.nvim_create_autocmd("ColorScheme", {
       group = vim.api.nvim_create_augroup("SnacksCustomColors", { clear = true }),
       callback = function()
-        vim.api.nvim_set_hl(0, "SnacksPickerSelected", { bg = "#2a1d31" })
-        vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { bg = "#2a1d31" })
+        vim.api.nvim_set_hl(0, "SnacksPickerSelected", { bg = "#190b1f" })
+        vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { bg = "#190b1f" })
         vim.api.nvim_set_hl(0, "SnacksPickerBorder", { fg = "#c79eff" })
         vim.api.nvim_set_hl(0, "SnacksInputBorder", { fg = "#c79eff" })
         vim.api.nvim_set_hl(0, "SnacksNotifierBorder", { fg = "#c79eff" })
