@@ -7,14 +7,8 @@ CONFIG_FILE="$HOME/.config/waybar/scripts/cities_config.json"
 STATE_FILE="/tmp/waybar_city_state"
 
 # Read cities from config file
-if [ -f "$CONFIG_FILE" ] && command -v jq >/dev/null 2>&1; then
-    mapfile -t TIMEZONES < <(jq -r '.cities[].timezone' "$CONFIG_FILE")
-    mapfile -t SHORT_CODES < <(jq -r '.cities[].short_code' "$CONFIG_FILE")
-else
-    # Fallback to hardcoded values
-    TIMEZONES=("Asia/Kolkata" "America/New_York")
-    SHORT_CODES=("IND" "NYC")
-fi
+mapfile -t TIMEZONES < <(jq -r '.cities[].timezone' "$CONFIG_FILE")
+mapfile -t SHORT_CODES < <(jq -r '.cities[].short_code' "$CONFIG_FILE")
 
 # Get current city index from shared state
 if [ -f "$STATE_FILE" ]; then
@@ -31,13 +25,10 @@ CURRENT_SHORT_CODE="${SHORT_CODES[$CURRENT_INDEX]}"
 CURRENT_TIME=$(TZ="$CURRENT_TIMEZONE" date "+%I:%M%p")
 CURRENT_DAY=$(TZ="$CURRENT_TIMEZONE" date "+%a")
 
-# Get local time for tooltip
-LOCAL_TIME=$(date "+%I:%M%p")
-LOCAL_DAY=$(date "+%a")
-LOCAL_DATE=$(date "+%d %b")
+# Get full date for the selected city
+CITY_DATE=$(TZ="$CURRENT_TIMEZONE" date "+%a, %d %b %I:%M%p")
 
-# Create tooltip showing both local and selected city time
-TOOLTIP="<b>$CURRENT_TIMEZONE</b>\\n$LOCAL_DAY, $LOCAL_DATE $LOCAL_TIME"
+TOOLTIP="<b>$CURRENT_TIMEZONE</b>\\n$CITY_DATE"
 
 # JSON output for waybar (time only - city code handled by selector)
 echo "{\"text\": \"$CURRENT_DAY $CURRENT_TIME\", \"tooltip\": \"$TOOLTIP\", \"class\": \"multi-clock\"}"

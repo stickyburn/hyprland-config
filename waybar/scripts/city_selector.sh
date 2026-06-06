@@ -7,14 +7,8 @@ CONFIG_FILE="$HOME/.config/waybar/scripts/cities_config.json"
 STATE_FILE="/tmp/waybar_city_state"
 
 # Read cities from config file
-if [ -f "$CONFIG_FILE" ] && command -v jq >/dev/null 2>&1; then
-    mapfile -t DISPLAY_NAMES < <(jq -r '.cities[].display_name' "$CONFIG_FILE")
-    mapfile -t SHORT_CODES < <(jq -r '.cities[].short_code' "$CONFIG_FILE")
-else
-    # Fallback to hardcoded values
-    DISPLAY_NAMES=("India" "New York")
-    SHORT_CODES=("IND" "NYC")
-fi
+mapfile -t DISPLAY_NAMES < <(jq -r '.cities[].display_name' "$CONFIG_FILE")
+mapfile -t SHORT_CODES < <(jq -r '.cities[].short_code' "$CONFIG_FILE")
 
 # Get current city index
 if [ -f "$STATE_FILE" ]; then

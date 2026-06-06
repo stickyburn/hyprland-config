@@ -15,6 +15,14 @@
       "short_code": "USA",
       "latitude": "34.85",
       "longitude": "-82.39"
+    },
+    {
+      "weather_name": "Woolwich, London",
+      "timezone": "Europe/London",
+      "display_name": "London",
+      "short_code": "UK",
+      "latitude": "51.49",
+      "longitude": "0.07"
     }
   ]
 }

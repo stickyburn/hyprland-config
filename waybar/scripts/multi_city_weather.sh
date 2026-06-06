@@ -10,19 +10,10 @@ CACHE_DIR="/tmp/waybar_weather_cache"
 CACHE_DURATION=1800
 
 # Read cities from config file
-if [ -f "$CONFIG_FILE" ] && command -v jq >/dev/null 2>&1; then
-    # Use mapfile to properly handle spaces in city names
-    mapfile -t CITIES < <(jq -r '.cities[].weather_name' "$CONFIG_FILE")
-    mapfile -t LATITUDES < <(jq -r '.cities[].latitude' "$CONFIG_FILE")
-    mapfile -t LONGITUDES < <(jq -r '.cities[].longitude' "$CONFIG_FILE")
-    mapfile -t SHORT_CODES < <(jq -r '.cities[].short_code' "$CONFIG_FILE")
-else
-    # Fallback to hardcoded values if config file or jq is not available
-    CITIES=("Ghaziabad, UP" "Greer, SC")
-    LATITUDES=("28.67" "40.71")
-    LONGITUDES=("77.42" "-74.01")
-    SHORT_CODES=("IND" "NYC")
-fi
+mapfile -t CITIES < <(jq -r '.cities[].weather_name' "$CONFIG_FILE")
+mapfile -t LATITUDES < <(jq -r '.cities[].latitude' "$CONFIG_FILE")
+mapfile -t LONGITUDES < <(jq -r '.cities[].longitude' "$CONFIG_FILE")
+mapfile -t SHORT_CODES < <(jq -r '.cities[].short_code' "$CONFIG_FILE")
 
 # Ensure cache directory exists
 mkdir -p "$CACHE_DIR"
@@ -37,42 +28,27 @@ fi
 
 CURRENT_CITY="${CITIES[$CURRENT_INDEX]}"
 CURRENT_SHORT_CODE="${SHORT_CODES[$CURRENT_INDEX]}"
+LAT="${LATITUDES[$CURRENT_INDEX]}"
+LON="${LONGITUDES[$CURRENT_INDEX]}"
 CACHE_FILE="${CACHE_DIR}/weather_${CURRENT_CITY// /_}.json"
 
 get_weather_data() {
-    local city="$1"
-    local cache_file="${CACHE_DIR}/weather_${city// /_}.json"
+    local lat="$1" lon="$2"
     
-    if [ -f "$cache_file" ]; then
-        CACHE_TIME=$(stat -c %Y "$cache_file" 2>/dev/null || echo 0)
+    if [ -f "$CACHE_FILE" ]; then
+        CACHE_TIME=$(stat -c %Y "$CACHE_FILE" 2>/dev/null || echo 0)
         CURRENT_TIME=$(date +%s)
         if [ $((CURRENT_TIME - CACHE_TIME)) -lt $CACHE_DURATION ]; then
-            cat "$cache_file"
+            cat "$CACHE_FILE"
             return 0
         fi
-    fi
-
-    # Get coordinates for the city from config arrays
-    local lat lon
-    for i in "${!CITIES[@]}"; do
-        if [ "${CITIES[$i]}" = "$city" ]; then
-            lat="${LATITUDES[$i]}"
-            lon="${LONGITUDES[$i]}"
-            break
-        fi
-    done
-    
-    # Default to first city if coordinates not found
-    if [ -z "$lat" ] || [ -z "$lon" ]; then
-        lat="${LATITUDES[0]}"
-        lon="${LONGITUDES[0]}"
     fi
 
     URL="https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,pressure_msl,wind_speed_10m,weather_code&timezone=auto"
     WEATHER_DATA=$(curl -s "$URL" 2>/dev/null)
     
     if [ -n "$WEATHER_DATA" ] && echo "$WEATHER_DATA" | grep -q '"temperature_2m":'; then
-        echo "$WEATHER_DATA" > "$cache_file"
+        echo "$WEATHER_DATA" > "$CACHE_FILE"
         echo "$WEATHER_DATA"
         return 0
     else
@@ -80,7 +56,7 @@ get_weather_data() {
     fi
 }
 
-if WEATHER_DATA=$(get_weather_data "$CURRENT_CITY"); then
+if WEATHER_DATA=$(get_weather_data "$LAT" "$LON"); then
     # Parse Open-Meteo JSON data using jq if available, or fallback to grep
     if command -v jq >/dev/null 2>&1; then
         TEMP=$(echo "$WEATHER_DATA" | jq -r '.current.temperature_2m' | cut -d. -f1)
