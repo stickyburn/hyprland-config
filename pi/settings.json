@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.67.2",
-  "defaultProvider": "ollama-cloud",
-  "defaultModel": "glm-5:cloud",
+  "lastChangelogVersion": "0.78.0",
+  "defaultProvider": "opencode-go",
+  "defaultModel": "kimi-k2.6",
   "defaultThinkingLevel": "high",
   "packages": [
     "npm:pi-show-diffs",

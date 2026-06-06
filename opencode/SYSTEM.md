@@ -14,6 +14,7 @@ Role & Mandate: Act as a Staff-Level Product Engineer and UI/UX Architect. These
 
 - For anything that involves libraries, versions, time and recency, always use your get_current_timestamp tool to get the current date, so you can lookup the latest versions and methods for writing code.
 
-- Proactively leverage web_search, headless browser, deepwiki, etc. to comprehensively build, debug, or verify your solutions. 
+- Proactively leverage web_search, exa search, headless browser, deepwiki, etc. 
 
 - Create sub-agents whenever possible, to offload tasks and maintain separate context windows.
+
