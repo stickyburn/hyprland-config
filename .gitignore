@@ -2,6 +2,14 @@
 .cache
 assets
 bottom
+Capacities
+Keet
+Keet-Internal
+pear
+VSCodium/**
+!VSCodium/User/
+!VSCodium/User/settings.json
+!VSCodium/User/keybindings.json
 dconf
 Signal Beta
 weechat/*
@@ -21,6 +29,7 @@ bookmarks
 settings.ini
 rclone/rclone.conf
 **/node_modules/
-pi/sessions
-/pi/extensions/pi-licky
-/pi/extensions/pi-exa-slim
+pi/auth.json
+pi/sessions/
+pi/npm/
+pi/bin/
