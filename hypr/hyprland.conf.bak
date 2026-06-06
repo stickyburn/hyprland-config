@@ -1,7 +1,5 @@
-# non-systemd
-exec-once = dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-
-monitor=,highrr,0x0,1.5
+# scaling
+monitor=DP-1,3840x2160@165,0x0,1.5
 
 # remove X11 fallbacks
 env = GDK_BACKEND,wayland
@@ -14,6 +12,7 @@ env = XDG_SESSION_TYPE,wayland
 env = XDG_SESSION_DESKTOP,Hyprland
 
 env = HYPRCURSOR_THEME,Bibata-Modern-Amber
+env = XCURSOR_THEME,Bibata-Modern-Amber
 env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
 
@@ -58,7 +57,6 @@ cursor {
 dwindle {
     force_split = 0
     use_active_for_splits = true
-    pseudotile = true
     preserve_split = true
 }
 
@@ -71,7 +69,9 @@ misc {
     force_default_wallpaper = 0
     disable_hyprland_logo = true
     enable_swallow = true
-    swallow_regex =
+}
+
+debug {
     vfr = 1
 }
 
@@ -85,7 +85,6 @@ decoration {
         enabled = true
         size = 2
         passes = 3
-        new_optimizations = on
         ignore_opacity = true
         xray = true
         popups = true
@@ -120,17 +119,15 @@ animations {
 }
 
 # Ignore maximize requests from apps. You'll probably like this.
-windowrulev2 = suppressevent maximize, class:.*
+windowrule = suppress_event maximize, match:class .*
 
 # Float Windows
-windowrulev2=float,class:^(blueman-manager)$
-windowrulev2=float,class:^(org.pulseaudio.pavucontrol)$
-windowrulev2=float,title:^(Picture in picture)$
-windowrulev2=float,title:^(Open Files|Open File|Save File)$
-windowrulev2=center,title:^(Open Files|Open File|Save File)$
-# windowrulev2=opacity 1.0 override 1.0 override 1.0 override,class:^(vivaldi-stable)$
+windowrule = float on, match:class ^(blueman-manager)$
+windowrule = float on, match:class ^(org.pulseaudio.pavucontrol)$
+windowrule = float on, match:title ^(Picture in picture)$
+windowrule = float on, center on, match:title ^(Open Files|Open File|Save File)$
 
 # Ignore borders when screenshots etc
-layerrule=noanim, selection
+layerrule = animation none, match:namespace selection
 
 source = ~/.config/hypr/keybinds.conf
