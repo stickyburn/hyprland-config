@@ -3,13 +3,13 @@
     border: none;
     border-radius: 0;
     font-family: "ZedMono Nerd Font", monospace;
-    font-size: 13px;
+    font-size: 12px;
     min-height: 0;
 }
 
 window#waybar {
     background: transparent;
-    color: #cdd6f4;
+    color: #eee9ff;
     border: none;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -23,16 +23,14 @@ window#waybar.hidden {
 .modules-left,
 .modules-center,
 .modules-right {
-    background: #201A2F;
+    background: #221727;
     border-radius: 16px;
-    padding: 0 12px;
-    margin: 8px 12px 2px 12px;
+    padding: 0 16px;
+    margin: 8px 16px 4px 16px;
     transition: all 0.3s ease;
 }
 
 /* Individual modules - Standardized base styling */
-#clock,
-#custom-weather,
 #custom-city-selector,
 #custom-multi-clock,
 #custom-multi-weather,
@@ -42,7 +40,7 @@ window#waybar.hidden {
 #custom-idle {
     background: transparent;
     padding: 0 8px;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 /* Workspaces - Standardized with consistent sizing */
@@ -57,33 +55,23 @@ window#waybar.hidden {
     border-radius: 50%;
     min-width: 20px;
     min-height: 20px;
-    margin: 4px 3px;
-    font-size: 10px;
+    margin: 4px 4px;
+    font-size: 12px;
 }
 
 #workspaces button.active {
-    color: #f5c2e7;
+    color: #c79eff;
     padding: 0;
 }
 
 /* Module-specific colors - Maintained for visual distinction */
-#clock {
-    color: #cba6f7;
-    font-weight: bold;
-}
-
-#custom-weather {
-    color: #89b4fa;
-}
-
 #custom-city-selector {
     color: #f9e2af;
     font-weight: bold;
-    margin-right: 4px;
 }
 
 #custom-multi-clock {
-    color: #cba6f7;
+    color: #c79eff;
     font-weight: bold;
 }
 
@@ -96,7 +84,7 @@ window#waybar.hidden {
 }
 
 #memory {
-    color: #a6e3a1;
+    color: #98e4a7;
 }
 
 #custom-vpn {
@@ -104,7 +92,7 @@ window#waybar.hidden {
 }
 
 #custom-vpn.connected {
-    color: #a6e3a1;
+    color: #98e4a7;
 }
 
 #custom-vpn.disconnected {
@@ -113,7 +101,6 @@ window#waybar.hidden {
 
 #custom-idle {
     color: #f38ba8;
-    border-radius: 6px;
 }
 
 /* Tooltip - Consistent with module styling */
@@ -122,6 +109,6 @@ tooltip {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 8px 12px;
-    color: #cdd6f4;
-    font-size: 13px;
+    color: #eee9ff;
+    font-size: 12px;
 }
