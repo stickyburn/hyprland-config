@@ -2,8 +2,8 @@
 show_hidden = true
 
 [opener]
-pi = [
-  { run = 'kitty @ launch --type=tab -- zsh -c "cd \"$@\" && pi"', desc = "Pi" },
+opencode = [
+  { run = 'kitty @ launch --type=tab -- zsh -c "cd \"$@\" && opencode"', desc = "Opencode" },
 ]
 
 nvim_file = [{ run = 'nvim "$@"', block = true, desc = "Nvim" }]
@@ -30,7 +30,7 @@ rules = [
     "nvim_file",
   ] },
   { url = "*/", use = [
-    "pi",
+    "opencode",
     "nvim",
     "codium",
     "terminal",
