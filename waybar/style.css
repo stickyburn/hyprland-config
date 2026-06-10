@@ -25,8 +25,8 @@ window#waybar.hidden {
 .modules-right {
     background: #221727;
     border-radius: 16px;
-    padding: 0 16px;
-    margin: 8px 16px 4px 16px;
+    padding: 2px 16px;
+    margin: 4px 16px 0 16px;
     transition: all 0.3s ease;
 }
 
@@ -34,9 +34,9 @@ window#waybar.hidden {
 #custom-city-selector,
 #custom-multi-clock,
 #custom-multi-weather,
+#custom-network,
 #cpu,
 #memory,
-#custom-vpn,
 #custom-idle {
     background: transparent;
     padding: 0 8px;
@@ -55,7 +55,7 @@ window#waybar.hidden {
     border-radius: 50%;
     min-width: 20px;
     min-height: 20px;
-    margin: 4px 4px;
+    margin: 0 4px;
     font-size: 12px;
 }
 
@@ -79,24 +79,21 @@ window#waybar.hidden {
     color: #89b4fa;
 }
 
+#custom-network {
+    color: #89b4fa;
+    font-size: 13px;
+}
+
+#custom-network.disconnected {
+    color: #f38ba8;
+}
+
 #cpu {
     color: #f9e2af;
 }
 
 #memory {
     color: #98e4a7;
-}
-
-#custom-vpn {
-    color: #f38ba8;
-}
-
-#custom-vpn.connected {
-    color: #98e4a7;
-}
-
-#custom-vpn.disconnected {
-    color: #f38ba8;
 }
 
 #custom-idle {

@@ -12,9 +12,9 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
+        "custom/network",
         "cpu",
         "memory",
-        "custom/vpn",
         "custom/idle"
     ],
     "custom/city-selector": {
@@ -56,26 +56,26 @@
     "cpu": {
         "format": " {usage}%",
         "tooltip": false,
-        "interval": 2,
+        "interval": 5,
         "on-click": "~/.config/waybar/scripts/launch_btop.sh"
     },
     "memory": {
         "format": " {percentage}%",
         "tooltip": false,
-        "interval": 2,
+        "interval": 5,
         "on-click": "~/.config/waybar/scripts/launch_btop.sh"
-    },
-    "custom/vpn": {
-        "format": "{}",
-        "exec": "~/.config/waybar/scripts/vpn_status.sh",
-        "interval": 10,
-        "return-type": "json",
-        "signal": 10
     },
     "custom/idle": {
         "format": "",
         "tooltip": "Sleep",
         "on-click": "hyprctl dispatch dpms off",
         "interval": 3600
+    },
+    "custom/network": {
+        "format": "{}",
+        "interval": 2,
+        "exec": "~/.config/waybar/scripts/network_status.sh",
+        "return-type": "json",
+        "markup": "pango"
     }
 }
