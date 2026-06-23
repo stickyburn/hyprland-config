@@ -46,7 +46,7 @@ hl.config({
 	general = {
 		layout = "master",
 		gaps_in = 4,
-		gaps_out = 8,
+		gaps_out = { top = 6, right = 8, bottom = 8, left = 8 },
 		border_size = 2,
 		col = {
 			active_border = { colors = { "rgb(FFCCDD)", "rgb(FF338F)" }, angle = 45 },
