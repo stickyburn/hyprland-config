@@ -3,22 +3,17 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        javascript = { "biome" },
-        javascriptreact = { "biome" },
-        typescript = { "biome" },
-        typescriptreact = { "biome" },
-        json = { "biome" },
-        jsonc = { "biome" },
-        css = { "biome" },
-        html = { "biome" },
+        -- JS/TS are handled by the ESLint LSP server so it uses the project's own ESLint version
+        json = { "prettier" },
+        jsonc = { "prettier" },
+        css = { "prettier" },
+        html = { "prettier" },
         lua = { "stylua" },
         toml = { "taplo" },
       },
       formatters = {
-        biome = {
-          command = "bun",
-          args = { "/Users/stickyburn/.local/share/bun/bin/biome", "format", "--stdin-file-path", "$FILENAME" },
-          stdin = true,
+        prettier = {
+          command = vim.env.HOME .. "/.local/share/pnpm/prettier",
         },
       },
     },

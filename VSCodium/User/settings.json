@@ -51,7 +51,7 @@
   "json.schemaDownload.enable": true,
   "npm.packageManager": "pnpm",
   "window.commandCenter": true,
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "top",
   "workbench.colorTheme": "Light Modern",
   "workbench.editor.decorations.badges": false,
   "workbench.editor.decorations.colors": false,
@@ -63,54 +63,28 @@
   // LSP & formatting
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.codeActionsOnSave": {
-    "source.fixAll": "always"
+    "source.fixAll.eslint": "always"
   },
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.quickSuggestions": {
     "strings": "on"
   },
-  "biome.lsp.bin": "${userHome}/.local/share/pnpm/biome",
-  "rust-analyzer.server.path": "${userHome}/.local/cargo/bin/rust-analyzer",
-  "rust-analyzer.cargo.extraEnv": {
-    "RUSTUP_HOME": "${userHome}/.local/rust",
-    "CARGO_HOME": "${userHome}/.local/cargo"
-  },
-  "rust-analyzer.cargo.buildScripts.enable": true,
-  "rust-analyzer.procMacro.enable": true,
+  "js/ts.validate.enabled": false,
   "[javascript]": {
-    "editor.defaultFormatter": "biomejs.biome",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
-  },
-  "svelte.enable-ts-plugin": true,
-  "[json]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer",
-    "editor.formatOnSave": true,
-    "editor.semanticHighlighting.enabled": true
-  },
-  "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml",
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
   // themes
   "window.autoDetectColorScheme": true,
@@ -177,11 +151,11 @@
       "tab.inactiveBackground": "#221727",
       "titleBar.activeBackground": "#221727",
       "terminal.background": "#221727",
-      "tab.activeBorder": "#0F0617",
-      "editor.lineHighlightBackground": "#0F0617",
-      "editor.selectionBackground": "#0F0617",
-      "editorHoverWidget.background": "#0F0617",
-      "quickInputList.focusBackground": "#0F0617",
+      "tab.activeBorder": "#190b1f",
+      "editor.lineHighlightBackground": "#190b1f",
+      "editor.selectionBackground": "#190b1f",
+      "editorHoverWidget.background": "#190b1f",
+      "quickInputList.focusBackground": "#190b1f",
       "editorSuggestWidget.selectedForeground": "#6A6367",
       "tab.inactiveForeground": "#6A6367",
     }
@@ -190,5 +164,5 @@
   "remote.SSH.remotePlatform": {
     "refyne": "linux",
     "runpod": "linux"
-  },
+  }
 }

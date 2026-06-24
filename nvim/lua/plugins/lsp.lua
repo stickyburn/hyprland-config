@@ -13,10 +13,13 @@ return {
           mason = false,
           cmd = { "bun", vim.env.HOME .. "/.local/share/bun/bin/vtsls", "--stdio" },
         },
-        biome = {
+        eslint = {
           mason = false,
-          cmd = { "bun", vim.env.HOME .. "/.local/share/bun/bin/biome", "lsp-proxy" },
-          filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json", "jsonc", "css" },
+          cmd = { vim.env.HOME .. "/.local/share/pnpm/vscode-eslint-language-server", "--stdio" },
+          filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json", "jsonc" },
+          settings = {
+            format = true,
+          },
         },
         cssls = {
           mason = false,
