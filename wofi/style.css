@@ -1,6 +1,6 @@
 * {
-    font-family: "Funnel Sans";
-    font-size: 14px;
+    font-family: "Mona Sans";
+    font-size: 13px;
 }
 
 window {
@@ -75,7 +75,7 @@ window {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 
+    transition:
         background-color 0.2s ease,
         transform 0.2s cubic-bezier(0.23, 1, 0.32, 1),
         box-shadow 0.2s ease;
@@ -97,11 +97,9 @@ window {
 }
 
 #entry:selected {
-    background: linear-gradient(
-        135deg,
-        rgba(199, 158, 255, 0.18),
-        rgba(255, 51, 143, 0.15)
-    );
+    background: linear-gradient(135deg,
+            rgba(199, 158, 255, 0.18),
+            rgba(255, 51, 143, 0.15));
     border-color: rgba(199, 158, 255, 0.3);
     transform: translateX(3px) scale(1.03);
     box-shadow:
@@ -125,20 +123,21 @@ window {
     right: -2px;
     bottom: -2px;
     border-radius: 12px;
-    background: linear-gradient(
-        45deg,
-        transparent,
-        rgba(199, 158, 255, 0.1),
-        transparent
-    );
+    background: linear-gradient(45deg,
+            transparent,
+            rgba(199, 158, 255, 0.1),
+            transparent);
     animation: subtleGlow 2s ease-in-out infinite;
     z-index: -1;
 }
 
 @keyframes subtleGlow {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0.5;
     }
+
     50% {
         opacity: 0.8;
     }
