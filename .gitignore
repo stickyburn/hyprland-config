@@ -30,7 +30,4 @@ bookmarks
 settings.ini
 rclone/rclone.conf
 **/node_modules/
-pi/auth.json
-pi/sessions/
-pi/npm/
-pi/bin/
+Raffi
