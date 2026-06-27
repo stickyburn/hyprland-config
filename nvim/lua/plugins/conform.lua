@@ -1,3 +1,5 @@
+local bun_bin = (vim.env.BUN_INSTALL or (vim.env.HOME .. "/.local/share/bun")) .. "/bin"
+
 return {
   {
     "stevearc/conform.nvim",
@@ -13,7 +15,7 @@ return {
       },
       formatters = {
         prettier = {
-          command = vim.env.HOME .. "/.local/share/pnpm/prettier",
+          command = bun_bin .. "/prettier",
         },
       },
     },

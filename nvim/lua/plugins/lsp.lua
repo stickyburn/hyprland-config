@@ -1,3 +1,5 @@
+local bun_bin = (vim.env.BUN_INSTALL or (vim.env.HOME .. "/.local/share/bun")) .. "/bin"
+
 return {
   {
     "neovim/nvim-lspconfig",
@@ -11,11 +13,11 @@ return {
         -- external bun
         vtsls = {
           mason = false,
-          cmd = { "bun", vim.env.HOME .. "/.local/share/bun/bin/vtsls", "--stdio" },
+          cmd = { bun_bin .. "/vtsls", "--stdio" },
         },
         eslint = {
           mason = false,
-          cmd = { vim.env.HOME .. "/.local/share/pnpm/vscode-eslint-language-server", "--stdio" },
+          cmd = { bun_bin .. "/vscode-eslint-language-server", "--stdio" },
           filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json", "jsonc" },
           settings = {
             format = true,
@@ -23,11 +25,11 @@ return {
         },
         cssls = {
           mason = false,
-          cmd = { "bun", vim.env.HOME .. "/.local/share/bun/bin/css-language-server", "--stdio" },
+          cmd = { bun_bin .. "/css-language-server", "--stdio" },
         },
         tailwindcss = {
           mason = false,
-          cmd = { "bun", vim.env.HOME .. "/.local/share/bun/bin/tailwindcss-language-server", "--stdio" },
+          cmd = { bun_bin .. "/tailwindcss-language-server", "--stdio" },
         },
       },
     },
