@@ -1,38 +1,18 @@
 {
 	"$schema": "https://opencode.ai/config.json",
+	"instructions": ["SYSTEM.md"],
 	"default_agent": "plan",
-	"permission": {
-		"*": "ask",
-		"read": "allow",
-		"external_directory": "allow",
-		"todowrite": "allow",
-		"todoread": "allow",
-		"webfetch": "allow",
-		"websearch": "allow",
-		"glob": "allow",
-		"grep": "allow",
-		"exa_*": "allow",
-		"Exa*": "allow",
-		"deepwiki_*": "allow",
-		"task": "allow",
-		"bash": {
-			"ls *": "allow",
-			"echo *": "allow",
-			"grep *": "allow",
-			"rg *": "allow",
-			"find *": "allow",
-			"file *": "allow",
-			"sort *": "allow",
-			"which *": "allow",
-			"brew list *": "allow",
-			"head *": "allow",
-			"tail *": "allow",
-			"cat *": "allow",
-			"pwd *": "allow",
-			"git status": "allow",
-			"git diff *": "allow",
-			"git show *": "allow",
-			"git log *": "allow"
+	"agent": {
+		"build": {
+			"color": "#98E4A7"
+		},
+		"explore": {
+			"permission": {
+				"*": "allow"
+			}
+		},
+		"plan": {
+			"color": "#c79eff"
 		}
 	},
 	"mcp": {
@@ -47,18 +27,38 @@
 			"url": "https://mcp.exa.ai/mcp"
 		}
 	},
-	"instructions": ["SYSTEM.md"],
-	"agent": {
-		"explore": {
-			"permission": {
-				"*": "allow"
-			}
-		},
-		"build": {
-			"color": "#98E4A7"
-		},
-		"plan": {
-			"color": "#c79eff"
+	"permission": {
+		"*": "ask",
+		"read": "allow",
+		"external_directory": "allow",
+		"glob": "allow",
+		"grep": "allow",
+		"todowrite": "allow",
+		"todoread": "allow",
+		"webfetch": "allow",
+		"websearch": "allow",
+		"task": "allow",
+		"deepwiki_*": "allow",
+		"exa_*": "allow",
+		"Exa*": "allow",
+		"bash": {
+			"pwd *": "allow",
+			"ls *": "allow",
+			"which *": "allow",
+			"file *": "allow",
+			"cat *": "allow",
+			"head *": "allow",
+			"tail *": "allow",
+			"grep *": "allow",
+			"rg *": "allow",
+			"find *": "allow",
+			"sort *": "allow",
+			"echo *": "allow",
+			"brew list *": "allow",
+			"git status": "allow",
+			"git diff *": "allow",
+			"git show *": "allow",
+			"git log *": "allow"
 		}
 	},
 	"experimental": {
