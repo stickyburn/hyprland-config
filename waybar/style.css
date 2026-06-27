@@ -23,7 +23,7 @@ window#waybar.hidden {
 .modules-left,
 .modules-center,
 .modules-right {
-    background: #221727;
+    background: #0f0f1a;
     border-radius: 16px;
     padding: 2px 16px;
     margin: 4px 16px 0 16px;
@@ -102,7 +102,7 @@ window#waybar.hidden {
 
 /* Tooltip - Consistent with module styling */
 tooltip {
-    background-color: rgb(26, 19, 32);
+    background-color: #0f0f1a;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 8px 12px;

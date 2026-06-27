@@ -48,8 +48,8 @@ return {
     vim.api.nvim_create_autocmd("ColorScheme", {
       group = vim.api.nvim_create_augroup("SnacksCustomColors", { clear = true }),
       callback = function()
-        vim.api.nvim_set_hl(0, "SnacksPickerSelected", { bg = "#190b1f" })
-        vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { bg = "#190b1f" })
+        vim.api.nvim_set_hl(0, "SnacksPickerSelected", { bg = "#0f0f1a" })
+        vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { bg = "#0f0f1a" })
         vim.api.nvim_set_hl(0, "SnacksPickerBorder", { fg = "#c79eff" })
         vim.api.nvim_set_hl(0, "SnacksInputBorder", { fg = "#c79eff" })
         vim.api.nvim_set_hl(0, "SnacksNotifierBorder", { fg = "#c79eff" })

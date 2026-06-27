@@ -1,5 +1,5 @@
 # Minimal btop theme
-# Background: 221727, Primary accent: c79eff
+# Background: 0f0f1a, Primary accent: c79eff
 
 # Colors should be in 6 or 2 character hexadecimal or single spaced rgb decimal: "#RRGGBB", "#BW" or "0-255 0-255 0-255"
 # example for white: "#ffffff", "#ff" or "255 255 255".
@@ -10,7 +10,7 @@
 # Use "start", "mid" and "end" for three color gradient
 
 # Main background, empty for terminal default, need to be empty if you want transparent background
-theme[main_bg]="#221727"
+theme[main_bg]="#0f0f1a"
 
 # Main text color
 theme[main_fg]="#eee9ff"
