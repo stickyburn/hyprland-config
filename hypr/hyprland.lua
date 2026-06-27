@@ -23,8 +23,8 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 -- Cursor
 hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Amber")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Amber")
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XCURSOR_SIZE", "32")
+hl.env("HYPRCURSOR_SIZE", "32")
 
 ---- AUTOSTART ----
 hl.on("hyprland.start", function()
@@ -111,13 +111,13 @@ hl.config({
 hl.config({
 	decoration = {
 		rounding = 10,
-		active_opacity = 0.96,
-		inactive_opacity = 0.96,
+		active_opacity = 1.0,
+		inactive_opacity = 1.0,
 		fullscreen_opacity = 1.0,
 		blur = {
 			enabled = true,
 			size = 2,
-			passes = 4,
+			passes = 2,
 			ignore_opacity = true,
 			xray = true,
 			popups = true,
@@ -190,6 +190,12 @@ hl.window_rule({
 	match = { title = "^(Open Files|Open File|Save File)$" },
 	float = true,
 	center = true,
+})
+
+hl.window_rule({
+	name = "no-blur-video-apps",
+	match = { class = "^(raffi|com\\.stremio\\.stremio)$" },
+	opaque = true,
 })
 
 ---- LAYER RULES ----
