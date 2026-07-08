@@ -9,6 +9,7 @@ bindkey '^[[B' history-substring-search-down
 autoload -Uz compinit && compinit
 source ~/.config/zsh/aliases/git
 source ~/.config/zsh/aliases/system
+[[ -f ~/.config/zsh/aliases/python ]] && source ~/.config/zsh/aliases/python
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' +'l:|=* r:|=*'

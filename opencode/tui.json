@@ -5,7 +5,10 @@
 	"keybinds": {
 		"leader": "ctrl+g",
 		"command_list": "ctrl+p",
-		"sidebar_toggle": "ctrl+shift+e"
+		"sidebar_toggle": "ctrl+shift+e",
+		"terminal_suspend": "none",
+		"input_undo": "ctrl+z,ctrl+-,super+z",
+		"input_redo": "ctrl+.,super+shift+z"
 	},
 	"scroll_acceleration": {
 		"enabled": true

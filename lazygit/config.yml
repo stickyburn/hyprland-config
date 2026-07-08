@@ -1,6 +1,7 @@
 gui:
+  sidePanelWidth: 0.38
   mainPanelSplitMode: horizontal
-  splitDiff: always
+  splitDiff: auto
   nerdFontsVersion: "3"
   showNumstatInFilesView: true
   scrollOffMargin: 2
