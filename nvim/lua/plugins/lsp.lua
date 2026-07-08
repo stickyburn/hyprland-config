@@ -1,4 +1,4 @@
-local bun_bin = (vim.env.BUN_INSTALL or (vim.env.HOME .. "/.local/share/bun")) .. "/bin"
+local bun_bin = vim.env.BUN_INSTALL .. "/bin"
 
 return {
   {
@@ -10,7 +10,6 @@ return {
         taplo = {},
         marksman = {},
 
-        -- external bun
         vtsls = {
           mason = false,
           cmd = { bun_bin .. "/vtsls", "--stdio" },
