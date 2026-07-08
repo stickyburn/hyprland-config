@@ -3,4 +3,5 @@ hide_scroll=true
 no_actions=false
 term=kitty
 mode=drun
+width=28%
 --show
