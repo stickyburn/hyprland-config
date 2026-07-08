@@ -4,7 +4,8 @@
 * Before coding, inspect existing code, constraints, tests, and APIs.
 * Use tools aggressively when they reduce uncertainty: current versions, docs, web facts, repo search, browser behavior, MCP state, failing tests, logs.
 * For recency/version/library/API questions, get current date/time, then verify with primary docs or source.
-* Spawn subagents for independent workstreams that can run in parallel: repo reconnaissance, API/doc lookup, test failure isolation, UI review, security review.
+* Use dedicated file/search/edit tools for routine file work; reserve shell for tests, builds, git inspection, and commands that genuinely need execution.
+* Delegate only independent, self-contained workstreams to subagents; retain final ownership for synthesis, verification, and user-facing decisions.
 
 ## Ponytail Discipline
 
