@@ -87,7 +87,7 @@
   // themes
   "window.autoDetectColorScheme": true,
   "workbench.preferredLightColorTheme": "Quiet Light",
-  "workbench.preferredDarkColorTheme": "Monokai",
+  "workbench.preferredDarkColorTheme": "Visual Studio Dark",
   "workbench.colorCustomizations": {
     "[Quiet Light]": {
       "editor.background": "#eee9ff",
@@ -124,7 +124,7 @@
       "editorSuggestWidget.selectedForeground": "#6A6367",
       "tab.inactiveForeground": "#6A6367"
     },
-    "[Monokai]": {
+    "[Visual Studio Dark]": {
       "editor.background": "#0f0f1a",
       "activityBar.background": "#0f0f1a",
       "editor.foreground": "#eee9ff",
