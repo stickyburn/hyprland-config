@@ -4,6 +4,9 @@
 
 local map = vim.keymap.set
 
+-- platform-aware modifier: <D-...> (Cmd) on macOS, <C-...> (Ctrl) elsewhere
+local mod = vim.fn.has("macunix") == 1 and "D" or "C"
+
 -- quickly open command
 map("n", ";", ":", { desc = "CMD enter command mode" })
 
@@ -27,13 +30,15 @@ map("n", "<CR>", "o", { desc = "Open line below" })   -- o → Enter
 -- search navigation (n is now word back)
 map("n", "<leader>n", function() vim.cmd("normal! n") end, { desc = "Next search result" })
 map("n", "<leader>N", function() vim.cmd("normal! N") end, { desc = "Previous search result" })
+map("n", "<C-->", "<C-o>", { desc = "Jump back" })
+map("n", "<C-+>", "<C-i>", { desc = "Jump forward" })
 
 -- quickly escape from insert mode
 -- TODO: check perf before enabling
 --map("i", "jk", "<ESC>")
 
--- <D> is the cmd key on macOS
-map("n", "<D-o>", function()
+-- toggle explorer sidebar (Cmd/Ctrl + Shift + E)
+map("n", "<" .. mod .. "-S-e>", function()
   local pickers = Snacks.picker.get({ source = "explorer" })
   local explorer = pickers[1]
 
@@ -44,8 +49,12 @@ map("n", "<D-o>", function()
   end
 end, { desc = "Toggle explorer visibility" })
 
--- toggle statusline visibility
-map("n", "<D-S-b>", function()
+map("n", "<" .. mod .. "-o>", function()
+  Snacks.picker.files()
+end, { desc = "Open file picker" })
+
+-- toggle statusline visibility (Cmd/Ctrl + Shift + B)
+map("n", "<" .. mod .. "-S-b>", function()
   if vim.o.laststatus == 0 then
     vim.o.laststatus = 3
   else

@@ -1,11 +1,15 @@
-local bun_bin = vim.env.BUN_INSTALL .. "/bin"
+local bun_bin = (vim.env.BUN_INSTALL or vim.fn.expand("~/.local/share/bun")) .. "/bin"
 
 return {
   {
     "stevearc/conform.nvim",
     opts = {
+      default_format_opts = { timeout_ms = 10000, lsp_format = "fallback" },
       formatters_by_ft = {
-        -- JS/TS are handled by the ESLint LSP server so it uses the project's own ESLint version
+        javascript = { "prettier_config", lsp_format = "first" },
+        javascriptreact = { "prettier_config", lsp_format = "first" },
+        typescript = { "prettier_config", lsp_format = "first" },
+        typescriptreact = { "prettier_config", lsp_format = "first" },
         json = { "prettier" },
         jsonc = { "prettier" },
         css = { "prettier" },
@@ -15,7 +19,16 @@ return {
       },
       formatters = {
         prettier = {
-          command = bun_bin .. "/prettier",
+          command = function(self, ctx)
+            return require("conform.util").find_executable({ "node_modules/.bin/prettier" }, bun_bin .. "/prettier")(
+              self,
+              ctx
+            )
+          end,
+        },
+        prettier_config = {
+          inherit = "prettier",
+          require_cwd = true,
         },
       },
     },
