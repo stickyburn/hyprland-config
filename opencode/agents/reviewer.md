@@ -1,7 +1,7 @@
 ---
 description: Reviews completed diffs against the plan and acceptance criteria.
 mode: subagent
-model: openai/gpt-5.5
+model: openai/gpt-5.6-sol
 variant: xhigh
 ---
 

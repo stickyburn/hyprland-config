@@ -1,7 +1,7 @@
 ---
 description: Plans coding work, delegates implementation to coder, then delegates review to reviewer.
 mode: primary
-model: openai/gpt-5.5
+model: openai/gpt-5.6-sol
 variant: xhigh
 color: "#98E4A7"
 ---
