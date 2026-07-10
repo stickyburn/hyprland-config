@@ -24,14 +24,18 @@ map("v", "i", "}", { desc = "↓ block down" })
 map("v", "o", "w", { desc = "→ word forward" })
 
 -- ── Displaced keys ──────────────────────────────────────────
-map("n", "l", "i", { desc = "Insert mode" })          -- i → l
-map("n", "<CR>", "o", { desc = "Open line below" })   -- o → Enter
+map("n", "l", "i", { desc = "Insert mode" }) -- i → l
+map("n", "<CR>", "o", { desc = "Open line below" }) -- o → Enter
 
 -- search navigation (n is now word back)
-map("n", "<leader>n", function() vim.cmd("normal! n") end, { desc = "Next search result" })
-map("n", "<leader>N", function() vim.cmd("normal! N") end, { desc = "Previous search result" })
-map("n", "<C-->", "<C-o>", { desc = "Jump back" })
-map("n", "<C-+>", "<C-i>", { desc = "Jump forward" })
+map("n", "<leader>n", function()
+  vim.cmd("normal! n")
+end, { desc = "Next search result" })
+map("n", "<leader>N", function()
+  vim.cmd("normal! N")
+end, { desc = "Previous search result" })
+--map("n", "<C-->", "<C-o>", { desc = "Jump back" })
+--map("n", "<C-+>", "<C-i>", { desc = "Jump forward" })
 
 -- quickly escape from insert mode
 -- TODO: check perf before enabling

@@ -1,21 +1,6 @@
 -- ~/.config/hypr/keybinds.lua
 local mainMod = "ALT"
 
--- Layout-aware focus: in monocle, cycle prev/next; in master, use directional focus
-local function focus_aware(direction, cycle_cmd)
-	return function()
-		local ws = hl.get_active_workspace()
-		if ws == nil then
-			return
-		end
-		if ws.tiled_layout == "monocle" then
-			hl.dispatch(hl.dsp.layout(cycle_cmd))
-		else
-			hl.dispatch(hl.dsp.focus({ direction = direction }))
-		end
-	end
-end
-
 -- Switch to monocle layout on current workspace
 local function set_monocle()
 	local ws = hl.get_active_workspace()
@@ -70,17 +55,13 @@ hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ +3%"), { locked = true })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("pactl set-sink-mute @DEFAULT_SINK@ toggle"), { locked = true })
 
--- Cycle focus (layout-aware)
-hl.bind(mainMod .. " + n", focus_aware("left", "cycleprev"))
-hl.bind(mainMod .. " + e", focus_aware("right", "cyclenext"))
-hl.bind(mainMod .. " + i", focus_aware("up", "cycleprev"))
-hl.bind(mainMod .. " + o", focus_aware("down", "cyclenext"))
+-- Cycle focus
+hl.bind(mainMod .. " + n", hl.dsp.layout("cycleprev"))
+hl.bind(mainMod .. " + e", hl.dsp.layout("cyclenext"))
 
--- Swap windows
-hl.bind(mainMod .. " + CTRL + n", hl.dsp.window.move({ direction = "left" }))
-hl.bind(mainMod .. " + CTRL + e", hl.dsp.window.move({ direction = "right" }))
-hl.bind(mainMod .. " + CTRL + i", hl.dsp.window.move({ direction = "up" }))
-hl.bind(mainMod .. " + CTRL + o", hl.dsp.window.move({ direction = "down" }))
+-- Move windows
+hl.bind(mainMod .. " + i", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + o", hl.dsp.window.move({ direction = "right" }))
 
 -- Switch workspaces
 hl.bind(mainMod .. " + l", hl.dsp.focus({ workspace = 1 }))
