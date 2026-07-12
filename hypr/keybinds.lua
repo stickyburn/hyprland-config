@@ -25,8 +25,8 @@ local function set_master()
 	hl.workspace_rule({
 		workspace = ws.name,
 		layout = "master",
-		gaps_out = 8,
-		gaps_in = 4,
+		gaps_out = 9,
+		gaps_in = 5,
 		border_size = 2,
 	})
 end
@@ -35,7 +35,7 @@ end
 hl.bind("CTRL + RETURN", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exit())
-hl.bind("CTRL + SPACE", hl.dsp.exec_cmd('wofi --show drun -I --width 28% --no-actions --prompt ""'))
+hl.bind("CTRL + SPACE", hl.dsp.exec_cmd("wofi --show drun"))
 hl.bind(mainMod .. " + CTRL + SPACE", hl.dsp.exec_cmd("wofi-emoji"))
 
 -- Layout switches
@@ -49,6 +49,10 @@ hl.bind(mainMod .. " + SHIFT + U", hl.dsp.exec_cmd("~/.config/waybar/scripts/tog
 -- App launchers
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("blueman-manager"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("pavucontrol"))
+
+-- Notification history
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("makoctl dismiss"))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("makoctl restore"))
 
 -- Volume keys
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ -3%"), { locked = true })

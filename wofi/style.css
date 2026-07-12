@@ -1,150 +1,94 @@
+@define-color canvas #0e0f10;
+@define-color panel #0f0f1a;
+@define-color input #121124;
+@define-color raised #201a2f;
+@define-color selected #2a1d31;
+@define-color text #eee9ff;
+@define-color soft #ffeef2;
+@define-color violet #c79eff;
+@define-color pink #ff91c3;
+@define-color signal #ff338f;
+
 * {
     font-family: "Switzer";
     font-size: 13px;
 }
 
 window {
-    background: #221727;
-    margin: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 0 0 1px rgba(255, 255, 255, 0.05);
-}
-
-#input {
-    margin: 20px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: #221727;
-    color: #eee9ff;
-    padding: 12px 16px;
-    font-size: 14px;
-    font-weight: 500;
-    box-shadow:
-        inset 0 1px 2px rgba(0, 0, 0, 0.1),
-        0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-#input:focus {
-    outline: none;
-    border-color: rgba(199, 158, 255, 0.6);
-    background: #1A1527;
-    box-shadow:
-        inset 0 1px 2px rgba(0, 0, 0, 0.15),
-        0 2px 12px rgba(199, 158, 255, 0.2),
-        0 0 0 2px rgba(199, 158, 255, 0.1);
-}
-
-#inner-box {
-    background: #221727;
-    border-radius: 12px;
-    margin: 0 20px 20px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.03),
-        0 4px 16px rgba(0, 0, 0, 0.2);
+    background: @canvas;
+    border: 1px solid @violet;
+    border-radius: 10px;
 }
 
 #outer-box {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
+    background: @panel;
+    border-radius: 9px;
+    padding: 10px;
 }
 
+#input {
+    background: @input;
+    color: @text;
+    border: 1px solid @selected;
+    border-radius: 7px;
+    margin: 2px 2px 10px;
+    padding: 11px 14px;
+    font-family: "Zed Sans";
+    font-size: 15px;
+    font-weight: 500;
+    transition-property: border-color, background-color;
+    transition-duration: 160ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#input:focus {
+    border-color: @violet;
+    background: @raised;
+}
+
+#inner-box,
 #scroll {
-    margin: 8px;
-    border-radius: 8px;
-}
-
-#text {
-    padding: 12px 16px;
-    color: #eee9ff;
-    font-weight: 450;
-    transition: color 0.15s ease;
+    background: transparent;
 }
 
 #entry {
-    padding: 12px 16px;
-    margin: 7px 12px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s cubic-bezier(0.23, 1, 0.32, 1),
-        box-shadow 0.2s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-#entry:nth-child(even) {
-    background: rgba(199, 158, 255, 0.04);
+    background: transparent;
+    border-left: 3px solid @panel;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 8px 10px;
+    transition-property: background-color, border-left-color, border-left-width, padding-left;
+    transition-duration: 95ms;
+    transition-timing-function: cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 
 #entry:hover {
-    background: rgba(199, 158, 255, 0.12);
-    border-color: rgba(199, 158, 255, 0.2);
-    transform: translateX(2px) scale(1.02);
-    box-shadow:
-        0 4px 12px rgba(199, 158, 255, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    background: @raised;
+    border-left-color: @pink;
 }
 
 #entry:selected {
-    background: linear-gradient(135deg,
-            rgba(199, 158, 255, 0.18),
-            rgba(255, 51, 143, 0.15));
-    border-color: rgba(199, 158, 255, 0.3);
-    transform: translateX(3px) scale(1.03);
-    box-shadow:
-        0 6px 16px rgba(199, 158, 255, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: @selected;
+    border-left: 5px solid @signal;
+    padding-left: 8px;
+}
+
+#img {
+    margin-right: 11px;
+}
+
+#text {
+    color: @soft;
+    font-weight: 400;
 }
 
 #text:selected {
-    background: transparent;
-    color: #eee9ff;
+    color: @text;
     font-weight: 600;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Subtle glow effect for selected items */
-#entry:selected::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: 12px;
-    background: linear-gradient(45deg,
-            transparent,
-            rgba(199, 158, 255, 0.1),
-            transparent);
-    animation: subtleGlow 2s ease-in-out infinite;
-    z-index: -1;
-}
-
-@keyframes subtleGlow {
-
-    0%,
-    100% {
-        opacity: 0.5;
-    }
-
-    50% {
-        opacity: 0.8;
-    }
-}
-
-/* Focus indicator for accessibility */
-#entry:focus {
-    outline: 2px solid rgba(199, 158, 255, 0.4);
-    outline-offset: 2px;
+#expander-box {
+    background: @raised;
+    color: @violet;
+    border-radius: 5px;
 }

@@ -1,36 +1,55 @@
-/* Base styles - Standardized */
+@define-color canvas #0e0f10;
+@define-color rail #0f0f1a;
+@define-color raised #121124;
+@define-color edge #2a1d31;
+@define-color text #eee9ff;
+@define-color soft #ffeef2;
+@define-color violet #c79eff;
+@define-color pink #ff91c3;
+@define-color signal #ff338f;
+@define-color mint #98e4a7;
+
 * {
     border: none;
     border-radius: 0;
-    font-family: "ZedMono Nerd Font", monospace;
-    font-size: 12px;
+    font-family: "ZedMono Nerd Font";
+    font-size: 11px;
     min-height: 0;
 }
 
 window#waybar {
     background: transparent;
-    color: #eee9ff;
-    border: none;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    color: @text;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+    opacity: 0.16;
 }
 
-/* Module containers - Standardized spacing and margins */
 .modules-left,
 .modules-center,
-.modules-right {
-    background: #0f0f1a;
-    border-radius: 16px;
-    padding: 2px 16px;
-    margin: 4px 16px 0 16px;
-    transition: all 0.3s ease;
+#telemetry {
+    background: @rail;
+    border: 1px solid @edge;
+    border-radius: 8px;
+    margin-top: 4px;
 }
 
-/* Individual modules - Standardized base styling */
+.modules-left {
+    margin-left: 8px;
+    padding: 0 6px;
+}
+
+.modules-center {
+    background: @canvas;
+    padding: 2px 3px;
+}
+
+#telemetry {
+    margin-right: 8px;
+    padding: 0 4px;
+}
+
 #custom-city-selector,
 #custom-multi-clock,
 #custom-multi-weather,
@@ -38,74 +57,141 @@ window#waybar.hidden {
 #cpu,
 #memory,
 #custom-idle {
-    background: transparent;
     padding: 0 8px;
-    font-size: 12px;
+    border-radius: 5px;
+    transition-property: background-color, color;
+    transition-duration: 100ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Workspaces - Standardized with consistent sizing */
+#custom-city-selector {
+    color: @signal;
+    font-weight: 700;
+}
+
+#custom-multi-clock {
+    color: @text;
+    font-weight: 600;
+}
+
+#custom-multi-weather {
+    color: @pink;
+}
+
 #workspaces {
     background: transparent;
 }
 
 #workspaces button {
-    padding: 0;
     background: transparent;
-    color: #6c7086;
-    border-radius: 50%;
-    min-width: 20px;
-    min-height: 20px;
-    margin: 0 4px;
-    font-size: 12px;
+    color: @soft;
+    border-bottom: 0 solid transparent;
+    border-radius: 5px;
+    margin: 0 1px;
+    padding: 0 7px;
+    min-width: 16px;
+    font-size: 10px;
+    transition-property: background-color, color, border-bottom-width, border-bottom-color;
+    transition-duration: 90ms;
+    transition-timing-function: cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+#workspaces button:hover {
+    background: @raised;
+    color: @violet;
 }
 
 #workspaces button.active {
-    color: #c79eff;
+    background: @raised;
+    color: @violet;
+    border-bottom: 2px solid @signal;
+    font-weight: 800;
+}
+
+#workspaces button.urgent {
+    background: @signal;
+    color: @canvas;
+    animation: urgent-breathe 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes urgent-breathe {
+    0% { background: #ff338f; }
+    50% { background: #ff91c3; }
+    100% { background: #ff338f; }
+}
+
+#window {
+    background: @rail;
+    color: @soft;
+    border: 1px solid @edge;
+    border-radius: 7px;
+    margin: 4px 12px 0 8px;
+    padding: 0 12px;
+    font-family: "Switzer";
+    font-size: 11px;
+    font-weight: 500;
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: 170ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#window:hover {
+    background: @raised;
+    color: @violet;
+    border-color: @violet;
+}
+
+window#waybar.empty #window {
+    min-width: 0;
+    margin: 0;
     padding: 0;
-}
-
-/* Module-specific colors - Maintained for visual distinction */
-#custom-city-selector {
-    color: #f9e2af;
-    font-weight: bold;
-}
-
-#custom-multi-clock {
-    color: #c79eff;
-    font-weight: bold;
-}
-
-#custom-multi-weather {
-    color: #89b4fa;
+    border: none;
+    opacity: 0;
 }
 
 #custom-network {
-    color: #89b4fa;
-    font-size: 13px;
+    color: @mint;
+    font-size: 12px;
 }
 
 #custom-network.disconnected {
-    color: #f38ba8;
+    color: @signal;
 }
 
 #cpu {
-    color: #f9e2af;
+    color: @violet;
 }
 
 #memory {
-    color: #98e4a7;
+    color: @pink;
 }
 
 #custom-idle {
-    color: #f38ba8;
+    color: @soft;
+    border-left: 1px solid @edge;
+    margin-left: 3px;
 }
 
-/* Tooltip - Consistent with module styling */
+#custom-city-selector:hover,
+#custom-multi-weather:hover,
+#custom-network:hover,
+#cpu:hover,
+#memory:hover,
+#custom-idle:hover {
+    background: @raised;
+    color: @text;
+}
+
 tooltip {
-    background-color: #0f0f1a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 8px 12px;
-    color: #eee9ff;
+    background: @raised;
+    color: @text;
+    border: 1px solid @violet;
+    border-radius: 7px;
+}
+
+tooltip label {
+    font-family: "Switzer";
     font-size: 12px;
+    min-width: 80px;
+    padding: 5px 7px;
 }

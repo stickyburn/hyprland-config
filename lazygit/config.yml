@@ -8,6 +8,19 @@ gui:
   scrollOffBehavior: margin
   wrapLinesInStagingView: true
   useHunkModeInStagingView: true
+  theme:
+    activeBorderColor: ["#c79eff", bold]
+    inactiveBorderColor: ["#2a1d31"]
+    searchingActiveBorderColor: ["#ff91c3", bold]
+    optionsTextColor: ["#c79eff"]
+    selectedLineBgColor: ["#201a2f"]
+    selectedRangeBgColor: ["#2a1d31"]
+    cherryPickedCommitFgColor: ["#0e0f10"]
+    cherryPickedCommitBgColor: ["#ff91c3"]
+    markedBaseCommitFgColor: ["#0e0f10"]
+    markedBaseCommitBgColor: ["#98e4a7"]
+    unstagedChangesColor: ["#ff338f"]
+    defaultFgColor: ["#eee9ff"]
 quitOnTopLevelReturn: true
 
 git:

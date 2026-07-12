@@ -49,7 +49,7 @@
   "npm.packageManager": "auto",
   "window.commandCenter": true,
   "workbench.activityBar.location": "top",
-  "workbench.colorTheme": "Light Modern",
+  "workbench.colorTheme": "Visual Studio Dark",
   "workbench.editor.decorations.badges": false,
   "workbench.editor.decorations.colors": false,
   "workbench.sideBar.location": "right",
@@ -90,73 +90,267 @@
   "workbench.colorCustomizations": {
     "[Quiet Light]": {
       "editor.background": "#eee9ff",
+      "foreground": "#0e0f10",
+      "descriptionForeground": "#2a1d31",
+      "focusBorder": "#c79eff",
       "activityBar.background": "#eee9ff",
+      "activityBar.foreground": "#0e0f10",
+      "activityBar.inactiveForeground": "#2a1d31",
       "editor.foreground": "#0e0f10",
-      "statusBar.foreground": "#0e0f10",
+      "editor.lineHighlightBackground": "#ffeef2",
+      "editor.selectionBackground": "#dffff8",
+      "editorCursor.foreground": "#ff338f",
       "editorGroupHeader.tabsBackground": "#eee9ff",
-      "editorOverviewRuler.border": "#eee9ff",
-      "editorSuggestWidget.background": "#eee9ff",
-      "editorSuggestWidget.border": "#eee9ff",
-      "editorSuggestWidget.selectedBackground": "#eee9ff",
-      "input.background": "#eee9ff",
-      "menu.background": "#eee9ff",
-      "quickInput.background": "#eee9ff",
+      "editorGroupHeader.noTabsBackground": "#eee9ff",
+      "editorGroup.emptyBackground": "#eee9ff",
+      "editorOverviewRuler.border": "#ffeef2",
+      "editorSuggestWidget.background": "#ffeef2",
+      "editorSuggestWidget.border": "#c79eff",
+      "editorSuggestWidget.selectedBackground": "#dffff8",
+      "editorSuggestWidget.selectedForeground": "#0e0f10",
+      "editorHoverWidget.background": "#ffeef2",
+      "editorHoverWidget.border": "#c79eff",
+      "input.background": "#ffeef2",
+      "input.border": "#c79eff",
+      "menu.background": "#ffeef2",
+      "menu.selectionBackground": "#dffff8",
+      "quickInput.background": "#ffeef2",
+      "quickInputList.focusBackground": "#dffff8",
       "sideBar.background": "#eee9ff",
+      "sideBar.foreground": "#0e0f10",
+      "sideBarSectionHeader.background": "#eee9ff",
       "statusBar.background": "#eee9ff",
+      "statusBar.foreground": "#0e0f10",
       "tab.activeBackground": "#eee9ff",
-      "tab.activeBorderTop": "#eee9ff",
-      "tab.border": "#eee9ff",
+      "tab.activeBorderTop": "#ff338f",
+      "tab.activeForeground": "#0e0f10",
+      "tab.border": "#ffeef2",
       "tab.inactiveBackground": "#eee9ff",
+      "tab.inactiveForeground": "#2a1d31",
       "titleBar.activeBackground": "#eee9ff",
+      "titleBar.activeForeground": "#0e0f10",
       "panel.background": "#eee9ff",
-      "scrollbar.shadow": "#dbd2fb",
-      "scrollbarSlider.activeBackground": "#dbd2fb",
-      "scrollbarSlider.background": "#dbd2fb",
-      "scrollbarSlider.hoverBackground": "#dbd2fb",
-      "tab.activeBorder": "#dbd2fb",
-      "editor.lineHighlightBackground": "#dbd2fb",
-      "editor.selectionBackground": "#dbd2fb",
-      "editorHoverWidget.background": "#dbd2fb",
-      "quickInputList.focusBackground": "#dbd2fb",
+      "panelSectionHeader.background": "#eee9ff",
       "panel.border": "#c79eff",
       "panelTitle.activeBorder": "#c79eff",
-      "editorSuggestWidget.selectedForeground": "#6A6367",
-      "tab.inactiveForeground": "#6A6367"
+      "scrollbar.shadow": "#c79eff",
+      "scrollbarSlider.background": "#c79eff",
+      "scrollbarSlider.hoverBackground": "#ff91c3",
+      "scrollbarSlider.activeBackground": "#ff91c3",
+      "terminal.background": "#eee9ff",
+      "terminal.foreground": "#0e0f10",
+      "terminal.ansiBlack": "#0e0f10",
+      "terminal.ansiRed": "#ff338f",
+      "terminal.ansiGreen": "#221727",
+      "terminal.ansiYellow": "#2a1d31",
+      "terminal.ansiBlue": "#201a2f",
+      "terminal.ansiMagenta": "#221727",
+      "terminal.ansiCyan": "#2a1d31",
+      "terminal.ansiWhite": "#eee9ff",
+      "terminal.ansiBrightBlack": "#2a1d31",
+      "terminal.ansiBrightRed": "#ff338f",
+      "terminal.ansiBrightGreen": "#221727",
+      "terminal.ansiBrightYellow": "#201a2f",
+      "terminal.ansiBrightBlue": "#2a1d31",
+      "terminal.ansiBrightMagenta": "#221727",
+      "terminal.ansiBrightCyan": "#0e0f10",
+      "terminal.ansiBrightWhite": "#ffeef2"
     },
     "[Visual Studio Dark]": {
       "editor.background": "#0e0f10",
+      "foreground": "#eee9ff",
+      "descriptionForeground": "#ff91c3",
+      "focusBorder": "#c79eff",
       "activityBar.background": "#0e0f10",
+      "activityBar.foreground": "#eee9ff",
+      "activityBar.inactiveForeground": "#c79eff",
       "editor.foreground": "#eee9ff",
+      "editor.lineHighlightBackground": "#0f0f1a",
+      "editor.selectionBackground": "#2a1d31",
+      "editorCursor.foreground": "#ff338f",
       "statusBar.foreground": "#eee9ff",
       "editorGroupHeader.tabsBackground": "#0e0f10",
-      "editorOverviewRuler.border": "#0e0f10",
-      "editorSuggestWidget.background": "#0e0f10",
-      "editorSuggestWidget.border": "#0e0f10",
-      "editorSuggestWidget.selectedBackground": "#0e0f10",
-      "input.background": "#0e0f10",
-      "menu.background": "#0e0f10",
-      "quickInput.background": "#0e0f10",
+      "editorGroupHeader.noTabsBackground": "#0e0f10",
+      "editorGroup.emptyBackground": "#0e0f10",
+      "editorOverviewRuler.border": "#0f0f1a",
+      "editorSuggestWidget.background": "#121124",
+      "editorSuggestWidget.border": "#2a1d31",
+      "editorSuggestWidget.selectedBackground": "#2a1d31",
+      "editorSuggestWidget.selectedForeground": "#eee9ff",
+      "editorHoverWidget.background": "#121124",
+      "editorHoverWidget.border": "#2a1d31",
+      "input.background": "#121124",
+      "input.border": "#2a1d31",
+      "menu.background": "#121124",
+      "menu.selectionBackground": "#2a1d31",
+      "quickInput.background": "#121124",
+      "quickInputList.focusBackground": "#2a1d31",
       "sideBar.background": "#0e0f10",
+      "sideBar.foreground": "#eee9ff",
+      "sideBarSectionHeader.background": "#0e0f10",
       "statusBar.background": "#0e0f10",
       "tab.activeBackground": "#0e0f10",
-      "tab.activeBorderTop": "#0e0f10",
-      "tab.border": "#0e0f10",
+      "tab.activeBorderTop": "#ff338f",
+      "tab.activeForeground": "#eee9ff",
+      "tab.border": "#0f0f1a",
       "tab.inactiveBackground": "#0e0f10",
+      "tab.inactiveForeground": "#ff91c3",
       "titleBar.activeBackground": "#0e0f10",
-      "terminal.background": "#0e0f10",
-      "tab.activeBorder": "#22282d",
-      "scrollbar.shadow": "#22282d",
-      "scrollbarSlider.activeBackground": "#22282d",
-      "scrollbarSlider.background": "#22282d",
-      "scrollbarSlider.hoverBackground": "#22282d",
-      "editor.lineHighlightBackground": "#22282d",
-      "editor.selectionBackground": "#22282d",
-      "editorHoverWidget.background": "#22282d",
-      "quickInputList.focusBackground": "#22282d",
-      "panel.border": "#c79eff",
+      "titleBar.activeForeground": "#eee9ff",
+      "panel.background": "#0e0f10",
+      "panelSectionHeader.background": "#0e0f10",
+      "panel.border": "#2a1d31",
       "panelTitle.activeBorder": "#c79eff",
-      "editorSuggestWidget.selectedForeground": "#6A6367",
-      "tab.inactiveForeground": "#6A6367",
+      "scrollbar.shadow": "#0e0f10",
+      "scrollbarSlider.background": "#2a1d31",
+      "scrollbarSlider.hoverBackground": "#c79eff",
+      "scrollbarSlider.activeBackground": "#c79eff",
+      "terminal.background": "#0e0f10",
+      "terminal.foreground": "#eee9ff",
+      "terminal.ansiBlack": "#0e0f10",
+      "terminal.ansiRed": "#ff338f",
+      "terminal.ansiGreen": "#98e4a7",
+      "terminal.ansiYellow": "#ff91c3",
+      "terminal.ansiBlue": "#c79eff",
+      "terminal.ansiMagenta": "#ff91c3",
+      "terminal.ansiCyan": "#dffff8",
+      "terminal.ansiWhite": "#eee9ff",
+      "terminal.ansiBrightBlack": "#2a1d31",
+      "terminal.ansiBrightRed": "#ff338f",
+      "terminal.ansiBrightGreen": "#98e4a7",
+      "terminal.ansiBrightYellow": "#ffeef2",
+      "terminal.ansiBrightBlue": "#c79eff",
+      "terminal.ansiBrightMagenta": "#ff91c3",
+      "terminal.ansiBrightCyan": "#dffff8",
+      "terminal.ansiBrightWhite": "#ffeef2"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[Visual Studio Dark]": {
+      "comments": "#c79eff",
+      "strings": "#98e4a7",
+      "numbers": "#ff338f",
+      "keywords": "#ff91c3",
+      "functions": "#dffff8",
+      "types": "#dffff8",
+      "variables": "#eee9ff",
+      "textMateRules": [
+        {
+          "scope": [
+            "comment",
+            "punctuation.definition.comment"
+          ],
+          "settings": {
+            "fontStyle": "italic",
+            "foreground": "#c79eff"
+          }
+        },
+        {
+          "scope": [
+            "keyword",
+            "storage.type",
+            "storage.modifier"
+          ],
+          "settings": {
+            "fontStyle": "italic",
+            "foreground": "#ff91c3"
+          }
+        },
+        {
+          "scope": [
+            "punctuation",
+            "keyword.operator"
+          ],
+          "settings": {
+            "foreground": "#c79eff"
+          }
+        }
+      ]
+    },
+    "[Quiet Light]": {
+      "comments": "#2a1d31",
+      "strings": "#221727",
+      "numbers": "#ff338f",
+      "keywords": "#221727",
+      "functions": "#201a2f",
+      "types": "#201a2f",
+      "variables": "#0e0f10",
+      "textMateRules": [
+        {
+          "scope": [
+            "comment",
+            "punctuation.definition.comment"
+          ],
+          "settings": {
+            "fontStyle": "italic",
+            "foreground": "#2a1d31"
+          }
+        },
+        {
+          "scope": [
+            "keyword",
+            "storage.type",
+            "storage.modifier"
+          ],
+          "settings": {
+            "fontStyle": "italic bold",
+            "foreground": "#221727"
+          }
+        },
+        {
+          "scope": [
+            "punctuation",
+            "keyword.operator"
+          ],
+          "settings": {
+            "foreground": "#2a1d31"
+          }
+        }
+      ]
+    }
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "[Visual Studio Dark]": {
+      "enabled": true,
+      "rules": {
+        "*": "#eee9ff",
+        "comment": {
+          "foreground": "#c79eff",
+          "italic": true
+        },
+        "string": "#98e4a7",
+        "number": "#ff338f",
+        "keyword": {
+          "foreground": "#ff91c3",
+          "italic": true
+        },
+        "function": "#dffff8",
+        "method": "#dffff8",
+        "type": "#dffff8",
+        "class": "#dffff8",
+        "operator": "#c79eff"
+      }
+    },
+    "[Quiet Light]": {
+      "enabled": true,
+      "rules": {
+        "*": "#0e0f10",
+        "comment": {
+          "foreground": "#2a1d31",
+          "italic": true
+        },
+        "string": "#221727",
+        "number": "#ff338f",
+        "keyword": {
+          "foreground": "#221727",
+          "bold": true
+        },
+        "function": "#201a2f",
+        "method": "#201a2f",
+        "type": "#201a2f",
+        "class": "#201a2f",
+        "operator": "#2a1d31"
+      }
     }
   },
   // remote dev

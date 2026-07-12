@@ -34,8 +34,9 @@ end, { desc = "Next search result" })
 map("n", "<leader>N", function()
   vim.cmd("normal! N")
 end, { desc = "Previous search result" })
---map("n", "<C-->", "<C-o>", { desc = "Jump back" })
---map("n", "<C-+>", "<C-i>", { desc = "Jump forward" })
+-- jump cursor back/forward
+map("n", "<C-;>", "<C-o>", { desc = "Jump back" })
+map("n", "<C-'>", "<C-i>", { desc = "Jump forward" })
 
 -- quickly escape from insert mode
 -- TODO: check perf before enabling

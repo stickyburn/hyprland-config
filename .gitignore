@@ -27,7 +27,9 @@ zsh/.zcompdump
 zsh/history
 zsh/db.zo
 bookmarks
-settings.ini
 rclone/rclone.conf
 **/node_modules/
 Raffi
+.android
+.wrangler
+tool_state

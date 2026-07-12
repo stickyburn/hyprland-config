@@ -7,9 +7,9 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
--- Force background color to match kitty terminal
-local bg = "#0e0f10"
-local modal_bg = "#0e0f10"
+local palette = require("config.palette")
+local bg = palette.canvas
+local modal_bg = palette.raised
 
 local function set_bg()
   vim.api.nvim_set_hl(0, "Normal", { bg = bg })
@@ -21,10 +21,10 @@ local function set_bg()
 
   -- Modals and picker windows
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = modal_bg })
-  vim.api.nvim_set_hl(0, "FloatBorder", { bg = modal_bg, fg = "#eee9ff" })
-  vim.api.nvim_set_hl(0, "FloatTitle", { bg = modal_bg, fg = "#eee9ff" })
+  vim.api.nvim_set_hl(0, "FloatBorder", { bg = modal_bg, fg = palette.violet })
+  vim.api.nvim_set_hl(0, "FloatTitle", { bg = modal_bg, fg = palette.text, bold = true })
   vim.api.nvim_set_hl(0, "SnacksPickerNormal", { bg = modal_bg })
-  vim.api.nvim_set_hl(0, "SnacksPickerBorder", { bg = modal_bg, fg = "#eee9ff" })
+  vim.api.nvim_set_hl(0, "SnacksPickerBorder", { bg = modal_bg, fg = palette.violet })
 
   -- Override lualine highlight backgrounds to match
   for _, name in ipairs(vim.fn.getcompletion("lualine_", "highlight")) do

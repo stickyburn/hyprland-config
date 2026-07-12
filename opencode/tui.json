@@ -1,6 +1,6 @@
 {
 	"$schema": "https://opencode.ai/tui.json",
-	"theme": "system",
+	"theme": "signal-noir",
 	"plugin": ["opencode-tps-meter@latest"],
 	"keybinds": {
 		"leader": "ctrl+g",

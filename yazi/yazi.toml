@@ -14,11 +14,11 @@ nvim = [
 ]
 
 codium = [
-  { run = 'open -a "VSCodium" "$@"', for = "macos", desc = "Codium" },
-  { run = 'zsh -c "cd \"$1\" && codium ." -- "$@"', for = "linux", desc = "Codium" },
+  { run = 'open -a "VSCodium" "$@"', for = "macos", desc = "Code" },
+  { run = 'zsh -c "cd \"$1\" && codium ." -- "$@"', for = "linux", desc = "Code" },
 ]
 
-terminal = [{ run = 'kitty @ launch --type=tab --cwd="$@"', desc = "Terminal" }]
+terminal = [{ run = 'kitty @ launch --type=tab --cwd="$@"', desc = "Kitty" }]
 
 finder = [
   { run = 'open -R "$@"', for = "macos", desc = "Finder" },

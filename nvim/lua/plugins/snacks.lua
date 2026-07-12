@@ -43,17 +43,18 @@ return {
   },
   config = function(_, opts)
     require("snacks").setup(opts)
+    local palette = require("config.palette")
 
     -- Set custom colors for snacks highlight groups
     vim.api.nvim_create_autocmd("ColorScheme", {
       group = vim.api.nvim_create_augroup("SnacksCustomColors", { clear = true }),
       callback = function()
-        vim.api.nvim_set_hl(0, "SnacksPickerSelected", { fg = "#221727", bg = "#c79eff", bold = true })
-        vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { fg = "#221727", bg = "#c79eff" })
-        vim.api.nvim_set_hl(0, "SnacksPickerBorder", { fg = "#c79eff" })
-        vim.api.nvim_set_hl(0, "SnacksInputBorder", { fg = "#c79eff" })
-        vim.api.nvim_set_hl(0, "SnacksNotifierBorder", { fg = "#c79eff" })
-        vim.api.nvim_set_hl(0, "SnacksDashboardBorder", { fg = "#c79eff" })
+        vim.api.nvim_set_hl(0, "SnacksPickerSelected", { fg = palette.deep, bg = palette.violet, bold = true })
+        vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { fg = palette.deep, bg = palette.violet })
+        vim.api.nvim_set_hl(0, "SnacksPickerBorder", { fg = palette.violet })
+        vim.api.nvim_set_hl(0, "SnacksInputBorder", { fg = palette.violet })
+        vim.api.nvim_set_hl(0, "SnacksNotifierBorder", { fg = palette.violet })
+        vim.api.nvim_set_hl(0, "SnacksDashboardBorder", { fg = palette.violet })
       end,
     })
 

@@ -1,7 +1,14 @@
 allow_images=true
+allow_markup=true
 hide_scroll=true
-no_actions=false
+insensitive=true
+matching=fuzzy
+no_actions=true
 term=kitty
 mode=drun
+location=center
+prompt=Search applications
 width=28%
---show
+height=460
+lines=7
+image_size=30

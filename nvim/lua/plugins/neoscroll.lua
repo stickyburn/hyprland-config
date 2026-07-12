@@ -7,7 +7,7 @@ return {
     stop_eof = true,
     respect_scrolloff = false,
     cursor_scrolls_alone = true,
-    easing = "linear",
+    easing = "quadratic",
     performance_mode = false,
   },
 }

@@ -45,12 +45,12 @@ hl.config({
 hl.config({
 	general = {
 		layout = "master",
-		gaps_in = 4,
-		gaps_out = { top = 6, right = 8, bottom = 8, left = 8 },
+		gaps_in = 5,
+		gaps_out = { top = 7, right = 9, bottom = 9, left = 9 },
 		border_size = 2,
 		col = {
-			active_border = { colors = { "rgb(FFCCDD)", "rgb(FF338F)" }, angle = 45 },
-			inactive_border = "rgb(362e45)",
+			active_border = { colors = { "rgb(C79EFF)", "rgb(FF338F)" }, angle = 35 },
+			inactive_border = "rgb(2A1D31)",
 		},
 		allow_tearing = false,
 	},
@@ -110,7 +110,7 @@ hl.config({
 ---- DECORATION ----
 hl.config({
 	decoration = {
-		rounding = 10,
+		rounding = 8,
 		active_opacity = 0.95,
 		inactive_opacity = 0.95,
 		fullscreen_opacity = 1.0,
@@ -124,9 +124,9 @@ hl.config({
 		},
 		shadow = {
 			enabled = true,
-			range = 20,
-			render_power = 3,
-			color = 0x66000000,
+			range = 18,
+			render_power = 2,
+			color = 0x990e0f10,
 		},
 	},
 })
@@ -151,14 +151,21 @@ hl.curve("fluent_decel", { type = "bezier", points = { { 0.1, 1 }, { 0, 1 } } })
 hl.curve("easeInOutCirc", { type = "bezier", points = { { 0.85, 0 }, { 0.15, 1 } } })
 hl.curve("easeOutCirc", { type = "bezier", points = { { 0, 0.55 }, { 0.45, 1 } } })
 hl.curve("easeOutExpo", { type = "bezier", points = { { 0.16, 1 }, { 0.3, 1 } } })
+hl.curve("crisp", { type = "bezier", points = { { 0.12, 1 }, { 0.22, 1 } } })
+hl.curve("workspace_snap", { type = "bezier", points = { { 0.2, 1.03 }, { 0.32, 1 } } })
+hl.curve("soft_back", { type = "bezier", points = { { 0.25, 1.06 }, { 0.4, 1 } } })
 
 ---- ANIMATIONS ----
 hl.config({ animations = { enabled = true } })
-hl.animation({ leaf = "windows", enabled = true, speed = 3, bezier = "md3_decel", style = "popin 60%" })
-hl.animation({ leaf = "border", enabled = true, speed = 10, bezier = "default" })
-hl.animation({ leaf = "fade", enabled = true, speed = 2.5, bezier = "md3_decel" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 3.5, bezier = "easeOutExpo", style = "slide" })
-hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel", style = "slidevert" })
+hl.animation({ leaf = "windows", enabled = true, speed = 1.5, bezier = "crisp" })
+hl.animation({ leaf = "windowsIn", enabled = true, speed = 1.4, bezier = "soft_back", style = "popin 94%" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 0.9, bezier = "crisp", style = "popin 98%" })
+hl.animation({ leaf = "windowsMove", enabled = true, speed = 1.2, bezier = "crisp" })
+hl.animation({ leaf = "border", enabled = true, speed = 0.25, bezier = "crisp" })
+hl.animation({ leaf = "fade", enabled = true, speed = 1, bezier = "crisp" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 1.6, bezier = "workspace_snap", style = "slidefade 32%" })
+hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 1.5, bezier = "soft_back", style = "slidefadevert 18%" })
+hl.animation({ leaf = "layers", enabled = true, speed = 1.2, bezier = "crisp", style = "popin 96%" })
 
 ---- WINDOW RULES ----
 hl.window_rule({

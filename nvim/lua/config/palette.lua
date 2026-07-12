@@ -1,0 +1,15 @@
+return {
+  canvas = "#0e0f10",
+  panel = "#0f0f1a",
+  raised = "#121124",
+  deep = "#221727",
+  surface = "#201a2f",
+  edge = "#2a1d31",
+  text = "#eee9ff",
+  soft = "#ffeef2",
+  cool = "#dffff8",
+  pink = "#ff91c3",
+  signal = "#ff338f",
+  violet = "#c79eff",
+  mint = "#98e4a7",
+}

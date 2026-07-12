@@ -2,7 +2,7 @@
 # Background: 0f0f1a, Primary accent: c79eff
 
 # Colors should be in 6 or 2 character hexadecimal or single spaced rgb decimal: "#RRGGBB", "#BW" or "0-255 0-255 0-255"
-# example for white: "#ffffff", "#ff" or "255 255 255".
+# example for the theme foreground: "#eee9ff".
 
 # All graphs and meters can be gradients
 # For single color graphs leave "mid" and "end" variable empty.
@@ -28,7 +28,7 @@ theme[selected_bg]="#c79eff"
 theme[selected_fg]="#221727"
 
 # Color of inactive/disabled text
-theme[inactive_fg]="#665c6e"
+theme[inactive_fg]="#2a1d31"
 
 # Misc colors for processes box including mini cpu graphs, details memory graph and details status text
 theme[proc_misc]="#98e4a7"
@@ -50,40 +50,40 @@ theme[div_line]="#2a1d31"
 
 # Temperature graph colors - purple to green
 theme[temp_start]="#c79eff"
-theme[temp_mid]="#aec9db"
+theme[temp_mid]="#ff91c3"
 theme[temp_end]="#98e4a7"
 
 # CPU graph colors - purple to green gradient
 theme[cpu_start]="#c79eff"
-theme[cpu_mid]="#aec9db"
+theme[cpu_mid]="#ff91c3"
 theme[cpu_end]="#98e4a7"
 
 # Mem/Disk free meter - soft green
 theme[free_start]="#98e4a7"
-theme[free_mid]="#7ed495"
-theme[free_end]="#6bc786"
+theme[free_mid]="#dffff8"
+theme[free_end]="#98e4a7"
 
 # Mem/Disk cached meter - soft green
 theme[cached_start]="#98e4a7"
-theme[cached_mid]="#7ed495"
-theme[cached_end]="#6bc786"
+theme[cached_mid]="#dffff8"
+theme[cached_end]="#98e4a7"
 
 # Mem/Disk available meter - soft green
 theme[available_start]="#98e4a7"
-theme[available_mid]="#7ed495"
-theme[available_end]="#6bc786"
+theme[available_mid]="#dffff8"
+theme[available_end]="#98e4a7"
 
 # Mem/Disk used meter - pastel purple
 theme[used_start]="#c79eff"
-theme[used_mid]="#b8a3cf"
-theme[used_end]="#a88fc9"
+theme[used_mid]="#ff91c3"
+theme[used_end]="#ff338f"
 
 # Download graph colors - soft green gradient
 theme[download_start]="#98e4a7"
-theme[download_mid]="#7ed495"
-theme[download_end]="#6bc786"
+theme[download_mid]="#dffff8"
+theme[download_end]="#98e4a7"
 
 # Upload graph colors - soft purple gradient
 theme[upload_start]="#c79eff"
-theme[upload_mid]="#b8a3cf"
-theme[upload_end]="#a88fc9"
+theme[upload_mid]="#ff91c3"
+theme[upload_end]="#ff338f"

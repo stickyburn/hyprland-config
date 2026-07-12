@@ -1,7 +1,8 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 30,
+    "height": 34,
+    "expand-right": true,
     "prefer-dark-theme": true,
     "modules-left": [
         "custom/city-selector",
@@ -12,10 +13,8 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
-        "custom/network",
-        "cpu",
-        "memory",
-        "custom/idle"
+        "group/context",
+        "group/telemetry"
     ],
     "custom/city-selector": {
         "format": "{}",
@@ -39,11 +38,7 @@
         "signal": 10
     },
     "hyprland/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-            "default": "○",
-            "active": "●"
-        },
+        "format": "{name}",
         "persistent-workspaces": {
             "*": 5
         },
@@ -53,20 +48,46 @@
         "sort-by-number": true,
         "cursor": false
     },
+    "hyprland/window": {
+        "format": "{class}",
+        "max-length": 32,
+        "separate-outputs": true,
+        "rewrite": {
+            "kitty": "Kitty",
+            "vivaldi-stable": "Vivaldi",
+            "codium": "Code"
+        }
+    },
+    "group/context": {
+        "orientation": "inherit",
+        "expand": true,
+        "modules": [
+            "hyprland/window"
+        ]
+    },
+    "group/telemetry": {
+        "orientation": "inherit",
+        "modules": [
+            "custom/network",
+            "cpu",
+            "memory",
+            "custom/idle"
+        ]
+    },
     "cpu": {
-        "format": " {usage}%",
+        "format": "CPU {usage}%",
         "tooltip": false,
         "interval": 5,
         "on-click": "~/.config/waybar/scripts/launch_btop.sh"
     },
     "memory": {
-        "format": " {percentage}%",
+        "format": "MEM {percentage}%",
         "tooltip": false,
         "interval": 5,
         "on-click": "~/.config/waybar/scripts/launch_btop.sh"
     },
     "custom/idle": {
-        "format": "",
+        "format": "󰌾",
         "tooltip": "Sleep",
         "on-click": "hyprctl dispatch dpms off",
         "interval": 3600

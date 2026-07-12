@@ -80,7 +80,7 @@ if [ -f "$STATE_FILE" ]; then
 
   METER=$(vertical_meter $PCT)
   TEXT="<b>$ICON</b> $METER"
-  TOOLTIP="Interface: $INTERFACE\n↓ $RX_MBPS Mbps ↑ $TX_MBPS Mbps"
+  TOOLTIP="Interface: $INTERFACE\n↓ $RX_MBPS Mbps      ↑ $TX_MBPS Mbps"
 else
   # First run: no speed data yet
   TEXT="<b>$ICON</b> ▁"

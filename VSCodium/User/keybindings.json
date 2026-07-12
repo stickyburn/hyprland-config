@@ -243,22 +243,14 @@
     "command": "-workbench.view.scm",
     "when": "workbench.scm.active"
   },
-  {
-    "key": "ctrl+-",
-    "command": "-workbench.action.zoomOut"
-  },
-  {
-    "key": "ctrl+-",
-    "command": "workbench.action.navigateBack"
-  },
-  {
-    "key": "ctrl+=",
-    "command": "-workbench.action.zoomIn"
-  },
-  {
-    "key": "ctrl+=",
-    "command": "workbench.action.navigateForward"
-  },
+    {
+      "key": "ctrl+;",
+      "command": "workbench.action.navigateBack"
+    },
+    {
+      "key": "ctrl+'",
+      "command": "workbench.action.navigateForward"
+    },
   {
     "key": "alt+ctrl+s",
     "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",

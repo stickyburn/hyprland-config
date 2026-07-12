@@ -36,7 +36,7 @@ precmd_hooks() {
 precmd_functions+=(precmd_hooks)
 
 setopt prompt_subst
-zstyle ':vcs_info:git:*' formats ' %b'
-export RPROMPT='%F{219}%D{%L:%M}%f'
-export PROMPT='%F{219}%1d ${vcs_info_msg_0_}
-%f '
+zstyle ':vcs_info:git:*' formats '%F{#c79eff} %b%f'
+export RPROMPT='%F{#c79eff}%D{%H:%M}%f'
+export PROMPT='%F{#ff338f}╭─%f %F{#ff91c3}%1d%f ${vcs_info_msg_0_}
+%F{#ff338f}╰─›%f '
