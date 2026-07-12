@@ -68,22 +68,21 @@
     "strings": "on"
   },
   "js/ts.validate.enabled": false,
-  "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
+  // "[javascript]": {
+  //   "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  // },
+  // "[javascriptreact]": {
+  //   "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  // },
+  // "[typescript]": {
+  //   "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  // },
+  // "[typescriptreact]": {
+  //   "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  // },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "svelte.ask-to-enable-ts-plugin": false,
   // themes
   "window.autoDetectColorScheme": true,
   "workbench.preferredLightColorTheme": "Quiet Light",
@@ -92,8 +91,8 @@
     "[Quiet Light]": {
       "editor.background": "#eee9ff",
       "activityBar.background": "#eee9ff",
-      "editor.foreground": "#0f0f1a",
-      "statusBar.foreground": "#0f0f1a",
+      "editor.foreground": "#0e0f10",
+      "statusBar.foreground": "#0e0f10",
       "editorGroupHeader.tabsBackground": "#eee9ff",
       "editorOverviewRuler.border": "#eee9ff",
       "editorSuggestWidget.background": "#eee9ff",
@@ -125,35 +124,35 @@
       "tab.inactiveForeground": "#6A6367"
     },
     "[Visual Studio Dark]": {
-      "editor.background": "#0f0f1a",
-      "activityBar.background": "#0f0f1a",
+      "editor.background": "#0e0f10",
+      "activityBar.background": "#0e0f10",
       "editor.foreground": "#eee9ff",
       "statusBar.foreground": "#eee9ff",
-      "editorGroupHeader.tabsBackground": "#0f0f1a",
-      "editorOverviewRuler.border": "#0f0f1a",
-      "editorSuggestWidget.background": "#0f0f1a",
-      "editorSuggestWidget.border": "#0f0f1a",
-      "editorSuggestWidget.selectedBackground": "#0f0f1a",
-      "input.background": "#0f0f1a",
-      "menu.background": "#0f0f1a",
-      "quickInput.background": "#0f0f1a",
-      "sideBar.background": "#0f0f1a",
-      "statusBar.background": "#0f0f1a",
-      "tab.activeBackground": "#0f0f1a",
-      "tab.activeBorderTop": "#0f0f1a",
-      "tab.border": "#0f0f1a",
-      "tab.inactiveBackground": "#0f0f1a",
-      "titleBar.activeBackground": "#0f0f1a",
-      "terminal.background": "#0f0f1a",
-      "tab.activeBorder": "#292947",
-      "scrollbar.shadow": "#292947",
-      "scrollbarSlider.activeBackground": "#292947",
-      "scrollbarSlider.background": "#292947",
-      "scrollbarSlider.hoverBackground": "#292947",
-      "editor.lineHighlightBackground": "#292947",
-      "editor.selectionBackground": "#292947",
-      "editorHoverWidget.background": "#292947",
-      "quickInputList.focusBackground": "#292947",
+      "editorGroupHeader.tabsBackground": "#0e0f10",
+      "editorOverviewRuler.border": "#0e0f10",
+      "editorSuggestWidget.background": "#0e0f10",
+      "editorSuggestWidget.border": "#0e0f10",
+      "editorSuggestWidget.selectedBackground": "#0e0f10",
+      "input.background": "#0e0f10",
+      "menu.background": "#0e0f10",
+      "quickInput.background": "#0e0f10",
+      "sideBar.background": "#0e0f10",
+      "statusBar.background": "#0e0f10",
+      "tab.activeBackground": "#0e0f10",
+      "tab.activeBorderTop": "#0e0f10",
+      "tab.border": "#0e0f10",
+      "tab.inactiveBackground": "#0e0f10",
+      "titleBar.activeBackground": "#0e0f10",
+      "terminal.background": "#0e0f10",
+      "tab.activeBorder": "#22282d",
+      "scrollbar.shadow": "#22282d",
+      "scrollbarSlider.activeBackground": "#22282d",
+      "scrollbarSlider.background": "#22282d",
+      "scrollbarSlider.hoverBackground": "#22282d",
+      "editor.lineHighlightBackground": "#22282d",
+      "editor.selectionBackground": "#22282d",
+      "editorHoverWidget.background": "#22282d",
+      "quickInputList.focusBackground": "#22282d",
       "panel.border": "#c79eff",
       "panelTitle.activeBorder": "#c79eff",
       "editorSuggestWidget.selectedForeground": "#6A6367",

@@ -8,8 +8,8 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 -- Force background color to match kitty terminal
-local bg = "#0f0f1a"
-local modal_bg = "#0f0f1a"
+local bg = "#0e0f10"
+local modal_bg = "#0e0f10"
 
 local function set_bg()
   vim.api.nvim_set_hl(0, "Normal", { bg = bg })

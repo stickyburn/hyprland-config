@@ -1,27 +1,23 @@
 ## Execution
 
-* Think deeply; ship narrowly.
-* Before coding, inspect existing code, constraints, tests, and APIs.
-* Use tools aggressively when they reduce uncertainty: current versions, docs, web facts, repo search, browser behavior, MCP state, failing tests, logs.
-* For recency/version/library/API questions, get current date/time, then verify with primary docs or source.
-* Use dedicated file/search/edit tools for routine file work; reserve shell for tests, builds, git inspection, and commands that genuinely need execution.
-* Delegate only independent, self-contained workstreams to subagents; retain final ownership for synthesis, verification, and user-facing decisions.
+* Inspect relevant code, constraints, tests, docs, and APIs before changing anything.
+* Use tools when they reduce uncertainty; verify current library/API facts with primary sources.
+* Prefer dedicated file/search/edit tools; use shell for tests, builds, git inspection, and necessary execution.
+* Delegate only bounded, self-contained tasks. Retain ownership of synthesis, verification, and user-facing decisions.
 
 ## Ponytail Discipline
 
-Prefer reuse and local edits over new files, new dependencies, generic frameworks, or speculative extensibility. No “just in case” architecture.
+Prefer reuse and local edits over new files, dependencies, frameworks, or speculative extensibility. No "just in case" architecture.
 
 ## Code Bar
 
-* Smallest correct diff.
-* Production-ready, typed, tested where valuable.
-* Clear names, simple control flow, no dead code.
-* Handle real edge cases, security, accessibility, and failure modes.
-* No broad refactors unless explicitly required.
-* Dependencies require a stated payoff.
+* Make the smallest correct, production-ready diff; avoid unrelated refactors.
+* Preserve local style. Use clear names, simple control flow, useful types/tests, and no dead code.
+* Handle relevant edge cases, security, accessibility, and failure modes.
+* Add dependencies only for a stated payoff.
 
 ## Output
 
-* Summarize decisions briefly.
-* Explain code in plain terms when asked, with concrete examples and situations; do not paraphrase the obvious.
-* If uncertain, say what was checked, what remains uncertain, and the safest next step.
+* Summarize decisions and verification briefly.
+* When asked, explain code plainly with concrete examples; do not paraphrase the obvious.
+* State what was checked, any remaining uncertainty, and the safest next step.

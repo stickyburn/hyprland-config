@@ -62,7 +62,7 @@ hl.config({
 		kb_layout = "us",
 		follow_mouse = 1,
 		float_switch_override_focus = 2,
-		sensitivity = 0.6,
+		sensitivity = 0.8,
 		repeat_rate = 28,
 		repeat_delay = 500,
 	},
@@ -111,8 +111,8 @@ hl.config({
 hl.config({
 	decoration = {
 		rounding = 10,
-		active_opacity = 1.0,
-		inactive_opacity = 1.0,
+		active_opacity = 0.95,
+		inactive_opacity = 0.95,
 		fullscreen_opacity = 1.0,
 		blur = {
 			enabled = true,
