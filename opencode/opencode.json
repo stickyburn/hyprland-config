@@ -1,18 +1,21 @@
 {
 	"$schema": "https://opencode.ai/config.json",
+	"small_model": "ollama-cloud/deepseek-v4-flash",
 	"instructions": ["SYSTEM.md"],
 	"default_agent": "plan",
 	"agent": {
+		"plan": {
+			"model": "ollama-cloud/glm-5.2",
+			"color": "#c79eff"
+		},
 		"build": {
+			"model": "ollama-cloud/glm-5.2",
 			"color": "#98E4A7"
 		},
 		"explore": {
 			"permission": {
 				"*": "allow"
 			}
-		},
-		"plan": {
-			"color": "#c79eff"
 		}
 	},
 	"mcp": {
@@ -55,7 +58,7 @@
 			"sort *": "allow",
 			"echo *": "allow",
 			"brew list *": "allow",
-			"git status": "allow",
+			"git status *": "allow",
 			"git diff *": "allow",
 			"git show *": "allow",
 			"git log *": "allow"
