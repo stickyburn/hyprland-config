@@ -6,6 +6,11 @@
 tool_state
 **/node_modules/
 
+# ── lockfiles ────────────────────────────────────
+**/package-lock.json
+**/Gemfile.lock
+**/lazy-lock.json
+
 # ── system / desktop ─────────────────────────────
 dconf
 pulse
