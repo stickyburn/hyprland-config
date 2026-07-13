@@ -1,5 +1,3 @@
-local bun_bin = (vim.env.BUN_INSTALL or vim.fn.expand("~/.local/share/bun")) .. "/bin"
-
 return {
   {
     "stevearc/conform.nvim",
@@ -18,14 +16,6 @@ return {
         toml = { "taplo" },
       },
       formatters = {
-        prettier = {
-          command = function(self, ctx)
-            return require("conform.util").find_executable({ "node_modules/.bin/prettier" }, bun_bin .. "/prettier")(
-              self,
-              ctx
-            )
-          end,
-        },
         prettier_config = {
           inherit = "prettier",
           require_cwd = true,
