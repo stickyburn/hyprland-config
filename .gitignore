@@ -1,35 +1,42 @@
-.env.local
+# ── state / cache / runtime ──────────────────────
 .cache
-assets
-bottom
+.android
+.wrangler
+.env.local
+tool_state
+**/node_modules/
+
+# ── system / desktop ─────────────────────────────
+dconf
+pulse
+systemd
+mimeapps.list
+pavucontrol.ini
+settings
+gtk-3.0/bookmarks
+
+# ── applications (full ignore) ───────────────────
 Capacities
 Keet
 Keet-Internal
 Keet-Nightly
+Raffi
+Signal Beta
+Vivaldi
+vivaldi-stable.conf
 pear
 VSCodium/**
 !VSCodium/User/
 !VSCodium/User/settings.json
 !VSCodium/User/keybindings.json
-dconf
-Signal Beta
-weechat/*
-!weechat/weechat.conf
-mimeapps.list
-pavucontrol.ini
-pulse
-systemd
-vivaldi
+
+# ── zsh ──────────────────────────────────────────
 zsh/.z
 zsh/.zhistory
 zsh/.zsh_history
 zsh/.zcompdump
-zsh/history
 zsh/db.zo
-bookmarks
+
+# ── secrets / credentials ────────────────────────
 rclone/rclone.conf
-**/node_modules/
-Raffi
-.android
-.wrangler
-tool_state
+zsh/secrets/secrets.zsh
