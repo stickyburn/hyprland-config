@@ -45,3 +45,4 @@ zsh/db.zo
 # ── secrets / credentials ────────────────────────
 rclone/rclone.conf
 zsh/secrets/secrets.zsh
+opencode/service.json

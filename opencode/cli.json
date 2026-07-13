@@ -1,0 +1,25 @@
+{
+  "theme": {
+    "name": "signal-noir"
+  },
+  "keybinds": {
+    "leader": "ctrl+g",
+    "command_list": "ctrl+p",
+    "sidebar_toggle": "ctrl+shift+e",
+    "input_undo": "ctrl+z,ctrl+-,super+z",
+    "input_redo": "ctrl+.,super+shift+z",
+    "terminal_suspend": "none"
+  },
+  "scroll": {
+    "acceleration": true
+  },
+  "diffs": {
+    "wrap": "word"
+  },
+  "session": {
+    "sidebar": "hide",
+    "scrollbar": false,
+    "thinking": "show"
+  },
+  "animations": true
+}
