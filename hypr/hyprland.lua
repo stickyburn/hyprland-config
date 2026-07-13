@@ -116,8 +116,8 @@ hl.config({
 		fullscreen_opacity = 1.0,
 		blur = {
 			enabled = true,
-			size = 2,
-			passes = 2,
+			size = 1,
+			passes = 1,
 			ignore_opacity = true,
 			xray = true,
 			popups = true,
@@ -164,7 +164,13 @@ hl.animation({ leaf = "windowsMove", enabled = true, speed = 1.2, bezier = "cris
 hl.animation({ leaf = "border", enabled = true, speed = 0.25, bezier = "crisp" })
 hl.animation({ leaf = "fade", enabled = true, speed = 1, bezier = "crisp" })
 hl.animation({ leaf = "workspaces", enabled = true, speed = 1.6, bezier = "workspace_snap", style = "slidefade 32%" })
-hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 1.5, bezier = "soft_back", style = "slidefadevert 18%" })
+hl.animation({
+	leaf = "specialWorkspace",
+	enabled = true,
+	speed = 1.5,
+	bezier = "soft_back",
+	style = "slidefadevert 18%",
+})
 hl.animation({ leaf = "layers", enabled = true, speed = 1.2, bezier = "crisp", style = "popin 96%" })
 
 ---- WINDOW RULES ----
