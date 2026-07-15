@@ -17,7 +17,7 @@ dead comments; they are the palette source.
 
 | Hex | Name | Tier | Purpose |
 |---|---|---|---|
-| `#0e0f10` | canvas | bg-0 | Darkest base. Main bg, terminal "black". |
+| `#121019` | canvas | bg-0 | Darkest base. Main bg, terminal "black". |
 | `#0f0f1a` | panel | bg-1 | Surface one step up. Bars, panels, line highlight. |
 | `#121124` | raised | bg-2 | Modal/popup float bg. |
 | `#221727` | deep | bg-3 | Mid-dark accent (light-side primary). |
@@ -41,16 +41,16 @@ Tiers: **bg-0..bg-4** are 5 darkness levels (canvas is base, each step lighter).
 
 | File | Scope | Format |
 |---|---|---|
-| `nvim/lua/config/palette.lua` | nvim runtime | `return { canvas = "#0e0f10", ... }` |
+| `nvim/lua/config/palette.lua` | nvim runtime | `return { canvas = "#121019", ... }` |
 | `opencode/themes/signal-noir.json` | opencode TUI | `defs` block (references by name in `theme`) |
-| `waybar/style.css` | waybar | `@define-color canvas #0e0f10;` (10 of 13 colors) |
-| `wofi/style.css` | wofi | `@define-color canvas #0e0f10;` (9 of 13 colors) |
+| `waybar/style.css` | waybar | `@define-color canvas #121019;` (10 of 13 colors) |
+| `wofi/style.css` | wofi | `@define-color canvas #121019;` (9 of 13 colors) |
 
 **Everything else hardcodes hex inline.** To change a color, edit the 4 source
 files above, then grep for the old hex to find inline uses:
 
 ```bash
-rg -i '#0e0f10' -g '*.{lua,conf,css,json,toml,yml,sh,md}' -g '!**/plugins/**' -g '!**/skills/**'
+rg -i '#121019' -g '*.{lua,conf,css,json,toml,yml,sh,md}' -g '!**/plugins/**' -g '!**/skills/**'
 ```
 
 Hardcoded files: `kitty/kitty.conf`, `hypr/hyprland.lua`, `mako/config`,

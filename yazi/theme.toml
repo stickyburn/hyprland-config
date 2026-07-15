@@ -1,17 +1,17 @@
 [indicator]
 preview = {}
-current = { fg = "#0e0f10", bg = "#eee9ff" }
-parent = { fg = "#0e0f10", bg = "#eee9ff" }
+current = { fg = "#121019", bg = "#eee9ff" }
+parent = { fg = "#121019", bg = "#eee9ff" }
 
 [mgr]
-cwd = { fg = "#0e0f10", bg = "#0e0f10" }
+cwd = { fg = "#121019", bg = "#121019" }
 
 [pick]
 border = { fg = "#c79eff" }
 
 [pick.active]
 fg = "#eee9ff"
-bg = "#0e0f10"
+bg = "#121019"
 
 [pick.inactive]
 fg = "#eee9ff"

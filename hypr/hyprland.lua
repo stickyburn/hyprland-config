@@ -111,8 +111,8 @@ hl.config({
 hl.config({
 	decoration = {
 		rounding = 8,
-		active_opacity = 0.95,
-		inactive_opacity = 0.95,
+		active_opacity = 1.0,
+		inactive_opacity = 1.0,
 		fullscreen_opacity = 1.0,
 		blur = {
 			enabled = true,
@@ -126,7 +126,7 @@ hl.config({
 			enabled = true,
 			range = 18,
 			render_power = 2,
-			color = 0x990e0f10,
+			color = 0x99121019,
 		},
 	},
 })
