@@ -1,19 +1,19 @@
-# PATH — interactive-only
+# interactive paths only
 export PATH="$HOME/.config/pear/bin:$PATH"
 
 source "$ZDOTDIR/secrets/secrets.zsh"
 
 source ~/.config/zsh/plugins/zsh-autocomplete/zsh-autosuggestions.zsh
-
 eval "$(zoxide init zsh)"
-
 source ~/.config/zsh/plugins/zsh-history-search/zsh-history-substring-search.zsh
+
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
 autoload -Uz compinit && compinit
+
 source ~/.config/zsh/aliases/git
 source ~/.config/zsh/aliases/system
 [[ -f ~/.config/zsh/aliases/python ]] && source ~/.config/zsh/aliases/python
