@@ -8,6 +8,7 @@ return {
       servers = {
         -- mason servers
         taplo = {},
+        rust_analyzer = {},
 
         vtsls = {
           mason = false,

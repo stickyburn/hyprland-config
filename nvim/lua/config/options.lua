@@ -5,6 +5,3 @@
 -- line numbers
 vim.opt.number = false
 vim.opt.relativenumber = false
-
--- sign gutters
-vim.opt.signcolumn = "yes"

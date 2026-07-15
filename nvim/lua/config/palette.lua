@@ -1,5 +1,5 @@
 return {
-  canvas = "#0e0f10",
+  canvas = "#121019",
   panel = "#0f0f1a",
   raised = "#121124",
   deep = "#221727",

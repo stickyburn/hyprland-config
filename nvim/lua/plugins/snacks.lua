@@ -4,9 +4,6 @@ return {
     -- Starts Tree-sitter and redraws before showing the file, leading to delays on larger opens.
     quickfile = { enabled = false },
     indent = { only_scope = true },
-    dashboard = { enabled = true },
-    notifier = { enabled = true },
-    scroll = { enabled = true },
     picker = {
       win = {
         list = {
@@ -25,17 +22,14 @@ return {
             preset = "default",
             preview = true,
           },
-          auto_close = false,
           jump = { close = true },
           win = {
             list = {
               keys = {
                 -- Colemak tree navigation
                 ["n"] = "explorer_close", -- left: collapse / parent
-                ["e"] = "list_up",        -- up
-                ["i"] = "list_down",      -- down
-                ["o"] = "confirm",        -- right: expand / open
-                ["l"] = "focus_input",    -- filter / insert mode
+                ["o"] = "confirm", -- right: expand / open
+                ["l"] = "focus_input", -- filter / insert mode
               },
             },
           },
@@ -43,25 +37,4 @@ return {
       },
     },
   },
-  config = function(_, opts)
-    require("snacks").setup(opts)
-    local palette = require("config.palette")
-
-    -- Set custom colors for snacks highlight groups
-    vim.api.nvim_create_autocmd("ColorScheme", {
-      group = vim.api.nvim_create_augroup("SnacksCustomColors", { clear = true }),
-      callback = function()
-        vim.api.nvim_set_hl(0, "SnacksPickerSelected", { fg = palette.deep, bg = palette.violet, bold = true })
-        vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { fg = palette.deep, bg = palette.violet })
-        vim.api.nvim_set_hl(0, "SnacksPickerBorder", { fg = palette.violet })
-        vim.api.nvim_set_hl(0, "SnacksInputBorder", { fg = palette.violet })
-        vim.api.nvim_set_hl(0, "SnacksNotifierBorder", { fg = palette.violet })
-        vim.api.nvim_set_hl(0, "SnacksDashboardBorder", { fg = palette.violet })
-      end,
-    })
-
-    if vim.g.colors_name then
-      vim.api.nvim_exec_autocmds("ColorScheme", {})
-    end
-  end,
 }
