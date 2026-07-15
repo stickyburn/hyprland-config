@@ -1,6 +1,8 @@
 return {
   "folke/snacks.nvim",
   opts = {
+    -- Starts Tree-sitter and redraws before showing the file, leading to delays on larger opens.
+    quickfile = { enabled = false },
     indent = { only_scope = true },
     dashboard = { enabled = true },
     notifier = { enabled = true },

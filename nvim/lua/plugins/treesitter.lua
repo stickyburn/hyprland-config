@@ -1,22 +1,27 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "vimdoc",
-        "html",
+    opts = function(_, opts)
+      -- Replace LazyVim's baseline instead of extending it.
+      opts.ensure_installed = {
+        "bash",
         "css",
+        "html",
+        "hyprlang",
         "javascript",
-        "typescript",
-        "tsx",
-        "toml",
+        "json",
+        "kitty",
+        "lua",
         "markdown",
         "markdown_inline",
-        "json",
-        "jsonc",
-      },
-    },
+        "ron",
+        "rust",
+        "toml",
+        "tsx",
+        "typescript",
+        "vimdoc",
+        "zsh",
+      }
+    end,
   },
 }

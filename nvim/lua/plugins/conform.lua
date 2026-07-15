@@ -2,17 +2,18 @@ return {
   {
     "stevearc/conform.nvim",
     opts = {
-      default_format_opts = { timeout_ms = 10000, lsp_format = "fallback" },
+      default_format_opts = { timeout_ms = 10000 },
       formatters_by_ft = {
-        javascript = { "prettier_config", lsp_format = "first" },
-        javascriptreact = { "prettier_config", lsp_format = "first" },
-        typescript = { "prettier_config", lsp_format = "first" },
-        typescriptreact = { "prettier_config", lsp_format = "first" },
-        json = { "prettier" },
-        jsonc = { "prettier" },
-        css = { "prettier" },
-        html = { "prettier" },
-        lua = { "stylua" },
+        fish = vim.NIL,
+        javascript = { "prettier_config" },
+        javascriptreact = { "prettier_config" },
+        typescript = { "prettier_config" },
+        typescriptreact = { "prettier_config" },
+        json = { "prettier_config" },
+        jsonc = { "prettier_config" },
+        css = { "prettier_config" },
+        html = { "prettier_config" },
+        rust = { "rustfmt" },
         toml = { "taplo" },
       },
       formatters = {
