@@ -1,8 +1,6 @@
 ---
 description: Reviews completed diffs against the plan and acceptance criteria.
 mode: subagent
-permission:
-  task: deny
 model: openai/gpt-5.6-sol
 variant: xhigh
 ---

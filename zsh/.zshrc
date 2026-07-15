@@ -10,6 +10,8 @@ eval "$(zoxide init zsh)"
 source ~/.config/zsh/plugins/zsh-history-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
 
 autoload -Uz compinit && compinit
 source ~/.config/zsh/aliases/git
