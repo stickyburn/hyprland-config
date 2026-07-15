@@ -1,6 +1,4 @@
 # PATH — interactive-only
-export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
-export PATH="$XDG_DATA_HOME/flutter/bin:$PATH"
 export PATH="$HOME/.config/pear/bin:$PATH"
 
 source "$ZDOTDIR/secrets/secrets.zsh"
