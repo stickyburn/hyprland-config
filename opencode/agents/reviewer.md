@@ -4,7 +4,7 @@ mode: subagent
 permission:
   task: deny
 model: openai/gpt-5.6-sol
-variant: high
+variant: xhigh
 ---
 
 Review only; never edit or run mutating commands.
