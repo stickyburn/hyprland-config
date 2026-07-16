@@ -1,0 +1,111 @@
+[
+  {
+    "id": "motion-eval-01",
+    "name": "Control feedback is responsive and state-safe",
+    "prompt": "Add hover, focus, press, and reduced-motion behavior to this existing CSS button without changing its layout: <button class=\"save-button\">Save changes</button>. The product is a calm accounting tool, and the button already changes background color for hover. Return complete HTML/CSS.",
+    "assertions": [
+      "The motion treatment fits a calm high-frequency product rather than adding generic bounce or scale-up",
+      "Input receives immediate feedback and the stable visual states remain understandable without animation",
+      "Only intended properties are transitioned; transition: all is not used",
+      "Focus-visible remains strong and is not replaced by hover styling",
+      "Reduced motion removes or replaces spatial movement without removing state feedback",
+      "The complete example preserves native button semantics and does not shift surrounding layout"
+    ]
+  },
+  {
+    "id": "motion-eval-02",
+    "name": "Stagger reveals without withholding content",
+    "prompt": "Implement a one-time page-load reveal for six related onboarding steps. The sequence should clarify their order, keep the last step's delay at or below 300ms, and finish every step within 700ms of initialization. Return self-contained HTML/CSS/JS and include a no-JS baseline plus reduced-motion behavior.",
+    "assertions": [
+      "The sequence follows the semantic order and uses a bounded inter-item delay",
+      "The last step starts within 300ms and all six settle within 700ms of initialization",
+      "Initial hidden styles do not strand content when JavaScript fails or reduced motion is enabled",
+      "The reveal runs once and cleans up any runtime listeners or classes",
+      "Reduced motion presents all steps immediately or through a restrained non-spatial alternative",
+      "The output is a complete working example"
+    ]
+  },
+  {
+    "id": "motion-eval-03",
+    "name": "Accessible toggle motion follows state",
+    "prompt": "Build a self-contained dark-mode toggle. The knob should feel physical; five click or Space activations 50ms apart must end in the fifth requested state rather than between states. Users who prefer reduced motion, including a preference changed while the page is open, should get equivalent feedback.",
+    "assertions": [
+      "The underlying checked state changes immediately and is exposed through native or correct switch semantics",
+      "Five activations 50ms apart retarget safely and end in the fifth requested state",
+      "Position and color are not the only means of exposing the final state",
+      "Spring or easing behavior is restrained and appropriate to direct manipulation",
+      "Reduced motion and a runtime preference change remove large or spring movement while preserving state feedback",
+      "Keyboard focus and operation work in the complete example"
+    ]
+  },
+  {
+    "id": "motion-eval-04",
+    "name": "View transition preserves navigation correctness",
+    "prompt": "Implement a two-view SPA demo using the View Transitions API for a shared project thumbnail. Starting on list, run Detail -> Back -> Detail with each activation 50ms apart, then browser Back and Forward. It must still navigate correctly without API support and when reduced motion is enabled at runtime. Return one self-contained HTML file with #list-view and #detail-view selectors.",
+    "assertions": [
+      "The real state or DOM update succeeds independently of the transition API",
+      "Shared-element names are unique and applied only to corresponding objects",
+      "The 50ms Detail -> Back -> Detail sequence ends with only #detail-view visible and controls enabled",
+      "Reduced motion, including a runtime preference change, performs the state update directly or skips only the animation",
+      "Navigation creates the correct history entries; Back and Forward restore the corresponding view after rapid input",
+      "Focus moves to the destination heading, controls remain usable, and temporary transition names are cleared after finished or skipped transitions",
+      "ready and update-callback failures are handled, stale completions are identity-guarded, and navigation never waits for finished",
+      "The output is a complete self-contained demo with feature detection"
+    ]
+  },
+  {
+    "id": "motion-eval-05",
+    "name": "Ambient motion supports brand without harming reading",
+    "prompt": "Create a subtle ambient background for a marine research landing page. The concept should derive from tidal measurement rather than generic floating blobs. The headline and trial action must remain easy to read and use. Return self-contained HTML.",
+    "assertions": [
+      "Motion parameters and geometry derive visibly from tidal or measurement behavior",
+      "Ambient movement stays behind content and does not move text or controls",
+      "A user-accessible pause or stop control is provided for persistent auto-starting motion",
+      "No effect flashes more than three times in one second unless below-threshold analysis is supplied",
+      "Reduced motion uses a deliberate static composition",
+      "The loop pauses when the page is hidden and releases runtime work appropriately",
+      "The result remains responsive and maintains text and focus visibility"
+    ]
+  },
+  {
+    "id": "motion-eval-06",
+    "name": "Drag interaction carries velocity and has alternatives",
+    "prompt": "Implement a dismissible notification card that follows horizontal pointer drag, commits after a clear threshold, and springs back otherwise. Fixture: package.json has exact dependencies react 19.2.0, react-dom 19.2.0, and motion 12.23.24; the test stack is Vitest 3.2.4 plus Testing Library React 16.3.0, and existing components import motion, useDragControls, and useReducedMotion from motion/react. Use that convention and add no package. The interaction test must cover: 40px drag then release; 120px drag then release; pointercancel; lostpointercapture; unmount during drag; two drags started 50ms apart; keyboard dismissal; and reduced motion toggled at runtime.",
+    "assertions": [
+      "The card tracks direct input and uses release velocity or displacement in the settle decision",
+      "The 40px release, pointercancel, and lostpointercapture cases return to the stable state without stale transforms",
+      "The 120px release commits dismissal, and two drags 50ms apart leave only the latest gesture in control",
+      "The dismiss outcome is available by keyboard or an explicit control, not drag alone",
+      "Reduced motion avoids a large spring travel while preserving dismissal feedback",
+      "One pointer owns the gesture; touch-action preserves vertical scrolling; capture and listeners are cleaned up on cancellation and unmount",
+      "The implementation uses the stated motion/react API and adds no dependency",
+      "The interaction test exercises every supplied event sequence and changes the reduced-motion preference while mounted"
+    ]
+  },
+  {
+    "id": "motion-eval-07",
+    "name": "Performance recommendation follows supplied evidence",
+    "prompt": "Audit this scroll animation using the supplied profile instead of guessing. Profile over 60 frames: 22 dropped; each scroll frame averages Recalculate Style 5ms, Layout 7ms, Paint 4ms; the handler writes panel.style.height from scrollY, then reads panel.offsetHeight, then changes a full-viewport blob's filter blur; a separate transform-only marker contributes no layout and less than 0.3ms paint. Explain the bottlenecks, provide the smallest patch strategy, and state what you would measure after the change.",
+    "assertions": [
+      "The diagnosis cites the measured per-frame style, layout, paint, and dropped-frame evidence",
+      "The read-after-write sequence is identified as forced synchronous layout rather than blamed on animation generally",
+      "The full-viewport blur is identified as broad paint cost while the measured transform marker is not treated as the bottleneck",
+      "The patch batches or removes layout reads, replaces or bounds the height animation appropriately, and reduces the blur paint area",
+      "The response does not claim compositor-only or smooth performance without a follow-up profile",
+      "Follow-up measurement names dropped frames, frame time, layout, paint area, and input responsiveness"
+    ]
+  },
+  {
+    "id": "motion-eval-08",
+    "name": "SwiftUI motion adapts to runtime accessibility changes",
+    "prompt": "Patch this SwiftUI fixture without changing its public API. It currently uses `withAnimation(.spring(response: 0.45, dampingFraction: 0.7)) { isExpanded.toggle() }` and `.transition(.scale.combined(with: .opacity))` for an expandable account card. Keep the state change and opacity feedback, replace vestibular scale motion when Reduce Motion is enabled, and support the preference changing while the view is mounted. Return the complete View plus a concise XCTest or ViewInspector-style test plan with observable states.",
+    "assertions": [
+      "The complete View reads SwiftUI's accessibilityReduceMotion environment value rather than a web media query",
+      "Expanded state changes immediately in both modes and does not depend on animation completion",
+      "Normal mode retains restrained spring or spatial continuity while reduced mode removes scale and uses opacity or an immediate state change",
+      "Because the environment value participates in rendering, a runtime preference change affects the next interaction without recreating app state",
+      "The test plan observes collapsed and expanded semantics in both modes plus a preference change while mounted",
+      "The patch preserves the fixture's public API and adds no dependency"
+    ]
+  }
+]

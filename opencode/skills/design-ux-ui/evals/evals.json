@@ -1,0 +1,82 @@
+[
+  {
+    "id": "design-eval-01",
+    "name": "Operational dashboard prioritizes monitoring tasks",
+    "prompt": "Design and implement a self-contained HTML monitoring dashboard for a Kubernetes cluster. It needs pod health, CPU and memory pressure, error rate, and recent events. Operators use it on desktop during incidents, but it must remain usable on a phone.",
+    "assertions": [
+      "The primary composition supports scanning changing state rather than using marketing-page hierarchy",
+      "Anomalies and recent events have stronger priority than decorative summary cards",
+      "Representative data is presented as interface sample data rather than a factual product claim",
+      "The primary workflow remains usable at narrow and wide viewports without hidden overflow",
+      "Status is not encoded by color alone",
+      "Keyboard focus and non-happy states are implemented",
+      "The output is a complete self-contained HTML file"
+    ]
+  },
+  {
+    "id": "design-eval-02",
+    "name": "Subject-specific landing page avoids current design defaults",
+    "prompt": "Build a responsive landing page for Tracewell, a developer error-tracing tool. Its defining idea is reconstructing the exact path to a production failure. Include pricing and a primary trial action. Use draft copy where product claims are unknown. Output self-contained HTML.",
+    "assertions": [
+      "The visual concept derives from tracing execution paths rather than a generic SaaS style",
+      "One signature element communicates the product idea while the rest of the page stays restrained",
+      "The result does not invent testimonials, customer counts, uptime, or performance claims",
+      "Pricing is structurally comparable and the primary action is unambiguous",
+      "Type, color, and layout choices form a coherent product-specific system",
+      "The page works at narrow and wide viewports with visible keyboard focus",
+      "The output is a complete self-contained HTML file"
+    ]
+  },
+  {
+    "id": "design-eval-03",
+    "name": "Dark theme is retuned and accessible",
+    "prompt": "Extend this maintained documentation product's light theme into a dark theme and return the complete light/dark semantic CSS. Existing tokens: --canvas #faf7f2, --surface #ffffff, --text #28231f, --text-muted #69615a, --border #d8d0c8, --action #a33f27, --action-text #ffffff, --focus #1769aa, --success #287a4b, --danger #b32929. Components use only these semantic roles. The product uses Source Serif for reading and a sans for controls. Retain every role, add only dark-theme values, set browser color-scheme, and include a numeric contrast table for text/canvas, text/surface, muted text/canvas, action text/action, focus/canvas, and focus/surface. Text pairs must meet WCAG AA and focus must meet 3:1 against adjacent surfaces. Explain only consequential decisions.",
+    "assertions": [
+      "The dark theme uses a deliberate surface and luminance hierarchy rather than algorithmic inversion",
+      "Accent lightness and chroma are retuned based on prominence and contrast, not blindly reused or desaturated",
+      "The requested numeric contrast table demonstrates WCAG AA text contrast for every listed pairing",
+      "The focus token reaches 3:1 against both supplied dark surfaces and CSS color-scheme is set for native controls",
+      "The existing semantic contract is preserved without adding an unnecessary token layer",
+      "No unsupported rule requires pure black or pure white to be universally avoided"
+    ]
+  },
+  {
+    "id": "design-eval-04",
+    "name": "Critique prioritizes evidence and structural repairs",
+    "prompt": "Critique this landing page from the description alone: centered gradient hero, three identical icon feature cards, two large unsourced metrics, and a sign-up form that reports all errors only in a toast. Give me the highest-impact changes first.",
+    "assertions": [
+      "Findings are ordered by impact and separate structural, interaction, content, and visual issues",
+      "Each major finding states evidence, user impact, a concrete repair, and a tradeoff when meaningful",
+      "The critique prioritizes composition and form recovery before cosmetic recoloring",
+      "Unsourced metrics are identified as a trust and content problem",
+      "Toast-only form errors are identified as an accessibility and recovery problem",
+      "The response avoids vague advice such as make it cleaner or more modern"
+    ]
+  },
+  {
+    "id": "design-eval-05",
+    "name": "Component system fits existing repository constraints",
+    "prompt": "Return updated React and CSS for a maintained fintech button component. Existing constraints: Button.tsx accepts React.ButtonHTMLAttributes<HTMLButtonElement> plus children; theme.css defines --action #145a45, --action-hover #0d4938, --danger #a52a2a, --danger-hover #842020, --surface #ffffff, --text #17211d, --border #8b9791, and --focus #005fcc; no UI library is installed. Add primary, secondary, and destructive variants plus default, hover, focus-visible, active, disabled, and loading states. Preserve native button semantics, forward existing props, do not add a dependency, and include a minimal test that checks observable behavior.",
+    "assertions": [
+      "The implementation reuses the supplied semantic tokens and preserves the existing prop contract",
+      "Variants communicate hierarchy and destructive intent without relying on color alone",
+      "Hover, focus-visible, active, disabled, and loading states are covered",
+      "Touch target and contrast requirements are verified on actual state pairs",
+      "No unnecessary component abstraction or dependency is introduced",
+      "The test checks rendered semantics, disabled/loading behavior, and variants rather than implementation call details"
+    ]
+  },
+  {
+    "id": "design-eval-06",
+    "name": "Complex form flow includes recovery and interruption states",
+    "prompt": "Design a mobile-first account recovery flow for users who may have lost access to both email and an authenticator. It must be reassuring without weakening security. Provide the interaction specification, key screens, and accessibility notes.",
+    "assertions": [
+      "The flow distinguishes available recovery paths and does not imply insecure shortcuts",
+      "Entry, orientation, action, feedback, recovery, and interrupted-work states are specified",
+      "Errors preserve user input and provide a concrete next step",
+      "Focus management, labels, live status, target size, and zoom are addressed",
+      "Copy uses stable user-facing vocabulary without false reassurance",
+      "The design balances progressive disclosure with visibility of alternative recovery options"
+    ]
+  }
+]

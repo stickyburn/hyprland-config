@@ -1,0 +1,128 @@
+[
+  {
+    "id": "trigger-should-01",
+    "prompt": "Make these controls feel responsive on hover, press, and keyboard focus without changing the layout",
+    "expected": true,
+    "rationale": "Control-state motion and feedback"
+  },
+  {
+    "id": "trigger-should-02",
+    "prompt": "Add continuity between the project grid and detail route with a shared-element transition",
+    "expected": true,
+    "rationale": "Route and shared-element motion"
+  },
+  {
+    "id": "trigger-should-03",
+    "prompt": "The upload can take 20 seconds; design the progress and transition into the completed state",
+    "expected": true,
+    "rationale": "Progress and state-transition motion"
+  },
+  {
+    "id": "trigger-should-04",
+    "prompt": "Animate this menu icon into a close icon and make rapid toggles behave correctly",
+    "expected": true,
+    "rationale": "Animated icon with interruption behavior"
+  },
+  {
+    "id": "trigger-should-05",
+    "prompt": "Reveal these ordered steps in sequence, but keep the total interaction fast",
+    "expected": true,
+    "rationale": "Stagger and choreography"
+  },
+  {
+    "id": "trigger-should-06",
+    "prompt": "Give this swipe-to-dismiss card velocity-aware spring behavior and a keyboard alternative",
+    "expected": true,
+    "rationale": "Gesture physics and accessible alternative"
+  },
+  {
+    "id": "trigger-should-07",
+    "prompt": "Create a restrained brand motion language for our museum kiosk interface",
+    "expected": true,
+    "rationale": "Motion-system and expressive direction"
+  },
+  {
+    "id": "trigger-should-08",
+    "prompt": "Tie the diagram's progress to scroll position without hijacking scrolling",
+    "expected": true,
+    "rationale": "Scroll-linked explanatory motion"
+  },
+  {
+    "id": "trigger-should-09",
+    "prompt": "Audit our transitions and replace vestibular movement when reduced motion is enabled",
+    "expected": true,
+    "rationale": "Reduced-motion audit and remediation"
+  },
+  {
+    "id": "trigger-should-10",
+    "prompt": "The interface feels inert. Add purposeful feedback where state changes happen",
+    "expected": true,
+    "rationale": "Implicit motion-polish request grounded in state"
+  },
+  {
+    "id": "trigger-not-01",
+    "prompt": "Rework this dashboard so incident status scans first and the grid adapts cleanly from phone to desktop",
+    "expected": false,
+    "rationale": "Static interface design"
+  },
+  {
+    "id": "trigger-not-02",
+    "prompt": "Choose a color and typography system for this fintech app",
+    "expected": false,
+    "rationale": "Static visual-system design"
+  },
+  {
+    "id": "trigger-not-03",
+    "prompt": "Why does the drawer flicker only after the third rapid open and leave an invisible overlay blocking clicks?",
+    "expected": false,
+    "rationale": "Animation defect requiring systematic debugging"
+  },
+  {
+    "id": "trigger-not-04",
+    "prompt": "Render this After Effects-style launch video as an MP4 with animated titles",
+    "expected": false,
+    "rationale": "Video and timeline production rather than interface motion"
+  },
+  {
+    "id": "trigger-not-05",
+    "prompt": "Our detached pages keep accumulating requestAnimationFrame callbacks after route changes; trace where they survive unmount",
+    "expected": false,
+    "rationale": "Root-cause debugging of a lifecycle defect"
+  },
+  {
+    "id": "trigger-not-06",
+    "prompt": "Set up responsive spacing and breakpoints for the settings page",
+    "expected": false,
+    "rationale": "Layout and spacing design"
+  },
+  {
+    "id": "trigger-not-07",
+    "prompt": "Review this animation PR for cancellation bugs, memory leaks, stale completion callbacks, and missing tests",
+    "expected": false,
+    "rationale": "Code review with motion design explicitly out of scope"
+  },
+  {
+    "id": "trigger-not-08",
+    "prompt": "Should the product use a habit loop or weekly digest for retention?",
+    "expected": false,
+    "rationale": "Product strategy"
+  },
+  {
+    "id": "trigger-not-09",
+    "prompt": "Animate this pixel-art scene into an MP4 with rain and lightning",
+    "expected": false,
+    "rationale": "Pixel-art video pipeline"
+  },
+  {
+    "id": "trigger-not-10",
+    "prompt": "Connect the existing Dialog component to the account button using its current defaults; do not redesign or add motion",
+    "expected": false,
+    "rationale": "Mechanical implementation with motion explicitly excluded"
+  },
+  {
+    "id": "trigger-not-11",
+    "prompt": "Polish this settings page using only spacing, typography, color, and borders; keep every transition unchanged",
+    "expected": false,
+    "rationale": "Static visual polish belongs to interface design"
+  }
+]

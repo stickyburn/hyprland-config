@@ -1,0 +1,122 @@
+[
+  {
+    "id": "trigger-should-01",
+    "prompt": "Review my changes before I commit",
+    "expected": true,
+    "rationale": "Pre-commit review — requesting-code-review"
+  },
+  {
+    "id": "trigger-should-02",
+    "prompt": "Can you check if this is safe to merge?",
+    "expected": true,
+    "rationale": "Pre-merge gate — requesting-code-review"
+  },
+  {
+    "id": "trigger-should-03",
+    "prompt": "Review my pull request",
+    "expected": true,
+    "rationale": "PR review — requesting-code-review"
+  },
+  {
+    "id": "trigger-should-04",
+    "prompt": "What did I miss in this diff?",
+    "expected": true,
+    "rationale": "Self-review / diff review — requesting-code-review"
+  },
+  {
+    "id": "trigger-should-05",
+    "prompt": "Check my staged changes for any issues",
+    "expected": true,
+    "rationale": "Pre-commit review — requesting-code-review"
+  },
+  {
+    "id": "trigger-should-06",
+    "prompt": "Is this code secure enough to ship?",
+    "expected": true,
+    "rationale": "Security-focused review — requesting-code-review"
+  },
+  {
+    "id": "trigger-should-07",
+    "prompt": "Review the tests in my PR — are they good enough?",
+    "expected": true,
+    "rationale": "Test quality review — requesting-code-review"
+  },
+  {
+    "id": "trigger-should-08",
+    "prompt": "I'm about to push, can you review my commits first?",
+    "expected": true,
+    "rationale": "Pre-push review — requesting-code-review"
+  },
+  {
+    "id": "trigger-should-09",
+    "prompt": "Does this refactor preserve the original behavior?",
+    "expected": true,
+    "rationale": "Refactor verification — requesting-code-review"
+  },
+  {
+    "id": "trigger-should-10",
+    "prompt": "Check if there's any scope creep in my PR",
+    "expected": true,
+    "rationale": "Scope review — requesting-code-review"
+  },
+  {
+    "id": "trigger-not-01",
+    "prompt": "Why is my function returning undefined?",
+    "expected": false,
+    "rationale": "Active bug — use systematic-debugging"
+  },
+  {
+    "id": "trigger-not-02",
+    "prompt": "Design a landing page for my SaaS product",
+    "expected": false,
+    "rationale": "UI design — use design-ux-ui"
+  },
+  {
+    "id": "trigger-not-03",
+    "prompt": "Add a hover animation to these cards",
+    "expected": false,
+    "rationale": "Motion — use motion"
+  },
+  {
+    "id": "trigger-not-04",
+    "prompt": "Who is our target customer segment?",
+    "expected": false,
+    "rationale": "Product strategy — use product-strategy"
+  },
+  {
+    "id": "trigger-not-05",
+    "prompt": "My tests are flaky, they pass sometimes and fail other times",
+    "expected": false,
+    "rationale": "Debugging flaky tests — use systematic-debugging"
+  },
+  {
+    "id": "trigger-not-06",
+    "prompt": "Build a new feature for exporting data to CSV",
+    "expected": false,
+    "rationale": "New feature implementation, not review"
+  },
+  {
+    "id": "trigger-not-07",
+    "prompt": "What pricing model should we use?",
+    "expected": false,
+    "rationale": "Product strategy — use product-strategy"
+  },
+  {
+    "id": "trigger-not-08",
+    "prompt": "Choose a color palette for my app",
+    "expected": false,
+    "rationale": "Color system — use design-ux-ui"
+  },
+  {
+    "id": "trigger-not-09",
+    "prompt": "Debug the TypeError in my React component",
+    "expected": false,
+    "rationale": "Active bug — use systematic-debugging"
+  },
+  {
+    "id": "trigger-not-10",
+    "prompt": "Set up a CI/CD pipeline for our project",
+    "expected": false,
+    "rationale": "DevOps setup, not code review"
+  }
+]

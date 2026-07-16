@@ -1,0 +1,122 @@
+[
+  {
+    "id": "trigger-should-01",
+    "prompt": "Implement a pricing comparison page in our existing Next.js app and make it feel specific to our observability product",
+    "expected": true,
+    "rationale": "Production UI implementation with hierarchy, comparison, and visual-quality requirements"
+  },
+  {
+    "id": "trigger-should-02",
+    "prompt": "this dashboard works but it looks like generic ai slop, redesign it without losing density",
+    "expected": true,
+    "rationale": "Explicit interface redesign and density work"
+  },
+  {
+    "id": "trigger-should-03",
+    "prompt": "Create the empty, loading, error, and success states for our project list",
+    "expected": true,
+    "rationale": "UX state design for a product surface"
+  },
+  {
+    "id": "trigger-should-04",
+    "prompt": "Audit this checkout screenshot for hierarchy, usability, mobile behavior, and accessibility",
+    "expected": true,
+    "rationale": "Design and UX critique"
+  },
+  {
+    "id": "trigger-should-05",
+    "prompt": "Build a keyboard-first command palette component that matches the components already in src/ui",
+    "expected": true,
+    "rationale": "UI component design and repository implementation"
+  },
+  {
+    "id": "trigger-should-06",
+    "prompt": "Make this existing modal keyboard-accessible: focus is not contained, the close icon has no name, and focus is lost when it closes",
+    "expected": true,
+    "rationale": "Accessibility remediation requiring interaction design judgment"
+  },
+  {
+    "id": "trigger-should-07",
+    "prompt": "Our settings page is a wall of fields. Rework the information architecture and implement the new layout",
+    "expected": true,
+    "rationale": "UX structure plus UI implementation"
+  },
+  {
+    "id": "trigger-should-08",
+    "prompt": "Design a responsive navigation system for a documentation site with four product areas",
+    "expected": true,
+    "rationale": "Navigation, responsive layout, and information architecture"
+  },
+  {
+    "id": "trigger-should-09",
+    "prompt": "Make this React form easier to complete and improve its visual hierarchy",
+    "expected": true,
+    "rationale": "Mixed UX and visual refinement"
+  },
+  {
+    "id": "trigger-should-10",
+    "prompt": "Set up a small reusable component and token system for this new frontend",
+    "expected": true,
+    "rationale": "Design-system creation"
+  },
+  {
+    "id": "trigger-not-01",
+    "prompt": "Should this startup sell to freelancers or enterprise security teams first?",
+    "expected": false,
+    "rationale": "Product and market strategy"
+  },
+  {
+    "id": "trigger-not-02",
+    "prompt": "The layout is final. Add a spring transition when this drawer opens and respect reduced motion",
+    "expected": false,
+    "rationale": "Motion-only implementation on a settled layout"
+  },
+  {
+    "id": "trigger-not-03",
+    "prompt": "After upgrading our dialog library, focus jumps to Safari's address bar when the modal closes. Reproduce it and find the root cause",
+    "expected": false,
+    "rationale": "A regression investigation requiring systematic debugging before design remediation"
+  },
+  {
+    "id": "trigger-not-04",
+    "prompt": "Wire the existing Button component's onClick prop to open the existing modal; do not change visuals or behavior",
+    "expected": false,
+    "rationale": "Mechanical frontend wiring with no interface design decision"
+  },
+  {
+    "id": "trigger-not-05",
+    "prompt": "Design the PostgreSQL schema for subscriptions and invoices",
+    "expected": false,
+    "rationale": "Database architecture"
+  },
+  {
+    "id": "trigger-not-06",
+    "prompt": "Profile this canvas animation and find why it drops frames",
+    "expected": false,
+    "rationale": "Animation performance debugging"
+  },
+  {
+    "id": "trigger-not-07",
+    "prompt": "Research whether small accounting firms will pay for automated reconciliation",
+    "expected": false,
+    "rationale": "Market evidence and product strategy"
+  },
+  {
+    "id": "trigger-not-08",
+    "prompt": "Review my pull request for correctness, security regressions, and missing tests",
+    "expected": false,
+    "rationale": "Code review rather than design critique"
+  },
+  {
+    "id": "trigger-not-09",
+    "prompt": "Convert this portrait to a four-color Game Boy sprite",
+    "expected": false,
+    "rationale": "Pixel-art generation"
+  },
+  {
+    "id": "trigger-not-10",
+    "prompt": "The approved responsive layout overflows by 12px only in Safari 18. Reproduce the browser-specific defect and explain which CSS rule causes it",
+    "expected": false,
+    "rationale": "Root-cause debugging of an isolated browser defect"
+  }
+]

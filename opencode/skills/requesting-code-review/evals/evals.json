@@ -1,0 +1,74 @@
+[
+  {
+    "id": "review-eval-01",
+    "name": "Review catches SQL injection without hallucinating other vulnerabilities",
+    "prompt": "Review this code change. It's a new endpoint that accepts a user search query and returns matching products:\n\n```python\n@app.route('/api/products/search')\ndef search_products():\n    query = request.args.get('q', '')\n    sql = f\"SELECT * FROM products WHERE name LIKE '%{query}%'\"\n    results = db.execute(sql)\n    return jsonify(results)\n```",
+    "assertions": [
+      "The review identifies the SQL injection vulnerability with a specific line reference",
+      "The review uses Conventional Comments labels (issue, suggestion, etc.)",
+      "The review does NOT hallucinate vulnerabilities that don't exist (e.g., XSS in a JSON API response)",
+      "The review does NOT say 'LGTM' or approve without reading the diff",
+      "The review suggests a specific fix (parameterized queries) not a vague 'fix the security'",
+      "The review flags missing input validation as a separate issue or suggestion",
+      "The review includes at least one note about what's missing (tests, error handling)",
+      "The SQL injection is marked as blocking"
+    ]
+  },
+  {
+    "id": "review-eval-02",
+    "name": "Review flags scope creep using surgical changes principle",
+    "prompt": "Review this PR. The description says: 'Fix the null pointer in the user profile page when address is missing.' The diff includes: (1) adding a null check for address in ProfilePage.jsx, (2) renaming all variables in UserList.jsx from camelCase to snake_case, (3) adding a new SettingsPage.jsx component, (4) updating package.json with three new dependencies.",
+    "assertions": [
+      "The review flags the variable renaming as scope creep — it doesn't trace to the stated goal",
+      "The review flags the new SettingsPage component as scope creep",
+      "The review flags the new dependencies as requiring justification",
+      "The review approves the null check as the only change that traces to the goal",
+      "The review suggests splitting the PR into separate PRs for the unrelated changes",
+      "The review uses Conventional Comments labels",
+      "The review does NOT approve everything without questioning scope",
+      "The scope creep flags are blocking or at minimum clearly labeled as issues"
+    ]
+  },
+  {
+    "id": "review-eval-03",
+    "name": "Review checks test assertion quality, not just coverage",
+    "prompt": "Review this test:\n\n```javascript\ndescribe('formatPrice', () => {\n  it('formats the price', () => {\n    const result = formatPrice(42);\n    expect(result).toBeDefined();\n    expect(typeof result).toBe('string');\n  });\n});\n```",
+    "assertions": [
+      "The review identifies that the test has no meaningful assertions — it checks that a value is defined and is a string, not that it is correctly formatted",
+      "The review identifies this as test theater — replacing the implementation with a stub that returns 'hello' would pass",
+      "The review suggests specific assertions that should be added (e.g., expect(result).toBe('$42.00'))",
+      "The review flags the missing edge cases (null, undefined, 0, negative, decimals, large numbers)",
+      "The review does NOT praise the test or say coverage is good",
+      "The review uses Conventional Comments labels"
+    ]
+  },
+  {
+    "id": "review-eval-04",
+    "name": "Review provides specific praise and avoids generic feedback",
+    "prompt": "Review this PR that adds error handling to a payment processing module. The diff includes: try/catch for the API call with specific error types, a retry with exponential backoff for transient failures, a logger that masks credit card numbers, and comprehensive tests for each error path.",
+    "assertions": [
+      "The review includes at least one specific praise that references a concrete detail (e.g., the credit card masking, the exponential backoff, the error path tests)",
+      "The review does NOT use generic praise like 'nice work' or 'good code'",
+      "The review checks security (credit card masking, no secrets in logs)",
+      "The review checks test quality (do the tests assert behavior or just that code runs)",
+      "The review checks for issues (are there race conditions in the retry? is the backoff configurable? what about the max retry count?)",
+      "The review uses Conventional Comments labels",
+      "The review does NOT hallucinate issues that don't exist",
+      "Blocking issues (if any) are clearly distinguished from non-blocking"
+    ]
+  },
+  {
+    "id": "review-eval-05",
+    "name": "Review resists banned AI-generic patterns",
+    "prompt": "Review this small change: a single-line fix that changes a timeout from 3000ms to 5000ms in an API client. The PR description says: 'Increase timeout to handle slow API responses in production.'",
+    "assertions": [
+      "The review does NOT write an essay-length comment for a one-line change",
+      "The review does NOT hallucinate security vulnerabilities that don't exist in a timeout change",
+      "The review does NOT suggest generic 'consider adding error handling'",
+      "The review does ask whether the timeout increase is the right fix or if the underlying slow API should be investigated (question or suggestion)",
+      "The review checks whether 5000ms is appropriate (what does the calling code do while waiting? is there a user-facing impact?)",
+      "The review is proportional in length to the diff complexity",
+      "The review does NOT say 'LGTM' without reading — it references the specific change and its context"
+    ]
+  }
+]

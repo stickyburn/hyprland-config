@@ -1,0 +1,82 @@
+[
+  {
+    "query": "We're at $80k ARR and churn is getting worse even though feature usage is up. Can you figure out whether this is a packaging problem, a weak customer segment, or missing recurring value and tell us what to test next?",
+    "should_trigger": true
+  },
+  {
+    "query": "I have an idea for automating compliance evidence for dental clinics. Is this worth pursuing, who would pay, and what wedge could beat the all-in-one practice suites?",
+    "should_trigger": true
+  },
+  {
+    "query": "Our three pricing tiers all convert about the same and enterprise customers keep asking for usage pricing. Redesign the value metric and give me a safe pricing experiment.",
+    "should_trigger": true
+  },
+  {
+    "query": "Should my profitable $20k MRR browser extension raise a seed round, stay bootstrapped, or use revenue financing? I need a milestone-based answer, not generic VC advice.",
+    "should_trigger": true
+  },
+  {
+    "query": "PostHog shows teams that invite a second editor retain much better. Design a product loop around collaboration and tell me how to prove it is causal before we rebuild onboarding.",
+    "should_trigger": true
+  },
+  {
+    "query": "Find examples of old marketplace companies that solved cold start in unusual ways and translate the underlying mechanism to a local equipment-rental product in 2026.",
+    "should_trigger": true
+  },
+  {
+    "query": "We sell security training per seat but usage and value follow the number of risky events. Work out better packaging, unit economics, and how to migrate customers without destroying trust.",
+    "should_trigger": true
+  },
+  {
+    "query": "Everyone says our AI writing assistant is cool, but nobody comes back after exporting the first document. Do we have a retention problem, a one-shot job, or no product-market fit?",
+    "should_trigger": true
+  },
+  {
+    "query": "We're deciding between launching for accountants, fractional CFOs, or founders. Research the actual alternatives and recommend a distribution-first beachhead.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our founder wants streaks, scarcity banners, and a deliberately hard cancellation flow to lift subscription revenue. Give us an ethical alternative that can still improve LTV.",
+    "should_trigger": true
+  },
+  {
+    "query": "Rebuild the pricing page in src/app/pricing/page.tsx to match this Figma link. Keep all existing prices and copy, but make the cards responsive and accessible.",
+    "should_trigger": false
+  },
+  {
+    "query": "Stripe webhook retries are creating duplicate subscriptions in production. Here is the stack trace and the handler. Find the root cause and fix it with a regression test.",
+    "should_trigger": false
+  },
+  {
+    "query": "Review this pull request that adds annual billing. Focus on race conditions, authorization, idempotency, and whether the migration can corrupt existing subscriptions.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write five homepage headlines for our existing payroll product. The positioning is already approved: same-day payroll corrections for restaurant groups.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain loss aversion and the decoy effect for my undergraduate psychology exam, with citations to the original studies.",
+    "should_trigger": false
+  },
+  {
+    "query": "Does our subscription cancellation flow comply with the FTC click-to-cancel rule and the EU Digital Services Act? I need legal requirements, not product recommendations.",
+    "should_trigger": false
+  },
+  {
+    "query": "I have $30,000 to invest personally. Compare index funds, bonds, and startup angel investments for my retirement portfolio.",
+    "should_trigger": false
+  },
+  {
+    "query": "The Wi-Fi drops whenever this MacBook switches from the access point in the office to the one in the hall. Diagnose the VLAN, roaming, driver, and switch configuration.",
+    "should_trigger": false
+  },
+  {
+    "query": "Animate the onboarding progress indicator with a restrained spring and shared-element transition. Respect prefers-reduced-motion and keep it at 60fps.",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a three-year GAAP revenue recognition schedule for our prepaid annual contracts and explain the journal entries.",
+    "should_trigger": false
+  }
+]

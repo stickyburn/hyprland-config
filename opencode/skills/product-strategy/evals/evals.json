@@ -1,0 +1,75 @@
+{
+  "skill_name": "product-strategy",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm considering a B2B SaaS for construction site supervisors in the UK. It would use AI to turn voice notes and WhatsApp photos into a daily site log. I can build the MVP in six weeks, but I don't know whether this is a real business or just a neat demo. Find the non-obvious opportunity, tell me what version is worth testing, how it could reach its first 100 teams, and what evidence would make you kill it. Please use current market evidence rather than giving me a generic startup checklist.",
+      "expected_output": "A current, sourced decision that maps existing workflows and alternatives, generates mechanism-level differentiated bets, connects distribution and monetization, names transfer limits, and defines consequential validation with kill criteria.",
+      "files": [],
+      "assertions": [
+        "Current factual market and competitor claims include direct citations.",
+        "The analysis includes manual workarounds and non-consumption, not only direct SaaS competitors.",
+        "At least two candidate bets differ in mechanism rather than superficial audience wording.",
+        "The recommendation connects a specific user trigger, activation event, distribution path, and revenue model.",
+        "The answer states a strongest disconfirming case and measurable kill criteria.",
+        "The response does not default to TAM, SWOT, build-community, or leverage-AI advice."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Our consumer meal-planning app charges $9.99/month. Trial conversion is 18%, month-one paid churn is 31%, and retained users usually plan meals only on Sundays. The team wants to preselect annual billing, add a seven-day streak, send daily notifications, and make cancellation a three-screen flow. Diagnose the real problem and redesign the product and subscription loop. I want better revenue, but not at the cost of user trust.",
+      "expected_output": "A cohort- and cadence-aware diagnosis that rejects deceptive retention tactics, separates activation from recurring value, proposes a natural weekly loop and transparent monetization tests, and includes trust guardrails.",
+      "files": [],
+      "assertions": [
+        "The answer explicitly rejects or replaces preselection and cancellation obstruction.",
+        "The diagnosis recognizes the product's natural weekly cadence rather than forcing daily engagement.",
+        "Proposed loops close through changed state or recurring user value, not notifications alone.",
+        "Recommendations distinguish activation, voluntary churn, payment churn, and segment or cohort questions.",
+        "Tests include behavioral metrics, pass/fail thresholds, and trust or regret guardrails.",
+        "Pricing and packaging advice is not based mainly on anchors, charm pricing, or decoys."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I run a bootstrapped developer tool at $35k MRR, 78% gross margin, 4% monthly logo churn, and almost all growth comes from GitHub and word of mouth. A seed fund offered to discuss a $2m round so we can hire enterprise sales and build SSO, audit logs, and on-prem deployment. Should we raise, keep bootstrapping, use debt, or do something else? Work through the economics and tell me what milestone should come before a financing decision.",
+      "expected_output": "A capital-source comparison tied to venture fit, cohort economics, enterprise demand evidence, milestone unlocks, runway, control, and reversible tests rather than a reflexive fundraising recommendation.",
+      "files": [],
+      "assertions": [
+        "The answer evaluates whether the company has a venture-scale and capital-accelerated engine rather than treating funding as success.",
+        "Calculations state assumptions and limitations, especially around churn and simple LTV.",
+        "Bootstrapping, customer financing, debt or revenue finance, and venture are compared on fit and risk.",
+        "The recommendation identifies evidence needed for enterprise demand and willingness to pay.",
+        "The proposed amount or financing decision is tied to a measurable milestone and next options.",
+        "The answer names the strongest downside of its preferred route."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "We sell API monitoring to small engineering teams. Signups are flat, but users who connect both production traffic and Slack retain 3.2x better. Interviews say they like the product, while win/loss notes show we lose to Datadog bundles and to teams doing nothing. We have three ideas: add synthetic browser tests, reposition around incident handoffs, or make the current monitor free and monetize history. Decide what we should do next and design the shortest test that can distinguish the options.",
+      "expected_output": "A decision that distinguishes correlation from causation, maps bundled and non-consumption alternatives, compares the three options by user mechanism, distribution, economics, and incumbent response, then proposes discriminating tests.",
+      "files": [],
+      "assertions": [
+        "The 3.2x retention fact is treated as an observed correlation requiring causal validation.",
+        "Datadog bundling and doing nothing are analyzed as distinct competitive forces.",
+        "Each option is mapped to user value, distribution, monetization, and incumbent or platform response.",
+        "The answer makes a clear recommendation rather than returning an unranked pros-and-cons list.",
+        "The test plan distinguishes the options with explicit pass/fail thresholds and a next decision.",
+        "Material inferences and assumptions are labeled or clearly separated from observations."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "I want a Dropbox-style referral loop for a 2026 privacy-first family document vault. Research what actually made Dropbox's early referral program work instead of repeating the famous story, explain which conditions do and do not transfer, and design a loop that fits this product without bribing users to spam their relatives.",
+      "expected_output": "A sourced historical mechanism analysis with period-specific enabling conditions and causal caveats, followed by an ethical modern loop tied to family collaboration, trust, stored value, and measurable transfer assumptions.",
+      "files": [],
+      "assertions": [
+        "The historical case includes dates, direct sources, observed outcomes, and causal uncertainty.",
+        "The answer distinguishes Dropbox's mechanism from the visible give-storage tactic.",
+        "Transfer analysis covers channel, product value, trust, competition, and privacy differences in 2026.",
+        "The proposed loop creates recipient value and changed product state rather than spam exposure alone.",
+        "The loop includes edge conversion metrics, cycle time, abuse controls, and trust guardrails.",
+        "The answer includes a cheap test and a condition for abandoning the analogy."
+      ]
+    }
+  ]
+}

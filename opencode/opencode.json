@@ -58,7 +58,9 @@
 			"git status *": "allow",
 			"git diff *": "allow",
 			"git show *": "allow",
-			"git log *": "allow"
+			"git log *": "allow",
+      "git branch --all *": "allow",
+      "git rev-parse *": "allow"
 		}
 	},
 	"experimental": {

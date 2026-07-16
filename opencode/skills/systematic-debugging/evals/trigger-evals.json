@@ -1,0 +1,122 @@
+[
+  {
+    "id": "trigger-should-01",
+    "prompt": "I'm getting a TypeError in my JavaScript code, can you help?",
+    "expected": true,
+    "rationale": "Bug / error — systematic debugging"
+  },
+  {
+    "id": "trigger-should-02",
+    "prompt": "My tests are flaky, they pass sometimes and fail other times",
+    "expected": true,
+    "rationale": "Flaky test / race condition — systematic debugging"
+  },
+  {
+    "id": "trigger-should-03",
+    "prompt": "This was working yesterday but now it's broken, I don't know what changed",
+    "expected": true,
+    "rationale": "Regression — systematic debugging"
+  },
+  {
+    "id": "trigger-should-04",
+    "prompt": "Why is my function returning undefined instead of the expected value?",
+    "expected": true,
+    "rationale": "Unexpected behavior — systematic debugging"
+  },
+  {
+    "id": "trigger-should-05",
+    "prompt": "The app crashes when I click the submit button on an empty form",
+    "expected": true,
+    "rationale": "Crash / reproduction scenario — systematic debugging"
+  },
+  {
+    "id": "trigger-should-06",
+    "prompt": "I think there's a memory leak in my Node.js app, memory keeps growing",
+    "expected": true,
+    "rationale": "Memory leak — systematic debugging"
+  },
+  {
+    "id": "trigger-should-07",
+    "prompt": "I can't reproduce this bug that a user reported, it only happens on their machine",
+    "expected": true,
+    "rationale": "Environment-dependent bug / reproduction challenge — systematic debugging"
+  },
+  {
+    "id": "trigger-should-08",
+    "prompt": "My API endpoint is responding really slowly all of a sudden",
+    "expected": true,
+    "rationale": "Performance problem — systematic debugging"
+  },
+  {
+    "id": "trigger-should-09",
+    "prompt": "There's a deadlock in my concurrent Go program",
+    "expected": true,
+    "rationale": "Deadlock / race condition — systematic debugging"
+  },
+  {
+    "id": "trigger-should-10",
+    "prompt": "The test suite is failing after I merged a pull request, how do I find what broke?",
+    "expected": true,
+    "rationale": "Regression isolation — systematic debugging"
+  },
+  {
+    "id": "trigger-not-01",
+    "prompt": "Design a dashboard layout for monitoring Kubernetes pods",
+    "expected": false,
+    "rationale": "UI design — use design-ux-ui"
+  },
+  {
+    "id": "trigger-not-02",
+    "prompt": "Add a hover animation to these cards",
+    "expected": false,
+    "rationale": "Motion / animation — use motion"
+  },
+  {
+    "id": "trigger-not-03",
+    "prompt": "Who is our target customer segment?",
+    "expected": false,
+    "rationale": "Product strategy — use product-strategy"
+  },
+  {
+    "id": "trigger-not-04",
+    "prompt": "Review my pull request for code quality",
+    "expected": false,
+    "rationale": "Code review — use requesting-code-review"
+  },
+  {
+    "id": "trigger-not-05",
+    "prompt": "Build a new feature for exporting data to CSV",
+    "expected": false,
+    "rationale": "New feature implementation, not debugging"
+  },
+  {
+    "id": "trigger-not-06",
+    "prompt": "What pricing model should we use for our SaaS?",
+    "expected": false,
+    "rationale": "Product strategy / pricing — use product-strategy"
+  },
+  {
+    "id": "trigger-not-07",
+    "prompt": "Set up a CI/CD pipeline for our project",
+    "expected": false,
+    "rationale": "DevOps setup, not debugging"
+  },
+  {
+    "id": "trigger-not-08",
+    "prompt": "Choose a color palette for my fintech app",
+    "expected": false,
+    "rationale": "Color system design — use design-ux-ui"
+  },
+  {
+    "id": "trigger-not-09",
+    "prompt": "Write a marketing landing page for our product",
+    "expected": false,
+    "rationale": "New page creation, not debugging"
+  },
+  {
+    "id": "trigger-not-10",
+    "prompt": "The server is down and we think it's a DNS issue",
+    "expected": false,
+    "rationale": "Infrastructure outage without a code component — troubleshooting, not code debugging"
+  }
+]
