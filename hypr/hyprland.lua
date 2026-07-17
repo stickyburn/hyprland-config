@@ -2,6 +2,10 @@
 -- Hyprland Lua configuration (0.55+)
 -- https://wiki.hyprland.org/Configuring/Start/
 
+local script_dir = debug.getinfo(1, "S").source:sub(2):match("(.*/)") or "./"
+local loaded, theme = pcall(dofile, script_dir .. "theme.lua")
+if not loaded then theme = {} end
+
 ---- MONITORS ----
 hl.monitor({
 	output = "DP-1",
@@ -48,10 +52,7 @@ hl.config({
 		gaps_in = 5,
 		gaps_out = { top = 7, right = 9, bottom = 9, left = 9 },
 		border_size = 2,
-		col = {
-			active_border = { colors = { "rgb(C79EFF)", "rgb(FF338F)" }, angle = 35 },
-			inactive_border = "rgb(2A1D31)",
-		},
+		col = theme.borders,
 		allow_tearing = false,
 	},
 })
@@ -111,8 +112,8 @@ hl.config({
 hl.config({
 	decoration = {
 		rounding = 8,
-		active_opacity = 1.0,
-		inactive_opacity = 1.0,
+		active_opacity = 0.96,
+		inactive_opacity = 0.96,
 		fullscreen_opacity = 1.0,
 		blur = {
 			enabled = true,
@@ -126,7 +127,7 @@ hl.config({
 			enabled = true,
 			range = 18,
 			render_power = 2,
-			color = 0x99121019,
+			color = theme.shadow,
 		},
 	},
 })
@@ -219,5 +220,4 @@ hl.layer_rule({
 })
 
 ---- KEYBINDINGS ----
-local script_dir = debug.getinfo(1, "S").source:sub(2):match("(.*/)") or "./"
 dofile(script_dir .. "keybinds.lua")

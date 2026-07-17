@@ -6,12 +6,12 @@
 	"agent": {
 		"plan": {
 			"model": "openai/gpt-5.6-sol",
-			"variant": "xhigh",
+			"variant": "high",
 			"color": "#c79eff"
 		},
 		"build": {
-			"model": "openai/gpt-5.6-sol",
-      "variant": "high",
+			"model": "ollama-cloud/glm-5.2",
+      "variant": "max",
 			"color": "#98E4A7"
 	  }
 	},

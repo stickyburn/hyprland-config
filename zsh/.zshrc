@@ -2,6 +2,9 @@
 export PATH="$HOME/.config/pear/bin:$PATH"
 
 source "$ZDOTDIR/secrets/secrets.zsh"
+source "$ZDOTDIR/theme.zsh"
+
+export LG_CONFIG_FILE="$XDG_CONFIG_HOME/lazygit/config.yml,$XDG_CONFIG_HOME/lazygit/theme.yml"
 
 source ~/.config/zsh/plugins/zsh-autocomplete/zsh-autosuggestions.zsh
 eval "$(zoxide init zsh)"
@@ -43,7 +46,7 @@ precmd_hooks() {
 precmd_functions+=(precmd_hooks)
 
 setopt prompt_subst
-zstyle ':vcs_info:git:*' formats '%F{#c79eff} %b%f'
-export RPROMPT='%F{#555}%D{%H:%M}%f'
-export PROMPT='%F{#ff91c3}%1d%f ${vcs_info_msg_0_}
-%F{#ff338f}›%f '
+zstyle ':vcs_info:git:*' formats "%F{$SIGNAL_NOIR_FOCUS} %b%f"
+export RPROMPT="%F{$SIGNAL_NOIR_BORDER}%D{%H:%M}%f"
+export PROMPT="%F{$SIGNAL_NOIR_ACCENT}%1d%f \${vcs_info_msg_0_}
+%F{$SIGNAL_NOIR_DANGER}›%f "

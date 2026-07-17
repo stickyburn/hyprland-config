@@ -1,3 +1,4 @@
+# Generated from theme/signal-noir.json.
 [indicator]
 preview = {}
 current = { fg = "#121019", bg = "#eee9ff" }

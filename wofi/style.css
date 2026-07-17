@@ -1,13 +1,4 @@
-@define-color canvas #121019;
-@define-color panel #0f0f1a;
-@define-color input #121124;
-@define-color raised #201a2f;
-@define-color selected #2a1d31;
-@define-color text #eee9ff;
-@define-color soft #ffeef2;
-@define-color violet #c79eff;
-@define-color pink #ff91c3;
-@define-color signal #ff338f;
+@import url("theme.css");
 
 * {
     font-family: "Switzer";
@@ -15,21 +6,21 @@
 }
 
 window {
-    background: @canvas;
-    border: 1px solid @violet;
+    background: @background;
+    border: 1px solid @focus;
     border-radius: 10px;
 }
 
 #outer-box {
-    background: @panel;
+    background: @panel_bg;
     border-radius: 9px;
     padding: 10px;
 }
 
 #input {
-    background: @input;
-    color: @text;
-    border: 1px solid @selected;
+    background: @elevated_bg;
+    color: @foreground;
+    border: 1px solid @border;
     border-radius: 7px;
     margin: 2px 2px 10px;
     padding: 11px 14px;
@@ -42,8 +33,8 @@ window {
 }
 
 #input:focus {
-    border-color: @violet;
-    background: @raised;
+    border-color: @focus;
+    background: @selection_bg;
 }
 
 #inner-box,
@@ -53,7 +44,7 @@ window {
 
 #entry {
     background: transparent;
-    border-left: 3px solid @panel;
+    border-left: 3px solid @panel_bg;
     border-radius: 5px;
     margin: 2px;
     padding: 8px 10px;
@@ -63,13 +54,13 @@ window {
 }
 
 #entry:hover {
-    background: @raised;
-    border-left-color: @pink;
+    background: @selection_bg;
+    border-left-color: @accent;
 }
 
 #entry:selected {
-    background: @selected;
-    border-left: 5px solid @signal;
+    background: @border;
+    border-left: 5px solid @danger;
     padding-left: 8px;
 }
 
@@ -78,17 +69,17 @@ window {
 }
 
 #text {
-    color: @soft;
+    color: @foreground_muted;
     font-weight: 400;
 }
 
 #text:selected {
-    color: @text;
+    color: @foreground;
     font-weight: 600;
 }
 
 #expander-box {
-    background: @raised;
-    color: @violet;
+    background: @selection_bg;
+    color: @focus;
     border-radius: 5px;
 }

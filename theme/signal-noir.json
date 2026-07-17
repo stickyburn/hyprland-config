@@ -1,0 +1,33 @@
+{
+  "name": "signal-noir",
+  "colors": {
+    "canvas": "#121019",
+    "panel": "#0f0f1a",
+    "raised": "#121124",
+    "deep": "#221727",
+    "surface": "#201a2f",
+    "edge": "#2a1d31",
+    "text": "#eee9ff",
+    "soft": "#ffeef2",
+    "cool": "#dffff8",
+    "pink": "#ff91c3",
+    "signal": "#ff338f",
+    "violet": "#c79eff",
+    "mint": "#98e4a7"
+  },
+  "roles": {
+    "background": "canvas",
+    "panel_bg": "panel",
+    "elevated_bg": "raised",
+    "selection_bg": "surface",
+    "border": "edge",
+    "foreground": "text",
+    "foreground_muted": "soft",
+    "info": "cool",
+    "accent": "pink",
+    "danger": "signal",
+    "focus": "violet",
+    "success": "mint",
+    "on_accent": "deep"
+  }
+}

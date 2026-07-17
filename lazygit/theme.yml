@@ -1,0 +1,15 @@
+# Generated from theme/signal-noir.json.
+gui:
+  theme:
+    activeBorderColor: ["#c79eff", bold]
+    inactiveBorderColor: ["#2a1d31"]
+    searchingActiveBorderColor: ["#ff91c3", bold]
+    optionsTextColor: ["#c79eff"]
+    selectedLineBgColor: ["#201a2f"]
+    selectedRangeBgColor: ["#2a1d31"]
+    cherryPickedCommitFgColor: ["#121019"]
+    cherryPickedCommitBgColor: ["#ff91c3"]
+    markedBaseCommitFgColor: ["#121019"]
+    markedBaseCommitBgColor: ["#98e4a7"]
+    unstagedChangesColor: ["#ff338f"]
+    defaultFgColor: ["#eee9ff"]

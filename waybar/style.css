@@ -1,13 +1,4 @@
-@define-color canvas #121019;
-@define-color rail #0f0f1a;
-@define-color raised #121124;
-@define-color edge #2a1d31;
-@define-color text #eee9ff;
-@define-color soft #ffeef2;
-@define-color violet #c79eff;
-@define-color pink #ff91c3;
-@define-color signal #ff338f;
-@define-color mint #98e4a7;
+@import url("theme.css");
 
 * {
     border: none;
@@ -19,7 +10,7 @@
 
 window#waybar {
     background: transparent;
-    color: @text;
+    color: @foreground;
 }
 
 window#waybar.hidden {
@@ -29,8 +20,8 @@ window#waybar.hidden {
 .modules-left,
 .modules-center,
 #telemetry {
-    background: @rail;
-    border: 1px solid @edge;
+    background: @panel_bg;
+    border: 1px solid @border;
     border-radius: 8px;
     margin-top: 4px;
 }
@@ -41,7 +32,7 @@ window#waybar.hidden {
 }
 
 .modules-center {
-    background: @canvas;
+    background: @background;
     padding: 2px 3px;
 }
 
@@ -65,17 +56,17 @@ window#waybar.hidden {
 }
 
 #custom-city-selector {
-    color: @signal;
+    color: @danger;
     font-weight: 700;
 }
 
 #custom-multi-clock {
-    color: @text;
+    color: @foreground;
     font-weight: 600;
 }
 
 #custom-multi-weather {
-    color: @pink;
+    color: @accent;
 }
 
 #workspaces {
@@ -84,7 +75,7 @@ window#waybar.hidden {
 
 #workspaces button {
     background: transparent;
-    color: @soft;
+    color: @foreground_muted;
     border-bottom: 0 solid transparent;
     border-radius: 5px;
     margin: 0 1px;
@@ -97,33 +88,33 @@ window#waybar.hidden {
 }
 
 #workspaces button:hover {
-    background: @raised;
-    color: @violet;
+    background: @elevated_bg;
+    color: @focus;
 }
 
 #workspaces button.active {
-    background: @raised;
-    color: @violet;
-    border-bottom: 2px solid @signal;
+    background: @elevated_bg;
+    color: @focus;
+    border-bottom: 2px solid @danger;
     font-weight: 800;
 }
 
 #workspaces button.urgent {
-    background: @signal;
-    color: @canvas;
+    background: @danger;
+    color: @background;
     animation: urgent-breathe 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes urgent-breathe {
-    0% { background: #ff338f; }
-    50% { background: #ff91c3; }
-    100% { background: #ff338f; }
+    0% { background: @danger; }
+    50% { background: @accent; }
+    100% { background: @danger; }
 }
 
 #window {
-    background: @rail;
-    color: @soft;
-    border: 1px solid @edge;
+    background: @panel_bg;
+    color: @foreground_muted;
+    border: 1px solid @border;
     border-radius: 7px;
     margin: 4px 12px 0 8px;
     padding: 0 12px;
@@ -136,9 +127,9 @@ window#waybar.hidden {
 }
 
 #window:hover {
-    background: @raised;
-    color: @violet;
-    border-color: @violet;
+    background: @elevated_bg;
+    color: @focus;
+    border-color: @focus;
 }
 
 window#waybar.empty #window {
@@ -150,25 +141,25 @@ window#waybar.empty #window {
 }
 
 #custom-network {
-    color: @mint;
+    color: @success;
     font-size: 12px;
 }
 
 #custom-network.disconnected {
-    color: @signal;
+    color: @danger;
 }
 
 #cpu {
-    color: @violet;
+    color: @focus;
 }
 
 #memory {
-    color: @pink;
+    color: @accent;
 }
 
 #custom-idle {
-    color: @soft;
-    border-left: 1px solid @edge;
+    color: @foreground_muted;
+    border-left: 1px solid @border;
     margin-left: 3px;
 }
 
@@ -178,14 +169,14 @@ window#waybar.empty #window {
 #cpu:hover,
 #memory:hover,
 #custom-idle:hover {
-    background: @raised;
-    color: @text;
+    background: @elevated_bg;
+    color: @foreground;
 }
 
 tooltip {
-    background: @raised;
-    color: @text;
-    border: 1px solid @violet;
+    background: @elevated_bg;
+    color: @foreground;
+    border: 1px solid @focus;
     border-radius: 7px;
 }
 

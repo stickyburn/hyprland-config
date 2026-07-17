@@ -16,55 +16,205 @@
     "mint": "#98e4a7"
   },
   "theme": {
-    "primary": { "dark": "violet", "light": "deep" },
-    "secondary": { "dark": "pink", "light": "surface" },
-    "accent": { "dark": "signal", "light": "deep" },
-    "error": { "dark": "signal", "light": "signal" },
-    "warning": { "dark": "pink", "light": "deep" },
-    "success": { "dark": "mint", "light": "deep" },
-    "info": { "dark": "cool", "light": "surface" },
-    "text": { "dark": "text", "light": "canvas" },
-    "textMuted": { "dark": "soft", "light": "edge" },
-    "background": { "dark": "canvas", "light": "text" },
-    "backgroundPanel": { "dark": "panel", "light": "soft" },
-    "backgroundElement": { "dark": "raised", "light": "cool" },
-    "border": { "dark": "edge", "light": "violet" },
-    "borderActive": { "dark": "violet", "light": "deep" },
-    "borderSubtle": { "dark": "surface", "light": "pink" },
-    "diffAdded": { "dark": "mint", "light": "deep" },
-    "diffRemoved": { "dark": "signal", "light": "signal" },
-    "diffContext": { "dark": "pink", "light": "edge" },
-    "diffHunkHeader": { "dark": "violet", "light": "deep" },
-    "diffHighlightAdded": { "dark": "mint", "light": "deep" },
-    "diffHighlightRemoved": { "dark": "signal", "light": "signal" },
-    "diffAddedBg": { "dark": "surface", "light": "cool" },
-    "diffRemovedBg": { "dark": "deep", "light": "soft" },
-    "diffContextBg": { "dark": "panel", "light": "text" },
-    "diffLineNumber": { "dark": "pink", "light": "pink" },
-    "diffAddedLineNumberBg": { "dark": "surface", "light": "cool" },
-    "diffRemovedLineNumberBg": { "dark": "deep", "light": "soft" },
-    "markdownText": { "dark": "text", "light": "canvas" },
-    "markdownHeading": { "dark": "pink", "light": "deep" },
-    "markdownLink": { "dark": "cool", "light": "surface" },
-    "markdownLinkText": { "dark": "violet", "light": "deep" },
-    "markdownCode": { "dark": "mint", "light": "deep" },
-    "markdownBlockQuote": { "dark": "pink", "light": "edge" },
-    "markdownEmph": { "dark": "pink", "light": "surface" },
-    "markdownStrong": { "dark": "soft", "light": "deep" },
-    "markdownHorizontalRule": { "dark": "edge", "light": "violet" },
-    "markdownListItem": { "dark": "signal", "light": "deep" },
-    "markdownListEnumeration": { "dark": "violet", "light": "surface" },
-    "markdownImage": { "dark": "cool", "light": "deep" },
-    "markdownImageText": { "dark": "violet", "light": "surface" },
-    "markdownCodeBlock": { "dark": "soft", "light": "canvas" },
-    "syntaxComment": { "dark": "violet", "light": "edge" },
-    "syntaxKeyword": { "dark": "pink", "light": "deep" },
-    "syntaxFunction": { "dark": "cool", "light": "surface" },
-    "syntaxVariable": { "dark": "text", "light": "canvas" },
-    "syntaxString": { "dark": "mint", "light": "deep" },
-    "syntaxNumber": { "dark": "signal", "light": "signal" },
-    "syntaxType": { "dark": "cool", "light": "surface" },
-    "syntaxOperator": { "dark": "violet", "light": "deep" },
-    "syntaxPunctuation": { "dark": "soft", "light": "canvas" }
+    "primary": {
+      "dark": "violet",
+      "light": "deep"
+    },
+    "secondary": {
+      "dark": "pink",
+      "light": "surface"
+    },
+    "accent": {
+      "dark": "signal",
+      "light": "deep"
+    },
+    "error": {
+      "dark": "signal",
+      "light": "signal"
+    },
+    "warning": {
+      "dark": "pink",
+      "light": "deep"
+    },
+    "success": {
+      "dark": "mint",
+      "light": "deep"
+    },
+    "info": {
+      "dark": "cool",
+      "light": "surface"
+    },
+    "text": {
+      "dark": "text",
+      "light": "canvas"
+    },
+    "textMuted": {
+      "dark": "soft",
+      "light": "edge"
+    },
+    "background": {
+      "dark": "canvas",
+      "light": "text"
+    },
+    "backgroundPanel": {
+      "dark": "panel",
+      "light": "soft"
+    },
+    "backgroundElement": {
+      "dark": "raised",
+      "light": "cool"
+    },
+    "border": {
+      "dark": "edge",
+      "light": "violet"
+    },
+    "borderActive": {
+      "dark": "violet",
+      "light": "deep"
+    },
+    "borderSubtle": {
+      "dark": "surface",
+      "light": "pink"
+    },
+    "diffAdded": {
+      "dark": "mint",
+      "light": "deep"
+    },
+    "diffRemoved": {
+      "dark": "signal",
+      "light": "signal"
+    },
+    "diffContext": {
+      "dark": "pink",
+      "light": "edge"
+    },
+    "diffHunkHeader": {
+      "dark": "violet",
+      "light": "deep"
+    },
+    "diffHighlightAdded": {
+      "dark": "mint",
+      "light": "deep"
+    },
+    "diffHighlightRemoved": {
+      "dark": "signal",
+      "light": "signal"
+    },
+    "diffAddedBg": {
+      "dark": "surface",
+      "light": "cool"
+    },
+    "diffRemovedBg": {
+      "dark": "deep",
+      "light": "soft"
+    },
+    "diffContextBg": {
+      "dark": "panel",
+      "light": "text"
+    },
+    "diffLineNumber": {
+      "dark": "pink",
+      "light": "pink"
+    },
+    "diffAddedLineNumberBg": {
+      "dark": "surface",
+      "light": "cool"
+    },
+    "diffRemovedLineNumberBg": {
+      "dark": "deep",
+      "light": "soft"
+    },
+    "markdownText": {
+      "dark": "text",
+      "light": "canvas"
+    },
+    "markdownHeading": {
+      "dark": "pink",
+      "light": "deep"
+    },
+    "markdownLink": {
+      "dark": "cool",
+      "light": "surface"
+    },
+    "markdownLinkText": {
+      "dark": "violet",
+      "light": "deep"
+    },
+    "markdownCode": {
+      "dark": "mint",
+      "light": "deep"
+    },
+    "markdownBlockQuote": {
+      "dark": "pink",
+      "light": "edge"
+    },
+    "markdownEmph": {
+      "dark": "pink",
+      "light": "surface"
+    },
+    "markdownStrong": {
+      "dark": "soft",
+      "light": "deep"
+    },
+    "markdownHorizontalRule": {
+      "dark": "edge",
+      "light": "violet"
+    },
+    "markdownListItem": {
+      "dark": "signal",
+      "light": "deep"
+    },
+    "markdownListEnumeration": {
+      "dark": "violet",
+      "light": "surface"
+    },
+    "markdownImage": {
+      "dark": "cool",
+      "light": "deep"
+    },
+    "markdownImageText": {
+      "dark": "violet",
+      "light": "surface"
+    },
+    "markdownCodeBlock": {
+      "dark": "soft",
+      "light": "canvas"
+    },
+    "syntaxComment": {
+      "dark": "violet",
+      "light": "edge"
+    },
+    "syntaxKeyword": {
+      "dark": "pink",
+      "light": "deep"
+    },
+    "syntaxFunction": {
+      "dark": "cool",
+      "light": "surface"
+    },
+    "syntaxVariable": {
+      "dark": "text",
+      "light": "canvas"
+    },
+    "syntaxString": {
+      "dark": "mint",
+      "light": "deep"
+    },
+    "syntaxNumber": {
+      "dark": "signal",
+      "light": "signal"
+    },
+    "syntaxType": {
+      "dark": "cool",
+      "light": "surface"
+    },
+    "syntaxOperator": {
+      "dark": "violet",
+      "light": "deep"
+    },
+    "syntaxPunctuation": {
+      "dark": "soft",
+      "light": "canvas"
+    }
   }
 }

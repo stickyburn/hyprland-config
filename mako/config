@@ -1,12 +1,10 @@
+include=~/.config/mako/theme.conf
+
 max-visible=3
 max-history=12
 layer=overlay
 anchor=top-right
 font=Switzer 10
-background-color=#0f0f1a
-text-color=#eee9ff
-border-color=#c79eff
-progress-color=#ff338f
 border-size=2
 border-radius=8
 width=250
@@ -19,9 +17,5 @@ icon-border-radius=6
 default-timeout=5000
 format=<b>%s</b>\n%b
 
-[urgency=low]
-border-color=#2a1d31
-
 [urgency=high]
-border-color=#ff338f
 default-timeout=0
