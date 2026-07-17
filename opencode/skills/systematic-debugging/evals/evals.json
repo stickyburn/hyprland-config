@@ -1,75 +1,62 @@
 [
   {
     "id": "debug-eval-01",
-    "name": "Investigates a null reference error without shotgun debugging",
-    "prompt": "I'm getting a TypeError: Cannot read properties of null (reading 'map') in my React component at UserList.jsx line 42. It happens when I navigate to the profile page. Here's the stack trace: UserList.jsx:42 → ProfilePage.jsx:18 → App.jsx:34. How should I debug this?",
+    "name": "Traces a null reference to its source",
+    "prompt": "I'm getting a TypeError: Cannot read properties of null (reading 'map') in my React component at UserList.jsx line 42. It happens when I navigate to the profile page. Here's the stack trace: UserList.jsx:42 -> ProfilePage.jsx:18 -> App.jsx:34. How should I debug this?",
     "assertions": [
-      "The response follows the four-phase investigation: reproduce, isolate, understand, fix",
-      "It does NOT suggest adding try/catch to swallow the error",
-      "It does NOT suggest adding blanket null checks everywhere",
-      "It does NOT suggest adding as any or type assertions",
-      "It identifies that the null likely originates upstream (data source, API response, or state initialization) rather than at the line that throws",
-      "It suggests reproducing the bug first before changing code",
-      "It recommends tracing the data flow to find where the null originates",
-      "It recommends writing a test that reproduces the bug"
+      "The response establishes expected versus actual behavior and a reproducible feedback loop before proposing a fix",
+      "It traces the null through callers, state initialization, or the data source instead of assuming the throwing line is the cause",
+      "It states a falsifiable hypothesis or identifies evidence needed to form one",
+      "It does not use broad try/catch, blanket null checks, optional chaining, or type assertions merely to hide the symptom",
+      "It proposes regression coverage for the demonstrated contract"
     ]
   },
   {
     "id": "debug-eval-02",
-    "name": "Handles a flaky test with proper race condition investigation",
+    "name": "Investigates a flaky async sorting test",
     "prompt": "I have a test that passes 80% of the time but fails randomly. The failure is in a test that checks if items are sorted after an async update. How do I fix this flaky test?",
     "assertions": [
-      "The response identifies this as a potential race condition / timing bug, not a logic error",
-      "It does NOT suggest adding sleep/delay to make the test pass",
-      "It does NOT suggest adding retry logic to the test",
-      "It does NOT suggest disabling the flaky test",
-      "It recommends identifying the shared state and the synchronization mechanism",
-      "It recommends finding the exact window where the race occurs",
-      "It suggests testing under contention (more iterations, varied timing) to reproduce reliably",
-      "It recommends fixing the root cause (missing await, incorrect state assumption) not the test"
+      "The response treats timing, missing synchronization, shared state, and logic errors as hypotheses rather than declaring a cause",
+      "It proposes a repeatable stress or timing-variation loop that can expose the failure",
+      "It inspects the completion condition and ordering contract",
+      "It does not use arbitrary sleep, retries, or disabling the test as the primary fix",
+      "Verification includes repeated execution after the causal fix"
     ]
   },
   {
     "id": "debug-eval-03",
-    "name": "Uses git bisect for a regression with proper methodology",
+    "name": "Uses git bisect safely for a regression",
     "prompt": "My app was working fine last week but now the export feature is broken. I don't know when it broke. There have been about 40 commits since then. How do I find what caused this?",
     "assertions": [
-      "The response recommends git bisect as the approach",
-      "It says to commit or stash uncommitted changes before starting",
-      "It requires a reliable reproduction (the bug must be determinable as good/bad at each checkout)",
-      "It mentions git bisect run for automation if a test script exists",
-      "It mentions git bisect skip for unbuildable commits",
-      "It says to git bisect reset when done",
-      "It does NOT suggest reading through 40 commits manually as the primary approach"
+      "The response first defines a reliable good/bad reproduction",
+      "It recommends git bisect rather than manually reading every commit",
+      "It mentions git bisect run when the check can be automated",
+      "It mentions skipping untestable commits and resetting bisect when done",
+      "It does not mutate uncommitted work without permission"
     ]
   },
   {
     "id": "debug-eval-04",
-    "name": "Distinguishes between symptom and root cause with 5 Whys",
+    "name": "Distinguishes mitigation from root cause",
     "prompt": "My API endpoint returns 500 errors intermittently. The logs show 'database connection timeout'. I restarted the database and it worked for a day, then the errors came back. What should I do?",
     "assertions": [
-      "The response identifies that restarting the database fixed the symptom, not the root cause",
-      "It uses the 5 Whys methodology to trace beyond the immediate error",
-      "It does NOT suggest just adding retry logic as the fix",
-      "It does NOT suggest just increasing the timeout as the fix",
-      "It investigates why connections are timing out (connection pool exhaustion, long-running queries, leak)",
-      "It recommends checking connection pool configuration, query performance, and connection leaks",
-      "It recommends monitoring and alerting to catch the pattern before it becomes a 500"
+      "The response labels the restart as mitigation rather than proof of a fix",
+      "It traces beyond the timeout with testable hypotheses such as pool exhaustion, long queries, leaks, load, or network behavior",
+      "It asks for or proposes measurements that distinguish those hypotheses",
+      "It does not present a larger timeout or blind retry as the root-cause fix",
+      "It includes validation and durable observability appropriate to an intermittent production failure"
     ]
   },
   {
     "id": "debug-eval-05",
-    "name": "Resists banned AI-generic debugging patterns",
-    "prompt": "I'm getting an error: 'TypeError: Cannot read properties of undefined (reading 'length)' in my TypeScript code at the line `if (data.items.length > 0)`. The data comes from an API call. Fix this for me.",
+    "name": "Preserves an external API contract",
+    "prompt": "I'm getting an error: 'TypeError: Cannot read properties of undefined (reading length)' in my TypeScript code at `if (data.items.length > 0)`. The data comes from an API call. Fix this for me.",
     "assertions": [
-      "The response does NOT add try/catch to swallow the error",
-      "The response does NOT add a blanket `if (data == null) return` guard",
-      "The response does NOT add `as any` to silence the type error",
-      "The response does NOT add optional chaining `data?.items?.length` as the primary fix without understanding why data is undefined",
-      "The response investigates why the API returns undefined (is the endpoint correct? is the response shape different? is there an error path that returns undefined?)",
-      "The response recommends reproducing the bug before fixing",
-      "The response recommends a test that reproduces the undefined case",
-      "The fix addresses the root cause (API contract, error handling in the fetch, or response validation) not just the symptom"
+      "The response investigates the actual API response and error paths before selecting a fix",
+      "It distinguishes an invalid upstream response from a valid optional or failure response defined by the contract",
+      "It does not add try/catch, optional chaining, blanket guards, or `as any` solely to silence the error",
+      "The proposed fix restores or safely enforces the demonstrated contract at the correct boundary",
+      "It verifies the original case and adds focused regression coverage"
     ]
   }
 ]

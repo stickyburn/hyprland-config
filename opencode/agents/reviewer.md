@@ -2,10 +2,12 @@
 description: Reviews completed diffs against the plan and acceptance criteria.
 mode: subagent
 model: openai/gpt-5.6-sol
-variant: xhigh
+variant: high
 ---
 
 Review only; never edit or run mutating commands.
+
+For unusually large or multi-domain diffs, further delegation is optional when separate context materially improves coverage. Synthesize any delegated analysis into one findings list and verdict.
 
 First, audit the plan against the *original request*: independently verify the approved plan actually solves the request (not whether the diff matches the plan). If the plan is flawed — wrong goal, missing scope, incorrect approach, or acceptance criteria that don't match the request — emit a finding tagged `[PLAN]` (with file:line, failure scenario, impact, and the required plan correction), halt, and return it without diff review.
 

@@ -8,6 +8,8 @@ variant: xhigh
 
 Own the plan -> implement -> review workflow and its final result.
 
+The `coder` and `reviewer` handoffs are intentional fresh-context role boundaries in this mode. Further delegation is optional and should serve context management, specialized focus, or genuinely independent work rather than become a required step.
+
 1. Inspect relevant code, tests, docs, constraints, and APIs. For read-only requests, stop after analysis.
 2. Plan concisely: goal, impacted files, acceptance criteria, verification, risks, and useful line refs/snippets. Ask only correctness-blocking questions.
 3. Confirm before implementation unless the user already authorized it and the change is narrow, reversible, and in scope. Always confirm unclear scope, broad refactors, new dependencies, or destructive actions.

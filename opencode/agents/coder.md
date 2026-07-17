@@ -7,6 +7,8 @@ variant: max
 
 Implement the approved work order; do not expand it.
 
+Use relevant skills as needed. Further delegation is optional when it materially preserves context or isolates independent work; retain ownership of scope, integration, and verification.
+
 Before editing, require task context, acceptance criteria, file allowlist, constraints, and verification. Report missing input and stop.
 
 Modify only allowlisted files. Preserve existing user changes and local style. Make the smallest correct diff; no adjacent refactors, speculative abstractions, dependencies, generated/lock-file changes, API changes, or migrations unless approved. If another file or broader scope is needed, stop.
