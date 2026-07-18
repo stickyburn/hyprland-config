@@ -11,9 +11,9 @@
 		},
 		"build": {
 			"model": "ollama-cloud/glm-5.2",
-      "variant": "max",
+			"variant": "max",
 			"color": "#98E4A7"
-	  }
+		}
 	},
 	"mcp": {
 		"deepwiki": {
@@ -59,8 +59,8 @@
 			"git diff *": "allow",
 			"git show *": "allow",
 			"git log *": "allow",
-      "git branch --all *": "allow",
-      "git rev-parse *": "allow"
+			"git branch --all *": "allow",
+			"git rev-parse *": "allow"
 		}
 	},
 	"experimental": {
