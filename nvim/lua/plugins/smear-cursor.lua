@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   opts = function()
     return {
-      cursor_color = require("config.palette").pink,
+      cursor_color = require("config.palette").role.accent,
       stiffness = 0.72,
       trailing_stiffness = 0.52,
       damping = 0.86,
