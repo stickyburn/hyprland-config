@@ -1,12 +1,13 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const themeDir = dirname(fileURLToPath(import.meta.url));
 const configDir = dirname(themeDir);
-const source = JSON.parse(readFileSync(join(themeDir, "signal-noir.json"), "utf8"));
-const colors = source.colors;
-const roles = source.roles;
+const source = JSON.parse(readFileSync(join(themeDir, "neonway.json"), "utf8"));
+const { colors, roles, light_roles: lightRoles } = source;
+const checkOnly = process.argv.includes("--check");
+let stale = false;
 
 for (const [name, value] of Object.entries(colors)) {
   if (!/^#[0-9a-f]{6}$/i.test(value)) {
@@ -14,14 +15,21 @@ for (const [name, value] of Object.entries(colors)) {
   }
 }
 
-for (const [role, token] of Object.entries(roles)) {
-  if (!colors[token]) {
-    throw new Error(`Unknown token ${token} for role ${role}`);
+const roleNames = Object.keys(roles).sort();
+for (const [scheme, schemeRoles] of Object.entries({ dark: roles, light: lightRoles })) {
+  if (!schemeRoles || Object.keys(schemeRoles).sort().join() !== roleNames.join()) {
+    throw new Error(`${scheme} roles must match the canonical role set`);
+  }
+  for (const [role, token] of Object.entries(schemeRoles)) {
+    if (!colors[token]) {
+      throw new Error(`Unknown ${scheme} token ${token} for role ${role}`);
+    }
   }
 }
 
 const color = (name) => colors[name];
 const role = (name) => color(roles[name]);
+const lightRole = (name) => color(lightRoles[name]);
 
 function write(relativePath, content) {
   const path = join(configDir, relativePath);
@@ -33,22 +41,28 @@ function write(relativePath, content) {
   } catch {}
 
   if (current !== next) {
+    if (checkOnly) {
+      stale = true;
+      console.error(`stale ${relativePath}`);
+      return;
+    }
+    mkdirSync(dirname(path), { recursive: true });
     writeFileSync(path, next);
     console.log(`updated ${relativePath}`);
   }
 }
 
 function renderCss() {
-  const primitiveLines = Object.entries(colors).map(([name, value]) => `@define-color ${name} ${value};`);
   const roleLines = Object.entries(roles).map(([name, token]) => `@define-color ${name} ${color(token)};`);
-  return ["/* Generated from theme/signal-noir.json. */", ...primitiveLines, "", ...roleLines].join("\n");
+  return ["/* Generated from theme/neonway.json. */", ...roleLines].join("\n");
 }
 
 function renderLua() {
   const primitiveLines = Object.entries(colors).map(([name, value]) => `  ${name} = \"${value}\",`);
   const roleLines = Object.entries(roles).map(([name, token]) => `    ${name} = color.${token},`);
+  const lightRoleLines = Object.entries(lightRoles).map(([name, token]) => `    ${name} = color.${token},`);
   return [
-    "-- Generated from theme/signal-noir.json.",
+    "-- Generated from theme/neonway.json.",
     "local color = {",
     ...primitiveLines,
     "}",
@@ -57,6 +71,9 @@ function renderLua() {
     "  color = color,",
     "  role = {",
     ...roleLines,
+    "  },",
+    "  light_role = {",
+    ...lightRoleLines,
     "  },",
     "}",
     "",
@@ -70,21 +87,52 @@ function renderLua() {
 
 function renderHypr() {
   const rgb = (value) => `rgb(${value.slice(1)})`;
-  return `-- Generated from theme/signal-noir.json.
+  return `-- Generated from theme/neonway.json.
 return {
   borders = {
-    active_border = { colors = { "${rgb(role("focus"))}", "${rgb(role("danger"))}" }, angle = 35 },
+    active_border = { colors = { "${rgb(role("focus"))}", "${rgb(role("accent"))}" }, angle = 35 },
     inactive_border = "${rgb(role("border"))}",
   },
   shadow = 0x99${role("background").slice(1)},
 }`;
 }
 
-function renderKitty() {
-  return `# Generated from theme/signal-noir.json.
+function renderKittyLight() {
+  return `# Generated from theme/neonway.json.
+background ${lightRole("background")}
+foreground ${lightRole("foreground")}
+cursor ${lightRole("danger")}
+macos_titlebar_color background
+
+color0 ${color("canvas")}
+color1 ${color("signal_light_mode")}
+color2 ${color("mint_light_mode")}
+color3 ${color("pink_light_mode")}
+color4 ${color("violet_light_mode")}
+color5 ${color("pink_light_mode")}
+color6 ${color("cool_light_mode")}
+color7 ${color("edge")}
+color8 ${color("edge")}
+color9 ${color("signal_light_mode")}
+color10 ${color("mint_light_mode")}
+color11 ${color("pink_light_mode")}
+color12 ${color("violet_light_mode")}
+color13 ${color("pink_light_mode")}
+color14 ${color("cool_light_mode")}
+color15 ${color("canvas")}
+
+active_tab_foreground ${lightRole("on_accent")}
+active_tab_background ${lightRole("focus")}
+inactive_tab_foreground ${lightRole("foreground")}
+inactive_tab_background ${lightRole("background")}`;
+}
+
+function renderKittyDark() {
+  return `# Generated from theme/neonway.json.
 background ${role("background")}
 foreground ${role("foreground")}
 cursor ${role("foreground")}
+macos_titlebar_color background
 
 color0 ${color("canvas")}
 color1 ${color("signal")}
@@ -110,11 +158,11 @@ inactive_tab_background ${role("background")}`;
 }
 
 function renderMako() {
-  return `# Generated from theme/signal-noir.json.
+  return `# Generated from theme/neonway.json.
 background-color=${role("panel_bg")}
 text-color=${role("foreground")}
 border-color=${role("focus")}
-progress-color=${role("danger")}
+progress-color=${role("accent")}
 
 [urgency=low]
 border-color=${role("border")}
@@ -124,19 +172,18 @@ border-color=${role("danger")}`;
 }
 
 function renderZsh() {
-  return `# Generated from theme/signal-noir.json.
-typeset -g SIGNAL_NOIR_BORDER='${role("border")}'
-typeset -g SIGNAL_NOIR_ACCENT='${role("accent")}'
-typeset -g SIGNAL_NOIR_DANGER='${role("danger")}'
-typeset -g SIGNAL_NOIR_FOCUS='${role("focus")}'`;
+  return `# Generated from theme/neonway.json.
+typeset -g NEONWAY_BORDER='${role("border")}'
+typeset -g NEONWAY_ACCENT='${role("accent")}'
+typeset -g NEONWAY_FOCUS='${role("focus")}'`;
 }
 
 function renderLazygit() {
-  return `# Generated from theme/signal-noir.json.
+  return `# Generated from theme/neonway.json.
 gui:
   theme:
     activeBorderColor: ["${role("focus")}", bold]
-    inactiveBorderColor: ["${role("border")}"]
+    inactiveBorderColor: ["${role("foreground")}"]
     searchingActiveBorderColor: ["${role("accent")}", bold]
     optionsTextColor: ["${role("focus")}"]
     selectedLineBgColor: ["${role("selection_bg")}"]
@@ -191,13 +238,13 @@ function renderBtop() {
   };
 
   return [
-    "# Generated from theme/signal-noir.json.",
+    "# Generated from theme/neonway.json.",
     ...Object.entries(values).map(([name, token]) => `theme[${name}]=\"${color(token)}\"`),
   ].join("\n");
 }
 
 function renderYazi() {
-  return `# Generated from theme/signal-noir.json.
+  return `# Generated from theme/neonway.json.
 [indicator]
 preview = {}
 current = { fg = "${role("background")}", bg = "${role("foreground")}" }
@@ -233,59 +280,60 @@ btn_no = { fg = "${role("foreground")}" }`;
 
 function renderOpenCode() {
   const pair = (dark, light) => ({ dark, light });
+  const rolePair = (name) => pair(roles[name], lightRoles[name]);
   const output = {
     $schema: "https://opencode.ai/theme.json",
     defs: colors,
     theme: {
-      primary: pair("violet", "deep"),
-      secondary: pair("pink", "surface"),
-      accent: pair("signal", "deep"),
-      error: pair("signal", "signal"),
-      warning: pair("pink", "deep"),
-      success: pair("mint", "deep"),
-      info: pair("cool", "surface"),
-      text: pair("text", "canvas"),
-      textMuted: pair("soft", "edge"),
-      background: pair("canvas", "text"),
-      backgroundPanel: pair("panel", "soft"),
-      backgroundElement: pair("raised", "cool"),
-      border: pair("edge", "violet"),
-      borderActive: pair("violet", "deep"),
-      borderSubtle: pair("surface", "pink"),
-      diffAdded: pair("mint", "deep"),
-      diffRemoved: pair("signal", "signal"),
-      diffContext: pair("pink", "edge"),
-      diffHunkHeader: pair("violet", "deep"),
-      diffHighlightAdded: pair("mint", "deep"),
-      diffHighlightRemoved: pair("signal", "signal"),
+      primary: rolePair("focus"),
+      secondary: rolePair("accent"),
+      accent: rolePair("danger"),
+      error: rolePair("danger"),
+      warning: rolePair("accent"),
+      success: rolePair("success"),
+      info: rolePair("info"),
+      text: rolePair("foreground"),
+      textMuted: rolePair("foreground_muted"),
+      background: rolePair("background"),
+      backgroundPanel: rolePair("panel_bg"),
+      backgroundElement: rolePair("elevated_bg"),
+      border: rolePair("border"),
+      borderActive: rolePair("focus"),
+      borderSubtle: pair(roles.selection_bg, lightRoles.selection_bg),
+      diffAdded: pair("mint", "mint_light_mode"),
+      diffRemoved: pair("signal", "signal_light_mode"),
+      diffContext: pair("pink", "pink_light_mode"),
+      diffHunkHeader: pair("violet", "violet_light_mode"),
+      diffHighlightAdded: pair("mint", "mint_light_mode"),
+      diffHighlightRemoved: pair("signal", "signal_light_mode"),
       diffAddedBg: pair("surface", "cool"),
       diffRemovedBg: pair("deep", "soft"),
       diffContextBg: pair("panel", "text"),
-      diffLineNumber: pair("pink", "pink"),
+      diffLineNumber: pair("pink", "pink_light_mode"),
       diffAddedLineNumberBg: pair("surface", "cool"),
       diffRemovedLineNumberBg: pair("deep", "soft"),
       markdownText: pair("text", "canvas"),
-      markdownHeading: pair("pink", "deep"),
-      markdownLink: pair("cool", "surface"),
-      markdownLinkText: pair("violet", "deep"),
-      markdownCode: pair("mint", "deep"),
-      markdownBlockQuote: pair("pink", "edge"),
-      markdownEmph: pair("pink", "surface"),
+      markdownHeading: pair("pink", "pink_light_mode"),
+      markdownLink: pair("cool", "cool_light_mode"),
+      markdownLinkText: pair("violet", "violet_light_mode"),
+      markdownCode: pair("mint", "mint_light_mode"),
+      markdownBlockQuote: pair("pink", "pink_light_mode"),
+      markdownEmph: pair("pink", "pink_light_mode"),
       markdownStrong: pair("soft", "deep"),
-      markdownHorizontalRule: pair("edge", "violet"),
-      markdownListItem: pair("signal", "deep"),
-      markdownListEnumeration: pair("violet", "surface"),
-      markdownImage: pair("cool", "deep"),
-      markdownImageText: pair("violet", "surface"),
+      markdownHorizontalRule: pair("edge", "violet_light_mode"),
+      markdownListItem: pair("signal", "signal_light_mode"),
+      markdownListEnumeration: pair("violet", "violet_light_mode"),
+      markdownImage: pair("cool", "cool_light_mode"),
+      markdownImageText: pair("violet", "violet_light_mode"),
       markdownCodeBlock: pair("soft", "canvas"),
-      syntaxComment: pair("violet", "edge"),
-      syntaxKeyword: pair("pink", "deep"),
-      syntaxFunction: pair("cool", "surface"),
+      syntaxComment: pair("violet", "violet_light_mode"),
+      syntaxKeyword: pair("pink", "pink_light_mode"),
+      syntaxFunction: pair("cool", "cool_light_mode"),
       syntaxVariable: pair("text", "canvas"),
-      syntaxString: pair("mint", "deep"),
-      syntaxNumber: pair("signal", "signal"),
-      syntaxType: pair("cool", "surface"),
-      syntaxOperator: pair("violet", "deep"),
+      syntaxString: pair("mint", "mint_light_mode"),
+      syntaxNumber: pair("signal", "signal_light_mode"),
+      syntaxType: pair("cool", "cool_light_mode"),
+      syntaxOperator: pair("violet", "violet_light_mode"),
       syntaxPunctuation: pair("soft", "canvas"),
     },
   };
@@ -293,14 +341,92 @@ function renderOpenCode() {
   return JSON.stringify(output, null, 2);
 }
 
+function renderGtk() {
+  const definitions = {
+    theme_bg_color: role("background"),
+    theme_fg_color: role("foreground"),
+    theme_base_color: role("panel_bg"),
+    theme_text_color: role("foreground"),
+    theme_selected_bg_color: role("selection_bg"),
+    theme_selected_fg_color: role("foreground"),
+    insensitive_bg_color: role("elevated_bg"),
+    insensitive_fg_color: role("foreground_muted"),
+    borders: role("border"),
+    accent_bg_color: role("focus"),
+    accent_fg_color: role("on_accent"),
+    accent_color: role("focus"),
+    window_bg_color: role("background"),
+    window_fg_color: role("foreground"),
+    view_bg_color: role("panel_bg"),
+    view_fg_color: role("foreground"),
+    headerbar_bg_color: role("elevated_bg"),
+    headerbar_fg_color: role("foreground"),
+    popover_bg_color: role("elevated_bg"),
+    popover_fg_color: role("foreground"),
+    card_bg_color: role("elevated_bg"),
+    card_fg_color: role("foreground"),
+    dialog_bg_color: role("panel_bg"),
+    dialog_fg_color: role("foreground"),
+    success_color: role("success"),
+    warning_color: role("accent"),
+    error_color: role("danger"),
+  };
+  return [
+    "/* Generated from theme/neonway.json. */",
+    ...Object.entries(definitions).map(([name, value]) => `@define-color ${name} ${value};`),
+  ].join("\n");
+}
+
+function renderClaude() {
+  const token = {
+    claude: "violet", claudeShimmer: "mint",
+    claudeBlue_FOR_SYSTEM_SPINNER: "violet", claudeBlueShimmer_FOR_SYSTEM_SPINNER: "mint",
+    text: "text", inverseText: "canvas", inactive: "pink", inactiveShimmer: "soft",
+    subtle: "violet", suggestion: "mint", permission: "violet", permissionShimmer: "mint",
+    remember: "mint", background: roles.background, success: "mint", error: "signal",
+    warning: "pink", warningShimmer: "soft", merged: "mint", promptBorder: "violet",
+    promptBorderShimmer: "mint", planMode: "cool", autoAccept: "mint", bashBorder: "pink",
+    ide: "cool", fastMode: "pink", fastModeShimmer: "soft", diffAdded: "surface",
+    diffRemoved: "deep", diffAddedDimmed: "raised", diffRemovedDimmed: "panel",
+    diffAddedWord: "mint", diffRemovedWord: "signal", userMessageBackground: "raised",
+    userMessageBackgroundHover: "surface", messageActionsBackground: "surface",
+    bashMessageBackgroundColor: "deep", memoryBackgroundColor: "raised",
+    selectionBg: roles.selection_bg, rate_limit_fill: "violet", rate_limit_empty: "edge",
+    briefLabelYou: "pink", briefLabelClaude: "violet", professionalBlue: "violet",
+    chromeYellow: "pink", clawd_body: "violet", clawd_background: "canvas",
+    rainbow_red: "signal", rainbow_orange: "pink", rainbow_yellow: "soft",
+    rainbow_green: "mint", rainbow_blue: "cool", rainbow_indigo: "violet",
+    rainbow_violet: "violet", rainbow_red_shimmer: "pink", rainbow_orange_shimmer: "soft",
+    rainbow_yellow_shimmer: "soft", rainbow_green_shimmer: "mint",
+    rainbow_blue_shimmer: "cool", rainbow_indigo_shimmer: "violet",
+    rainbow_violet_shimmer: "violet", red_FOR_SUBAGENTS_ONLY: "signal",
+    blue_FOR_SUBAGENTS_ONLY: "cool", green_FOR_SUBAGENTS_ONLY: "mint",
+    yellow_FOR_SUBAGENTS_ONLY: "soft", purple_FOR_SUBAGENTS_ONLY: "violet",
+    orange_FOR_SUBAGENTS_ONLY: "pink", pink_FOR_SUBAGENTS_ONLY: "pink",
+    cyan_FOR_SUBAGENTS_ONLY: "cool",
+  };
+  return JSON.stringify({
+    name: "Neonway",
+    base: "dark",
+    overrides: Object.fromEntries(Object.entries(token).map(([name, nameToken]) => [name, color(nameToken)])),
+  }, null, 2);
+}
+
 write("waybar/theme.css", renderCss());
 write("wofi/theme.css", renderCss());
 write("hypr/theme.lua", renderHypr());
 write("nvim/lua/config/palette.lua", renderLua());
-write("kitty/theme.conf", renderKitty());
+write("kitty/dark-theme.auto.conf", renderKittyDark());
+write("kitty/light-theme.auto.conf", renderKittyLight());
+write("kitty/no-preference-theme.auto.conf", renderKittyLight());
 write("mako/theme.conf", renderMako());
 write("zsh/theme.zsh", renderZsh());
 write("lazygit/theme.yml", renderLazygit());
 write("btop/themes/minimal.theme", renderBtop());
 write("yazi/theme.toml", renderYazi());
-write("opencode/themes/signal-noir.json", renderOpenCode());
+write("opencode/themes/neonway.json", renderOpenCode());
+write("claude/themes/neonway.json", renderClaude());
+write("gtk-3.0/gtk.css", renderGtk());
+write("gtk-4.0/gtk.css", renderGtk());
+
+if (checkOnly && stale) process.exitCode = 1;

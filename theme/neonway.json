@@ -1,5 +1,4 @@
 {
-  "name": "signal-noir",
   "colors": {
     "canvas": "#121019",
     "panel": "#0f0f1a",
@@ -13,7 +12,12 @@
     "pink": "#ff91c3",
     "signal": "#ff338f",
     "violet": "#c79eff",
-    "mint": "#98e4a7"
+    "mint": "#98e4a7",
+    "violet_light_mode": "#7740aa",
+    "pink_light_mode": "#ad386d",
+    "mint_light_mode": "#197344",
+    "cool_light_mode": "#006d80",
+    "signal_light_mode": "#c51f6c"
   },
   "roles": {
     "background": "canvas",
@@ -29,5 +33,20 @@
     "focus": "violet",
     "success": "mint",
     "on_accent": "deep"
+  },
+  "light_roles": {
+    "background": "text",
+    "panel_bg": "soft",
+    "elevated_bg": "soft",
+    "selection_bg": "cool",
+    "border": "violet_light_mode",
+    "foreground": "canvas",
+    "foreground_muted": "edge",
+    "info": "cool_light_mode",
+    "accent": "pink_light_mode",
+    "danger": "signal_light_mode",
+    "focus": "violet_light_mode",
+    "success": "mint_light_mode",
+    "on_accent": "text"
   }
 }
