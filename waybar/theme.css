@@ -1,18 +1,4 @@
-/* Generated from theme/signal-noir.json. */
-@define-color canvas #121019;
-@define-color panel #0f0f1a;
-@define-color raised #121124;
-@define-color deep #221727;
-@define-color surface #201a2f;
-@define-color edge #2a1d31;
-@define-color text #eee9ff;
-@define-color soft #ffeef2;
-@define-color cool #dffff8;
-@define-color pink #ff91c3;
-@define-color signal #ff338f;
-@define-color violet #c79eff;
-@define-color mint #98e4a7;
-
+/* Generated from theme/neonway.json. */
 @define-color background #121019;
 @define-color panel_bg #0f0f1a;
 @define-color elevated_bg #121124;

@@ -20,6 +20,7 @@ autoload -Uz compinit && compinit
 source ~/.config/zsh/aliases/git
 source ~/.config/zsh/aliases/system
 [[ -f ~/.config/zsh/aliases/python ]] && source ~/.config/zsh/aliases/python
+[[ -f ~/.config/zsh/aliases/socket ]] && source ~/.config/zsh/aliases/socket
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' +'l:|=* r:|=*'
@@ -46,7 +47,7 @@ precmd_hooks() {
 precmd_functions+=(precmd_hooks)
 
 setopt prompt_subst
-zstyle ':vcs_info:git:*' formats "%F{$SIGNAL_NOIR_FOCUS} %b%f"
-export RPROMPT="%F{$SIGNAL_NOIR_BORDER}%D{%H:%M}%f"
-export PROMPT="%F{$SIGNAL_NOIR_ACCENT}%1d%f \${vcs_info_msg_0_}
-%F{$SIGNAL_NOIR_DANGER}›%f "
+zstyle ':vcs_info:git:*' formats "%F{$NEONWAY_FOCUS} %b%f"
+export RPROMPT="%F{$NEONWAY_BORDER}%D{%H:%M}%f"
+export PROMPT="%F{$NEONWAY_ACCENT}%1d%f \${vcs_info_msg_0_}
+%F{$NEONWAY_ACCENT}›%f "

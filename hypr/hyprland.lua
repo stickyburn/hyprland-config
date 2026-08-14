@@ -3,8 +3,7 @@
 -- https://wiki.hyprland.org/Configuring/Start/
 
 local script_dir = debug.getinfo(1, "S").source:sub(2):match("(.*/)") or "./"
-local loaded, theme = pcall(dofile, script_dir .. "theme.lua")
-if not loaded then theme = {} end
+local theme = dofile(script_dir .. "theme.lua")
 
 ---- MONITORS ----
 hl.monitor({
