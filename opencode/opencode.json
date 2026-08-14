@@ -3,16 +3,22 @@
 	"small_model": "ollama-cloud/deepseek-v4-flash",
 	"instructions": ["SYSTEM.md"],
 	"default_agent": "build",
+	"subagent_depth": 1,
 	"agent": {
 		"plan": {
-			"model": "openai/gpt-5.6-sol",
-			"variant": "high",
+			"model": "ollama-cloud/glm-5.2",
+			"variant": "max",
 			"color": "#c79eff"
 		},
 		"build": {
 			"model": "ollama-cloud/glm-5.2",
 			"variant": "max",
-			"color": "#98E4A7"
+			"color": "#98e4a7"
+		},
+		"explore": {
+			"permission": {
+				"bash": "allow"
+			}
 		}
 	},
 	"mcp": {
@@ -20,11 +26,6 @@
 			"enabled": true,
 			"type": "remote",
 			"url": "https://mcp.deepwiki.com/mcp"
-		},
-		"exa": {
-			"enabled": true,
-			"type": "remote",
-			"url": "https://mcp.exa.ai/mcp"
 		}
 	},
 	"permission": {
@@ -37,10 +38,11 @@
 		"todoread": "allow",
 		"webfetch": "allow",
 		"websearch": "allow",
+		"question": "allow",
+		"skill": "allow",
+		"execute": "allow",
 		"task": "allow",
 		"deepwiki_*": "allow",
-		"exa_*": "allow",
-		"Exa*": "allow",
 		"bash": {
 			"pwd *": "allow",
 			"ls *": "allow",
@@ -60,7 +62,9 @@
 			"git show *": "allow",
 			"git log *": "allow",
 			"git branch --all *": "allow",
-			"git rev-parse *": "allow"
+			"git branch --show-current *": "allow",
+			"git rev-parse *": "allow",
+			"sed -n *": "allow"
 		}
 	},
 	"experimental": {
