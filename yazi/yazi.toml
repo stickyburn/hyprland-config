@@ -4,25 +4,25 @@ linemode = "size"
 
 [opener]
 opencode = [
-  { run = 'kitty @ launch --type=tab -- zsh -c "cd \"$@\" && opencode"', desc = "Opencode" },
+  { run = 'kitty @ launch --type=tab -- zsh -c "cd %s && opencode"', desc = "Opencode" },
 ]
 
-nvim_file = [{ run = 'nvim "$@"', block = true, desc = "Nvim" }]
+nvim_file = [{ run = 'nvim %s', block = true, desc = "Nvim" }]
 
 nvim = [
-  { run = 'kitty @ launch --type=tab -- zsh -c "cd \"$@\" && nvim"', desc = "Nvim" },
+  { run = 'kitty @ launch --type=tab -- zsh -c "cd %s && nvim"', desc = "Nvim" },
 ]
 
 codium = [
-  { run = 'open -a "VSCodium" "$@"', for = "macos", desc = "Code" },
-  { run = 'zsh -c "cd \"$1\" && codium ." -- "$@"', for = "linux", desc = "Code" },
+  { run = 'open -a "VSCodium" %s', for = "macos", desc = "Code" },
+  { run = 'zsh -c "cd %s && codium ."', for = "linux", desc = "Code" },
 ]
 
-terminal = [{ run = 'kitty @ launch --type=tab --cwd="$@"', desc = "Kitty" }]
+terminal = [{ run = 'kitty @ launch --type=tab --cwd=%s', desc = "Kitty" }]
 
 finder = [
-  { run = 'open -R "$@"', for = "macos", desc = "Finder" },
-  { run = 'xdg-open "$(dirname "$@")"', for = "linux", desc = "Finder" },
+  { run = 'open -R %s', for = "macos", desc = "Finder" },
+  { run = 'xdg-open %d', for = "linux", desc = "Finder" },
 ]
 
 [open]

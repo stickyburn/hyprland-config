@@ -1,0 +1,51 @@
+# Generated from neonway.
+[indicator]
+preview = {}
+current = { fg = "#eee9ff", bg = "#7740aa" }
+parent = { fg = "#eee9ff", bg = "#7740aa" }
+
+[mgr]
+cwd = { fg = "#eee9ff", bg = "#eee9ff" }
+
+[mode]
+normal_main = { fg = "#eee9ff", bg = "#eee9ff" }
+normal_alt = { fg = "#eee9ff", bg = "#eee9ff" }
+select_main = { fg = "#eee9ff", bg = "#eee9ff" }
+select_alt = { fg = "#eee9ff", bg = "#eee9ff" }
+unset_main = { fg = "#eee9ff", bg = "#eee9ff" }
+unset_alt = { fg = "#eee9ff", bg = "#eee9ff" }
+
+[status]
+overall = { fg = "#eee9ff", bg = "#eee9ff" }
+perm_type = { fg = "#eee9ff", bg = "#eee9ff" }
+perm_read = { fg = "#eee9ff", bg = "#eee9ff" }
+perm_write = { fg = "#eee9ff", bg = "#eee9ff" }
+perm_exec = { fg = "#eee9ff", bg = "#eee9ff" }
+perm_sep = { fg = "#eee9ff", bg = "#eee9ff" }
+progress_label = { fg = "#eee9ff", bg = "#eee9ff" }
+progress_normal = { fg = "#eee9ff", bg = "#eee9ff" }
+progress_error = { fg = "#eee9ff", bg = "#eee9ff" }
+
+[pick]
+border = { fg = "#7740aa" }
+
+[pick.active]
+fg = "#14111B"
+bg = "#eee9ff"
+
+[pick.inactive]
+fg = "#14111B"
+
+[input]
+border = { fg = "#7740aa" }
+title = { fg = "#14111B" }
+value = { fg = "#14111B" }
+selected = { reversed = true }
+
+[confirm]
+border = { fg = "#7740aa" }
+title = { fg = "#14111B" }
+body = { fg = "#14111B" }
+list = { fg = "#14111B" }
+btn_yes = { reversed = true }
+btn_no = { fg = "#14111B" }
