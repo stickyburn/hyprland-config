@@ -6,9 +6,9 @@ source "$ZDOTDIR/theme.zsh"
 
 export LG_CONFIG_FILE="$XDG_CONFIG_HOME/lazygit/config.yml,$XDG_CONFIG_HOME/lazygit/theme.yml"
 
-source ~/.config/zsh/plugins/zsh-autocomplete/zsh-autosuggestions.zsh
+source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(zoxide init zsh)"
-source ~/.config/zsh/plugins/zsh-history-search/zsh-history-substring-search.zsh
+source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
