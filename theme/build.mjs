@@ -54,7 +54,7 @@ function write(relativePath, content) {
 
 function renderCss() {
   const roleLines = Object.entries(roles).map(([name, token]) => `@define-color ${name} ${color(token)};`);
-  return ["/* Generated from theme/neonway.json. */", ...roleLines].join("\n");
+  return ["/* Generated from neonway. */", ...roleLines].join("\n");
 }
 
 function renderLua() {
@@ -62,7 +62,7 @@ function renderLua() {
   const roleLines = Object.entries(roles).map(([name, token]) => `    ${name} = color.${token},`);
   const lightRoleLines = Object.entries(lightRoles).map(([name, token]) => `    ${name} = color.${token},`);
   return [
-    "-- Generated from theme/neonway.json.",
+    "-- Generated from neonway.",
     "local color = {",
     ...primitiveLines,
     "}",
@@ -87,7 +87,7 @@ function renderLua() {
 
 function renderHypr() {
   const rgb = (value) => `rgb(${value.slice(1)})`;
-  return `-- Generated from theme/neonway.json.
+  return `-- Generated from neonway.
 return {
   borders = {
     active_border = { colors = { "${rgb(role("focus"))}", "${rgb(role("accent"))}" }, angle = 35 },
@@ -98,7 +98,7 @@ return {
 }
 
 function renderKittyLight() {
-  return `# Generated from theme/neonway.json.
+  return `# Generated from neonway.
 background ${lightRole("background")}
 foreground ${lightRole("foreground")}
 cursor ${lightRole("danger")}
@@ -107,18 +107,18 @@ macos_titlebar_color background
 color0 ${color("canvas")}
 color1 ${color("signal_light_mode")}
 color2 ${color("mint_light_mode")}
-color3 ${color("pink_light_mode")}
+color3 ${color("pink")}
 color4 ${color("violet_light_mode")}
-color5 ${color("pink_light_mode")}
-color6 ${color("cool_light_mode")}
+color5 ${color("pink")}
+color6 ${color("mint_light_mode")}
 color7 ${color("edge")}
 color8 ${color("edge")}
 color9 ${color("signal_light_mode")}
 color10 ${color("mint_light_mode")}
-color11 ${color("pink_light_mode")}
+color11 ${color("pink")}
 color12 ${color("violet_light_mode")}
-color13 ${color("pink_light_mode")}
-color14 ${color("cool_light_mode")}
+color13 ${color("pink")}
+color14 ${color("mint_light_mode")}
 color15 ${color("canvas")}
 
 active_tab_foreground ${lightRole("on_accent")}
@@ -128,7 +128,7 @@ inactive_tab_background ${lightRole("background")}`;
 }
 
 function renderKittyDark() {
-  return `# Generated from theme/neonway.json.
+  return `# Generated from neonway.
 background ${role("background")}
 foreground ${role("foreground")}
 cursor ${role("foreground")}
@@ -140,7 +140,7 @@ color2 ${color("mint")}
 color3 ${color("pink")}
 color4 ${color("violet")}
 color5 ${color("pink")}
-color6 ${color("cool")}
+color6 ${color("mint")}
 color7 ${color("text")}
 color8 ${color("edge")}
 color9 ${color("signal")}
@@ -148,7 +148,7 @@ color10 ${color("mint")}
 color11 ${color("soft")}
 color12 ${color("violet")}
 color13 ${color("pink")}
-color14 ${color("cool")}
+color14 ${color("mint")}
 color15 ${color("soft")}
 
 active_tab_foreground ${role("on_accent")}
@@ -158,7 +158,7 @@ inactive_tab_background ${role("background")}`;
 }
 
 function renderMako() {
-  return `# Generated from theme/neonway.json.
+  return `# Generated from neonway.
 background-color=${role("panel_bg")}
 text-color=${role("foreground")}
 border-color=${role("focus")}
@@ -172,14 +172,14 @@ border-color=${role("danger")}`;
 }
 
 function renderZsh() {
-  return `# Generated from theme/neonway.json.
+  return `# Generated from neonway.
 typeset -g NEONWAY_BORDER='${role("border")}'
 typeset -g NEONWAY_ACCENT='${role("accent")}'
 typeset -g NEONWAY_FOCUS='${role("focus")}'`;
 }
 
 function renderLazygit() {
-  return `# Generated from theme/neonway.json.
+  return `# Generated from neonway.
 gui:
   theme:
     activeBorderColor: ["${role("focus")}", bold]
@@ -218,19 +218,19 @@ function renderBtop() {
     cpu_mid: "pink",
     cpu_end: "mint",
     free_start: "mint",
-    free_mid: "cool",
+    free_mid: "mint",
     free_end: "mint",
     cached_start: "mint",
-    cached_mid: "cool",
+    cached_mid: "mint",
     cached_end: "mint",
     available_start: "mint",
-    available_mid: "cool",
+    available_mid: "mint",
     available_end: "mint",
     used_start: "violet",
     used_mid: "pink",
     used_end: "signal",
     download_start: "mint",
-    download_mid: "cool",
+    download_mid: "mint",
     download_end: "mint",
     upload_start: "violet",
     upload_mid: "pink",
@@ -238,44 +238,95 @@ function renderBtop() {
   };
 
   return [
-    "# Generated from theme/neonway.json.",
+    "# Generated from neonway.",
     ...Object.entries(values).map(([name, token]) => `theme[${name}]=\"${color(token)}\"`),
   ].join("\n");
 }
 
 function renderYazi() {
-  return `# Generated from theme/neonway.json.
+  return `# Generated from neonway.
+[flavor]
+dark = "neonway-dark"
+light = "neonway-light"`;
+}
+
+function renderYaziFlavor(schemeRoles) {
+  const schemeRole = (name) => color(schemeRoles[name]);
+  return `# Generated from neonway.
 [indicator]
 preview = {}
-current = { fg = "${role("background")}", bg = "${role("foreground")}" }
-parent = { fg = "${role("background")}", bg = "${role("foreground")}" }
+current = { fg = "${schemeRole("on_accent")}", bg = "${schemeRole("focus")}" }
+parent = { fg = "${schemeRole("on_accent")}", bg = "${schemeRole("focus")}" }
 
 [mgr]
-cwd = { fg = "${role("background")}", bg = "${role("background")}" }
+cwd = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+
+[mode]
+normal_main = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+normal_alt = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+select_main = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+select_alt = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+unset_main = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+unset_alt = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+
+[status]
+overall = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+perm_type = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+perm_read = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+perm_write = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+perm_exec = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+perm_sep = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+progress_label = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+progress_normal = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
+progress_error = { fg = "${schemeRole("background")}", bg = "${schemeRole("background")}" }
 
 [pick]
-border = { fg = "${role("focus")}" }
+border = { fg = "${schemeRole("focus")}" }
 
 [pick.active]
-fg = "${role("foreground")}"
-bg = "${role("background")}"
+fg = "${schemeRole("foreground")}"
+bg = "${schemeRole("background")}"
 
 [pick.inactive]
-fg = "${role("foreground")}"
+fg = "${schemeRole("foreground")}"
 
 [input]
-border = { fg = "${role("focus")}" }
-title = { fg = "${role("foreground")}" }
-value = { fg = "${role("foreground")}" }
+border = { fg = "${schemeRole("focus")}" }
+title = { fg = "${schemeRole("foreground")}" }
+value = { fg = "${schemeRole("foreground")}" }
 selected = { reversed = true }
 
 [confirm]
-border = { fg = "${role("focus")}" }
-title = { fg = "${role("foreground")}" }
-body = { fg = "${role("foreground")}" }
-list = { fg = "${role("foreground")}" }
+border = { fg = "${schemeRole("focus")}" }
+title = { fg = "${schemeRole("foreground")}" }
+body = { fg = "${schemeRole("foreground")}" }
+list = { fg = "${schemeRole("foreground")}" }
 btn_yes = { reversed = true }
-btn_no = { fg = "${role("foreground")}" }`;
+btn_no = { fg = "${schemeRole("foreground")}" }`;
+}
+
+function renderYaziTmTheme(schemeRoles, name) {
+  const schemeRole = (roleName) => color(schemeRoles[roleName]);
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>name</key>
+  <string>${name}</string>
+  <key>settings</key>
+  <array>
+    <dict>
+      <key>settings</key>
+      <dict>
+        <key>background</key>
+        <string>${schemeRole("background")}</string>
+        <key>foreground</key>
+        <string>${schemeRole("foreground")}</string>
+      </dict>
+    </dict>
+  </array>
+</dict>
+</plist>`;
 }
 
 function renderOpenCode() {
@@ -289,7 +340,7 @@ function renderOpenCode() {
       secondary: rolePair("accent"),
       accent: rolePair("danger"),
       error: rolePair("danger"),
-      warning: rolePair("accent"),
+      warning: rolePair("danger"),
       success: rolePair("success"),
       info: rolePair("info"),
       text: rolePair("foreground"),
@@ -302,37 +353,37 @@ function renderOpenCode() {
       borderSubtle: pair(roles.selection_bg, lightRoles.selection_bg),
       diffAdded: pair("mint", "mint_light_mode"),
       diffRemoved: pair("signal", "signal_light_mode"),
-      diffContext: pair("pink", "pink_light_mode"),
+      diffContext: pair("pink", "pink"),
       diffHunkHeader: pair("violet", "violet_light_mode"),
       diffHighlightAdded: pair("mint", "mint_light_mode"),
       diffHighlightRemoved: pair("signal", "signal_light_mode"),
-      diffAddedBg: pair("surface", "cool"),
+      diffAddedBg: pair("surface", "mint_tint"),
       diffRemovedBg: pair("deep", "soft"),
       diffContextBg: pair("panel", "text"),
-      diffLineNumber: pair("pink", "pink_light_mode"),
-      diffAddedLineNumberBg: pair("surface", "cool"),
+      diffLineNumber: pair("pink", "pink"),
+      diffAddedLineNumberBg: pair("surface", "mint_tint"),
       diffRemovedLineNumberBg: pair("deep", "soft"),
       markdownText: pair("text", "canvas"),
-      markdownHeading: pair("pink", "pink_light_mode"),
-      markdownLink: pair("cool", "cool_light_mode"),
+      markdownHeading: pair("pink", "pink"),
+      markdownLink: pair("mint", "mint_light_mode"),
       markdownLinkText: pair("violet", "violet_light_mode"),
       markdownCode: pair("mint", "mint_light_mode"),
-      markdownBlockQuote: pair("pink", "pink_light_mode"),
-      markdownEmph: pair("pink", "pink_light_mode"),
+      markdownBlockQuote: pair("pink", "pink"),
+      markdownEmph: pair("pink", "pink"),
       markdownStrong: pair("soft", "deep"),
       markdownHorizontalRule: pair("edge", "violet_light_mode"),
       markdownListItem: pair("signal", "signal_light_mode"),
       markdownListEnumeration: pair("violet", "violet_light_mode"),
-      markdownImage: pair("cool", "cool_light_mode"),
+      markdownImage: pair("mint", "mint_light_mode"),
       markdownImageText: pair("violet", "violet_light_mode"),
       markdownCodeBlock: pair("soft", "canvas"),
       syntaxComment: pair("violet", "violet_light_mode"),
-      syntaxKeyword: pair("pink", "pink_light_mode"),
-      syntaxFunction: pair("cool", "cool_light_mode"),
+      syntaxKeyword: pair("pink", "pink"),
+      syntaxFunction: pair("mint", "mint_light_mode"),
       syntaxVariable: pair("text", "canvas"),
       syntaxString: pair("mint", "mint_light_mode"),
       syntaxNumber: pair("signal", "signal_light_mode"),
-      syntaxType: pair("cool", "cool_light_mode"),
+      syntaxType: pair("mint", "mint_light_mode"),
       syntaxOperator: pair("violet", "violet_light_mode"),
       syntaxPunctuation: pair("soft", "canvas"),
     },
@@ -372,7 +423,7 @@ function renderGtk() {
     error_color: role("danger"),
   };
   return [
-    "/* Generated from theme/neonway.json. */",
+    "/* Generated from neonway. */",
     ...Object.entries(definitions).map(([name, value]) => `@define-color ${name} ${value};`),
   ].join("\n");
 }
@@ -384,9 +435,9 @@ function renderClaude() {
     text: "text", inverseText: "canvas", inactive: "pink", inactiveShimmer: "soft",
     subtle: "violet", suggestion: "mint", permission: "violet", permissionShimmer: "mint",
     remember: "mint", background: roles.background, success: "mint", error: "signal",
-    warning: "pink", warningShimmer: "soft", merged: "mint", promptBorder: "violet",
-    promptBorderShimmer: "mint", planMode: "cool", autoAccept: "mint", bashBorder: "pink",
-    ide: "cool", fastMode: "pink", fastModeShimmer: "soft", diffAdded: "surface",
+    warning: "signal", warningShimmer: "soft", merged: "mint", promptBorder: "violet",
+    promptBorderShimmer: "mint", planMode: "mint", autoAccept: "mint", bashBorder: "pink",
+    ide: "mint", fastMode: "pink", fastModeShimmer: "soft", diffAdded: "surface",
     diffRemoved: "deep", diffAddedDimmed: "raised", diffRemovedDimmed: "panel",
     diffAddedWord: "mint", diffRemovedWord: "signal", userMessageBackground: "raised",
     userMessageBackgroundHover: "surface", messageActionsBackground: "surface",
@@ -395,15 +446,15 @@ function renderClaude() {
     briefLabelYou: "pink", briefLabelClaude: "violet", professionalBlue: "violet",
     chromeYellow: "pink", clawd_body: "violet", clawd_background: "canvas",
     rainbow_red: "signal", rainbow_orange: "pink", rainbow_yellow: "soft",
-    rainbow_green: "mint", rainbow_blue: "cool", rainbow_indigo: "violet",
+    rainbow_green: "mint", rainbow_blue: "mint", rainbow_indigo: "violet",
     rainbow_violet: "violet", rainbow_red_shimmer: "pink", rainbow_orange_shimmer: "soft",
     rainbow_yellow_shimmer: "soft", rainbow_green_shimmer: "mint",
-    rainbow_blue_shimmer: "cool", rainbow_indigo_shimmer: "violet",
+    rainbow_blue_shimmer: "mint", rainbow_indigo_shimmer: "violet",
     rainbow_violet_shimmer: "violet", red_FOR_SUBAGENTS_ONLY: "signal",
-    blue_FOR_SUBAGENTS_ONLY: "cool", green_FOR_SUBAGENTS_ONLY: "mint",
+    blue_FOR_SUBAGENTS_ONLY: "mint", green_FOR_SUBAGENTS_ONLY: "mint",
     yellow_FOR_SUBAGENTS_ONLY: "soft", purple_FOR_SUBAGENTS_ONLY: "violet",
     orange_FOR_SUBAGENTS_ONLY: "pink", pink_FOR_SUBAGENTS_ONLY: "pink",
-    cyan_FOR_SUBAGENTS_ONLY: "cool",
+    cyan_FOR_SUBAGENTS_ONLY: "mint",
   };
   return JSON.stringify({
     name: "Neonway",
@@ -424,6 +475,10 @@ write("zsh/theme.zsh", renderZsh());
 write("lazygit/theme.yml", renderLazygit());
 write("btop/themes/minimal.theme", renderBtop());
 write("yazi/theme.toml", renderYazi());
+write("yazi/flavors/neonway-dark.yazi/flavor.toml", renderYaziFlavor(roles));
+write("yazi/flavors/neonway-dark.yazi/tmtheme.xml", renderYaziTmTheme(roles, "Neonway Dark"));
+write("yazi/flavors/neonway-light.yazi/flavor.toml", renderYaziFlavor(lightRoles));
+write("yazi/flavors/neonway-light.yazi/tmtheme.xml", renderYaziTmTheme(lightRoles, "Neonway Light"));
 write("opencode/themes/neonway.json", renderOpenCode());
 write("claude/themes/neonway.json", renderClaude());
 write("gtk-3.0/gtk.css", renderGtk());

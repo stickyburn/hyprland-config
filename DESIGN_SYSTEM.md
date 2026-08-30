@@ -1,7 +1,7 @@
 # Neonway
 
 `theme/neonway.json` is the only hand-edited color source. It contains
-the 18 palette colors and their semantic UI roles.
+the 17 palette colors and their semantic UI roles.
 
 After changing it, rebuild the native app theme files:
 
@@ -12,6 +12,20 @@ node ~/.config/theme/build.mjs
 The build is explicit and offline. There are no templates, watchers, hooks,
 or runtime generation. Generated files are committed, and applications keep
 working without Node.
+
+## Color modes
+
+Unqualified palette names are dark-mode colors. Colors with a
+`_light_mode` suffix are contrast-adjusted equivalents for light mode.
+
+- `mint` (`#98e4a7`) is the dark-mode green.
+- `mint_light_mode` (`#197344`) is the light-mode green.
+- `mint_tint` (`#dffff8`) is a pale light-mode diff background, not a
+  foreground or semantic success green.
+
+Dark and light terminal green and cyan slots intentionally share their
+mode's single mint color. Yazi inherits those terminal colors through its
+matching dark or light flavor.
 
 ## Generated files
 
@@ -26,7 +40,8 @@ are outputs, not copies that get moved after the build.
 - `zsh/theme.zsh`: variables used by the prompt in `zsh/.zshrc`
 - `lazygit/theme.yml`
 - `btop/themes/minimal.theme`
-- `yazi/theme.toml`
+- `yazi/theme.toml` and `yazi/flavors/neonway-{dark,light}.yazi/`: Yazi
+  follows the terminal color scheme
 - `opencode/themes/neonway.json`
 - `claude/themes/neonway.json`
 - `gtk-3.0/gtk.css` and `gtk-4.0/gtk.css`

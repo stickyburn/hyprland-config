@@ -1,4 +1,4 @@
-# Generated from theme/neonway.json.
+# Generated from neonway.
 gui:
   theme:
     activeBorderColor: ["#c79eff", bold]
@@ -7,9 +7,9 @@ gui:
     optionsTextColor: ["#c79eff"]
     selectedLineBgColor: ["#201a2f"]
     selectedRangeBgColor: ["#2a1d31"]
-    cherryPickedCommitFgColor: ["#121019"]
+    cherryPickedCommitFgColor: ["#14111B"]
     cherryPickedCommitBgColor: ["#ff91c3"]
-    markedBaseCommitFgColor: ["#121019"]
+    markedBaseCommitFgColor: ["#14111B"]
     markedBaseCommitBgColor: ["#98e4a7"]
     unstagedChangesColor: ["#ff338f"]
     defaultFgColor: ["#eee9ff"]

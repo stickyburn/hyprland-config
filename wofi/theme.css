@@ -1,12 +1,12 @@
-/* Generated from theme/neonway.json. */
-@define-color background #121019;
+/* Generated from neonway. */
+@define-color background #14111B;
 @define-color panel_bg #0f0f1a;
 @define-color elevated_bg #121124;
 @define-color selection_bg #201a2f;
 @define-color border #2a1d31;
 @define-color foreground #eee9ff;
 @define-color foreground_muted #ffeef2;
-@define-color info #dffff8;
+@define-color info #98e4a7;
 @define-color accent #ff91c3;
 @define-color danger #ff338f;
 @define-color focus #c79eff;

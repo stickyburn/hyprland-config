@@ -1,6 +1,6 @@
--- Generated from theme/neonway.json.
+-- Generated from neonway.
 local color = {
-  canvas = "#121019",
+  canvas = "#14111B",
   panel = "#0f0f1a",
   raised = "#121124",
   deep = "#221727",
@@ -8,16 +8,15 @@ local color = {
   edge = "#2a1d31",
   text = "#eee9ff",
   soft = "#ffeef2",
-  cool = "#dffff8",
   pink = "#ff91c3",
   signal = "#ff338f",
   violet = "#c79eff",
   mint = "#98e4a7",
+  mint_tint = "#dffff8",
   violet_light_mode = "#7740aa",
-  pink_light_mode = "#ad386d",
   mint_light_mode = "#197344",
-  cool_light_mode = "#006d80",
   signal_light_mode = "#c51f6c",
+  lavender_light_mode = "#d9cff8",
 }
 
 local theme = {
@@ -30,7 +29,7 @@ local theme = {
     border = color.edge,
     foreground = color.text,
     foreground_muted = color.soft,
-    info = color.cool,
+    info = color.mint,
     accent = color.pink,
     danger = color.signal,
     focus = color.violet,
@@ -39,14 +38,14 @@ local theme = {
   },
   light_role = {
     background = color.text,
-    panel_bg = color.soft,
-    elevated_bg = color.soft,
-    selection_bg = color.cool,
+    panel_bg = color.lavender_light_mode,
+    elevated_bg = color.lavender_light_mode,
+    selection_bg = color.mint_light_mode,
     border = color.violet_light_mode,
     foreground = color.canvas,
     foreground_muted = color.edge,
-    info = color.cool_light_mode,
-    accent = color.pink_light_mode,
+    info = color.mint_light_mode,
+    accent = color.pink,
     danger = color.signal_light_mode,
     focus = color.violet_light_mode,
     success = color.mint_light_mode,

@@ -1,7 +1,7 @@
 {
   "$schema": "https://opencode.ai/theme.json",
   "defs": {
-    "canvas": "#121019",
+    "canvas": "#14111B",
     "panel": "#0f0f1a",
     "raised": "#121124",
     "deep": "#221727",
@@ -9,16 +9,15 @@
     "edge": "#2a1d31",
     "text": "#eee9ff",
     "soft": "#ffeef2",
-    "cool": "#dffff8",
     "pink": "#ff91c3",
     "signal": "#ff338f",
     "violet": "#c79eff",
     "mint": "#98e4a7",
+    "mint_tint": "#dffff8",
     "violet_light_mode": "#7740aa",
-    "pink_light_mode": "#ad386d",
     "mint_light_mode": "#197344",
-    "cool_light_mode": "#006d80",
-    "signal_light_mode": "#c51f6c"
+    "signal_light_mode": "#c51f6c",
+    "lavender_light_mode": "#d9cff8"
   },
   "theme": {
     "primary": {
@@ -27,7 +26,7 @@
     },
     "secondary": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink"
     },
     "accent": {
       "dark": "signal",
@@ -38,16 +37,16 @@
       "light": "signal_light_mode"
     },
     "warning": {
-      "dark": "pink",
-      "light": "pink_light_mode"
+      "dark": "signal",
+      "light": "signal_light_mode"
     },
     "success": {
       "dark": "mint",
       "light": "mint_light_mode"
     },
     "info": {
-      "dark": "cool",
-      "light": "cool_light_mode"
+      "dark": "mint",
+      "light": "mint_light_mode"
     },
     "text": {
       "dark": "text",
@@ -63,11 +62,11 @@
     },
     "backgroundPanel": {
       "dark": "panel",
-      "light": "soft"
+      "light": "lavender_light_mode"
     },
     "backgroundElement": {
       "dark": "raised",
-      "light": "soft"
+      "light": "lavender_light_mode"
     },
     "border": {
       "dark": "edge",
@@ -79,7 +78,7 @@
     },
     "borderSubtle": {
       "dark": "surface",
-      "light": "cool"
+      "light": "mint_light_mode"
     },
     "diffAdded": {
       "dark": "mint",
@@ -91,7 +90,7 @@
     },
     "diffContext": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink"
     },
     "diffHunkHeader": {
       "dark": "violet",
@@ -107,7 +106,7 @@
     },
     "diffAddedBg": {
       "dark": "surface",
-      "light": "cool"
+      "light": "mint_tint"
     },
     "diffRemovedBg": {
       "dark": "deep",
@@ -119,11 +118,11 @@
     },
     "diffLineNumber": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink"
     },
     "diffAddedLineNumberBg": {
       "dark": "surface",
-      "light": "cool"
+      "light": "mint_tint"
     },
     "diffRemovedLineNumberBg": {
       "dark": "deep",
@@ -135,11 +134,11 @@
     },
     "markdownHeading": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink"
     },
     "markdownLink": {
-      "dark": "cool",
-      "light": "cool_light_mode"
+      "dark": "mint",
+      "light": "mint_light_mode"
     },
     "markdownLinkText": {
       "dark": "violet",
@@ -151,11 +150,11 @@
     },
     "markdownBlockQuote": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink"
     },
     "markdownEmph": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink"
     },
     "markdownStrong": {
       "dark": "soft",
@@ -174,8 +173,8 @@
       "light": "violet_light_mode"
     },
     "markdownImage": {
-      "dark": "cool",
-      "light": "cool_light_mode"
+      "dark": "mint",
+      "light": "mint_light_mode"
     },
     "markdownImageText": {
       "dark": "violet",
@@ -191,11 +190,11 @@
     },
     "syntaxKeyword": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink"
     },
     "syntaxFunction": {
-      "dark": "cool",
-      "light": "cool_light_mode"
+      "dark": "mint",
+      "light": "mint_light_mode"
     },
     "syntaxVariable": {
       "dark": "text",
@@ -210,8 +209,8 @@
       "light": "signal_light_mode"
     },
     "syntaxType": {
-      "dark": "cool",
-      "light": "cool_light_mode"
+      "dark": "mint",
+      "light": "mint_light_mode"
     },
     "syntaxOperator": {
       "dark": "violet",

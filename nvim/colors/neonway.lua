@@ -5,15 +5,15 @@ local current = "dark"
 local terminal = {
   dark = {
     p.canvas, p.signal, p.mint, p.pink,
-    p.violet, p.pink, p.cool, p.text,
+    p.violet, p.pink, p.mint, p.text,
     p.edge, p.signal, p.mint, p.soft,
-    p.violet, p.pink, p.cool, p.soft,
+    p.violet, p.pink, p.mint, p.soft,
   },
   light = {
-    p.canvas, p.signal_light_mode, p.mint_light_mode, p.pink_light_mode,
-    p.violet_light_mode, p.pink_light_mode, p.cool_light_mode, p.edge,
-    p.edge, p.signal_light_mode, p.mint_light_mode, p.pink_light_mode,
-    p.violet_light_mode, p.pink_light_mode, p.cool_light_mode, p.canvas,
+    p.canvas, p.signal_light_mode, p.mint_light_mode, p.pink,
+    p.violet_light_mode, p.pink, p.mint_light_mode, p.edge,
+    p.edge, p.signal_light_mode, p.mint_light_mode, p.pink,
+    p.violet_light_mode, p.pink, p.mint_light_mode, p.canvas,
   },
 }
 
@@ -27,6 +27,7 @@ local function apply()
   vim.g.colors_name = "neonway"
 
   local r = current == "light" and p.light_role or p.role
+  local diffAddFg = current == "light" and p.mint_light_mode or p.mint
 
   hi("Normal", { fg = r.foreground, bg = r.background })
   hi("NormalNC", { fg = r.foreground_muted, bg = r.background })
@@ -83,7 +84,7 @@ local function apply()
   hi("DiagnosticWarn", { fg = r.accent })
   hi("DiagnosticInfo", { fg = r.info })
   hi("DiagnosticHint", { fg = r.focus })
-  hi("DiffAdd", { fg = r.success, bg = r.elevated_bg })
+  hi("DiffAdd", { fg = diffAddFg, bg = r.elevated_bg })
   hi("DiffChange", { fg = r.accent, bg = r.elevated_bg })
   hi("DiffDelete", { fg = r.danger, bg = r.elevated_bg })
   hi("DiffText", { fg = r.background, bg = r.focus, bold = true })
