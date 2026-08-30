@@ -4,6 +4,10 @@ return {
     opts = {
       diagnostics = {
         virtual_text = false,
+        -- hide hint signs in the gutter (LazyVim's hint icon is a lightbulb)
+        signs = {
+          severity = { min = vim.diagnostic.severity.INFO },
+        },
       },
       servers = {
         -- mason servers

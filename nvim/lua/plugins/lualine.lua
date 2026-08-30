@@ -23,7 +23,16 @@ return {
       -- center
       -- remove progress/location
       opts.sections.lualine_y = {}
-      opts.sections.lualine_x = {}
+      -- right
+      opts.sections.lualine_x = {
+        {
+          -- current-line git blame, computed by gitsigns (see gitsigns.lua)
+          function()
+            return vim.b.gitsigns_blame_line or ""
+          end,
+          color = "Comment",
+        },
+      }
       -- right
       -- remove clock, keep location
       opts.sections.lualine_z = {
