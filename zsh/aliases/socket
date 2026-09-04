@@ -1,0 +1,4 @@
+# socket.dev
+alias npm="SFW_VERBOSE=true SFW_CUSTOM_REGISTRIES='npm:npm.pkg.github.com,npm:pkg-npm.githubusercontent.com' ~/.local/bin/sfw npm"
+alias cargo="SOCKET_API_TOKEN=$SOCKET_API_TOKEN ~/.local/bin/sfw cargo"
+alias pip3="SOCKET_API_TOKEN=$SOCKET_API_TOKEN SFW_VERBOSE=true ~/.local/bin/sfw pip3"
