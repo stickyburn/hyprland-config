@@ -4,11 +4,11 @@
   },
   "keybinds": {
     "leader": "ctrl+g",
-    "command_list": "ctrl+p",
-    "sidebar_toggle": "ctrl+shift+e",
-    "input_undo": "ctrl+z,ctrl+-,super+z",
-    "input_redo": "ctrl+.,super+shift+z",
-    "terminal_suspend": "none"
+    "command.palette.show": "ctrl+p",
+    "session.sidebar.toggle": "ctrl+shift+e",
+    "input.undo": "ctrl+z,ctrl+-,super+z",
+    "input.redo": "ctrl+.,super+shift+z",
+    "terminal.suspend": "none"
   },
   "scroll": {
     "acceleration": true
@@ -19,7 +19,7 @@
   "session": {
     "sidebar": "hide",
     "scrollbar": false,
-    "thinking": "show"
+    "thinking": "hide"
   },
   "animations": true
 }

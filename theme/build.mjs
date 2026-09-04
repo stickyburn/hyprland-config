@@ -52,9 +52,99 @@ function write(relativePath, content) {
   }
 }
 
-function renderCss() {
-  const roleLines = Object.entries(roles).map(([name, token]) => `@define-color ${name} ${color(token)};`);
+function renderCss(schemeRoles) {
+  const roleLines = Object.entries(schemeRoles).map(([name, token]) => `@define-color ${name} ${color(token)};`);
   return ["/* Generated from hyprway. */", ...roleLines].join("\n");
+}
+
+function renderWofi(schemeRoles) {
+  const roleLines = Object.entries(schemeRoles).map(([name, token]) => `@define-color ${name} ${color(token)};`);
+  return `/* Generated from hyprway. */
+${roleLines.join("\n")}
+
+* {
+    font-family: "Switzer";
+    font-size: 13px;
+}
+
+window {
+    background: @background;
+    border: 1px solid @focus;
+    border-radius: 10px;
+}
+
+#outer-box {
+    background: @panel_bg;
+    border-radius: 9px;
+    padding: 10px;
+}
+
+#input {
+    background: @elevated_bg;
+    color: @foreground;
+    border: 1px solid @border;
+    border-radius: 7px;
+    margin: 2px 2px 10px;
+    padding: 11px 14px;
+    font-family: "Switzer";
+    font-size: 15px;
+    font-weight: 500;
+    transition-property: border-color, background-color;
+    transition-duration: 160ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#input:focus {
+    border-color: @focus;
+    background: @selection_bg;
+}
+
+#inner-box,
+#scroll {
+    background: transparent;
+}
+
+#entry {
+    background: transparent;
+    border-left: 3px solid @panel_bg;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 8px 10px;
+    transition-property: background-color, border-left-color, border-left-width, padding-left;
+    transition-duration: 95ms;
+    transition-timing-function: cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+#entry:hover {
+    background: @selection_bg;
+    border-left-color: @accent;
+}
+
+#entry:selected {
+    background: @selection_bg;
+    border-left: 5px solid @focus;
+    padding-left: 8px;
+}
+
+#img {
+    margin-right: 11px;
+}
+
+#text {
+    color: @foreground_muted;
+    font-weight: 400;
+}
+
+#text:selected {
+    color: @foreground;
+    font-weight: 600;
+}
+
+#expander-box {
+    background: @selection_bg;
+    color: @focus;
+    border-radius: 5px;
+}`;
 }
 
 function renderLua() {
@@ -463,8 +553,8 @@ function renderClaude() {
   }, null, 2);
 }
 
-write("waybar/theme.css", renderCss());
-write("wofi/theme.css", renderCss());
+write("waybar/theme.css", renderCss(roles));
+write("wofi/style.css", renderWofi(roles));
 write("hypr/theme.lua", renderHypr());
 write("nvim/lua/config/palette.lua", renderLua());
 write("kitty/dark-theme.auto.conf", renderKittyDark());

@@ -1,4 +1,16 @@
-@import url("theme.css");
+/* Generated from hyprway. */
+@define-color background #14111B;
+@define-color panel_bg #150C1A;
+@define-color elevated_bg #150C1A;
+@define-color selection_bg #22112A;
+@define-color border #2a1d31;
+@define-color foreground #eee9ff;
+@define-color foreground_muted #ffeef2;
+@define-color accent #ff91c3;
+@define-color danger #ff338f;
+@define-color focus #c79eff;
+@define-color success #98e4a7;
+@define-color on_accent #221727;
 
 * {
     font-family: "Switzer";
@@ -24,7 +36,7 @@ window {
     border-radius: 7px;
     margin: 2px 2px 10px;
     padding: 11px 14px;
-    font-family: "Zed Sans";
+    font-family: "Switzer";
     font-size: 15px;
     font-weight: 500;
     transition-property: border-color, background-color;
