@@ -1,7 +1,7 @@
 ---
 description: Implements approved work orders efficiently.
 mode: subagent
-model: ollama-cloud/glm-5.2
+model: ollama-cloud/glm-5.3
 variant: max
 ---
 

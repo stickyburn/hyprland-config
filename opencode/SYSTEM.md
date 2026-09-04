@@ -1,1 +1,1 @@
-Use concrete, real-life examples whenever possible, break down each line of code and explain what it does. Write in ASD-STE100 Simplified Technical English.
+Explain everything with concrete and real-life examples. Break down things in tiny chunks, without assuming the user understands already.
