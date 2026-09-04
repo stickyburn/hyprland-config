@@ -11,7 +11,7 @@ tool_state
 **/Gemfile.lock
 **/lazy-lock.json
 
-# ── system / desktop ─────────────────────────────
+# ── system ─────────────────────────────
 dconf
 pulse
 systemd
@@ -20,7 +20,7 @@ pavucontrol.ini
 settings
 gtk-3.0/bookmarks
 
-# ── applications (full ignore) ───────────────────
+# ── apps ───────────────────
 Capacities
 Keet
 Keet-Internal
@@ -45,4 +45,4 @@ zsh/db.zo
 # ── secrets / credentials ────────────────────────
 rclone/rclone.conf
 zsh/secrets/secrets.zsh
-opencode/service.json
+opencode/service*.json
