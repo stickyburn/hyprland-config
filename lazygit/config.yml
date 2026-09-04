@@ -19,3 +19,11 @@ git:
 
 os:
   editPreset: "nvim"
+  # `o`: open in running nvim as a tab when lazygit runs inside nvim, else OS default
+  open: 'if [ -n "$NVIM" ]; then nvim --server "$NVIM" --remote-tab {{filename}} >/dev/null 2>&1; else open {{filename}}; fi'
+
+# Colemak-style list navigation
+keybinding:
+  universal:
+    prevItem: ['<up>', k, e]
+    nextItem: ['<down>', j, i]

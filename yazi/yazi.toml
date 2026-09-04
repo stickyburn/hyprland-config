@@ -4,7 +4,7 @@ linemode = "size"
 
 [opener]
 opencode = [
-  { run = 'kitty @ launch --type=tab -- zsh -c "cd %s && opencode"', desc = "Opencode" },
+  { run = 'kitty @ launch --type=tab -- zsh -c "cd %s && opencode2"', desc = "Opencode" },
 ]
 
 nvim_file = [{ run = 'nvim %s', block = true, desc = "Nvim" }]
