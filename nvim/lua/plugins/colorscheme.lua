@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "neonway",
+      colorscheme = "hyprway",
     },
   },
   { "catppuccin/nvim", enabled = false },

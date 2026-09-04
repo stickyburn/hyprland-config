@@ -1,11 +1,11 @@
-# Generated from neonway.
+# Generated from hyprway.
 gui:
   theme:
     activeBorderColor: ["#c79eff", bold]
     inactiveBorderColor: ["#eee9ff"]
     searchingActiveBorderColor: ["#ff91c3", bold]
     optionsTextColor: ["#c79eff"]
-    selectedLineBgColor: ["#201a2f"]
+    selectedLineBgColor: ["#22112A"]
     selectedRangeBgColor: ["#2a1d31"]
     cherryPickedCommitFgColor: ["#14111B"]
     cherryPickedCommitBgColor: ["#ff91c3"]

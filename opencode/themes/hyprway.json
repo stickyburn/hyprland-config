@@ -2,10 +2,9 @@
   "$schema": "https://opencode.ai/theme.json",
   "defs": {
     "canvas": "#14111B",
-    "panel": "#0f0f1a",
-    "raised": "#121124",
+    "panel": "#150C1A",
     "deep": "#221727",
-    "surface": "#201a2f",
+    "surface": "#22112A",
     "edge": "#2a1d31",
     "text": "#eee9ff",
     "soft": "#ffeef2",
@@ -65,8 +64,8 @@
       "light": "lavender_light_mode"
     },
     "backgroundElement": {
-      "dark": "raised",
-      "light": "lavender_light_mode"
+      "dark": "panel",
+      "light": "text"
     },
     "border": {
       "dark": "edge",

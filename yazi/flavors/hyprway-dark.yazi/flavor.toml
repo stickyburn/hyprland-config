@@ -1,4 +1,4 @@
-# Generated from neonway.
+# Generated from hyprway.
 [indicator]
 preview = {}
 current = { fg = "#221727", bg = "#c79eff" }

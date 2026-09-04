@@ -1,4 +1,4 @@
--- Generated from neonway.
+-- Generated from hyprway.
 return {
   borders = {
     active_border = { colors = { "rgb(c79eff)", "rgb(ff91c3)" }, angle = 35 },

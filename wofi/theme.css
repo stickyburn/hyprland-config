@@ -1,12 +1,11 @@
-/* Generated from neonway. */
+/* Generated from hyprway. */
 @define-color background #14111B;
-@define-color panel_bg #0f0f1a;
-@define-color elevated_bg #121124;
-@define-color selection_bg #201a2f;
+@define-color panel_bg #150C1A;
+@define-color elevated_bg #150C1A;
+@define-color selection_bg #22112A;
 @define-color border #2a1d31;
 @define-color foreground #eee9ff;
 @define-color foreground_muted #ffeef2;
-@define-color info #98e4a7;
 @define-color accent #ff91c3;
 @define-color danger #ff338f;
 @define-color focus #c79eff;

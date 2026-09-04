@@ -1,6 +1,6 @@
-# Neonway
+# Hyprway
 
-`theme/neonway.json` is the only hand-edited color source. It contains
+`theme/hyprway.json` is the only hand-edited color source. It contains
 the 17 palette colors and their semantic UI roles.
 
 After changing it, rebuild the native app theme files:
@@ -40,10 +40,10 @@ are outputs, not copies that get moved after the build.
 - `zsh/theme.zsh`: variables used by the prompt in `zsh/.zshrc`
 - `lazygit/theme.yml`
 - `btop/themes/minimal.theme`
-- `yazi/theme.toml` and `yazi/flavors/neonway-{dark,light}.yazi/`: Yazi
+- `yazi/theme.toml` and `yazi/flavors/hyprway-{dark,light}.yazi/`: Yazi
   follows the terminal color scheme
-- `opencode/themes/neonway.json`
-- `claude/themes/neonway.json`
+- `opencode/themes/hyprway.json`
+- `claude/themes/hyprway.json`
 - `gtk-3.0/gtk.css` and `gtk-4.0/gtk.css`
 
 Do not edit generated files directly.
@@ -54,8 +54,19 @@ Only colors are shared. Font sizes, spacing, radii, opacity, shadows, and
 motion remain local to each application because their units and behavior are
 not equivalent.
 
+## Platform-local files
+
+This repo targets Linux. Some live config directories on other platforms
+(macOS) intentionally hold copies instead of symlinks to this repo, because
+OS differences make the content diverge — for example keybinds (`super+*`
+instead of `ctrl+*`). As of writing: `~/.config/opencode/` symlinks most
+items (themes, agents, skills, SYSTEM.md) but keeps `cli.json` and `tui.json`
+as platform-local copies. When renaming a theme or any shared identifier,
+update the platform-local copies too — a stale reference there silently falls
+back to default behavior.
+
 The token-color sections of `VSCodium/User/settings.json` are synced by hand
-from the palette in `theme/neonway.json`; VSCodium has no mechanism to load
+from the palette in `theme/hyprway.json`; VSCodium has no mechanism to load
 themes from a local directory, so the inline overrides ride on the built-in
 `Visual Studio Dark` and `Quiet Light` carrier themes. The two agent badge
 colors in `opencode/opencode.json` also remain local because that config has

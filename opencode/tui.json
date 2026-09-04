@@ -1,6 +1,6 @@
 {
 	"$schema": "https://opencode.ai/tui.json",
-	"theme": "neonway",
+	"theme": "hyprway",
 	"plugin": ["opencode-tps-meter@latest"],
 	"keybinds": {
 		"leader": "ctrl+g",

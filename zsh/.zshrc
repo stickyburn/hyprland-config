@@ -47,7 +47,7 @@ precmd_hooks() {
 precmd_functions+=(precmd_hooks)
 
 setopt prompt_subst
-zstyle ':vcs_info:git:*' formats "%F{$NEONWAY_FOCUS} %b%f"
-export RPROMPT="%F{$NEONWAY_BORDER}%D{%H:%M}%f"
-export PROMPT="%F{$NEONWAY_ACCENT}%1d%f \${vcs_info_msg_0_}
-%F{$NEONWAY_ACCENT}›%f "
+zstyle ':vcs_info:git:*' formats "%F{$HYPRWAY_FOCUS} %b%f"
+export RPROMPT="%F{$HYPRWAY_BORDER}%D{%H:%M}%f"
+export PROMPT="%F{$HYPRWAY_ACCENT}%1d%f \${vcs_info_msg_0_}
+%F{$HYPRWAY_ACCENT}›%f "

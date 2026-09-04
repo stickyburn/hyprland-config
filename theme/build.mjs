@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const themeDir = dirname(fileURLToPath(import.meta.url));
 const configDir = dirname(themeDir);
-const source = JSON.parse(readFileSync(join(themeDir, "neonway.json"), "utf8"));
+const source = JSON.parse(readFileSync(join(themeDir, "hyprway.json"), "utf8"));
 const { colors, roles, light_roles: lightRoles } = source;
 const checkOnly = process.argv.includes("--check");
 let stale = false;
@@ -54,7 +54,7 @@ function write(relativePath, content) {
 
 function renderCss() {
   const roleLines = Object.entries(roles).map(([name, token]) => `@define-color ${name} ${color(token)};`);
-  return ["/* Generated from neonway. */", ...roleLines].join("\n");
+  return ["/* Generated from hyprway. */", ...roleLines].join("\n");
 }
 
 function renderLua() {
@@ -62,7 +62,7 @@ function renderLua() {
   const roleLines = Object.entries(roles).map(([name, token]) => `    ${name} = color.${token},`);
   const lightRoleLines = Object.entries(lightRoles).map(([name, token]) => `    ${name} = color.${token},`);
   return [
-    "-- Generated from neonway.",
+    "-- Generated from hyprway.",
     "local color = {",
     ...primitiveLines,
     "}",
@@ -87,7 +87,7 @@ function renderLua() {
 
 function renderHypr() {
   const rgb = (value) => `rgb(${value.slice(1)})`;
-  return `-- Generated from neonway.
+  return `-- Generated from hyprway.
 return {
   borders = {
     active_border = { colors = { "${rgb(role("focus"))}", "${rgb(role("accent"))}" }, angle = 35 },
@@ -98,7 +98,7 @@ return {
 }
 
 function renderKittyLight() {
-  return `# Generated from neonway.
+  return `# Generated from hyprway.
 background ${lightRole("background")}
 foreground ${lightRole("foreground")}
 cursor ${lightRole("danger")}
@@ -128,7 +128,7 @@ inactive_tab_background ${lightRole("background")}`;
 }
 
 function renderKittyDark() {
-  return `# Generated from neonway.
+  return `# Generated from hyprway.
 background ${role("background")}
 foreground ${role("foreground")}
 cursor ${role("foreground")}
@@ -158,7 +158,7 @@ inactive_tab_background ${role("background")}`;
 }
 
 function renderMako() {
-  return `# Generated from neonway.
+  return `# Generated from hyprway.
 background-color=${role("panel_bg")}
 text-color=${role("foreground")}
 border-color=${role("focus")}
@@ -172,14 +172,14 @@ border-color=${role("danger")}`;
 }
 
 function renderZsh() {
-  return `# Generated from neonway.
-typeset -g NEONWAY_BORDER='${role("border")}'
-typeset -g NEONWAY_ACCENT='${role("accent")}'
-typeset -g NEONWAY_FOCUS='${role("focus")}'`;
+  return `# Generated from hyprway.
+typeset -g HYPRWAY_BORDER='${role("border")}'
+typeset -g HYPRWAY_ACCENT='${role("accent")}'
+typeset -g HYPRWAY_FOCUS='${role("focus")}'`;
 }
 
 function renderLazygit() {
-  return `# Generated from neonway.
+  return `# Generated from hyprway.
 gui:
   theme:
     activeBorderColor: ["${role("focus")}", bold]
@@ -198,7 +198,7 @@ gui:
 
 function renderBtop() {
   const values = {
-    main_bg: "panel",
+    main_bg: roles.panel_bg,
     main_fg: "text",
     title: "violet",
     hi_fg: "violet",
@@ -238,21 +238,21 @@ function renderBtop() {
   };
 
   return [
-    "# Generated from neonway.",
+    "# Generated from hyprway.",
     ...Object.entries(values).map(([name, token]) => `theme[${name}]=\"${color(token)}\"`),
   ].join("\n");
 }
 
 function renderYazi() {
-  return `# Generated from neonway.
+  return `# Generated from hyprway.
 [flavor]
-dark = "neonway-dark"
-light = "neonway-light"`;
+dark = "hyprway-dark"
+light = "hyprway-light"`;
 }
 
 function renderYaziFlavor(schemeRoles) {
   const schemeRole = (name) => color(schemeRoles[name]);
-  return `# Generated from neonway.
+  return `# Generated from hyprway.
 [indicator]
 preview = {}
 current = { fg = "${schemeRole("on_accent")}", bg = "${schemeRole("focus")}" }
@@ -342,7 +342,7 @@ function renderOpenCode() {
       error: rolePair("danger"),
       warning: rolePair("danger"),
       success: rolePair("success"),
-      info: rolePair("info"),
+      info: rolePair("success"),
       text: rolePair("foreground"),
       textMuted: rolePair("foreground_muted"),
       background: rolePair("background"),
@@ -359,7 +359,7 @@ function renderOpenCode() {
       diffHighlightRemoved: pair("signal", "signal_light_mode"),
       diffAddedBg: pair("surface", "mint_tint"),
       diffRemovedBg: pair("deep", "soft"),
-      diffContextBg: pair("panel", "text"),
+      diffContextBg: pair(roles.panel_bg, "text"),
       diffLineNumber: pair("pink", "pink"),
       diffAddedLineNumberBg: pair("surface", "mint_tint"),
       diffRemovedLineNumberBg: pair("deep", "soft"),
@@ -423,7 +423,7 @@ function renderGtk() {
     error_color: role("danger"),
   };
   return [
-    "/* Generated from neonway. */",
+    "/* Generated from hyprway. */",
     ...Object.entries(definitions).map(([name, value]) => `@define-color ${name} ${value};`),
   ].join("\n");
 }
@@ -438,10 +438,10 @@ function renderClaude() {
     warning: "signal", warningShimmer: "soft", merged: "mint", promptBorder: "violet",
     promptBorderShimmer: "mint", planMode: "mint", autoAccept: "mint", bashBorder: "pink",
     ide: "mint", fastMode: "pink", fastModeShimmer: "soft", diffAdded: "surface",
-    diffRemoved: "deep", diffAddedDimmed: "raised", diffRemovedDimmed: "panel",
-    diffAddedWord: "mint", diffRemovedWord: "signal", userMessageBackground: "raised",
+    diffRemoved: "deep", diffAddedDimmed: roles.elevated_bg, diffRemovedDimmed: roles.panel_bg,
+    diffAddedWord: "mint", diffRemovedWord: "signal", userMessageBackground: roles.elevated_bg,
     userMessageBackgroundHover: "surface", messageActionsBackground: "surface",
-    bashMessageBackgroundColor: "deep", memoryBackgroundColor: "raised",
+    bashMessageBackgroundColor: "deep", memoryBackgroundColor: roles.elevated_bg,
     selectionBg: roles.selection_bg, rate_limit_fill: "violet", rate_limit_empty: "edge",
     briefLabelYou: "pink", briefLabelClaude: "violet", professionalBlue: "violet",
     chromeYellow: "pink", clawd_body: "violet", clawd_background: "canvas",
@@ -457,7 +457,7 @@ function renderClaude() {
     cyan_FOR_SUBAGENTS_ONLY: "mint",
   };
   return JSON.stringify({
-    name: "Neonway",
+    name: "Hyprway",
     base: "dark",
     overrides: Object.fromEntries(Object.entries(token).map(([name, nameToken]) => [name, color(nameToken)])),
   }, null, 2);
@@ -475,12 +475,12 @@ write("zsh/theme.zsh", renderZsh());
 write("lazygit/theme.yml", renderLazygit());
 write("btop/themes/minimal.theme", renderBtop());
 write("yazi/theme.toml", renderYazi());
-write("yazi/flavors/neonway-dark.yazi/flavor.toml", renderYaziFlavor(roles));
-write("yazi/flavors/neonway-dark.yazi/tmtheme.xml", renderYaziTmTheme(roles, "Neonway Dark"));
-write("yazi/flavors/neonway-light.yazi/flavor.toml", renderYaziFlavor(lightRoles));
-write("yazi/flavors/neonway-light.yazi/tmtheme.xml", renderYaziTmTheme(lightRoles, "Neonway Light"));
-write("opencode/themes/neonway.json", renderOpenCode());
-write("claude/themes/neonway.json", renderClaude());
+write("yazi/flavors/hyprway-dark.yazi/flavor.toml", renderYaziFlavor(roles));
+write("yazi/flavors/hyprway-dark.yazi/tmtheme.xml", renderYaziTmTheme(roles, "Hyprway Dark"));
+write("yazi/flavors/hyprway-light.yazi/flavor.toml", renderYaziFlavor(lightRoles));
+write("yazi/flavors/hyprway-light.yazi/tmtheme.xml", renderYaziTmTheme(lightRoles, "Hyprway Light"));
+write("opencode/themes/hyprway.json", renderOpenCode());
+write("claude/themes/hyprway.json", renderClaude());
 write("gtk-3.0/gtk.css", renderGtk());
 write("gtk-4.0/gtk.css", renderGtk());
 

@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
   <key>name</key>
-  <string>Neonway Dark</string>
+  <string>Hyprway Light</string>
   <key>settings</key>
   <array>
     <dict>
       <key>settings</key>
       <dict>
         <key>background</key>
-        <string>#14111B</string>
-        <key>foreground</key>
         <string>#eee9ff</string>
+        <key>foreground</key>
+        <string>#14111B</string>
       </dict>
     </dict>
   </array>

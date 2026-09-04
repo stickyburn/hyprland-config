@@ -1,11 +1,11 @@
-/* Generated from neonway. */
+/* Generated from hyprway. */
 @define-color theme_bg_color #14111B;
 @define-color theme_fg_color #eee9ff;
-@define-color theme_base_color #0f0f1a;
+@define-color theme_base_color #150C1A;
 @define-color theme_text_color #eee9ff;
-@define-color theme_selected_bg_color #201a2f;
+@define-color theme_selected_bg_color #22112A;
 @define-color theme_selected_fg_color #eee9ff;
-@define-color insensitive_bg_color #121124;
+@define-color insensitive_bg_color #150C1A;
 @define-color insensitive_fg_color #ffeef2;
 @define-color borders #2a1d31;
 @define-color accent_bg_color #c79eff;
@@ -13,15 +13,15 @@
 @define-color accent_color #c79eff;
 @define-color window_bg_color #14111B;
 @define-color window_fg_color #eee9ff;
-@define-color view_bg_color #0f0f1a;
+@define-color view_bg_color #150C1A;
 @define-color view_fg_color #eee9ff;
-@define-color headerbar_bg_color #121124;
+@define-color headerbar_bg_color #150C1A;
 @define-color headerbar_fg_color #eee9ff;
-@define-color popover_bg_color #121124;
+@define-color popover_bg_color #150C1A;
 @define-color popover_fg_color #eee9ff;
-@define-color card_bg_color #121124;
+@define-color card_bg_color #150C1A;
 @define-color card_fg_color #eee9ff;
-@define-color dialog_bg_color #0f0f1a;
+@define-color dialog_bg_color #150C1A;
 @define-color dialog_fg_color #eee9ff;
 @define-color success_color #98e4a7;
 @define-color warning_color #ff91c3;
