@@ -1,7 +1,7 @@
 {
   // UI
   "window.zoomLevel": 0,
-  "editor.fontFamily": "Zed Sans",
+  "editor.fontFamily": "Zed Mono",
   "terminal.integrated.fontFamily": "Zed Mono",
   "editor.fontSize": 14,
   "terminal.integrated.fontSize": 14,
@@ -71,6 +71,10 @@
     "strings": "on"
   },
   "js/ts.validate.enabled": false,
+  "files.associations": {
+    "**/waybar/*.css": "gtk-css",
+    "**/wofi/*.css": "gtk-css"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },

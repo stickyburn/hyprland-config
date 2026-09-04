@@ -50,10 +50,6 @@ hl.bind(mainMod .. " + SHIFT + U", hl.dsp.exec_cmd("~/.config/waybar/scripts/tog
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("blueman-manager"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("pavucontrol"))
 
--- Notification history
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("makoctl dismiss"))
-hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("makoctl restore"))
-
 -- Volume keys
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ -3%"), { locked = true })
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ +3%"), { locked = true })
