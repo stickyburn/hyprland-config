@@ -4,7 +4,7 @@
   border: none;
   border-radius: 0;
   font-family: "Switzer";
-  font-size: 11px;
+  font-size: 13px;
   min-height: 0;
 }
 
@@ -32,13 +32,12 @@ window#waybar.hidden {
 }
 
 .modules-center {
-  background: @background;
-  padding: 2px 3px;
+  padding: 0 6px;
 }
 
 #telemetry {
   margin-right: 8px;
-  padding: 0 4px;
+  padding: 0 6px;
 }
 
 #custom-city-selector,
@@ -76,15 +75,17 @@ window#waybar.hidden {
 #workspaces button {
   background: transparent;
   color: @foreground_muted;
-  border-bottom: 0 solid transparent;
   border-radius: 5px;
   margin: 0 1px;
   padding: 0 7px;
   min-width: 16px;
-  font-size: 10px;
-  transition-property: background-color, color, border-bottom-width, border-bottom-color;
+  transition-property: background-color, color;
   transition-duration: 90ms;
   transition-timing-function: cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+#workspaces button:not(.empty) {
+  background: @selection_bg;
 }
 
 #workspaces button:hover {
@@ -95,8 +96,6 @@ window#waybar.hidden {
 #workspaces button.active {
   background: @focus;
   color: @on_accent;
-  border-bottom: 2px solid @accent;
-  font-weight: 800;
 }
 
 #workspaces button.urgent {
@@ -123,11 +122,10 @@ window#waybar.hidden {
   background: @panel_bg;
   color: @foreground_muted;
   border: 1px solid @border;
-  border-radius: 7px;
+  border-radius: 8px;
   margin: 4px 12px 0 8px;
   padding: 0 12px;
   font-family: "Switzer";
-  font-size: 11px;
   font-weight: 500;
   transition-property: background-color, border-color, color, opacity;
   transition-duration: 170ms;
@@ -150,7 +148,6 @@ window#waybar.empty #window {
 
 #custom-network {
   color: @success;
-  font-size: 12px;
 }
 
 #custom-network.disconnected {
@@ -190,7 +187,7 @@ tooltip {
 
 tooltip label {
   font-family: "Switzer";
-  font-size: 12px;
+  font-size: 13px;
   min-width: 80px;
   padding: 5px 7px;
 }

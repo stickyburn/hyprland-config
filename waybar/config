@@ -45,8 +45,7 @@
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
         "on-click": "activate",
-        "sort-by-number": true,
-        "cursor": false
+        "sort-by-number": true
     },
     "hyprland/window": {
         "format": "{class}",
@@ -75,13 +74,13 @@
         ]
     },
     "cpu": {
-        "format": "CPU {usage}%",
+        "format": "󰍛 {usage}%",
         "tooltip": false,
         "interval": 5,
         "on-click": "~/.config/waybar/scripts/launch_btop.sh"
     },
     "memory": {
-        "format": "MEM {percentage}%",
+        "format": "󰑹 {percentage}%",
         "tooltip": false,
         "interval": 5,
         "on-click": "~/.config/waybar/scripts/launch_btop.sh"
