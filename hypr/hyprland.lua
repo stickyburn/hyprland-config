@@ -111,8 +111,8 @@ hl.config({
 hl.config({
 	decoration = {
 		rounding = 8,
-		active_opacity = 0.96,
-		inactive_opacity = 0.96,
+		active_opacity = 1.0,
+		inactive_opacity = 1.0,
 		fullscreen_opacity = 1.0,
 		blur = {
 			enabled = true,
@@ -201,6 +201,13 @@ hl.window_rule({
 hl.window_rule({
 	name = "float-file-dialogs",
 	match = { title = "^(Open Files|Open File|Save File)$" },
+	float = true,
+	center = true,
+})
+
+hl.window_rule({
+	name = "float-google-signin",
+	match = { title = "^(Sign in with Google|Google Sign in|Sign in - Google Accounts|Sign in • Google Accounts|Google Accounts)$" },
 	float = true,
 	center = true,
 })
