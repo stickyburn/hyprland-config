@@ -1,7 +1,7 @@
 # Hyprway
 
 `theme/hyprway.json` is the only hand-edited color source. It contains
-the 17 palette colors and their semantic UI roles.
+the palette colors and their semantic UI roles.
 
 After changing it, rebuild the native app theme files:
 
@@ -17,11 +17,8 @@ working without Node.
 
 Unqualified palette names are dark-mode colors. Colors with a
 `_light_mode` suffix are contrast-adjusted equivalents for light mode.
-
-- `mint` (`#98e4a7`) is the dark-mode green.
-- `mint_light_mode` (`#197344`) is the light-mode green.
-- `mint_tint` (`#dffff8`) is a pale light-mode diff background, not a
-  foreground or semantic success green.
+The exception is `mint_tint`: despite the missing suffix it is a pale
+light-mode diff background, not a foreground or semantic success green.
 
 Dark and light terminal green and cyan slots intentionally share their
 mode's single mint color. Yazi inherits those terminal colors through its
@@ -32,7 +29,8 @@ matching dark or light flavor.
 Generated files live beside the application config that consumes them; they
 are outputs, not copies that get moved after the build.
 
-- `waybar/theme.css` and `wofi/theme.css`
+- `waybar/theme.css`: imported by `waybar/style.css`
+- `wofi/style.css`: the entire wofi stylesheet is generated
 - `hypr/theme.lua` and `nvim/lua/config/palette.lua`
 - `kitty/dark-theme.auto.conf`, `kitty/light-theme.auto.conf`, and
   `kitty/no-preference-theme.auto.conf`: Kitty follows the OS color scheme

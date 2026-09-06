@@ -1,10 +1,10 @@
 # Generated from hyprway.
-theme[main_bg]="#150C1A"
+theme[main_bg]="#14111B"
 theme[main_fg]="#eee9ff"
 theme[title]="#c79eff"
 theme[hi_fg]="#c79eff"
 theme[selected_bg]="#c79eff"
-theme[selected_fg]="#221727"
+theme[selected_fg]="#2a1d31"
 theme[inactive_fg]="#2a1d31"
 theme[proc_misc]="#98e4a7"
 theme[cpu_box]="#c79eff"

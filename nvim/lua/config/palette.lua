@@ -1,8 +1,7 @@
 -- Generated from hyprway.
 local color = {
   canvas = "#14111B",
-  panel = "#150C1A",
-  deep = "#221727",
+  panel = "#181420",
   surface = "#22112A",
   edge = "#2a1d31",
   text = "#eee9ff",
@@ -15,7 +14,7 @@ local color = {
   violet_light_mode = "#7740aa",
   mint_light_mode = "#197344",
   signal_light_mode = "#c51f6c",
-  lavender_light_mode = "#d9cff8",
+  lavender_light_mode = "#e9defd",
 }
 
 local theme = {
@@ -32,12 +31,12 @@ local theme = {
     danger = color.signal,
     focus = color.violet,
     success = color.mint,
-    on_accent = color.deep,
+    on_accent = color.edge,
   },
   light_role = {
     background = color.text,
     panel_bg = color.lavender_light_mode,
-    elevated_bg = color.text,
+    elevated_bg = color.lavender_light_mode,
     selection_bg = color.mint_light_mode,
     border = color.violet_light_mode,
     foreground = color.canvas,

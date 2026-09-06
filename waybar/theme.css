@@ -1,7 +1,7 @@
 /* Generated from hyprway. */
 @define-color background #14111B;
-@define-color panel_bg #150C1A;
-@define-color elevated_bg #150C1A;
+@define-color panel_bg #181420;
+@define-color elevated_bg #181420;
 @define-color selection_bg #22112A;
 @define-color border #2a1d31;
 @define-color foreground #eee9ff;
@@ -10,4 +10,4 @@
 @define-color danger #ff338f;
 @define-color focus #c79eff;
 @define-color success #98e4a7;
-@define-color on_accent #221727;
+@define-color on_accent #2a1d31;

@@ -41,7 +41,10 @@ local function apply()
   hi("CursorLineNr", { fg = r.accent, bg = lineBg, bold = true })
   hi("LineNr", { fg = r.border })
   hi("SignColumn", { bg = r.background })
-  hi("EndOfBuffer", { fg = r.background, bg = r.background })
+  -- No bg on purpose: the eob filler falls back to the window background, so
+  -- empty areas inside floats (snacks explorer list/preview) stay panel
+  -- instead of dropping to canvas.
+  hi("EndOfBuffer", { fg = r.background })
   hi("Visual", { bg = r.selection_bg })
   hi("Search", { fg = r.on_accent, bg = r.accent, bold = true })
   hi("IncSearch", { fg = r.on_accent, bg = r.danger, bold = true })

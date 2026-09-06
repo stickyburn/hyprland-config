@@ -1,8 +1,8 @@
 # Generated from hyprway.
 [indicator]
 preview = {}
-current = { fg = "#221727", bg = "#c79eff" }
-parent = { fg = "#221727", bg = "#c79eff" }
+current = { fg = "#2a1d31", bg = "#c79eff" }
+parent = { fg = "#2a1d31", bg = "#c79eff" }
 
 [mgr]
 cwd = { fg = "#14111B", bg = "#14111B" }

@@ -1,8 +1,7 @@
 {
   "colors": {
     "canvas": "#14111B",
-    "panel": "#150C1A",
-    "deep": "#221727",
+    "panel": "#181420",
     "surface": "#22112A",
     "edge": "#2a1d31",
     "text": "#eee9ff",
@@ -15,7 +14,7 @@
     "violet_light_mode": "#7740aa",
     "mint_light_mode": "#197344",
     "signal_light_mode": "#c51f6c",
-    "lavender_light_mode": "#d9cff8"
+    "lavender_light_mode": "#e9defd"
   },
   "roles": {
     "background": "canvas",
@@ -29,12 +28,12 @@
     "danger": "signal",
     "focus": "violet",
     "success": "mint",
-    "on_accent": "deep"
+    "on_accent": "edge"
   },
   "light_roles": {
     "background": "text",
     "panel_bg": "lavender_light_mode",
-    "elevated_bg": "text",
+    "elevated_bg": "lavender_light_mode",
     "selection_bg": "mint_light_mode",
     "border": "violet_light_mode",
     "foreground": "canvas",
