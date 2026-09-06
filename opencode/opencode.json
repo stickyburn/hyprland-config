@@ -6,7 +6,7 @@
 	"default_agent": "build",
 	"agent": {
 		"plan": {
-			"model": "ollama-cloud/glm-5.3",
+			"model": "ollama-cloud/glm-5.3-flash",
 			"variant": "max",
 			"color": "#c79eff"
 		},
@@ -14,11 +14,6 @@
 			"model": "ollama-cloud/glm-5.3-flash",
 			"variant": "max",
 			"color": "#98e4a7"
-		},
-		"explore": {
-			"permission": {
-				"bash": "allow"
-			}
 		}
 	},
 	"mcp": {

@@ -1,9 +1,7 @@
 ---
-description: Plan, implement, and review through the multi-agent workflow.
+description: Coordinate planning, implementation, and review for a coding task.
 agent: task
 subtask: false
 ---
-
-Run the full workflow for this request and preserve its wording as the scope:
 
 $ARGUMENTS

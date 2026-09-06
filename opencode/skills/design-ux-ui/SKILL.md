@@ -5,14 +5,10 @@ description: Designs, implements, or critiques web, mobile, and desktop interfac
 
 # Design UX UI
 
-## Workflow
-
-1. Inspect the brief, content, assets, relevant source, shared components, tokens, typography, and nearby UI patterns. In an existing product, preserve its established visual language unless redesign is requested.
-2. Identify the primary user task, content hierarchy, required states, platform constraints, and one visual direction specific to the subject. Ask only questions that would materially change the result.
-3. Define the interaction and responsive behavior before visual polish. Cover relevant loading, empty, error, success, disabled, long-content, destructive, and narrow-layout states.
-4. Implement the smallest coherent solution in the repository's stack. Reuse its components and tokens. Use real content when available; do not invent claims, testimonials, or metrics.
-5. Make the interface semantic, keyboard-operable, responsive, and accessible. Target WCAG 2.2 AA for web unless the project specifies another standard.
-6. Verify the rendered result at narrow and wide sizes, exercise the primary flow and relevant failure states, and run applicable project checks.
+- Understand the user's task and content. Preserve an existing product's visual language unless redesign is requested; otherwise choose a direction specific to the subject, not a generic template.
+- Reuse the project's components and tokens. Use real content; do not invent claims, testimonials, or metrics.
+- Cover relevant interaction and failure states. Make the UI responsive, semantic, and keyboard-operable; target WCAG 2.2 AA for web unless specified otherwise.
+- Verify the rendered result at narrow and wide sizes, exercise the main flow and failure states, and run relevant checks.
 
 Load only the reference needed for the task:
 
@@ -23,4 +19,4 @@ Load only the reference needed for the task:
 - accessibility: `references/accessibility.md`
 - generic-looking output or a broad redesign: `references/anti-patterns.md`
 
-Use the `motion` skill when movement is a substantial part of the work. For critique, return prioritized evidence-based findings, concrete remedies, and meaningful tradeoffs.
+Use `motion` for substantial animation work. For critique, prioritize concrete findings and remedies.
