@@ -88,13 +88,13 @@ window#waybar.hidden {
 }
 
 #workspaces button:hover {
-  background: @elevated_bg;
+  background: @selection_bg;
   color: @focus;
 }
 
 #workspaces button.active {
-  background: @elevated_bg;
-  color: @focus;
+  background: @focus;
+  color: @on_accent;
   border-bottom: 2px solid @accent;
   font-weight: 800;
 }
@@ -135,7 +135,7 @@ window#waybar.hidden {
 }
 
 #window:hover {
-  background: @elevated_bg;
+  background: @selection_bg;
   color: @focus;
   border-color: @focus;
 }
@@ -177,7 +177,7 @@ window#waybar.empty #window {
 #cpu:hover,
 #memory:hover,
 #custom-idle:hover {
-  background: @elevated_bg;
+  background: @selection_bg;
   color: @foreground;
 }
 

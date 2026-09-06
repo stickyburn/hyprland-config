@@ -96,7 +96,7 @@ window {
 
 #input:focus {
     border-color: @focus;
-    background: @selection_bg;
+    background: @elevated_bg;
 }
 
 #inner-box,
@@ -121,7 +121,7 @@ window {
 }
 
 #entry:selected {
-    background: @selection_bg;
+    background: @focus;
     border-left: 5px solid @focus;
     padding-left: 8px;
 }
@@ -136,7 +136,7 @@ window {
 }
 
 #text:selected {
-    color: @foreground;
+    color: @on_accent;
     font-weight: 600;
 }
 
@@ -197,17 +197,17 @@ macos_titlebar_color background
 color0 ${color("canvas")}
 color1 ${color("signal_light_mode")}
 color2 ${color("mint_light_mode")}
-color3 ${color("pink")}
+color3 ${lightRole("accent")}
 color4 ${color("violet_light_mode")}
-color5 ${color("pink")}
+color5 ${lightRole("accent")}
 color6 ${color("mint_light_mode")}
 color7 ${color("edge")}
 color8 ${color("edge")}
 color9 ${color("signal_light_mode")}
 color10 ${color("mint_light_mode")}
-color11 ${color("pink")}
+color11 ${lightRole("accent")}
 color12 ${color("violet_light_mode")}
-color13 ${color("pink")}
+color13 ${lightRole("accent")}
 color14 ${color("mint_light_mode")}
 color15 ${color("canvas")}
 
@@ -232,7 +232,7 @@ color4 ${color("violet")}
 color5 ${color("pink")}
 color6 ${color("mint")}
 color7 ${color("text")}
-color8 ${color("edge")}
+color8 ${color("soft")}
 color9 ${color("signal")}
 color10 ${color("mint")}
 color11 ${color("soft")}
@@ -374,8 +374,8 @@ progress_error = { fg = "${schemeRole("background")}", bg = "${schemeRole("backg
 border = { fg = "${schemeRole("focus")}" }
 
 [pick.active]
-fg = "${schemeRole("foreground")}"
-bg = "${schemeRole("background")}"
+fg = "${schemeRole("on_accent")}"
+bg = "${schemeRole("focus")}"
 
 [pick.inactive]
 fg = "${schemeRole("foreground")}"
@@ -428,9 +428,9 @@ function renderOpenCode() {
     theme: {
       primary: rolePair("focus"),
       secondary: rolePair("accent"),
-      accent: rolePair("danger"),
+      accent: rolePair("accent"),
       error: rolePair("danger"),
-      warning: rolePair("danger"),
+      warning: rolePair("accent"),
       success: rolePair("success"),
       info: rolePair("success"),
       text: rolePair("foreground"),
@@ -440,26 +440,26 @@ function renderOpenCode() {
       backgroundElement: rolePair("elevated_bg"),
       border: rolePair("border"),
       borderActive: rolePair("focus"),
-      borderSubtle: pair(roles.selection_bg, lightRoles.selection_bg),
+      borderSubtle: rolePair("border"),
       diffAdded: pair("mint", "mint_light_mode"),
       diffRemoved: pair("signal", "signal_light_mode"),
-      diffContext: pair("pink", "pink"),
+      diffContext: rolePair("accent"),
       diffHunkHeader: pair("violet", "violet_light_mode"),
       diffHighlightAdded: pair("mint", "mint_light_mode"),
       diffHighlightRemoved: pair("signal", "signal_light_mode"),
       diffAddedBg: pair("surface", "mint_tint"),
       diffRemovedBg: pair("edge", "soft"),
-      diffContextBg: pair(roles.panel_bg, "text"),
-      diffLineNumber: pair("pink", "pink"),
+      diffContextBg: rolePair("background"),
+      diffLineNumber: rolePair("accent"),
       diffAddedLineNumberBg: pair("surface", "mint_tint"),
       diffRemovedLineNumberBg: pair("edge", "soft"),
       markdownText: pair("text", "canvas"),
-      markdownHeading: pair("pink", "pink"),
+      markdownHeading: rolePair("accent"),
       markdownLink: pair("mint", "mint_light_mode"),
       markdownLinkText: pair("violet", "violet_light_mode"),
       markdownCode: pair("mint", "mint_light_mode"),
-      markdownBlockQuote: pair("pink", "pink"),
-      markdownEmph: pair("pink", "pink"),
+      markdownBlockQuote: rolePair("accent"),
+      markdownEmph: rolePair("accent"),
       markdownStrong: pair("soft", "edge"),
       markdownHorizontalRule: pair("edge", "violet_light_mode"),
       markdownListItem: pair("signal", "signal_light_mode"),
@@ -468,7 +468,7 @@ function renderOpenCode() {
       markdownImageText: pair("violet", "violet_light_mode"),
       markdownCodeBlock: pair("soft", "canvas"),
       syntaxComment: pair("violet", "violet_light_mode"),
-      syntaxKeyword: pair("pink", "pink"),
+      syntaxKeyword: rolePair("accent"),
       syntaxFunction: pair("mint", "mint_light_mode"),
       syntaxVariable: pair("text", "canvas"),
       syntaxString: pair("mint", "mint_light_mode"),
@@ -488,8 +488,8 @@ function renderGtk() {
     theme_fg_color: role("foreground"),
     theme_base_color: role("panel_bg"),
     theme_text_color: role("foreground"),
-    theme_selected_bg_color: role("selection_bg"),
-    theme_selected_fg_color: role("foreground"),
+    theme_selected_bg_color: role("focus"),
+    theme_selected_fg_color: role("on_accent"),
     insensitive_bg_color: role("elevated_bg"),
     insensitive_fg_color: role("foreground_muted"),
     borders: role("border"),
@@ -498,7 +498,7 @@ function renderGtk() {
     accent_color: role("focus"),
     window_bg_color: role("background"),
     window_fg_color: role("foreground"),
-    view_bg_color: role("panel_bg"),
+    view_bg_color: role("background"),
     view_fg_color: role("foreground"),
     headerbar_bg_color: role("elevated_bg"),
     headerbar_fg_color: role("foreground"),
@@ -531,7 +531,7 @@ function renderClaude() {
     diffRemoved: "edge", diffAddedDimmed: roles.elevated_bg, diffRemovedDimmed: roles.panel_bg,
     diffAddedWord: "mint", diffRemovedWord: "signal", userMessageBackground: roles.elevated_bg,
     userMessageBackgroundHover: "surface", messageActionsBackground: "surface",
-    bashMessageBackgroundColor: "edge", memoryBackgroundColor: roles.elevated_bg,
+    bashMessageBackgroundColor: roles.panel_bg, memoryBackgroundColor: roles.elevated_bg,
     selectionBg: roles.selection_bg, rate_limit_fill: "violet", rate_limit_empty: "edge",
     briefLabelYou: "pink", briefLabelClaude: "violet", professionalBlue: "violet",
     chromeYellow: "pink", clawd_body: "violet", clawd_background: "canvas",

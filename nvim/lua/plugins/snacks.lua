@@ -4,6 +4,17 @@ return {
     -- Starts Tree-sitter and redraws before showing the file, leading to delays on larger opens.
     quickfile = { enabled = false },
     indent = { only_scope = true },
+    lazygit = {
+      theme = {
+        activeBorderColor = { fg = "FloatBorder", bold = true },
+        inactiveBorderColor = { fg = "HyprwayLazygitInactiveBorder" },
+        searchingActiveBorderColor = { fg = "Keyword", bold = true },
+        optionsTextColor = { fg = "FloatBorder" },
+        -- Preserve diff foregrounds while distinguishing selection from the float.
+        selectedLineBgColor = { bg = "HyprwayLazygitSelection", bold = true },
+        inactiveViewSelectedLineBgColor = { bg = "NormalFloat" },
+      },
+    },
     picker = {
       win = {
         list = {

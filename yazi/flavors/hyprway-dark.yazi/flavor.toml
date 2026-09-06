@@ -30,8 +30,8 @@ progress_error = { fg = "#14111B", bg = "#14111B" }
 border = { fg = "#c79eff" }
 
 [pick.active]
-fg = "#eee9ff"
-bg = "#14111B"
+fg = "#2a1d31"
+bg = "#c79eff"
 
 [pick.inactive]
 fg = "#eee9ff"

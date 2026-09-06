@@ -46,7 +46,7 @@ window {
 
 #input:focus {
     border-color: @focus;
-    background: @selection_bg;
+    background: @elevated_bg;
 }
 
 #inner-box,
@@ -71,7 +71,7 @@ window {
 }
 
 #entry:selected {
-    background: @selection_bg;
+    background: @focus;
     border-left: 5px solid @focus;
     padding-left: 8px;
 }
@@ -86,7 +86,7 @@ window {
 }
 
 #text:selected {
-    color: @foreground;
+    color: @on_accent;
     font-weight: 600;
 }
 

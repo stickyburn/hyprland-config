@@ -1,19 +1,20 @@
 local p = require("config.palette")
 
-local current = "dark"
+-- Neovim reloads the colorscheme when 'background' changes.
+local current = vim.o.background
 
 local terminal = {
   dark = {
     p.canvas, p.signal, p.mint, p.pink,
     p.violet, p.pink, p.mint, p.text,
-    p.edge, p.signal, p.mint, p.soft,
+    p.soft, p.signal, p.mint, p.soft,
     p.violet, p.pink, p.mint, p.soft,
   },
   light = {
-    p.canvas, p.signal_light_mode, p.mint_light_mode, p.pink,
-    p.violet_light_mode, p.pink, p.mint_light_mode, p.edge,
-    p.edge, p.signal_light_mode, p.mint_light_mode, p.pink,
-    p.violet_light_mode, p.pink, p.mint_light_mode, p.canvas,
+    p.canvas, p.signal_light_mode, p.mint_light_mode, p.pink_light_mode,
+    p.violet_light_mode, p.pink_light_mode, p.mint_light_mode, p.edge,
+    p.edge, p.signal_light_mode, p.mint_light_mode, p.pink_light_mode,
+    p.violet_light_mode, p.pink_light_mode, p.mint_light_mode, p.canvas,
   },
 }
 
@@ -28,7 +29,7 @@ local function apply()
 
   local r = current == "light" and p.light_role or p.role
   local diffAddFg = current == "light" and p.mint_light_mode or p.mint
-  local lineBg = current == "light" and p.mint_tint or r.selection_bg
+  local lineBg = r.panel_bg
 
   hi("Normal", { fg = r.foreground, bg = r.background })
   hi("NormalNC", { fg = r.foreground_muted, bg = r.background })
@@ -46,6 +47,9 @@ local function apply()
   -- instead of dropping to canvas.
   hi("EndOfBuffer", { fg = r.background })
   hi("Visual", { bg = r.selection_bg })
+  -- Lazygit sits on NormalFloat: lavender selection would disappear in light mode.
+  hi("HyprwayLazygitSelection", { bg = current == "light" and p.mint_tint or r.selection_bg })
+  hi("HyprwayLazygitInactiveBorder", { fg = r.foreground_muted })
   hi("Search", { fg = r.on_accent, bg = r.accent, bold = true })
   hi("IncSearch", { fg = r.on_accent, bg = r.danger, bold = true })
   hi("MatchParen", { fg = r.success, bg = r.selection_bg, bold = true })
@@ -122,6 +126,8 @@ end
 local function set(scheme)
   current = scheme
   apply()
+  -- Notify integrations (including Snacks' lazygit theme) on explicit toggles.
+  vim.api.nvim_exec_autocmds("ColorScheme", { pattern = "hyprway" })
 end
 
 apply()

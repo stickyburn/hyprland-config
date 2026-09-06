@@ -38,7 +38,7 @@
     "userMessageBackground": "#181420",
     "userMessageBackgroundHover": "#22112A",
     "messageActionsBackground": "#22112A",
-    "bashMessageBackgroundColor": "#2a1d31",
+    "bashMessageBackgroundColor": "#181420",
     "memoryBackgroundColor": "#181420",
     "selectionBg": "#22112A",
     "rate_limit_fill": "#c79eff",

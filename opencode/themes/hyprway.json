@@ -12,9 +12,10 @@
     "violet": "#c79eff",
     "mint": "#98e4a7",
     "mint_tint": "#dffff8",
+    "pink_light_mode": "#a62d68",
     "violet_light_mode": "#7740aa",
     "mint_light_mode": "#197344",
-    "signal_light_mode": "#c51f6c",
+    "signal_light_mode": "#bf1d68",
     "lavender_light_mode": "#e9defd"
   },
   "theme": {
@@ -24,19 +25,19 @@
     },
     "secondary": {
       "dark": "pink",
-      "light": "pink"
+      "light": "pink_light_mode"
     },
     "accent": {
-      "dark": "signal",
-      "light": "signal_light_mode"
+      "dark": "pink",
+      "light": "pink_light_mode"
     },
     "error": {
       "dark": "signal",
       "light": "signal_light_mode"
     },
     "warning": {
-      "dark": "signal",
-      "light": "signal_light_mode"
+      "dark": "pink",
+      "light": "pink_light_mode"
     },
     "success": {
       "dark": "mint",
@@ -75,8 +76,8 @@
       "light": "violet_light_mode"
     },
     "borderSubtle": {
-      "dark": "surface",
-      "light": "mint_light_mode"
+      "dark": "edge",
+      "light": "violet_light_mode"
     },
     "diffAdded": {
       "dark": "mint",
@@ -88,7 +89,7 @@
     },
     "diffContext": {
       "dark": "pink",
-      "light": "pink"
+      "light": "pink_light_mode"
     },
     "diffHunkHeader": {
       "dark": "violet",
@@ -111,12 +112,12 @@
       "light": "soft"
     },
     "diffContextBg": {
-      "dark": "panel",
+      "dark": "canvas",
       "light": "text"
     },
     "diffLineNumber": {
       "dark": "pink",
-      "light": "pink"
+      "light": "pink_light_mode"
     },
     "diffAddedLineNumberBg": {
       "dark": "surface",
@@ -132,7 +133,7 @@
     },
     "markdownHeading": {
       "dark": "pink",
-      "light": "pink"
+      "light": "pink_light_mode"
     },
     "markdownLink": {
       "dark": "mint",
@@ -148,11 +149,11 @@
     },
     "markdownBlockQuote": {
       "dark": "pink",
-      "light": "pink"
+      "light": "pink_light_mode"
     },
     "markdownEmph": {
       "dark": "pink",
-      "light": "pink"
+      "light": "pink_light_mode"
     },
     "markdownStrong": {
       "dark": "soft",
@@ -188,7 +189,7 @@
     },
     "syntaxKeyword": {
       "dark": "pink",
-      "light": "pink"
+      "light": "pink_light_mode"
     },
     "syntaxFunction": {
       "dark": "mint",
