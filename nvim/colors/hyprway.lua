@@ -5,16 +5,16 @@ local current = vim.o.background
 
 local terminal = {
   dark = {
-    p.canvas, p.signal, p.mint, p.pink,
+    p.background, p.signal, p.mint, p.pink,
     p.violet, p.pink, p.mint, p.text,
     p.soft, p.signal, p.mint, p.soft,
     p.violet, p.pink, p.mint, p.soft,
   },
   light = {
-    p.canvas, p.signal_light_mode, p.mint_light_mode, p.pink_light_mode,
-    p.violet_light_mode, p.pink_light_mode, p.mint_light_mode, p.edge,
-    p.edge, p.signal_light_mode, p.mint_light_mode, p.pink_light_mode,
-    p.violet_light_mode, p.pink_light_mode, p.mint_light_mode, p.canvas,
+    p.background, p.signal_light, p.mint_light, p.pink_light,
+    p.violet_light, p.pink_light, p.mint_light, p.edge,
+    p.edge, p.signal_light, p.mint_light, p.pink_light,
+    p.violet_light, p.pink_light, p.mint_light, p.background,
   },
 }
 
@@ -28,7 +28,7 @@ local function apply()
   vim.g.colors_name = "hyprway"
 
   local r = current == "light" and p.light_role or p.role
-  local diffAddFg = current == "light" and p.mint_light_mode or p.mint
+  local diffAddFg = current == "light" and p.mint_light or p.mint
   local lineBg = r.panel_bg
 
   hi("Normal", { fg = r.foreground, bg = r.background })
@@ -44,7 +44,7 @@ local function apply()
   hi("SignColumn", { bg = r.background })
   -- No bg on purpose: the eob filler falls back to the window background, so
   -- empty areas inside floats (snacks explorer list/preview) stay panel
-  -- instead of dropping to canvas.
+  -- instead of dropping to background.
   hi("EndOfBuffer", { fg = r.background })
   hi("Visual", { bg = r.selection_bg })
   -- Lazygit sits on NormalFloat: lavender selection would disappear in light mode.

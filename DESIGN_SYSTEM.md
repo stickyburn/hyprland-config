@@ -24,11 +24,11 @@ are also manual.
 
 Btop is the dark-mode reference: quiet canvas, violet focus, pink accents,
 mint information and off-white text. Light-capable apps follow that hierarchy
-with contrast-adjusted foregrounds (`*_light_mode`).
+with contrast-adjusted foregrounds (`*_light`).
 
 - Canvas for main reading areas; panel for inputs, popovers and current lines.
-  Use surface sparingly for interaction tints. Light mode reuses lavender for
-  panels and subtle selections.
+  Use surface sparingly for interaction tints. Light mode uses `background_light`
+  for its canvas and reuses lavender for panels and subtle selections.
 - Violet-filled focused options need contrasting `on_accent` text. Preserve
   syntax/diff foregrounds with subtle text selections instead. LazyGit inside
   Neovim uses mint tint in light mode to distinguish selection from its float.

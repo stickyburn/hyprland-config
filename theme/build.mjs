@@ -27,7 +27,10 @@ for (const [scheme, schemeRoles] of Object.entries({ dark: roles, light: lightRo
   }
 }
 
-const color = (name) => colors[name];
+function color(name) {
+  if (!colors[name]) throw new Error(`Unknown token ${name}`);
+  return colors[name];
+}
 const role = (name) => color(roles[name]);
 const lightRole = (name) => color(lightRoles[name]);
 
@@ -194,22 +197,22 @@ foreground ${lightRole("foreground")}
 cursor ${lightRole("danger")}
 macos_titlebar_color background
 
-color0 ${color("canvas")}
-color1 ${color("signal_light_mode")}
-color2 ${color("mint_light_mode")}
+color0 ${color("background")}
+color1 ${color("signal_light")}
+color2 ${color("mint_light")}
 color3 ${lightRole("accent")}
-color4 ${color("violet_light_mode")}
+color4 ${color("violet_light")}
 color5 ${lightRole("accent")}
-color6 ${color("mint_light_mode")}
+color6 ${color("mint_light")}
 color7 ${color("edge")}
 color8 ${color("edge")}
-color9 ${color("signal_light_mode")}
-color10 ${color("mint_light_mode")}
+color9 ${color("signal_light")}
+color10 ${color("mint_light")}
 color11 ${lightRole("accent")}
-color12 ${color("violet_light_mode")}
+color12 ${color("violet_light")}
 color13 ${lightRole("accent")}
-color14 ${color("mint_light_mode")}
-color15 ${color("canvas")}
+color14 ${color("mint_light")}
+color15 ${color("background")}
 
 active_tab_foreground ${lightRole("on_accent")}
 active_tab_background ${lightRole("focus")}
@@ -224,7 +227,7 @@ foreground ${role("foreground")}
 cursor ${role("foreground")}
 macos_titlebar_color background
 
-color0 ${color("canvas")}
+color0 ${color("background")}
 color1 ${color("signal")}
 color2 ${color("mint")}
 color3 ${color("pink")}
@@ -251,8 +254,8 @@ function renderMako() {
   return `# Generated from hyprway.
 background-color=${role("panel_bg")}
 text-color=${role("foreground")}
-border-color=${role("focus")}
-progress-color=${role("accent")}
+border-color=${role("accent")}
+progress-color=${role("focus")}
 
 [urgency=low]
 border-color=${role("border")}
@@ -288,7 +291,7 @@ gui:
 
 function renderBtop() {
   const values = {
-    main_bg: "canvas",
+    main_bg: "background",
     main_fg: "text",
     title: "violet",
     hi_fg: "violet",
@@ -441,41 +444,41 @@ function renderOpenCode() {
       border: rolePair("border"),
       borderActive: rolePair("focus"),
       borderSubtle: rolePair("border"),
-      diffAdded: pair("mint", "mint_light_mode"),
-      diffRemoved: pair("signal", "signal_light_mode"),
+      diffAdded: pair("mint", "mint_light"),
+      diffRemoved: pair("signal", "signal_light"),
       diffContext: rolePair("accent"),
-      diffHunkHeader: pair("violet", "violet_light_mode"),
-      diffHighlightAdded: pair("mint", "mint_light_mode"),
-      diffHighlightRemoved: pair("signal", "signal_light_mode"),
+      diffHunkHeader: pair("violet", "violet_light"),
+      diffHighlightAdded: pair("mint", "mint_light"),
+      diffHighlightRemoved: pair("signal", "signal_light"),
       diffAddedBg: pair("surface", "mint_tint"),
       diffRemovedBg: pair("edge", "soft"),
       diffContextBg: rolePair("background"),
       diffLineNumber: rolePair("accent"),
       diffAddedLineNumberBg: pair("surface", "mint_tint"),
       diffRemovedLineNumberBg: pair("edge", "soft"),
-      markdownText: pair("text", "canvas"),
+      markdownText: pair("text", "background_light"),
       markdownHeading: rolePair("accent"),
-      markdownLink: pair("mint", "mint_light_mode"),
-      markdownLinkText: pair("violet", "violet_light_mode"),
-      markdownCode: pair("mint", "mint_light_mode"),
+      markdownLink: pair("mint", "mint_light"),
+      markdownLinkText: pair("violet", "violet_light"),
+      markdownCode: pair("mint", "mint_light"),
       markdownBlockQuote: rolePair("accent"),
       markdownEmph: rolePair("accent"),
       markdownStrong: pair("soft", "edge"),
-      markdownHorizontalRule: pair("edge", "violet_light_mode"),
-      markdownListItem: pair("signal", "signal_light_mode"),
-      markdownListEnumeration: pair("violet", "violet_light_mode"),
-      markdownImage: pair("mint", "mint_light_mode"),
-      markdownImageText: pair("violet", "violet_light_mode"),
-      markdownCodeBlock: pair("soft", "canvas"),
-      syntaxComment: pair("violet", "violet_light_mode"),
+      markdownHorizontalRule: pair("edge", "violet_light"),
+      markdownListItem: pair("signal", "signal_light"),
+      markdownListEnumeration: pair("violet", "violet_light"),
+      markdownImage: pair("mint", "mint_light"),
+      markdownImageText: pair("violet", "violet_light"),
+      markdownCodeBlock: pair("soft", "background_light"),
+      syntaxComment: pair("violet", "violet_light"),
       syntaxKeyword: rolePair("accent"),
-      syntaxFunction: pair("mint", "mint_light_mode"),
-      syntaxVariable: pair("text", "canvas"),
-      syntaxString: pair("mint", "mint_light_mode"),
-      syntaxNumber: pair("signal", "signal_light_mode"),
-      syntaxType: pair("mint", "mint_light_mode"),
-      syntaxOperator: pair("violet", "violet_light_mode"),
-      syntaxPunctuation: pair("soft", "canvas"),
+      syntaxFunction: pair("mint", "mint_light"),
+      syntaxVariable: pair("text", "background_light"),
+      syntaxString: pair("mint", "mint_light"),
+      syntaxNumber: pair("signal", "signal_light"),
+      syntaxType: pair("mint", "mint_light"),
+      syntaxOperator: pair("violet", "violet_light"),
+      syntaxPunctuation: pair("soft", "background_light"),
     },
   };
 
@@ -522,7 +525,7 @@ function renderClaude() {
   const token = {
     claude: "violet", claudeShimmer: "mint",
     claudeBlue_FOR_SYSTEM_SPINNER: "violet", claudeBlueShimmer_FOR_SYSTEM_SPINNER: "mint",
-    text: "text", inverseText: "canvas", inactive: "pink", inactiveShimmer: "soft",
+    text: "text", inverseText: "background", inactive: "pink", inactiveShimmer: "soft",
     subtle: "violet", suggestion: "mint", permission: "violet", permissionShimmer: "mint",
     remember: "mint", background: roles.background, success: "mint", error: "signal",
     warning: "signal", warningShimmer: "soft", merged: "mint", promptBorder: "violet",
@@ -534,7 +537,7 @@ function renderClaude() {
     bashMessageBackgroundColor: roles.panel_bg, memoryBackgroundColor: roles.elevated_bg,
     selectionBg: roles.selection_bg, rate_limit_fill: "violet", rate_limit_empty: "edge",
     briefLabelYou: "pink", briefLabelClaude: "violet", professionalBlue: "violet",
-    chromeYellow: "pink", clawd_body: "violet", clawd_background: "canvas",
+    chromeYellow: "pink", clawd_body: "violet", clawd_background: "background",
     rainbow_red: "signal", rainbow_orange: "pink", rainbow_yellow: "soft",
     rainbow_green: "mint", rainbow_blue: "mint", rainbow_indigo: "violet",
     rainbow_violet: "violet", rainbow_red_shimmer: "pink", rainbow_orange_shimmer: "soft",
@@ -559,7 +562,7 @@ write("hypr/theme.lua", renderHypr());
 write("nvim/lua/config/palette.lua", renderLua());
 write("kitty/dark-theme.auto.conf", renderKittyDark());
 write("kitty/light-theme.auto.conf", renderKittyLight());
-write("kitty/no-preference-theme.auto.conf", renderKittyLight());
+write("kitty/no-preference-theme.auto.conf", renderKittyDark());
 write("mako/theme.conf", renderMako());
 write("zsh/theme.zsh", renderZsh());
 write("lazygit/theme.yml", renderLazygit());

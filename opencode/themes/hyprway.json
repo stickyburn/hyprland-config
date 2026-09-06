@@ -1,7 +1,7 @@
 {
   "$schema": "https://opencode.ai/theme.json",
   "defs": {
-    "canvas": "#14111B",
+    "background": "#14111B",
     "panel": "#181420",
     "surface": "#22112A",
     "edge": "#2a1d31",
@@ -12,96 +12,98 @@
     "violet": "#c79eff",
     "mint": "#98e4a7",
     "mint_tint": "#dffff8",
-    "pink_light_mode": "#a62d68",
-    "violet_light_mode": "#7740aa",
-    "mint_light_mode": "#197344",
-    "signal_light_mode": "#bf1d68",
-    "lavender_light_mode": "#e9defd"
+    "background_light": "#eee9ff",
+    "text_light": "#14111B",
+    "pink_light": "#a62d68",
+    "violet_light": "#7740aa",
+    "mint_light": "#197344",
+    "signal_light": "#bf1d68",
+    "lavender_light": "#e9defd"
   },
   "theme": {
     "primary": {
       "dark": "violet",
-      "light": "violet_light_mode"
+      "light": "violet_light"
     },
     "secondary": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink_light"
     },
     "accent": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink_light"
     },
     "error": {
       "dark": "signal",
-      "light": "signal_light_mode"
+      "light": "signal_light"
     },
     "warning": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink_light"
     },
     "success": {
       "dark": "mint",
-      "light": "mint_light_mode"
+      "light": "mint_light"
     },
     "info": {
       "dark": "mint",
-      "light": "mint_light_mode"
+      "light": "mint_light"
     },
     "text": {
       "dark": "text",
-      "light": "canvas"
+      "light": "text_light"
     },
     "textMuted": {
       "dark": "soft",
       "light": "edge"
     },
     "background": {
-      "dark": "canvas",
-      "light": "text"
+      "dark": "background",
+      "light": "background_light"
     },
     "backgroundPanel": {
       "dark": "panel",
-      "light": "lavender_light_mode"
+      "light": "lavender_light"
     },
     "backgroundElement": {
       "dark": "panel",
-      "light": "lavender_light_mode"
+      "light": "lavender_light"
     },
     "border": {
       "dark": "edge",
-      "light": "violet_light_mode"
+      "light": "violet_light"
     },
     "borderActive": {
       "dark": "violet",
-      "light": "violet_light_mode"
+      "light": "violet_light"
     },
     "borderSubtle": {
       "dark": "edge",
-      "light": "violet_light_mode"
+      "light": "violet_light"
     },
     "diffAdded": {
       "dark": "mint",
-      "light": "mint_light_mode"
+      "light": "mint_light"
     },
     "diffRemoved": {
       "dark": "signal",
-      "light": "signal_light_mode"
+      "light": "signal_light"
     },
     "diffContext": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink_light"
     },
     "diffHunkHeader": {
       "dark": "violet",
-      "light": "violet_light_mode"
+      "light": "violet_light"
     },
     "diffHighlightAdded": {
       "dark": "mint",
-      "light": "mint_light_mode"
+      "light": "mint_light"
     },
     "diffHighlightRemoved": {
       "dark": "signal",
-      "light": "signal_light_mode"
+      "light": "signal_light"
     },
     "diffAddedBg": {
       "dark": "surface",
@@ -112,12 +114,12 @@
       "light": "soft"
     },
     "diffContextBg": {
-      "dark": "canvas",
-      "light": "text"
+      "dark": "background",
+      "light": "background_light"
     },
     "diffLineNumber": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink_light"
     },
     "diffAddedLineNumberBg": {
       "dark": "surface",
@@ -129,31 +131,31 @@
     },
     "markdownText": {
       "dark": "text",
-      "light": "canvas"
+      "light": "background_light"
     },
     "markdownHeading": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink_light"
     },
     "markdownLink": {
       "dark": "mint",
-      "light": "mint_light_mode"
+      "light": "mint_light"
     },
     "markdownLinkText": {
       "dark": "violet",
-      "light": "violet_light_mode"
+      "light": "violet_light"
     },
     "markdownCode": {
       "dark": "mint",
-      "light": "mint_light_mode"
+      "light": "mint_light"
     },
     "markdownBlockQuote": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink_light"
     },
     "markdownEmph": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink_light"
     },
     "markdownStrong": {
       "dark": "soft",
@@ -161,63 +163,63 @@
     },
     "markdownHorizontalRule": {
       "dark": "edge",
-      "light": "violet_light_mode"
+      "light": "violet_light"
     },
     "markdownListItem": {
       "dark": "signal",
-      "light": "signal_light_mode"
+      "light": "signal_light"
     },
     "markdownListEnumeration": {
       "dark": "violet",
-      "light": "violet_light_mode"
+      "light": "violet_light"
     },
     "markdownImage": {
       "dark": "mint",
-      "light": "mint_light_mode"
+      "light": "mint_light"
     },
     "markdownImageText": {
       "dark": "violet",
-      "light": "violet_light_mode"
+      "light": "violet_light"
     },
     "markdownCodeBlock": {
       "dark": "soft",
-      "light": "canvas"
+      "light": "background_light"
     },
     "syntaxComment": {
       "dark": "violet",
-      "light": "violet_light_mode"
+      "light": "violet_light"
     },
     "syntaxKeyword": {
       "dark": "pink",
-      "light": "pink_light_mode"
+      "light": "pink_light"
     },
     "syntaxFunction": {
       "dark": "mint",
-      "light": "mint_light_mode"
+      "light": "mint_light"
     },
     "syntaxVariable": {
       "dark": "text",
-      "light": "canvas"
+      "light": "background_light"
     },
     "syntaxString": {
       "dark": "mint",
-      "light": "mint_light_mode"
+      "light": "mint_light"
     },
     "syntaxNumber": {
       "dark": "signal",
-      "light": "signal_light_mode"
+      "light": "signal_light"
     },
     "syntaxType": {
       "dark": "mint",
-      "light": "mint_light_mode"
+      "light": "mint_light"
     },
     "syntaxOperator": {
       "dark": "violet",
-      "light": "violet_light_mode"
+      "light": "violet_light"
     },
     "syntaxPunctuation": {
       "dark": "soft",
-      "light": "canvas"
+      "light": "background_light"
     }
   }
 }

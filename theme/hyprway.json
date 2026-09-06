@@ -1,6 +1,6 @@
 {
   "colors": {
-    "canvas": "#14111B",
+    "background": "#14111B",
     "panel": "#181420",
     "surface": "#22112A",
     "edge": "#2a1d31",
@@ -11,14 +11,16 @@
     "violet": "#c79eff",
     "mint": "#98e4a7",
     "mint_tint": "#dffff8",
-    "pink_light_mode": "#a62d68",
-    "violet_light_mode": "#7740aa",
-    "mint_light_mode": "#197344",
-    "signal_light_mode": "#bf1d68",
-    "lavender_light_mode": "#e9defd"
+    "background_light": "#eee9ff",
+    "text_light": "#14111B",
+    "pink_light": "#a62d68",
+    "violet_light": "#7740aa",
+    "mint_light": "#197344",
+    "signal_light": "#bf1d68",
+    "lavender_light": "#e9defd"
   },
   "roles": {
-    "background": "canvas",
+    "background": "background",
     "panel_bg": "panel",
     "elevated_bg": "panel",
     "selection_bg": "surface",
@@ -32,17 +34,17 @@
     "on_accent": "edge"
   },
   "light_roles": {
-    "background": "text",
-    "panel_bg": "lavender_light_mode",
-    "elevated_bg": "lavender_light_mode",
-    "selection_bg": "lavender_light_mode",
-    "border": "violet_light_mode",
-    "foreground": "canvas",
+    "background": "background_light",
+    "panel_bg": "lavender_light",
+    "elevated_bg": "lavender_light",
+    "selection_bg": "lavender_light",
+    "border": "violet_light",
+    "foreground": "text_light",
     "foreground_muted": "edge",
-    "accent": "pink_light_mode",
-    "danger": "signal_light_mode",
-    "focus": "violet_light_mode",
-    "success": "mint_light_mode",
+    "accent": "pink_light",
+    "danger": "signal_light",
+    "focus": "violet_light",
+    "success": "mint_light",
     "on_accent": "text"
   }
 }
