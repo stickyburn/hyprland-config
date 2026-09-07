@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "TodoWrite",
+      "Bash(pwd *)",
+      "Bash(ls *)",
+      "Bash(which *)",
+      "Bash(file *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(find *)",
+      "Bash(sort *)",
+      "Bash(echo *)",
+      "Bash(brew list *)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git show *)",
+      "Bash(git log *)",
+      "Bash(git branch --all *)",
+      "Bash(git branch --show-current *)",
+      "Bash(git rev-parse *)",
+      "Bash(sed -n *)"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  },
+  "model": "opus[1m]",
+  "extraKnownMarketplaces": {
+    "37signals": {
+      "source": {
+        "source": "github",
+        "repo": "basecamp/claude-plugins"
+      }
+    }
+  },
+  "effortLevel": "xhigh",
+  "modelSettings": {
+    "claude-fable-5": {
+      "effortLevel": "xhigh"
+    },
+    "claude-opus-5": {
+      "effortLevel": "xhigh"
+    }
+  },
+  "showThinkingSummaries": true,
+  "skipWorkflowUsageWarning": true,
+  "theme": "custom:hyprway",
+  "verbose": true,
+  "enabledPlugins": {
+    "hey@37signals": true
+  }
+}
