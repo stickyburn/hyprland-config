@@ -34,14 +34,6 @@
     "defaultMode": "default"
   },
   "model": "opus[1m]",
-  "extraKnownMarketplaces": {
-    "37signals": {
-      "source": {
-        "source": "github",
-        "repo": "basecamp/claude-plugins"
-      }
-    }
-  },
   "effortLevel": "xhigh",
   "modelSettings": {
     "claude-fable-5": {
@@ -54,8 +46,5 @@
   "showThinkingSummaries": true,
   "skipWorkflowUsageWarning": true,
   "theme": "custom:hyprway",
-  "verbose": true,
-  "enabledPlugins": {
-    "hey@37signals": true
-  }
+  "verbose": true
 }
