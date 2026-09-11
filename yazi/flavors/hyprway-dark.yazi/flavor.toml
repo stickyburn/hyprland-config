@@ -5,26 +5,26 @@ current = { fg = "#2a1d31", bg = "#c79eff" }
 parent = { fg = "#2a1d31", bg = "#c79eff" }
 
 [mgr]
-cwd = { fg = "#221727", bg = "#221727" }
+cwd = { fg = "#1a0e20", bg = "#1a0e20" }
 
 [mode]
-normal_main = { fg = "#221727", bg = "#221727" }
-normal_alt = { fg = "#221727", bg = "#221727" }
-select_main = { fg = "#221727", bg = "#221727" }
-select_alt = { fg = "#221727", bg = "#221727" }
-unset_main = { fg = "#221727", bg = "#221727" }
-unset_alt = { fg = "#221727", bg = "#221727" }
+normal_main = { fg = "#1a0e20", bg = "#1a0e20" }
+normal_alt = { fg = "#1a0e20", bg = "#1a0e20" }
+select_main = { fg = "#1a0e20", bg = "#1a0e20" }
+select_alt = { fg = "#1a0e20", bg = "#1a0e20" }
+unset_main = { fg = "#1a0e20", bg = "#1a0e20" }
+unset_alt = { fg = "#1a0e20", bg = "#1a0e20" }
 
 [status]
-overall = { fg = "#221727", bg = "#221727" }
-perm_type = { fg = "#221727", bg = "#221727" }
-perm_read = { fg = "#221727", bg = "#221727" }
-perm_write = { fg = "#221727", bg = "#221727" }
-perm_exec = { fg = "#221727", bg = "#221727" }
-perm_sep = { fg = "#221727", bg = "#221727" }
-progress_label = { fg = "#221727", bg = "#221727" }
-progress_normal = { fg = "#221727", bg = "#221727" }
-progress_error = { fg = "#221727", bg = "#221727" }
+overall = { fg = "#1a0e20", bg = "#1a0e20" }
+perm_type = { fg = "#1a0e20", bg = "#1a0e20" }
+perm_read = { fg = "#1a0e20", bg = "#1a0e20" }
+perm_write = { fg = "#1a0e20", bg = "#1a0e20" }
+perm_exec = { fg = "#1a0e20", bg = "#1a0e20" }
+perm_sep = { fg = "#1a0e20", bg = "#1a0e20" }
+progress_label = { fg = "#1a0e20", bg = "#1a0e20" }
+progress_normal = { fg = "#1a0e20", bg = "#1a0e20" }
+progress_error = { fg = "#1a0e20", bg = "#1a0e20" }
 
 [pick]
 border = { fg = "#c79eff" }

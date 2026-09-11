@@ -1,5 +1,5 @@
 /* Generated from hyprway. */
-@define-color theme_bg_color #221727;
+@define-color theme_bg_color #1a0e20;
 @define-color theme_fg_color #eee9ff;
 @define-color theme_base_color #181420;
 @define-color theme_text_color #eee9ff;
@@ -11,9 +11,9 @@
 @define-color accent_bg_color #c79eff;
 @define-color accent_fg_color #2a1d31;
 @define-color accent_color #c79eff;
-@define-color window_bg_color #221727;
+@define-color window_bg_color #1a0e20;
 @define-color window_fg_color #eee9ff;
-@define-color view_bg_color #221727;
+@define-color view_bg_color #1a0e20;
 @define-color view_fg_color #eee9ff;
 @define-color headerbar_bg_color #181420;
 @define-color headerbar_fg_color #eee9ff;
