@@ -25,7 +25,18 @@ finder = [
   { run = 'xdg-open %d', for = "linux", desc = "Finder" },
 ]
 
+pdf = [
+  { run = 'vivaldi %s', orphan = true, for = "linux", desc = "Vivaldi" },
+]
+
 [open]
+prepend_rules = [
+  { mime = "application/pdf", use = [
+    "pdf",
+    "open",
+  ] },
+]
+
 rules = [
   { url = "*", use = [
     "nvim_file",
