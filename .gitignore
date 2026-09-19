@@ -35,6 +35,10 @@ VSCodium/**
 !VSCodium/User/settings.json
 !VSCodium/User/keybindings.json
 
+# codex
+codex
+Codex
+
 # ── claude ─────────────────────────
 claude/.credentials.json
 claude/.claude.json
