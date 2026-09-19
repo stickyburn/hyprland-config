@@ -35,9 +35,28 @@ VSCodium/**
 !VSCodium/User/settings.json
 !VSCodium/User/keybindings.json
 
+# ── claude ─────────────────────────
+claude/.credentials.json
+claude/.claude.json
+claude/history.jsonl
+claude/projects/
+claude/file-history/
+claude/sessions/
+claude/session-env/
+claude/shell-snapshots/
+claude/cache/
+claude/backups/
+claude/plugins/
+# runtime junk
+claude/.last-cleanup
+claude/.last-update-result.json
+claude/policy-limits.json
+claude/remote-settings.json
+
 # ── zsh ──────────────────────────────────────────
 zsh/.z
 zsh/.zhistory
+
 zsh/.zsh_history
 zsh/.zcompdump
 zsh/db.zo
