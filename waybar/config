@@ -39,12 +39,12 @@
     },
     "hyprland/workspaces": {
         "format": "{name}",
+        "tooltip": false,
         "persistent-workspaces": {
             "*": 5
         },
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
-        "on-click": "activate",
         "sort-by-number": true
     },
     "hyprland/window": {
