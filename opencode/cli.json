@@ -4,6 +4,8 @@
   },
   "keybinds": {
     "leader": "ctrl+g",
+    "variant.list": "<leader>e",
+    "prompt.editor": "none",
     "command.palette.show": "ctrl+p",
     "session.sidebar.toggle": "ctrl+shift+e",
     "input.undo": "ctrl+z,ctrl+-,super+z",

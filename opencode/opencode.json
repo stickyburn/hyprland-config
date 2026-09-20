@@ -1,69 +1,81 @@
 {
-	"$schema": "https://opencode.ai/config.json",
-	"small_model": "ollama-cloud/deepseek-v4-flash",
-	"instructions": ["SYSTEM.md"],
-	"subagent_depth": 1,
-	"default_agent": "build",
-	"agent": {
-		"plan": {
-			"model": "ollama-cloud/glm-5.3-flash",
-			"variant": "max",
-			"color": "#c79eff"
-		},
-		"build": {
-			"model": "ollama-cloud/glm-5.3-flash",
-			"variant": "max",
-			"color": "#98e4a7"
-		}
-	},
-	"mcp": {
-		"deepwiki": {
-			"enabled": true,
-			"type": "remote",
-			"url": "https://mcp.deepwiki.com/mcp"
-		}
-	},
-	"permission": {
-		"*": "ask",
-		"read": "allow",
-		"external_directory": "allow",
-		"glob": "allow",
-		"grep": "allow",
-		"todowrite": "allow",
-		"todoread": "allow",
-		"webfetch": "allow",
-		"websearch": "allow",
-		"question": "allow",
-		"skill": "allow",
-		"execute": "allow",
-		"task": "allow",
-		"deepwiki_*": "allow",
-		"bash": {
-			"pwd *": "allow",
-			"ls *": "allow",
-			"which *": "allow",
-			"file *": "allow",
-			"cat *": "allow",
-			"head *": "allow",
-			"tail *": "allow",
-			"grep *": "allow",
-			"rg *": "allow",
-			"find *": "allow",
-			"sort *": "allow",
-			"echo *": "allow",
-			"brew list *": "allow",
-			"git status *": "allow",
-			"git diff *": "allow",
-			"git show *": "allow",
-			"git log *": "allow",
-			"git branch --all *": "allow",
-			"git branch --show-current *": "allow",
-			"git rev-parse *": "allow",
-			"gh pr view *": "allow",
-			"sed -n *": "allow"
-		}
-	},
-	"experimental": {
-		"disable_paste_summary": true
-	}
+  "$schema": "https://opencode.ai/config.json",
+  "small_model": "ollama-cloud/glm-5.3-flash",
+  "default_agent": "build",
+  "agent": {
+    "plan": {
+      "model": "ollama-cloud/glm-5.3-flash",
+      "variant": "max",
+      "color": "#c79eff"
+    },
+    "build": {
+      "model": "ollama-cloud/glm-5.3-flash",
+      "variant": "max",
+      "color": "#98e4a7"
+    }
+  },
+  "mcp": {
+    "deepwiki": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.deepwiki.com/mcp"
+    },
+    "servers": {
+      "agent-browser": {
+        "type": "local",
+        "command": [
+          "/home/lemonaid/.local/share/bun/bin/agent-browser",
+          "mcp",
+          "--tools",
+          "core"
+        ],
+        "environment": {
+          "AGENT_BROWSER_CONFIG": "/home/lemonaid/.config/agent-browser/config.json"
+        }
+      }
+    }
+  },
+  "permission": {
+    "*": "ask",
+    "read": "allow",
+    "external_directory": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "todowrite": "allow",
+    "todoread": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "question": "allow",
+    "skill": "allow",
+    "execute": "allow",
+    "task": "allow",
+    "deepwiki_*": "allow",
+    "bash": {
+      "pwd *": "allow",
+      "ls *": "allow",
+      "which *": "allow",
+      "file *": "allow",
+      "cat *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "grep *": "allow",
+      "rg *": "allow",
+      "find *": "allow",
+      "sort *": "allow",
+      "echo *": "allow",
+      "brew list *": "allow",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git show *": "allow",
+      "git log *": "allow",
+      "git branch --all *": "allow",
+      "git branch --show-current *": "allow",
+      "git rev-parse *": "allow",
+      "gh pr view *": "allow",
+      "sed -n *": "allow"
+    }
+  },
+  "experimental": {
+    "disable_paste_summary": true
+  }
 }

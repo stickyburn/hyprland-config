@@ -8,6 +8,7 @@ description: Reviews staged changes, commits, or pull-request diffs for correctn
 - Establish the review range and original intent; distinguish introduced defects from existing issues.
 - Inspect the diff and relevant surrounding code. Report actionable defects supported by a reachable failure and evidence, not speculation or style preferences.
 - Keep review read-only unless fixes are requested; run only checks known not to mutate files or external state.
+- When a potential UI defect needs runtime evidence, consult `browser-verification` and use checks consistent with the review's read-only scope.
 - Put findings first, ordered by severity, with `path:line`, impact, evidence, and a suggested fix. Say when there are none, and note checks and remaining testing gaps.
 
 Load `references/review-checklist.md` only for broad, high-risk, or multi-domain changes.

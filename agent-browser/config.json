@@ -1,0 +1,7 @@
+{
+  "$schema": "https://agent-browser.dev/schema.json",
+  "executablePath": "/usr/bin/vivaldi-stable",
+  "args": "--disable-vivaldi",
+  "headed": false,
+  "idleTimeout": "5m"
+}
