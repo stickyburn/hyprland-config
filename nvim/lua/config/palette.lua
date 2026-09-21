@@ -1,6 +1,6 @@
 -- Generated from hyprway.
 local color = {
-  background = "#161120",
+  background = "#14111b",
   panel = "#181420",
   surface = "#22112A",
   edge = "#2a1d31",

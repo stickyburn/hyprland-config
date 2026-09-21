@@ -562,7 +562,7 @@ write("hypr/theme.lua", renderHypr());
 write("nvim/lua/config/palette.lua", renderLua());
 write("kitty/dark-theme.auto.conf", renderKittyDark());
 write("kitty/light-theme.auto.conf", renderKittyLight());
-write("kitty/no-preference-theme.auto.conf", renderKittyDark());
+write("kitty/no-preference-theme.auto.conf", renderKittyLight());
 write("mako/theme.conf", renderMako());
 write("zsh/theme.zsh", renderZsh());
 write("lazygit/theme.yml", renderLazygit());
