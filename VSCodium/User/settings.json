@@ -1,8 +1,8 @@
 {
   // UI
   "window.zoomLevel": 0,
-  "editor.fontFamily": "Zed Mono",
-  "terminal.integrated.fontFamily": "Zed Mono",
+  "editor.fontFamily": "Maple Mono NF",
+  "terminal.integrated.fontFamily": "Maple Mono NF",
   "editor.fontSize": 14,
   "terminal.integrated.fontSize": 14,
   "editor.fontLigatures": true,
