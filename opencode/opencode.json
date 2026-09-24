@@ -24,14 +24,11 @@
       "agent-browser": {
         "type": "local",
         "command": [
-          "/home/lemonaid/.local/share/bun/bin/agent-browser",
+          "agent-browser",
           "mcp",
           "--tools",
           "core"
-        ],
-        "environment": {
-          "AGENT_BROWSER_CONFIG": "/home/lemonaid/.config/agent-browser/config.json"
-        }
+        ]
       }
     }
   },

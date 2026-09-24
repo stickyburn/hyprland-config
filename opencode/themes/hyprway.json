@@ -131,7 +131,7 @@
     },
     "markdownText": {
       "dark": "text",
-      "light": "background_light"
+      "light": "text_light"
     },
     "markdownHeading": {
       "dark": "pink",
@@ -183,7 +183,7 @@
     },
     "markdownCodeBlock": {
       "dark": "soft",
-      "light": "background_light"
+      "light": "edge"
     },
     "syntaxComment": {
       "dark": "violet",
@@ -199,7 +199,7 @@
     },
     "syntaxVariable": {
       "dark": "text",
-      "light": "background_light"
+      "light": "text_light"
     },
     "syntaxString": {
       "dark": "mint",
@@ -219,7 +219,7 @@
     },
     "syntaxPunctuation": {
       "dark": "soft",
-      "light": "background_light"
+      "light": "edge"
     }
   }
 }
