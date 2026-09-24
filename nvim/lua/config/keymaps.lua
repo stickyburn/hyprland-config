@@ -54,9 +54,26 @@ map("n", "<" .. mod .. "-S-e>", function()
   end
 end, { desc = "Toggle explorer visibility" })
 
+-- open file picker (Cmd/Ctrl + O)
 map("n", "<" .. mod .. "-o>", function()
   Snacks.picker.files()
 end, { desc = "Open file picker" })
+
+-- open explorer as a centered modal (Cmd/Ctrl + Shift + O)
+map("n", "<" .. mod .. "-S-o>", function()
+  local pickers = Snacks.picker.get({ source = "explorer" })
+  local explorer = pickers[1]
+
+  if explorer then
+    explorer:close()
+  end
+  Snacks.explorer({
+    layout = {
+      preset = "default",
+      preview = true,
+    },
+  })
+end, { desc = "Explorer (centered modal)" })
 
 -- toggle statusline visibility (Cmd/Ctrl + Shift + B)
 map("n", "<" .. mod .. "-S-b>", function()

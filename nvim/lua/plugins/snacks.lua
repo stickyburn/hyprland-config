@@ -29,10 +29,8 @@ return {
       },
       sources = {
         explorer = {
-          layout = {
-            preset = "default",
-            preview = true,
-          },
+          -- "right" is a built-in preset: the sidebar layout docked to the right edge
+          layout = { preset = "right" },
           jump = { close = true },
           win = {
             list = {
