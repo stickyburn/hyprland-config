@@ -5,7 +5,8 @@
     "panel": "#181420",
     "surface": "#22112A",
     "edge": "#2a1d31",
-    "text": "#eee9ff",
+    "text": "#d8d0ea",
+    "muted": "#c4b6dd",
     "soft": "#ffeef2",
     "pink": "#ff91c3",
     "signal": "#ff338f",
@@ -54,7 +55,7 @@
       "light": "text_light"
     },
     "textMuted": {
-      "dark": "soft",
+      "dark": "muted",
       "light": "edge"
     },
     "background": {
@@ -158,8 +159,8 @@
       "light": "pink_light"
     },
     "markdownStrong": {
-      "dark": "soft",
-      "light": "edge"
+      "dark": "text",
+      "light": "text_light"
     },
     "markdownHorizontalRule": {
       "dark": "edge",
@@ -182,7 +183,7 @@
       "light": "violet_light"
     },
     "markdownCodeBlock": {
-      "dark": "soft",
+      "dark": "muted",
       "light": "edge"
     },
     "syntaxComment": {
@@ -218,7 +219,7 @@
       "light": "violet_light"
     },
     "syntaxPunctuation": {
-      "dark": "soft",
+      "dark": "muted",
       "light": "edge"
     }
   }

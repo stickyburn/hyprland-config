@@ -4,7 +4,8 @@
     "panel": "#181420",
     "surface": "#22112A",
     "edge": "#2a1d31",
-    "text": "#eee9ff",
+    "text": "#d8d0ea",
+    "muted": "#c4b6dd",
     "soft": "#ffeef2",
     "pink": "#ff91c3",
     "signal": "#ff338f",
@@ -26,7 +27,7 @@
     "selection_bg": "surface",
     "border": "edge",
     "foreground": "text",
-    "foreground_muted": "soft",
+    "foreground_muted": "muted",
     "accent": "pink",
     "danger": "signal",
     "focus": "violet",
@@ -45,6 +46,6 @@
     "danger": "signal_light",
     "focus": "violet_light",
     "success": "mint_light",
-    "on_accent": "text"
+    "on_accent": "background_light"
   }
 }

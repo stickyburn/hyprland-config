@@ -4,8 +4,8 @@
 @define-color elevated_bg #181420;
 @define-color selection_bg #22112A;
 @define-color border #2a1d31;
-@define-color foreground #eee9ff;
-@define-color foreground_muted #ffeef2;
+@define-color foreground #d8d0ea;
+@define-color foreground_muted #c4b6dd;
 @define-color accent #ff91c3;
 @define-color danger #ff338f;
 @define-color focus #c79eff;

@@ -235,7 +235,7 @@ color4 ${color("violet")}
 color5 ${color("pink")}
 color6 ${color("mint")}
 color7 ${color("text")}
-color8 ${color("soft")}
+color8 ${color("muted")}
 color9 ${color("signal")}
 color10 ${color("mint")}
 color11 ${color("soft")}
@@ -463,13 +463,13 @@ function renderOpenCode() {
       markdownCode: pair("mint", "mint_light"),
       markdownBlockQuote: rolePair("accent"),
       markdownEmph: rolePair("accent"),
-      markdownStrong: pair("soft", "edge"),
+      markdownStrong: pair("text", "text_light"),
       markdownHorizontalRule: pair("edge", "violet_light"),
       markdownListItem: pair("signal", "signal_light"),
       markdownListEnumeration: pair("violet", "violet_light"),
       markdownImage: pair("mint", "mint_light"),
       markdownImageText: pair("violet", "violet_light"),
-      markdownCodeBlock: pair("soft", "edge"),
+      markdownCodeBlock: pair("muted", "edge"),
       syntaxComment: pair("violet", "violet_light"),
       syntaxKeyword: rolePair("accent"),
       syntaxFunction: pair("mint", "mint_light"),
@@ -478,7 +478,7 @@ function renderOpenCode() {
       syntaxNumber: pair("signal", "signal_light"),
       syntaxType: pair("mint", "mint_light"),
       syntaxOperator: pair("violet", "violet_light"),
-      syntaxPunctuation: pair("soft", "edge"),
+      syntaxPunctuation: pair("muted", "edge"),
     },
   };
 

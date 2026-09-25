@@ -4,7 +4,8 @@ local color = {
   panel = "#181420",
   surface = "#22112A",
   edge = "#2a1d31",
-  text = "#eee9ff",
+  text = "#d8d0ea",
+  muted = "#c4b6dd",
   soft = "#ffeef2",
   pink = "#ff91c3",
   signal = "#ff338f",
@@ -29,7 +30,7 @@ local theme = {
     selection_bg = color.surface,
     border = color.edge,
     foreground = color.text,
-    foreground_muted = color.soft,
+    foreground_muted = color.muted,
     accent = color.pink,
     danger = color.signal,
     focus = color.violet,
@@ -48,7 +49,7 @@ local theme = {
     danger = color.signal_light,
     focus = color.violet_light,
     success = color.mint_light,
-    on_accent = color.text,
+    on_accent = color.background_light,
   },
 }
 

@@ -34,18 +34,18 @@ fg = "#2a1d31"
 bg = "#c79eff"
 
 [pick.inactive]
-fg = "#eee9ff"
+fg = "#d8d0ea"
 
 [input]
 border = { fg = "#c79eff" }
-title = { fg = "#eee9ff" }
-value = { fg = "#eee9ff" }
+title = { fg = "#d8d0ea" }
+value = { fg = "#d8d0ea" }
 selected = { reversed = true }
 
 [confirm]
 border = { fg = "#c79eff" }
-title = { fg = "#eee9ff" }
-body = { fg = "#eee9ff" }
-list = { fg = "#eee9ff" }
+title = { fg = "#d8d0ea" }
+body = { fg = "#d8d0ea" }
+list = { fg = "#d8d0ea" }
 btn_yes = { reversed = true }
-btn_no = { fg = "#eee9ff" }
+btn_no = { fg = "#d8d0ea" }

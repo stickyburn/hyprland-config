@@ -1,6 +1,6 @@
 # Generated from hyprway.
 theme[main_bg]="#14111b"
-theme[main_fg]="#eee9ff"
+theme[main_fg]="#d8d0ea"
 theme[title]="#c79eff"
 theme[hi_fg]="#c79eff"
 theme[selected_bg]="#c79eff"
