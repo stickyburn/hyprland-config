@@ -1,6 +1,4 @@
 # interactive paths only
-export PATH="$HOME/.config/pear/bin:$PATH"
-
 source "$ZDOTDIR/secrets/secrets.zsh"
 source "$ZDOTDIR/theme.zsh"
 
