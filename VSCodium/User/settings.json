@@ -73,7 +73,7 @@
   "js/ts.validate.enabled": false,
   "files.associations": {
     "**/waybar/*.css": "gtk-css",
-    "**/wofi/*.css": "gtk-css"
+    "**/rofi/*.rasi": "gtk-css"
   },
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"

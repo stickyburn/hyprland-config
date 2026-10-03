@@ -1,0 +1,5 @@
+# New Delhi, India. Manual changes last until the next sunrise/sunset.
+lat: 28.6
+lng: 77.2
+usegeoclue: false
+portal: true

@@ -1,0 +1,92 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "overlay",
+  "control-center-margin-top": 12,
+  "control-center-margin-bottom": 12,
+  "control-center-margin-right": 12,
+  "control-center-margin-left": 12,
+  "control-center-width": 400,
+  "control-center-height": 720,
+  "notification-window-width": 300,
+  "fit-to-screen": false,
+  "timeout": 7,
+  "timeout-low": 4,
+  "timeout-critical": 0,
+  "keyboard-shortcuts": true,
+  "notification-grouping": true,
+  "notification-inline-replies": true,
+  "image-visibility": "when-available",
+  "transition-time": 150,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "text-empty": "All caught up",
+  "widgets": ["title", "buttons-grid", "buttons-grid#nightlight", "slider#nightlight", "buttons-grid#utilities", "mpris", "volume", "dnd", "notifications"],
+  "widget-config": {
+    "title": {
+      "text": "Control center",
+      "clear-all-button": true,
+      "button-text": "Clear all"
+    },
+    "buttons-grid": {
+      "buttons-per-row": 2,
+      "actions": [
+        {
+          "label": "Dark mode",
+          "type": "toggle",
+          "active": false,
+          "command": "case $SWAYNC_TOGGLE_STATE in true) darkman set dark ;; false) darkman set light ;; esac",
+          "update-command": "darkman get | grep -qx dark && echo true || echo false"
+        },
+        { "label": "Bluetooth", "command": "blueman-manager" }
+      ]
+    },
+    "buttons-grid#nightlight": {
+      "buttons-per-row": 1,
+      "actions": [
+        {
+          "label": "Night light",
+          "type": "toggle",
+          "active": false,
+          "command": "$HOME/.config/mango/scripts/restart_wlsunset.sh",
+          "update-command": "$HOME/.config/mango/scripts/restart_wlsunset.sh status"
+        }
+      ]
+    },
+    "slider#nightlight": {
+      "label": "",
+      "min": 2000,
+      "max": 6500,
+      "min_limit": 2000,
+      "max_limit": 6500,
+      "value_scale": 0,
+      "cmd_getter": "$HOME/.config/mango/scripts/restart_wlsunset.sh get",
+      "cmd_setter": "$HOME/.config/mango/scripts/restart_wlsunset.sh set $value"
+    },
+    "buttons-grid#utilities": {
+      "buttons-per-row": 2,
+      "actions": [
+        { "label": "Audio", "command": "pavucontrol" },
+        { "label": "Monitor", "command": "$HOME/.config/waybar/scripts/launch_btop.sh" }
+      ]
+    },
+    "volume": {
+      "label": "Volume",
+      "show-per-app": true,
+      "show-per-app-label": true,
+      "expand-per-app": false,
+      "expand-button-label": "Apps",
+      "collapse-button-label": "Hide",
+      "empty-list-label": "No apps playing audio"
+    },
+    "mpris": {
+      "autohide": true,
+      "show-album-art": "when-available"
+    },
+    "dnd": { "text": "Do not disturb" },
+    "notifications": { "vexpand": true }
+  }
+}

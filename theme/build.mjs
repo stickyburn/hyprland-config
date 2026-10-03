@@ -60,93 +60,84 @@ function renderCss(schemeRoles) {
   return ["/* Generated from hyprway. */", ...roleLines].join("\n");
 }
 
-function renderWofi(schemeRoles) {
-  const roleLines = Object.entries(schemeRoles).map(([name, token]) => `@define-color ${name} ${color(token)};`);
+function renderRofi(schemeRoles) {
+  // Rasi property names allow hyphens, but not underscores.
+  const roleLines = Object.entries(schemeRoles).map(([name, token]) => `    ${name.replaceAll("_", "-")}: ${color(token)};`);
   return `/* Generated from hyprway. */
+* {
 ${roleLines.join("\n")}
 
-* {
-    font-family: "Switzer";
-    font-size: 13px;
+    surface: ${color("surface")}E6;
+    font: "Switzer 10";
+    background-color: transparent;
+    text-color: @foreground-muted;
 }
 
 window {
-    background: @background;
-    border: 1px solid @focus;
-    border-radius: 10px;
-}
-
-#outer-box {
-    background: @panel_bg;
-    border-radius: 9px;
+    width: 28%;
+    border: 0px;
+    border-radius: 0px;
+    background-color: @surface;
     padding: 10px;
 }
 
-#input {
-    background: @elevated_bg;
-    color: @foreground;
-    border: 1px solid @border;
-    border-radius: 7px;
-    margin: 2px 2px 10px;
-    padding: 11px 14px;
-    font-family: "Switzer";
-    font-size: 15px;
-    font-weight: 500;
-    transition-property: border-color, background-color;
-    transition-duration: 160ms;
-    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-#input:focus {
+inputbar {
+    children: [ "prompt", "entry" ];
+    spacing: 12px;
+    background-color: transparent;
+    border: 2px solid;
     border-color: @focus;
-    background: @elevated_bg;
+    border-radius: 7px;
+    margin: 2px 2px 12px;
+    padding: 11px 14px;
 }
 
-#inner-box,
-#scroll {
-    background: transparent;
+prompt {
+    text-color: @foreground;
 }
 
-#entry {
-    background: transparent;
-    border-left: 3px solid @panel_bg;
+entry {
+    text-color: @foreground;
+    font: "Switzer 12";
+}
+
+listview {
+    lines: 7;
+    fixed-height: true;
+    cycle: false;
+    scrollbar: false;
+    border: 0px solid;
+    spacing: 4px;
+}
+
+element {
+    border: 0px solid;
     border-radius: 5px;
-    margin: 2px;
+    margin: 0px 2px;
     padding: 8px 10px;
-    transition-property: background-color, border-left-color, border-left-width, padding-left;
-    transition-duration: 95ms;
-    transition-timing-function: cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 
-#entry:hover {
-    background: @selection_bg;
-    border-left-color: @accent;
+element selected.normal {
+    background-color: @focus;
+    text-color: @on-accent;
 }
 
-#entry:selected {
-    background: @focus;
-    border-left: 5px solid @focus;
-    padding-left: 8px;
+element-text {
+    vertical-align: 0.5;
+    background-color: inherit;
+    text-color: inherit;
 }
 
-#img {
-    margin-right: 11px;
+element-icon {
+    vertical-align: 0.5;
+    background-color: inherit;
+    size: 1.8em;
+    margin: 0px 11px 0px 0px;
 }
 
-#text {
-    color: @foreground_muted;
-    font-weight: 400;
-}
-
-#text:selected {
-    color: @on_accent;
-    font-weight: 600;
-}
-
-#expander-box {
-    background: @selection_bg;
-    color: @focus;
-    border-radius: 5px;
+message {
+    background-color: transparent;
+    border: 0px;
 }`;
 }
 
@@ -176,18 +167,6 @@ function renderLua() {
     "",
     "return theme",
   ].join("\n");
-}
-
-function renderHypr() {
-  const rgb = (value) => `rgb(${value.slice(1)})`;
-  return `-- Generated from hyprway.
-return {
-  borders = {
-    active_border = { colors = { "${rgb(role("focus"))}", "${rgb(role("accent"))}" }, angle = 35 },
-    inactive_border = "${rgb(role("border"))}",
-  },
-  shadow = 0x99${role("background").slice(1)},
-}`;
 }
 
 function renderKittyLight() {
@@ -250,18 +229,13 @@ inactive_tab_foreground ${role("foreground")}
 inactive_tab_background ${role("background")}`;
 }
 
-function renderMako() {
-  return `# Generated from hyprway.
-background-color=${role("panel_bg")}
-text-color=${role("foreground")}
-border-color=${role("accent")}
-progress-color=${role("focus")}
+function renderSwaync() {
+  const rgb = role("panel_bg").slice(1).match(/../g).map((hex) => parseInt(hex, 16)).join(", ");
+  return `${renderCss(roles)}
 
-[urgency=low]
-border-color=${role("border")}
-
-[urgency=high]
-border-color=${role("danger")}`;
+:root {
+  --noti-bg: ${rgb};
+}`;
 }
 
 function renderZsh() {
@@ -557,13 +531,12 @@ function renderClaude() {
 }
 
 write("waybar/theme.css", renderCss(roles));
-write("wofi/style.css", renderWofi(roles));
-write("hypr/theme.lua", renderHypr());
+write("rofi/theme.rasi", renderRofi(roles));
 write("nvim/lua/config/palette.lua", renderLua());
 write("kitty/dark-theme.auto.conf", renderKittyDark());
 write("kitty/light-theme.auto.conf", renderKittyLight());
 write("kitty/no-preference-theme.auto.conf", renderKittyLight());
-write("mako/theme.conf", renderMako());
+write("swaync/theme.css", renderSwaync());
 write("zsh/theme.zsh", renderZsh());
 write("lazygit/theme.yml", renderLazygit());
 write("btop/themes/minimal.theme", renderBtop());

@@ -1,101 +1,27 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 34,
-    "expand-right": true,
-    "prefer-dark-theme": true,
-    "modules-left": [
-        "custom/city-selector",
-        "custom/multi-clock",
-        "custom/multi-weather"
-    ],
-    "modules-center": [
-        "hyprland/workspaces"
-    ],
-    "modules-right": [
-        "group/context",
-        "group/telemetry"
-    ],
-    "custom/city-selector": {
-        "format": "{}",
-        "exec": "~/.config/waybar/scripts/city_selector.sh",
-        "return-type": "json",
-        "on-click": "~/.config/waybar/scripts/city_selector.sh next",
-        "signal": 10
-    },
-    "custom/multi-clock": {
-        "format": "{}",
-        "interval": 30,
-        "exec": "~/.config/waybar/scripts/multi_city_clock.sh",
-        "return-type": "json",
-        "signal": 10
-    },
-    "custom/multi-weather": {
-        "format": "{}",
-        "interval": 1800,
-        "exec": "~/.config/waybar/scripts/multi_city_weather.sh",
-        "return-type": "json",
-        "signal": 10
-    },
-    "hyprland/workspaces": {
+    "include": ["~/.config/waybar/common.jsonc"],
+    "modules-center": ["ext/workspaces#mango"],
+    "ext/workspaces#mango": {
         "format": "{name}",
         "tooltip": false,
-        "persistent-workspaces": {
-            "*": 5
-        },
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
-        "sort-by-number": true
+        "on-click": "activate",
+        "on-scroll-up": "mmsg dispatch viewtoright,0",
+        "on-scroll-down": "mmsg dispatch viewtoleft,0",
+        "sort-by-name": true,
+        "ignore-hidden": true
     },
-    "hyprland/window": {
-        "format": "{class}",
+    "custom/window": {
+        "exec": "~/.config/waybar/scripts/mango.sh window",
+        "return-type": "json",
+        "restart-interval": 2,
+        "escape": true,
         "max-length": 32,
-        "separate-outputs": true,
-        "rewrite": {
-            "kitty": "Kitty",
-            "vivaldi-stable": "Vivaldi",
-            "codium": "Code"
-        }
+        "hide-empty-text": true
     },
     "group/context": {
-        "orientation": "inherit",
-        "expand": true,
-        "modules": [
-            "hyprland/window"
-        ]
-    },
-    "group/telemetry": {
-        "orientation": "inherit",
-        "modules": [
-            "custom/network",
-            "cpu",
-            "memory",
-            "custom/idle"
-        ]
-    },
-    "cpu": {
-        "format": "󰍛 {usage}%",
-        "tooltip": false,
-        "interval": 5,
-        "on-click": "~/.config/waybar/scripts/launch_btop.sh"
-    },
-    "memory": {
-        "format": "󱩙 {percentage}%",
-        "tooltip": false,
-        "interval": 5,
-        "on-click": "~/.config/waybar/scripts/launch_btop.sh"
+        "modules": ["custom/window"]
     },
     "custom/idle": {
-        "format": "󰌾",
-        "tooltip": "Sleep",
-        "on-click": "hyprctl dispatch dpms off",
-        "interval": 3600
-    },
-    "custom/network": {
-        "format": "{}",
-        "interval": 2,
-        "exec": "~/.config/waybar/scripts/network_status.sh",
-        "return-type": "json",
-        "markup": "pango"
+        "on-click": "~/.config/waybar/scripts/mango.sh sleep"
     }
 }

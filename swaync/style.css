@@ -1,0 +1,201 @@
+@import url("theme.css");
+
+:root {
+  --cc-bg: alpha(@background, 0.94);
+  --noti-border-color: transparent;
+  --noti-bg-alpha: 0.98;
+  --noti-bg-darker: @background;
+  --noti-bg-hover: @selection_bg;
+  --noti-bg-focus: alpha(@focus, 0.12);
+  --noti-close-bg: @elevated_bg;
+  --noti-close-bg-hover: @selection_bg;
+  --text-color: @foreground;
+  --text-color-disabled: @foreground_muted;
+  --bg-selected: @focus;
+  --border-radius: 10px;
+  --notification-icon-size: 40px;
+  --notification-group-icon-size: 24px;
+  --font-size-body: 13px;
+  --font-size-summary: 14px;
+  --notification-shadow: none;
+  --mpris-album-art-icon-size: 64px;
+  --mpris-album-art-shadow: none;
+  --mpris-album-art-overlay: alpha(@panel_bg, 0.9);
+  --control-row-height: 44px;
+  --control-column-width: 200px; /* Two equal columns in the 400px panel. */
+}
+
+* {
+  font-family: "Switzer";
+  font-size: 13px;
+}
+
+.control-center {
+  border: 1px solid @border;
+  border-radius: 14px;
+  padding: 8px;
+}
+
+.widget {
+  margin: 4px;
+  padding: 10px;
+}
+
+.widget-title > label {
+  font-size: 19px;
+  font-weight: 600;
+  color: @foreground;
+}
+
+.control-center button {
+  background: @panel_bg;
+  color: @foreground;
+  border: 1px solid @border;
+  border-radius: 8px;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.control-center button:hover {
+  background: @selection_bg;
+  border-color: @focus;
+}
+
+.control-center button:focus-visible {
+  outline: 2px solid @focus;
+  outline-offset: 2px;
+}
+
+.control-center button:disabled {
+  color: @foreground_muted;
+  opacity: 0.5;
+}
+
+.widget-title > button {
+  padding: 6px 10px;
+  color: @accent;
+}
+
+.widget-buttons-grid {
+  margin: 0;
+  padding: 0;
+}
+
+.widget-buttons-grid flowboxchild {
+  margin: 4px;
+  padding: 0;
+}
+
+.widget-buttons-grid flowboxchild > button {
+  /* Subtract the cell margins, button padding, and borders. */
+  min-width: calc(var(--control-column-width) - 8px - 24px - 2px);
+  min-height: calc(var(--control-row-height) - 2px);
+  padding: 0 12px;
+}
+
+.widget-buttons-grid flowboxchild > button:checked {
+  background: @focus;
+  color: @on_accent;
+  border-color: @focus;
+}
+
+/* Pair the separate native toggle and slider widgets on one compact row. */
+.widget-buttons-grid.nightlight {
+  margin-right: var(--control-column-width);
+}
+
+.widget-slider.nightlight {
+  margin: calc(0px - var(--control-row-height) - 4px) 4px 4px calc(var(--control-column-width) + 4px);
+  padding: 0;
+  min-height: var(--control-row-height);
+}
+
+.widget-volume,
+.widget-dnd {
+  background: @panel_bg;
+  border: 1px solid @border;
+  border-radius: 8px;
+  min-height: calc(var(--control-row-height) - 2px);
+  padding: 0 12px;
+}
+
+.widget-volume > box:first-child {
+  min-height: calc(var(--control-row-height) - 2px);
+}
+
+.control-center .widget-volume > box:first-child > button {
+  background: transparent;
+  border-color: transparent;
+}
+
+.control-center .widget-volume > box:first-child > button:hover {
+  background: @selection_bg;
+}
+
+.widget-dnd label {
+  font-size: 13px;
+}
+
+.control-center switch {
+  background: @border;
+  border: none;
+}
+
+.control-center switch:checked {
+  background: @focus;
+}
+
+.control-center switch slider {
+  background: @foreground;
+  box-shadow: none;
+}
+
+.control-center scale trough {
+  background: @border;
+  min-height: 5px;
+}
+
+.control-center scale highlight {
+  background: @focus;
+}
+
+.control-center scale slider {
+  background: @foreground;
+  border: 2px solid @focus;
+  box-shadow: none;
+}
+
+.widget-mpris .widget-mpris-player {
+  margin: 4px;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay {
+  padding: 12px;
+}
+
+.widget-mpris .widget-mpris-title {
+  font-size: 15px;
+}
+
+.notification-row .notification-background {
+  padding: 6px;
+}
+
+.notification-row .notification-background .notification .notification-default-action {
+  padding: 10px;
+}
+
+.notification-row .notification-background .notification.critical {
+  border-color: @danger;
+}
+
+.notification-row .notification-background .notification .notification-content .text-box .time {
+  color: @foreground_muted;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.control-center .control-center-list-placeholder {
+  color: @foreground_muted;
+  opacity: 1;
+}

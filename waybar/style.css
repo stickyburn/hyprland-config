@@ -4,7 +4,7 @@
   border: none;
   border-radius: 0;
   box-shadow: none;
-  font-family: "Switzer";
+  font-family: "Switzer", "Maple Mono NF";
   font-size: 13px;
   min-height: 0;
 }
@@ -34,6 +34,7 @@ window#waybar.hidden {
 
 .modules-center {
   padding: 0 6px;
+  border-radius: 99px;
 }
 
 #telemetry {
@@ -47,6 +48,7 @@ window#waybar.hidden {
 #custom-network,
 #cpu,
 #memory,
+#custom-notifications,
 #custom-idle {
   padding: 0 8px;
   border-radius: 5px;
@@ -74,7 +76,7 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-  background: transparent;
+  background: @selection_bg;
   color: @foreground_muted;
   border-radius: 5px;
   margin: 0 1px;
@@ -86,12 +88,11 @@ window#waybar.hidden {
   transition-timing-function: cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 
-#workspaces button:not(.empty) {
-  background: @selection_bg;
+#workspaces button.empty {
+  background: transparent;
 }
 
-#workspaces button:hover,
-#workspaces button.workspace-hover {
+#workspaces button:hover {
   background: @selection_bg;
   color: @focus;
   box-shadow: none;
@@ -124,7 +125,42 @@ window#waybar.hidden {
   }
 }
 
-#window {
+/* Keep full-size click targets; the centered labels draw Mango's tag markers. */
+#workspaces.mango button {
+  background: transparent;
+  border-radius: 99px;
+  min-width: 28px;
+  min-height: 28px;
+  margin: 0;
+  padding: 0;
+  animation: none;
+}
+
+#workspaces.mango button label {
+  font-size: 0;
+  background: @foreground_muted;
+  border-radius: 99px;
+  min-width: 8px;
+  min-height: 8px;
+  margin: 10px 0;
+}
+
+#workspaces.mango button.active label {
+  background: @focus;
+  min-width: 22px;
+}
+
+#workspaces.mango button:hover label {
+  background: @accent;
+}
+
+#workspaces.mango button.urgent label {
+  background: @danger;
+  animation: urgent-breathe 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+#window,
+#custom-window {
   background: @panel_bg;
   color: @foreground_muted;
   border: 1px solid @border;
@@ -138,7 +174,8 @@ window#waybar.hidden {
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-#window:hover {
+#window:hover,
+#custom-window:hover {
   background: @selection_bg;
   color: @focus;
   border-color: @focus;
@@ -168,6 +205,19 @@ window#waybar.empty #window {
   color: @accent;
 }
 
+#custom-notifications {
+  color: @foreground_muted;
+}
+
+#custom-notifications.notification {
+  color: @focus;
+}
+
+#custom-notifications.dnd-notification,
+#custom-notifications.dnd-none {
+  color: @accent;
+}
+
 #custom-idle {
   color: @foreground_muted;
   border-left: 1px solid @border;
@@ -179,6 +229,7 @@ window#waybar.empty #window {
 #custom-network:hover,
 #cpu:hover,
 #memory:hover,
+#custom-notifications:hover,
 #custom-idle:hover {
   background: @selection_bg;
   color: @foreground;

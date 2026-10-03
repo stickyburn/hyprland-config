@@ -1,0 +1,13 @@
+configuration {
+    modi: "drun";
+    show-icons: true;
+    matching: "fuzzy";
+    insensitive: true;
+    sort: true;
+    sorting-method: "fzf";
+    terminal: "kitty";
+    display-drun: "";
+    hide-scrollbar: true;
+}
+
+@theme "~/.config/rofi/theme.rasi"

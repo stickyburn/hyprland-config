@@ -1,0 +1,92 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "expand-right": true,
+    "prefer-dark-theme": true,
+    "modules-left": [
+        "custom/city-selector",
+        "custom/multi-clock",
+        "custom/multi-weather"
+    ],
+    "modules-right": [
+        "group/context",
+        "group/telemetry"
+    ],
+    "custom/city-selector": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/city.sh selector",
+        "return-type": "json",
+        "on-click": "~/.config/waybar/scripts/city.sh next",
+        "signal": 10
+    },
+    "custom/multi-clock": {
+        "format": "{}",
+        "interval": 30,
+        "exec": "~/.config/waybar/scripts/city.sh clock",
+        "return-type": "json",
+        "signal": 10
+    },
+    "custom/multi-weather": {
+        "format": "{}",
+        "interval": 1800,
+        "exec": "~/.config/waybar/scripts/city.sh weather",
+        "return-type": "json",
+        "signal": 10
+    },
+    "group/context": {
+        "orientation": "inherit",
+        "expand": true
+    },
+    "group/telemetry": {
+        "orientation": "inherit",
+        "modules": [
+            "custom/network",
+            "cpu",
+            "memory",
+            "custom/notifications",
+            "custom/idle"
+        ]
+    },
+    "cpu": {
+        "format": "󰍛 {usage}%",
+        "tooltip": false,
+        "interval": 5,
+        "on-click": "~/.config/waybar/scripts/launch_btop.sh"
+    },
+    "memory": {
+        "format": "󱩙 {percentage}%",
+        "tooltip": false,
+        "interval": 5,
+        "on-click": "~/.config/waybar/scripts/launch_btop.sh"
+    },
+    "custom/idle": {
+        "format": "󰌾",
+        "tooltip-format": "Turn off displays"
+    },
+    "custom/notifications": {
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂚",
+            "dnd-notification": "󰂠",
+            "dnd-none": "󰂛",
+            "inhibited-notification": "󰂠",
+            "inhibited-none": "󰂛",
+            "dnd-inhibited-notification": "󰂠",
+            "dnd-inhibited-none": "󰂛"
+        },
+        "return-type": "json",
+        "exec": "swaync-client -swb",
+        "restart-interval": 2,
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "custom/network": {
+        "format": "{}",
+        "interval": 2,
+        "exec": "~/.config/waybar/scripts/network_status.sh",
+        "return-type": "json"
+    }
+}
