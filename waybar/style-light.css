@@ -1,0 +1,15 @@
+@import url("style.css");
+
+/* Generated from hyprway. */
+@define-color background #eee9ff;
+@define-color panel_bg #e9defd;
+@define-color elevated_bg #e9defd;
+@define-color selection_bg #e9defd;
+@define-color border #7740aa;
+@define-color foreground #1F1221;
+@define-color foreground_muted #2a1d31;
+@define-color accent #a62d68;
+@define-color danger #bf1d68;
+@define-color focus #7740aa;
+@define-color success #197344;
+@define-color on_accent #eee9ff;

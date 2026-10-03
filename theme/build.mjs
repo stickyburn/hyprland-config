@@ -241,8 +241,8 @@ function renderSwaync() {
 function renderZsh() {
   return `# Generated from hyprway.
 typeset -g HYPRWAY_BORDER='${role("border")}'
-typeset -g HYPRWAY_ACCENT='${role("accent")}'
-typeset -g HYPRWAY_FOCUS='${role("focus")}'`;
+typeset -g HYPRWAY_ACCENT='magenta'
+typeset -g HYPRWAY_FOCUS='blue'`;
 }
 
 function renderLazygit() {
@@ -495,7 +495,7 @@ function renderGtk() {
   ].join("\n");
 }
 
-function renderClaude() {
+function renderClaude(scheme = "dark") {
   const token = {
     claude: "violet", claudeShimmer: "mint",
     claudeBlue_FOR_SYSTEM_SPINNER: "violet", claudeBlueShimmer_FOR_SYSTEM_SPINNER: "mint",
@@ -523,14 +523,37 @@ function renderClaude() {
     orange_FOR_SUBAGENTS_ONLY: "pink", pink_FOR_SUBAGENTS_ONLY: "pink",
     cyan_FOR_SUBAGENTS_ONLY: "mint",
   };
+  if (scheme === "light") {
+    const lightTokens = {
+      background: "background_light", panel: "lavender_light", surface: "lavender_light",
+      edge: "lavender_light", text: "text_light", pink: "pink_light", soft: "pink_light",
+      signal: "signal_light", violet: "violet_light", mint: "mint_light",
+    };
+    for (const name of Object.keys(token)) {
+      token[name] = lightTokens[token[name]] ?? token[name];
+    }
+    Object.assign(token, {
+      background: lightRoles.background, inverseText: lightRoles.on_accent,
+      text: lightRoles.foreground, clawd_background: lightRoles.background,
+      userMessageBackground: lightRoles.elevated_bg,
+      userMessageBackgroundHover: lightRoles.background,
+      messageActionsBackground: lightRoles.elevated_bg,
+      bashMessageBackgroundColor: lightRoles.panel_bg,
+      memoryBackgroundColor: lightRoles.elevated_bg, selectionBg: lightRoles.selection_bg,
+      diffAdded: "mint_tint", diffRemoved: "soft",
+      diffAddedDimmed: lightRoles.elevated_bg, diffRemovedDimmed: lightRoles.panel_bg,
+      diffAddedWord: "mint_tint", diffRemovedWord: "soft",
+    });
+  }
   return JSON.stringify({
-    name: "Hyprway",
-    base: "dark",
+    name: scheme === "light" ? "Hyprway Light" : "Hyprway",
+    base: scheme,
     overrides: Object.fromEntries(Object.entries(token).map(([name, nameToken]) => [name, color(nameToken)])),
   }, null, 2);
 }
 
 write("waybar/theme.css", renderCss(roles));
+write("waybar/style-light.css", `@import url("style.css");\n\n${renderCss(lightRoles)}`);
 write("rofi/theme.rasi", renderRofi(roles));
 write("nvim/lua/config/palette.lua", renderLua());
 write("kitty/dark-theme.auto.conf", renderKittyDark());
@@ -547,6 +570,7 @@ write("yazi/flavors/hyprway-light.yazi/flavor.toml", renderYaziFlavor(lightRoles
 write("yazi/flavors/hyprway-light.yazi/tmtheme.xml", renderYaziTmTheme(lightRoles, "Hyprway Light"));
 write("opencode/themes/hyprway.json", renderOpenCode());
 write("claude/themes/hyprway.json", renderClaude());
+write("claude/themes/hyprway-light.json", renderClaude("light"));
 write("gtk-3.0/gtk.css", renderGtk());
 write("gtk-4.0/gtk.css", renderGtk());
 
