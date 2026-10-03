@@ -1,9 +1,5 @@
 [
   {
-    "key": "ctrl+shift+b",
-    "command": "workbench.action.toggleActivityBarVisibility"
-  },
-  {
     "key": "ctrl+,",
     "command": "workbench.action.openApplicationSettingsJson"
   },
@@ -200,30 +196,12 @@
     "command": "workbench.action.toggleSidebarVisibility"
   },
   {
-    "key": "ctrl+l",
-    "command": "-composer.sendToAgent",
-    "when": "editorHasPromptBar && editorPromptBarFocused"
-  },
-  {
     "key": "shift+enter",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
       "text": "\\\r\n"
     },
     "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "-aichat.newchataction"
-  },
-  {
-    "key": "ctrl+shift+i",
-    "command": "-composer.newAgentChat"
-  },
-  {
-    "key": "ctrl+shift+i",
-    "command": "composer.startComposerPrompt",
-    "when": "cursor.appLayout != 'agent'"
   },
   {
     "key": "ctrl+c",
@@ -250,10 +228,5 @@
     {
       "key": "ctrl+'",
       "command": "workbench.action.navigateForward"
-    },
-  {
-    "key": "alt+ctrl+s",
-    "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
-    "when": "cursor.agentIdeUnification.enabled == true && !isAuxiliaryWindowFocusedContext"
-  }
+    }
 ]
