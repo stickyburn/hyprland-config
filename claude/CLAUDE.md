@@ -1,1 +1,1 @@
-../opencode/SYSTEM.md
+../opencode/AGENTS.md

@@ -1,135 +1,70 @@
-# Accessibility Reference
+# Accessibility
 
-Use this reference when accessibility, forms, focus, contrast, responsive
-reflow, or inclusive interaction is material to the task. Target WCAG 2.2 AA
-unless the product requires another standard. Automated checks help but do not
-replace keyboard, screen-reader, zoom, and visual inspection.
+Use for accessibility requirements and remediation. Target WCAG 2.2 AA for
+web unless another standard is required. For native apps, use platform
+semantics and accessibility guidance rather than transplanting web widgets.
 
-## Contents
+## Contrast and Targets
 
-- Contrast and color
-- Semantics and names
-- Keyboard and focus
-- Targets and input
-- Forms and feedback
-- Reflow, zoom, and content
-- Motion and time
-- Verification
-
-## Contrast and Color
-
-| Content | WCAG AA minimum |
-|---|---:|
+| Requirement | Baseline |
+|---|---|
 | Normal text | 4.5:1 |
-| Large text | 3:1 |
-| Essential UI boundaries and graphical objects | 3:1 against adjacent color |
+| Large text | 3:1; at least 24 CSS px normal or about 18.7 CSS px bold |
+| Essential UI boundaries and graphics | 3:1 against adjacent colors |
+| WCAG 2.2 AA targets | 24 × 24 CSS px or sufficient spacing, with defined exceptions |
+| Practical primary touch target | Prefer 44 × 44 CSS px; native guidance commonly uses Apple 44pt / Android 48dp |
 
-WCAG large text means at least 18pt (24 CSS px) at normal weight, or 14pt
-(about 18.7 CSS px) when bold. Test the rendered foreground/background pair,
-including hover, disabled, selected, dark-theme, and focus states. Do not rely
-on a color token's name as proof of contrast.
+Check actual default, hover, selected, error, focus, and theme pairings.
+Disabled controls have contrast exceptions, but unnecessarily faint content
+still hurts usability. Color and animation cannot be the only state cues.
+WCAG's 44px AAA target criterion is not an unconditional AA requirement.
 
-Color cannot be the only cue for status, errors, categories, or chart series.
-Add text, shape, pattern, iconography, or position while keeping the meaning
-available to assistive technology.
+## Semantics and Input
 
-## Semantics and Names
+- Prefer native buttons, links, and form controls. Associate persistent labels;
+  use ARIA to fill gaps, and follow APG keyboard patterns for custom widgets.
+- Accessible names should match visible labels. Name icon-only controls,
+  hide decorative icons, and give informative images useful alternative text.
+- Keep hierarchical headings, meaningful landmarks, and a skip path through
+  repeated navigation. Announce important async updates without chatty live regions.
+- Support keyboard functionality, except where the operation fundamentally
+  depends on the movement path. Offer practical alternative outcomes for such
+  tasks. Dragging operations generally also need a non-drag pointer alternative.
+- Hover must not be the sole way to discover or operate controls. Preserve
+  text selection, paste, autofill, and password-manager behavior.
 
-- Prefer native elements: `button` for actions, links for navigation, and
-  native form controls when they meet the need.
-- Give controls an accessible name through visible text or a proper label.
-  Add `aria-label` only when no visible label can provide the name.
-- Give informative images useful alternative text and decorative images empty
-  alt text. Hide decorative icons from the accessibility tree.
-- Keep headings hierarchical and landmarks meaningful. Include a skip link on
-  pages with repeated navigation.
-- Use ARIA to fill semantic gaps, not to recreate native controls casually.
-- Announce important asynchronous status with an appropriate live region, but
-  avoid chatty announcements.
+## Focus and Recovery
 
-## Keyboard and Focus
+Use a visible focus indicator; do not remove outlines without an equivalent.
+Check contrast, clipping, and sticky/overlay obstruction. Keep logical focus
+order without positive `tabindex`. Move/contain/restore focus according to
+dialog, menu, navigation, and form semantics; hidden content cannot retain
+operable controls.
 
-- Functionality must be available by keyboard unless the underlying operation
-  depends on the path of movement, such as freehand drawing. Native controls
-  already provide expected keyboard behavior; custom widgets must follow their
-  ARIA Authoring Practices interaction pattern. For path-dependent tasks,
-  provide an equivalent outcome or alternative input where practical without
-  misrepresenting it as an unconditional WCAG AA requirement.
-- Use `:focus-visible` for a strong visible indicator. Never remove outlines
-  without an equivalent replacement.
-- Ensure sticky headers, dialogs, and overlays do not fully obscure focused
-  elements. This is part of WCAG 2.2 Focus Not Obscured (Minimum).
-- Keep focus order aligned with reading and visual order. Avoid positive
-  `tabindex` values.
-- Move and restore focus deliberately for dialogs, menus, route changes, and
-  validation summaries.
+Associate field errors and help with controls. Preserve input, make required
+and read-only states clear, and focus an error summary or invalid field after
+failed submit. Avoid redundant entry in multi-step flows.
 
-A 2px contrasting outline with separation from the component is a robust
-starting point, not a universal prescription. Test it against every adjacent
-surface and when the component is near a clipping container.
+## Reflow, Motion, and Time
 
-## Targets and Input
+Support 200% text resizing and browser zoom. Ordinary vertical content should
+reflow at a width equivalent to 320 CSS px without two-dimensional scrolling;
+tables/maps/diagrams have scoped exceptions, not permission to lose controls.
+Do not disable pinch zoom. Test long labels and validation messages.
 
-WCAG 2.2 AA Target Size (Minimum) requires a target of at least 24 by 24 CSS
-pixels or sufficient spacing, with defined exceptions. WCAG AAA uses 44 by 44
-CSS pixels. Mobile platform guidance commonly recommends 44pt on Apple and
-48dp on Android.
-
-Use 44 by 44 CSS pixels as a strong touch baseline for primary controls, while
-handling dense-tool and inline-link exceptions intentionally. Do not make
-hover the only way to discover or operate a control. Support pointer, touch,
-keyboard, zoom, and text selection without disabling expected browser
-behavior.
-
-## Forms and Feedback
-
-- Use persistent, programmatically associated labels. Placeholder text is an
-  example or hint, not a label.
-- Use meaningful `name`, `type`, `inputmode`, and `autocomplete` values.
-- Keep paste and password managers working.
-- Place help and errors near the field and associate them with it. For long
-  forms, provide an error summary and move focus there after failed submit.
-- Validate when feedback becomes useful. Avoid scolding on every blur before
-  the user had a reasonable chance to finish.
-- Preserve entered values after an error and avoid asking for known data again
-  in multi-step flows.
-- Make required, optional, disabled, and read-only states unambiguous without
-  color alone.
-
-## Reflow, Zoom, and Content
-
-- Support 200% text resize and browser zoom without losing content or
-  operation.
-- Reflow ordinary vertical content at a width equivalent to 320 CSS pixels
-  without two-dimensional scrolling. Complex tables, maps, and diagrams have
-  scoped exceptions but still need a usable strategy.
-- Do not disable pinch zoom with viewport metadata.
-- Test long labels, large text, translated copy, empty values, and validation
-  messages. DOM order should remain logical when the layout changes.
-
-## Motion and Time
-
-- Respect `prefers-reduced-motion` and provide an equivalent non-motion cue.
-- Avoid large zooming, parallax, rapid flashing, and movement that is not
-  necessary to understand state.
-- Let users pause or stop non-essential moving or auto-updating content when
-  required.
-- Do not impose short time limits without warning, extension, or a genuine
-  real-world need.
+Respect reduced-motion preferences without losing information. Provide pause,
+stop, or hide controls for persistent automatic movement when required. Avoid
+unsafe flashes; reduced motion and pause controls do not make them safe.
+Handle time limits with warning and extension unless a defined exception applies.
 
 ## Verification
 
-For substantial UI work, verify:
+For substantial changes, check the affected keyboard path, names/roles/values,
+contrast, enlarged text, narrow layout, and reduced motion. Run available
+automated checks, but do not claim full compliance from them. If screen-reader
+behavior matters, test the relevant browser/reader combination or name the gap.
 
-1. Navigate the primary path using only the keyboard.
-2. Inspect accessible names, roles, values, and live updates.
-3. Check contrast for each semantic state, not just default text.
-4. Test zoom or text resize and a narrow viewport.
-5. Enable reduced motion.
-6. Run available automated accessibility checks and review their false
-   positives and blind spots.
-7. If screen-reader behavior is central, test with the target browser and
-   screen-reader combination rather than assuming from markup.
-
-Useful primary sources: WCAG 2.2, WAI-ARIA Authoring Practices, Apple Human
-Interface Guidelines, and Material Design accessibility guidance.
+Primary guidance: [WCAG 2.2](https://www.w3.org/TR/WCAG22/),
+[ARIA APG](https://www.w3.org/WAI/ARIA/apg/),
+[Apple HIG](https://developer.apple.com/design/human-interface-guidelines/),
+and [Material accessibility](https://m3.material.io/foundations/accessible-design/overview).

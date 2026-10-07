@@ -9,7 +9,6 @@ tool_state
 # ── lockfiles ────────────────────────────────────
 **/package-lock.json
 **/Gemfile.lock
-**/lazy-lock.json
 
 # ── system ─────────────────────────────
 dconf
@@ -22,9 +21,9 @@ gtk-3.0/bookmarks
 
 # ── apps ───────────────────
 Capacities
+Electron
 Keet
 Keet-Internal
-Keet-Nightly
 Raffi
 Signal Beta
 Vivaldi
@@ -55,7 +54,13 @@ claude/plugins/
 claude/.last-cleanup
 claude/.last-update-result.json
 claude/policy-limits.json
+claude/policy-limits.json.stamp.json
 claude/remote-settings.json
+claude/paste-cache/
+claude/skills/synced/
+claude/daemon*
+claude/jobs/
+claude/state/
 
 # ── zsh ──────────────────────────────────────────
 zsh/.z

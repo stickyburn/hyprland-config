@@ -1,105 +1,59 @@
-# Interaction and Content Reference
+# Interaction and Content
 
-Use this reference when designing flows, forms, navigation, controls, data
-views, feedback states, destructive actions, or interface copy.
+Use for flows, forms, navigation, controls, data views, and interface copy.
 
-## Model the Task
+## Flow and States
 
-For each important flow, identify:
+For important flows, cover entry, orientation, action, feedback, and recovery
+or the next step. Keep objects and vocabulary stable: “Publish” leads to
+“Published,” not “Submission complete.” Preserve context after interruption.
 
-```text
-entry -> orientation -> action -> feedback -> recovery or next step
-```
-
-Keep the user's object and vocabulary stable across the flow. If a button says
-"Publish," success feedback should say "Published," not "Submission
-complete." Preserve context after errors and interruptions.
-
-## State Matrix
-
-Design only relevant states, but do not stop at the happy path.
-
-| Area | States to consider |
+| Area | Consider only relevant states |
 |---|---|
 | Control | default, hover, focus, pressed, disabled, loading |
 | Selection | unselected, selected, mixed, unavailable |
 | Data | loading, empty, partial, stale, error, success |
-| Form | untouched, editing, invalid, submitting, saved, unsaved |
+| Form | editing, invalid, submitting, saved, unsaved |
 | Permission | allowed, read-only, denied, requestable |
 | Network | offline, retrying, conflict, restored |
 
-Communicate state with text or semantics in addition to visual treatment.
-Avoid disabling a control when an explanation or validation message would
-teach the user how to proceed.
+Communicate state through semantics or text as well as visual treatment.
+Do not disable a control when validation or an explanation better teaches
+the next step. Buttons remain spatially stable on hover by default.
 
-## Actions and Feedback
+## Actions and Forms
 
-- Give each control a specific verb-object label when space permits: "Create
-  project," "Save API key," "Archive invoice."
-- Distinguish navigation from actions in semantics and styling.
-- Show immediate acknowledgment for input, then persistent success only when
-  it helps.
-- Keep controls available until an operation actually starts. During async
-  work, prevent duplicate submission without erasing context.
-- Prefer undo for fast, reversible actions. Use confirmation when impact is
-  severe, difficult to reverse, delayed, or affects other people.
-- Put error guidance next to the failed action and explain the next valid step.
+- Use specific outcome labels such as “Create project.” Distinguish links
+  from actions. Icon-only tools need an accessible name and discoverable meaning.
+- Acknowledge input immediately. Prevent duplicate async submission while
+  retaining the object and context the user acted on.
+- Prefer undo for reversible actions; confirm severe or hard-to-reverse ones.
+- Ask only for timely information; group fields by goal. Use persistent labels,
+  contextual help, and controls suited to the choices, not database types.
+- Preserve input through validation and server failures. Put guidance next to
+  the failed field/action; a toast alone is not adequate form recovery.
+- Validate when useful. After failed submit, focus the summary or first invalid
+  field; allow corrections without repeatedly interrupting input.
+- Make required/optional status consistent and warn before losing meaningful
+  unsaved work. Keep paste, autofill, and password managers working.
 
-## Forms
+## Navigation and Collections
 
-- Ask only for information needed now. Group by user goal, not database model.
-- Use persistent labels and short contextual help.
-- Choose controls that match the data: radio for a short exclusive set,
-  checkbox for independent choices, select for longer familiar sets, search
-  or combobox for large sets.
-- Preserve input through validation and server failures.
-- Validate at a useful time. On submit, focus a summary or the first invalid
-  field; after an error, validate as the user corrects it.
-- Make optional fields explicit when most fields are required, or required
-  fields explicit when most are optional. Stay consistent.
-- Warn before losing meaningful unsaved work.
+Keep location, parent context, labels, and next actions clear. Use links for
+navigation and preserve browser history, deep links, scroll, and selection
+where expected. Put useful shareable filter/search state in the URL.
 
-## Navigation and Orientation
+Design collections around the user's question. Expose sort order, filters,
+result count, and reset; keep actions near selection. Preserve exact values
+even when charts provide an overview. Empty results retain the query and offer
+recovery. Use pagination or virtualization only when data volume warrants it.
+Small-screen navigation should preserve the same understandable architecture.
 
-- Make current location, parent context, and available next steps clear.
-- Use links for navigation so browser behaviors such as open-in-new-tab work.
-- Keep labels and placement stable across routes.
-- Reflect shareable application state such as search, filters, pagination, or
-  selected tabs in the URL when that benefits return, sharing, and history.
-- Preserve scroll, selection, and back-button expectations.
-- On small screens, change navigation form only when the information
-  architecture remains understandable.
+## Writing
 
-## Data and Collections
-
-- Design around the question users ask, not around the fields the backend
-  exposes.
-- Put common actions where selection and context are visible.
-- Show sort direction, active filters, result count, and a clear reset path.
-- For large lists, support scanning, keyboard movement where appropriate, and
-  performance strategies such as pagination, windowing, or `content-visibility`.
-- Preserve exact values through tables or details even when a chart provides
-  the overview.
-- Empty search results should retain the query and offer a correction, not
-  erase the user's work.
-
-## Interface Writing
-
-- Write from the user's side of the screen with plain, specific language.
-- Use active voice and sentence case unless the product system says otherwise.
-- Labels label; help explains; placeholders demonstrate. Do not make one string
-  perform all three jobs.
-- Error messages state what happened when known and what the user can do next.
-- Avoid fake urgency, guilt, ambiguous opt-outs, disguised ads, or other dark
-  patterns.
-- Test labels with real limits, localization, and assistive names.
-
-## Quality Check
-
-- The primary path is obvious and has a complete feedback loop.
-- Non-happy states preserve context and support recovery.
-- Destructive actions have proportionate safeguards.
-- Forms request only timely information and retain entered values.
-- Navigation works with browser history and direct links where relevant.
-- Labels describe user-visible outcomes consistently.
-- Touch, pointer, keyboard, and assistive interactions are all supported.
+Use plain, specific, user-facing language and stable terminology. Labels name,
+help explains, placeholders exemplify. State what failed when known and the
+next valid action. Avoid fake urgency, guilt, disguised ads, and ambiguous
+opt-outs. Test copy with real limits, long values, localization, and accessible
+names. Supporting instructions are useful when needed, not filler to narrate
+an otherwise obvious interface.

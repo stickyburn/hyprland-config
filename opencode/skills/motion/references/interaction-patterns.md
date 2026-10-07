@@ -1,142 +1,82 @@
-# Interaction Patterns Reference
+# Motion Patterns
 
-Use this reference for overlays, disclosure, lists, loading, scrolling,
-gestures, choreography, and ambient motion. Adapt patterns to the product
-rather than copying values mechanically.
+Use for interaction-specific motion decisions. Adapt to the product rather
+than copying a treatment or its timing mechanically.
 
-## Control Feedback
+## Controls and Selection
 
-A control needs immediate acknowledgment through state, not necessarily
-movement. Press compression, fill change, shadow change, haptic feedback, or a
-short highlight may all work. Keep focus styling stable and avoid transforms
-that shift neighboring layout or make text visibly blur.
+Use immediate state feedback. Routine buttons remain in place on hover;
+color, border, subtle shadow, or a highlight often suffice. A deliberate press
+response or direct manipulation is different from automatic hover lift.
+Keep focus stable and provide touch/keyboard equivalents.
 
-Hover is an enhancement, not the only feedback. Ensure touch and keyboard
-users receive equivalent state information.
+Toggle position can animate, but checked state changes immediately and has
+proper semantics/name. Retarget rapid input; reduced motion keeps the same
+state with immediate position or non-spatial feedback.
 
-## Toggle and Selection
+## Disclosure and Overlays
 
-Position can show state transition, but final state also needs semantic value,
-contrast, and an accessible name. A toggle may use a short slide or spring;
-reduced motion can switch position immediately while retaining state color,
-label, and announcement.
+Use spatial origin to explain where an accordion, drawer, or popover belongs.
+Height/grid-track animation can be correct for genuine layout change; test
+dynamic content and rapid reversal rather than assuming transforms solve it.
 
-Do not delay the underlying state change until animation completes.
+Backdrop and dialog are one event, possibly with different properties.
+Coordinate focus, `aria-expanded`, and hidden/inert state. Escape and repeated
+open/close input must interrupt safely; restore focus on close. Reduced motion
+can use immediate state or a short dissolve. Avoid operable invisible content.
 
-## Disclosure, Accordion, and Expand/Collapse
+## Lists, Routes, and Continuity
 
-Animate from the control's spatial origin and preserve reading order. Height
-animation can be correct because the content genuinely changes layout. Use a
-measured technique, grid-track transition, clip/transform treatment, or the
-existing library based on content and support. Test dynamic content and rapid
-reversal.
+Animate changed items rather than the whole collection. Stable keys and
+layout animation/FLIP can preserve identity during reorder. Stagger only for
+meaningful order/grouping; do not withhold long-list content.
 
-During close, do not move focus into hidden content. Update `aria-expanded`
-and hidden state in the correct sequence.
+Shared elements should represent the same recognizable object. Route direction
+should agree with navigation. History, focus, deep links, and scroll restoration
+must work without transitions; rapid navigation and Back gestures must not
+leave obsolete views or blocking overlays.
 
-## Modal, Popover, and Drawer
+## Loading and Attention
 
-- Backdrop and surface form one transition but can use different properties.
-- Use origin and direction to reinforce where the surface belongs.
-- Move focus according to dialog or popover semantics; restore it on close.
-- Let Escape, backdrop behavior, and repeated open/close input interrupt
-  safely.
-- Under reduced motion, use immediate state or a short dissolve without large
-  scale or travel.
+| Wait/context | Feedback |
+|---|---|
+| Very short action | Immediate control state, often no spinner |
+| Unknown structure | Compact status/progress |
+| Known structure | Skeleton matching final geometry |
+| Measurable operation | Real progress, with useful text |
+| Optimistic action | Immediate state plus failure recovery |
 
-## Lists and Reordering
+Keep the object being acted on visible. Avoid fake progress, endless shimmer,
+and layout shift. Locate a notification with motion, then settle; do not steal
+focus or pulse indefinitely. Important messages need readable duration and
+persistent recovery. Animation is never the only error/success cue.
 
-Animate changed items, not the entire collection. New items can enter from the
-insertion point; removed items can leave while neighbors move into place.
-Preserve stable keys and application state.
+## Scrolling and Gestures
 
-Stagger only when sequence communicates grouping, order, or spatial origin.
-For long lists, do not withhold later content. Layout animation or FLIP can
-preserve object continuity during sort and reorder.
+Use scroll linkage when position communicates progress or a spatial story.
+Keep essential content available, preserve native scrolling, stop offscreen
+work, and test wheel, keyboard, trackpad, touch, and reduced motion. Prefer
+supported CSS scroll-driven animation or a scoped observer over scrolljacking.
 
-## Loading and Progress
+Drag follows input without decorative lag. On release, carry measured velocity
+into a bounded settle/snap/return. Provide a non-drag control and keyboard path.
 
-Match feedback to the wait:
+For custom pointer handling, track one `pointerId`, choose `touch-action`
+before start, and set capture after DOM moves. Compute velocity from elapsed
+time, not event count. Handle `pointercancel`, `lostpointercapture`, superseding
+input, and unmount as idempotent rollback/commit paths. Release capture and
+listeners; preserve the intended native scroll axis and accessible operation.
 
-- very short action: immediate control state, often no spinner
-- unknown content structure: compact progress or status
-- known content structure: skeleton that matches final geometry
-- determinate operation: real progress with text when useful
-- optimistic action: immediate state plus recovery if the operation fails
+## Brand and Ambient Motion
 
-Avoid endless shimmer, layout shift when content arrives, fake determinate
-progress, and spinners that replace the object users were acting on. Announce
-important async status without making live regions noisy.
+Build one meaningful expressive moment around the subject: a useful diagram,
+an object's transformation, or a transition that reveals its relationship.
+Treatments seen in inspiration still need interruption and reduced-motion
+behavior; a screenshot cannot prove their timing or correctness.
 
-## Notifications and Attention
-
-Use motion to locate a change, then let it settle. Repeated pulsing competes
-with the primary task. Toasts and banners need enough time to read, must not
-steal focus unexpectedly, and should expose persistent recovery when the
-message matters.
-
-Animation cannot be the only error or success cue.
-
-## Route and Shared-Element Transitions
-
-Direction should agree with information architecture and platform navigation.
-Shared elements work when users recognize the object across states. Avoid
-morphing unrelated objects just because geometry permits it.
-
-Keep navigation, focus, history, deep links, and scroll restoration correct
-without the transition. Back gestures and rapid navigation must cancel or
-retarget cleanly.
-
-## Scroll-Linked Motion
-
-Use scroll linkage for information that benefits from position-based progress,
-such as reading progress, a controlled narrative, or a spatial diagram. Do not
-animate every section into existence.
-
-- Keep essential content available without animation.
-- Avoid scrolljacking and large multi-speed parallax.
-- Prefer CSS scroll-driven animation or a well-scoped observer when support and
-  fallback are acceptable.
-- Stop work for offscreen content.
-- Test trackpad, wheel, keyboard, touch, and reduced motion.
-
-## Gesture and Drag
-
-Direct manipulation should track input without decorative lag. On release,
-carry velocity into a bounded settle, snap, or return. Provide keyboard or
-button alternatives for the resulting operation, and avoid making a precise
-drag the only path.
-
-Handle cancellation, pointer capture, scroll conflict, reduced motion, and
-screen-reader operation explicitly. For custom pointer handling, accept one
-active `pointerId`, set capture after any DOM move, and choose `touch-action`
-before the gesture starts so the intended scroll axis remains native. Compute
-velocity from position and elapsed time rather than event count. Treat
-`pointercancel`, `lostpointercapture`, unmount, and superseding input as
-idempotent rollback or commit paths; release capture when needed and remove all
-listeners on teardown.
-
-## Ambient and Brand Motion
-
-Ambient motion is appropriate when atmosphere is part of the product or
-story. Keep it away from sustained reading and frequent controls. Evaluate it
-for at least several cycles, on mobile power constraints, and in peripheral
-vision.
-
-Persistent auto-starting motion presented alongside content may require a
-pause, stop, or hide mechanism under WCAG 2.2.2. Reduced motion should use a
-static composition or poster frame. Pause loops when the page is hidden.
-Avoid flashes; reduced motion or a pause control cannot remediate content that
-already exceeds the WCAG flash threshold.
-
-Animated gradients, glows, particles, and floating objects are not inherently
-wrong; they are generic when disconnected from subject, structure, or brand.
-
-## Choreography Check
-
-- Focal element is clear.
-- Sequence follows causality or spatial origin.
-- Content is not withheld for spectacle.
-- New input can interrupt the sequence.
-- Final state is correct without animation.
-- Reduced motion communicates the same change.
+Ambient effects are appropriate when atmosphere is part of the experience.
+Keep them away from sustained reading and controls, inspect several cycles,
+and account for mobile power. Pause when hidden and provide pause/stop/hide
+when persistent auto-starting motion requires it. Use a static reduced-motion
+composition and avoid unsafe flashes. Particles, glows, and animated gradients
+need a subject-specific purpose, not a blanket ban or automatic inclusion.

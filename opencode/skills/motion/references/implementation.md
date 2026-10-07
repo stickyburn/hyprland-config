@@ -1,155 +1,84 @@
-# Implementation Reference
+# Motion Implementation
 
-Use this reference when selecting an animation technology or reviewing
-implementation correctness. Check project versions and current platform
-support instead of relying on remembered APIs.
+Use for mechanism selection and lifecycle risks. Inspect installed versions
+and current support; do not rely on remembered library APIs.
 
-## Selection
+## Mechanism
 
-| Mechanism | Best fit |
+| Need | Prefer |
 |---|---|
-| CSS transition | two-state style changes |
-| CSS keyframes | fixed multi-step or looping animation |
-| Web Animations API | runtime playback control without a library |
-| View Transitions API | document or state continuity and shared elements |
-| Motion / existing UI library | React gestures, springs, layout animation |
-| GSAP | authored timelines and complex orchestration already using GSAP |
-| Native platform API | mobile or desktop application motion |
-| Canvas/WebGL | many animated objects, simulation, generative work |
+| Two-state styling | CSS transition |
+| Authored fixed sequence/loop | CSS keyframes |
+| Runtime playback, cancellation, reversal | Web Animations API |
+| Shared-element/state or document continuity | Supported View Transitions API |
+| React gestures, springs, layout animation | Installed Motion or existing UI library |
+| Complex authored timeline | Existing GSAP or equivalent |
+| Native app | Platform animation system |
+| Many objects or simulation | Canvas/WebGL |
 
-Prefer the repository's existing mechanism. Feature-detect progressive web
-APIs and ensure the state change works without animation.
+Reuse the stack. Feature-detect progressive APIs and retain a working
+non-animated baseline. Specify transition properties instead of `all`.
+Transform/opacity often suit frequent motion; dimensions, grid tracks,
+filters, and clipping can be valid when measured. Do not add `will-change`
+without profiling; scope it because layers cost memory.
 
-## CSS
+## Stable State and Cancellation
 
-Use transitions for state changes and keyframes for authored sequences.
-Specify intended properties:
+Application state owns the stable endpoint. Do not depend on an animation
+completion callback for correctness. Hidden content must not remain operable;
+coordinate `hidden`, `inert`, dialog/popover state, or conditional rendering.
 
-```css
-.disclosure {
-  transition:
-    opacity 160ms var(--ease-out),
-    transform 220ms var(--ease-out);
-}
-```
+For WAAPI, retain animation identity and the relevant `finished` promise.
+`cancel()` removes the effect, and canceling a non-idle animation rejects that
+promise with `AbortError`. A new promise is created when leaving the finished
+state. Catch expected cancellation, clean up, and guard stale completion by
+identity/generation. Persist endpoint styles through state or, when suitable,
+`commitStyles()` followed by cancellation rather than indefinite fill.
 
-`transform` and `opacity` are strong defaults for large or frequent motion.
-Color, `clip-path`, filter, grid tracks, and dimensions can be valid when visual
-correctness requires them. Measure their cost, contain their impact where
-possible, and avoid layout work on every frame across large subtrees.
+## View Transitions
 
-Do not add `will-change` preemptively. Layers consume memory and can make
-performance worse. Add it only after profiling and scope it to the period near
-the animation.
+Wrap the real same-document update with `document.startViewTransition()`
+where supported. Corresponding shared elements need unique transition names.
+Preserve focus, scroll, URL/history, and Back/Forward without animation.
 
-Avoid keeping hidden content focusable. Pair visual transitions with correct
-`hidden`, `inert`, popover/dialog state, or conditional rendering behavior.
+- `updateCallbackDone` reports the update, `ready` can reject snapshot setup,
+  and `finished` settles after the final view is visible. Handle failures and
+  cleanup-promise rejections rather than leaving them unhandled.
+- New input should update state without waiting for `finished`. Skip/replace
+  old transitions and guard stale callbacks. `skipTransition()` still runs
+  its update callback; skipping animation does not cancel stale application work.
+- Under reduced motion, update directly or skip only the effect. Clear temporary
+  names after completion/skip without erasing names owned by a newer transition.
 
-## Web Animations and View Transitions
+For same-origin cross-document transitions, both pages can use
+`@view-transition { navigation: auto; }`. Use `pageswap`/`pagereveal` only when
+needed; clear temporary state for back-forward-cache restores. Verify platform
+support before adopting element-scoped or other newer variants.
 
-Web Animations API is useful when code needs `play`, `pause`, `reverse`,
-`cancel`, `finished`, or timeline control. Retain the animation object and
-make application state or underlying styles own the stable endpoint.
-`Animation.cancel()` removes the effect and resets its timing, so a final state
-that exists only in keyframes will revert. Avoid indefinite `fill: forwards`;
-when appropriate, set the underlying state or use `commitStyles()` and then
-cancel the filling animation. Canceling a non-idle animation rejects the
-current `finished` promise with an expected `AbortError`, and a new promise is
-created whenever the animation leaves the finished state. Retain the relevant
-promise, catch cancellation, use `finally` for cleanup, and guard completion
-with animation identity, a generation counter, or current application state so
-an obsolete completion cannot commit stale visual or semantic state.
+## Components and Platforms
 
-For same-document View Transitions, wrap the real state or DOM update with
-`document.startViewTransition()` or use a supported element-scoped transition
-API when isolation is valuable. For same-origin cross-document navigation,
-both documents can opt in declaratively:
+In React, keep rendering deterministic, scope imperative selectors, and use
+the correct lifecycle. Clean up timelines, listeners, observers, subscriptions,
+and animation frames. Avoid restarting entrances on rerender. Library
+reduced-motion hooks still need deliberate alternatives and runtime updates.
+FLIP/layout animation can help, but inspect text rasterization, clipping,
+and hit testing. SVG transforms need deliberate origin/transform-box; morphs
+must preserve accessible names and state.
 
-```css
-@view-transition {
-  navigation: auto;
-}
-```
+Use native conventions: SwiftUI `accessibilityReduceMotion`, Android animator
+settings, React Native `AccessibilityInfo`, or Flutter `disableAnimations`
+and platform reduce-motion signals as appropriate. Verify current framework
+behavior, lifecycle, backgrounding, gestures, safe areas, text scaling, and
+preference changes rather than forcing web timing onto native controls.
 
-Use `pageswap` and `pagereveal` when cross-document transitions need dynamic
-names or navigation-specific setup. Clear temporary names and state so
-back-forward-cache restores do not produce duplicates. In every mode, normal
-state change or navigation is the baseline: it must succeed when transition
-support is absent or reduced motion is active. Preserve focus, scroll, history,
-deep links, and Back/Forward behavior. Do not trade navigation correctness for
-a visual morph.
+## Continuous Motion and Performance
 
-For same-document lifecycle handling, `updateCallbackDone` reports whether the
-state update completed, `ready` can reject when snapshot setup fails (including
-duplicate names), and `finished` settles after the final view is visible. Do
-not wait for animation completion before allowing navigation. On superseding
-input, update state immediately and skip or replace the active transition;
-`skipTransition()` skips animation but still runs its update callback. Handle
-promise rejection, guard stale work by transition identity or generation, and
-clear temporary names in `finished.finally()`. Under reduced motion, perform
-the update directly or skip the animation without skipping the update.
+Use elapsed time with `requestAnimationFrame` for interactive frames. Bound
+pixel ratio/object count, pause when hidden/offscreen, and release resources.
+Persistent decorative motion needs an appropriate pause control and a static
+reduced-motion treatment. Keep capture/export deterministic when required.
 
-## React and UI Libraries
-
-Before importing Motion, GSAP, or another package, inspect dependencies and
-existing code. Follow the installed version's API.
-
-- Keep render output deterministic; start imperative animation in the correct
-  lifecycle and scope selectors to the component.
-- Cancel timelines, observers, subscriptions, and animation frames on cleanup.
-- Do not restart entrance animations on every render.
-- For concurrent updates, make visual state derive from application state
-  rather than an animation callback alone.
-- Use the library's reduced-motion configuration or hook, then design bespoke
-  alternatives for large transforms, layout movement, parallax, and autoplay.
-- Layout animation and FLIP techniques are often better than hand-animating
-  `top`, `left`, `width`, and `height`, but verify text rasterization, clipping,
-  and hit testing during transforms.
-
-## SVG
-
-Transform SVG groups when several paths form one visual object. Set an
-explicit transform box and origin when browser defaults are ambiguous. Path
-drawing and morphing should preserve the icon's accessible name and state; a
-second SVG swapped in place may be simpler and more robust than a morph.
-
-## Native Platforms
-
-Use the repository's native animation system and accessibility setting:
-
-- SwiftUI: platform transitions and `accessibilityReduceMotion`
-- Android/Compose: platform motion conventions and animator-duration settings
-- React Native: `AccessibilityInfo` and the installed animation library
-- Flutter: `MediaQuery.disableAnimations` for requests to disable or minimize
-  animation, plus `PlatformDispatcher.accessibilityFeatures.reduceMotion` for
-  simplified motion and removed parallax on iOS
-
-Verify lifecycle, backgrounding, navigation gestures, text scaling, safe
-areas, runtime preference changes, and lower-end target devices. Observe the
-framework's accessibility-change signal when custom controllers persist. Do
-not force web easing or hover patterns onto native controls.
-
-## Canvas, WebGL, and Generative Motion
-
-- Drive interactive frames with `requestAnimationFrame`.
-- Use elapsed time rather than assuming a fixed refresh rate.
-- Cap device-pixel ratio and object count based on measured needs.
-- Pause when hidden or offscreen and release resources on teardown.
-- Keep export or capture paths deterministic when reproducibility matters.
-- Provide a static reduced-motion frame and a user pause control for persistent
-  decorative motion.
-
-## Profiling
-
-Profile the real interaction on representative hardware:
-
-- frame duration and dropped frames
-- long tasks and script work
-- style recalculation and layout per frame
-- paint area and expensive filters or shadows
-- layer count and memory
-- idle CPU/GPU usage for loops
-- input responsiveness while motion runs
-
-Paint or layout events are not automatically defects. Broad, repeated work
-that misses the frame budget is. Optimize from evidence.
+For expensive effects, profile frame time, dropped frames, long tasks, repeated
+layout, paint area, layer memory, and input responsiveness on representative
+hardware. Batch reads/writes and fix measured bottlenecks. Paint/layout events
+are not automatically defects; broad work that misses the frame budget is.
