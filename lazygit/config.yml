@@ -6,22 +6,19 @@ gui:
   showNumstatInFilesView: true
   scrollOffMargin: 2
   scrollOffBehavior: margin
-  wrapLinesInStagingView: true
-  useHunkModeInStagingView: true
+  wrapLinesInDiffView: true
+  useHunkModeInDiffView: true
 quitOnTopLevelReturn: true
-
 git:
   autoRefresh: true
   autoStageResolvedConflicts: true
   log:
     showGraph: always
     order: topo-order
-
 os:
   editPreset: "nvim"
   # `o`: open in running nvim as a tab when lazygit runs inside nvim, else OS default
   open: 'if [ -n "$NVIM" ]; then nvim --server "$NVIM" --remote-tab {{filename}} >/dev/null 2>&1; else open {{filename}}; fi'
-
 # Colemak-style list navigation
 keybinding:
   universal:

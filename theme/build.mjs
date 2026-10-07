@@ -502,7 +502,7 @@ function renderClaude(scheme = "dark") {
     text: "text", inverseText: "background", inactive: "pink", inactiveShimmer: "soft",
     subtle: "violet", suggestion: "mint", permission: "violet", permissionShimmer: "mint",
     remember: "mint", background: roles.background, success: "mint", error: "signal",
-    warning: "signal", warningShimmer: "soft", merged: "mint", promptBorder: "violet",
+    warning: "signal", warningShimmer: "soft", merged: "mint", promptBorder: "pink",
     promptBorderShimmer: "mint", planMode: "mint", autoAccept: "mint", bashBorder: "pink",
     ide: "mint", fastMode: "pink", fastModeShimmer: "soft", diffAdded: "surface",
     diffRemoved: "edge", diffAddedDimmed: roles.elevated_bg, diffRemovedDimmed: roles.panel_bg,
@@ -527,7 +527,7 @@ function renderClaude(scheme = "dark") {
     const lightTokens = {
       background: "background_light", panel: "lavender_light", surface: "lavender_light",
       edge: "lavender_light", text: "text_light", pink: "pink_light", soft: "pink_light",
-      signal: "signal_light", violet: "violet_light", mint: "mint_light",
+      signal: "signal_light", violet: "violet_light", mint: lightRoles.focus,
     };
     for (const name of Object.keys(token)) {
       token[name] = lightTokens[token[name]] ?? token[name];
@@ -535,6 +535,8 @@ function renderClaude(scheme = "dark") {
     Object.assign(token, {
       background: lightRoles.background, inverseText: lightRoles.on_accent,
       text: lightRoles.foreground, clawd_background: lightRoles.background,
+      claudeShimmer: lightRoles.accent, claudeBlueShimmer_FOR_SYSTEM_SPINNER: lightRoles.accent,
+      permissionShimmer: lightRoles.accent,
       userMessageBackground: lightRoles.elevated_bg,
       userMessageBackgroundHover: lightRoles.background,
       messageActionsBackground: lightRoles.elevated_bg,
