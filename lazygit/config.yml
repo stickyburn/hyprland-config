@@ -17,8 +17,10 @@ git:
     order: topo-order
 os:
   editPreset: "nvim"
-  # `o`: open in running nvim as a tab when lazygit runs inside nvim, else OS default
-  open: 'if [ -n "$NVIM" ]; then nvim --server "$NVIM" --remote-tab {{filename}} >/dev/null 2>&1; else open {{filename}}; fi'
+  # `o`: open in running nvim as a tab when lazygit runs inside nvim, else desktop default app.
+  # lazygit substitutes {{filename}} already shell-quoted (double quotes, $ ` " \ escaped),
+  # so it must stay unquoted here; on Linux `open` doesn't exist, the desktop opener is xdg-open.
+  open: 'if [ -n "$NVIM" ]; then nvim --server "$NVIM" --remote-tab {{filename}} >/dev/null 2>&1; else xdg-open {{filename}}; fi'
 # Colemak-style list navigation
 keybinding:
   universal:
