@@ -4,38 +4,28 @@ linemode = "size"
 
 [opener]
 opencode = [
-  { run = 'kitty @ launch --type=tab -- zsh -c "cd %s && opencode2"', desc = "Opencode" },
+  { run = "kitty @ launch --type=tab -- zsh -c 'cd -- \"$1\" && opencode2' zsh %s1", desc = "Opencode" },
 ]
 
 nvim_file = [{ run = 'nvim %s', block = true, desc = "Nvim" }]
 
 nvim = [
-  { run = 'kitty @ launch --type=tab -- zsh -c "cd %s && nvim"', desc = "Nvim" },
+  { run = "kitty @ launch --type=tab -- zsh -c 'cd -- \"$1\" && nvim' zsh %s1", desc = "Nvim" },
 ]
 
-codium = [
-  { run = 'open -a "VSCodium" %s', for = "macos", desc = "Code" },
-  { run = 'zsh -c "cd %s && codium ."', for = "linux", desc = "Code" },
-]
+code = [{ run = "zsh -c 'cd -- \"$1\" && codium .' zsh %s1", desc = "Code" }]
 
-terminal = [{ run = 'kitty @ launch --type=tab --cwd=%s', desc = "Kitty" }]
+terminal = [{ run = 'kitty @ launch --type=tab --cwd=%s1', desc = "Kitty" }]
 
 finder = [
   { run = 'open -R %s', for = "macos", desc = "Finder" },
-  { run = 'xdg-open %d', for = "linux", desc = "Finder" },
+  { run = 'xdg-open %d1', for = "linux", desc = "Finder" },
 ]
 
-pdf = [
-  { run = 'vivaldi %s', orphan = true, for = "linux", desc = "Vivaldi" },
-]
+pdf = [{ run = 'vivaldi %s', orphan = true, for = "linux", desc = "Vivaldi" }]
 
 [open]
-prepend_rules = [
-  { mime = "application/pdf", use = [
-    "pdf",
-    "open",
-  ] },
-]
+prepend_rules = [{ mime = "application/pdf", use = ["pdf", "open"] }]
 
 rules = [
   { url = "*", use = [
@@ -44,7 +34,7 @@ rules = [
   { url = "*/", use = [
     "opencode",
     "nvim",
-    "codium",
+    "code",
     "terminal",
     "finder",
   ] },
