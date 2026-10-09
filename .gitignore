@@ -5,6 +5,11 @@
 .env.local
 tool_state
 **/node_modules/
+**/.trash/
+
+# agent-browser state lives beside its authored config
+agent-browser/*
+!agent-browser/config.json
 
 # ── lockfiles ────────────────────────────────────
 **/package-lock.json
@@ -26,13 +31,17 @@ Keet
 Keet-Internal
 Raffi
 Signal Beta
-Vivaldi
-vivaldi-stable.conf
+Grok Bot/
+vivaldi/
 pear
-VSCodium/**
+VSCodium/*
 !VSCodium/User/
-!VSCodium/User/settings.json
-!VSCodium/User/keybindings.json
+VSCodium/User/globalStorage/
+VSCodium/User/workspaceStorage/
+VSCodium/User/History/
+VSCodium/User/Backups/
+VSCodium/User/snippets/
+VSCodium/User/chatLanguageModels.json
 
 # codex
 codex
@@ -61,6 +70,7 @@ claude/skills/synced/
 claude/daemon*
 claude/jobs/
 claude/state/
+claude/telemetry/
 
 # ── zsh ──────────────────────────────────────────
 zsh/.z
