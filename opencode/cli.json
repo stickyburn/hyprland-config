@@ -1,4 +1,5 @@
 {
+  "$schema": "https://opencode.ai/v2/cli.json",
   "theme": {
     "name": "hyprway"
   },
@@ -13,6 +14,9 @@
   },
   "scroll": {
     "acceleration": true
+  },
+  "prompt": {
+    "paste": "full"
   },
   "diffs": {
     "wrap": "word"

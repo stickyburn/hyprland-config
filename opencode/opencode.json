@@ -1,26 +1,25 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "small_model": "ollama-cloud/glm-5.3-flash",
   "default_agent": "build",
-  "agent": {
+  "agents": {
+    "title": {
+      "model": "ollama-cloud/glm-5.3-flash"
+    },
     "plan": {
-      "model": "ollama-cloud/glm-5.3-flash",
-      "variant": "max",
+      "model": "ollama-cloud/glm-5.3-flash#max",
       "color": "#c79eff"
     },
     "build": {
-      "model": "ollama-cloud/glm-5.3-flash",
-      "variant": "max",
+      "model": "ollama-cloud/glm-5.3-flash#max",
       "color": "#98e4a7"
     }
   },
   "mcp": {
-    "deepwiki": {
-      "enabled": true,
-      "type": "remote",
-      "url": "https://mcp.deepwiki.com/mcp"
-    },
     "servers": {
+      "deepwiki": {
+        "type": "remote",
+        "url": "https://mcp.deepwiki.com/mcp"
+      },
       "agent-browser": {
         "type": "local",
         "command": [
@@ -28,51 +27,47 @@
           "mcp",
           "--tools",
           "core"
-        ]
+        ],
+        "environment": {
+          "AGENT_BROWSER_CONFIG": "/home/lemonaid/.config/agent-browser/config.json"
+        }
       }
     }
   },
-  "permission": {
-    "*": "ask",
-    "read": "allow",
-    "external_directory": "allow",
-    "glob": "allow",
-    "grep": "allow",
-    "todowrite": "allow",
-    "todoread": "allow",
-    "webfetch": "allow",
-    "websearch": "allow",
-    "question": "allow",
-    "skill": "allow",
-    "execute": "allow",
-    "task": "allow",
-    "deepwiki_*": "allow",
-    "bash": {
-      "pwd *": "allow",
-      "ls *": "allow",
-      "which *": "allow",
-      "file *": "allow",
-      "cat *": "allow",
-      "head *": "allow",
-      "tail *": "allow",
-      "grep *": "allow",
-      "rg *": "allow",
-      "find *": "allow",
-      "sort *": "allow",
-      "echo *": "allow",
-      "brew list *": "allow",
-      "git status *": "allow",
-      "git diff *": "allow",
-      "git show *": "allow",
-      "git log *": "allow",
-      "git branch --all *": "allow",
-      "git branch --show-current *": "allow",
-      "git rev-parse *": "allow",
-      "gh pr view *": "allow",
-      "sed -n *": "allow"
-    }
-  },
-  "experimental": {
-    "disable_paste_summary": true
-  }
+  "permissions": [
+    { "action": "*", "resource": "*", "effect": "ask" },
+    { "action": "read", "resource": "*", "effect": "allow" },
+    { "action": "external_directory", "resource": "*", "effect": "allow" },
+    { "action": "glob", "resource": "*", "effect": "allow" },
+    { "action": "grep", "resource": "*", "effect": "allow" },
+    { "action": "webfetch", "resource": "*", "effect": "allow" },
+    { "action": "websearch", "resource": "*", "effect": "allow" },
+    { "action": "question", "resource": "*", "effect": "allow" },
+    { "action": "skill", "resource": "*", "effect": "allow" },
+    { "action": "execute", "resource": "*", "effect": "allow" },
+    { "action": "subagent", "resource": "*", "effect": "allow" },
+    { "action": "deepwiki_*", "resource": "*", "effect": "allow" },
+    { "action": "shell", "resource": "pwd *", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "which *", "effect": "allow" },
+    { "action": "shell", "resource": "file *", "effect": "allow" },
+    { "action": "shell", "resource": "cat *", "effect": "allow" },
+    { "action": "shell", "resource": "head *", "effect": "allow" },
+    { "action": "shell", "resource": "tail *", "effect": "allow" },
+    { "action": "shell", "resource": "grep *", "effect": "allow" },
+    { "action": "shell", "resource": "rg *", "effect": "allow" },
+    { "action": "shell", "resource": "find *", "effect": "allow" },
+    { "action": "shell", "resource": "sort *", "effect": "allow" },
+    { "action": "shell", "resource": "echo *", "effect": "allow" },
+    { "action": "shell", "resource": "brew list *", "effect": "allow" },
+    { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git show *", "effect": "allow" },
+    { "action": "shell", "resource": "git log *", "effect": "allow" },
+    { "action": "shell", "resource": "git branch --all *", "effect": "allow" },
+    { "action": "shell", "resource": "git branch --show-current *", "effect": "allow" },
+    { "action": "shell", "resource": "git rev-parse *", "effect": "allow" },
+    { "action": "shell", "resource": "gh pr view *", "effect": "allow" },
+    { "action": "shell", "resource": "sed -n *", "effect": "allow" }
+  ]
 }
