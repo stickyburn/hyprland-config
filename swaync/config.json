@@ -24,12 +24,15 @@
   "hide-on-clear": false,
   "hide-on-action": true,
   "text-empty": "All caught up",
-  "widgets": ["title", "buttons-grid", "buttons-grid#nightlight", "slider#nightlight", "buttons-grid#utilities", "mpris", "volume", "dnd", "notifications"],
+  "widgets": ["title", "buttons-grid", "buttons-grid#nightlight", "slider#nightlight", "buttons-grid#utilities", "mpris", "volume", "dnd", "buttons-grid#clear", "notifications"],
   "widget-config": {
     "title": {
       "text": "Control center",
-      "clear-all-button": true,
-      "button-text": "Clear all"
+      "clear-all-button": false
+    },
+    "buttons-grid#clear": {
+      "buttons-per-row": 1,
+      "actions": [{ "label": "Clear all", "command": "swaync-client -C" }]
     },
     "buttons-grid": {
       "buttons-per-row": 2,
@@ -41,7 +44,13 @@
           "command": "case $SWAYNC_TOGGLE_STATE in true) darkman set dark ;; false) darkman set light ;; esac",
           "update-command": "darkman get | grep -qx dark && echo true || echo false"
         },
-        { "label": "Bluetooth", "command": "blueman-manager" }
+        {
+          "label": "Bluetooth",
+          "type": "toggle",
+          "active": false,
+          "command": "swaync-client -cp; blueman-manager",
+          "update-command": "bluetoothctl show | grep -q 'Powered: yes' && echo true || echo false"
+        }
       ]
     },
     "buttons-grid#nightlight": {
