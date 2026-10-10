@@ -397,66 +397,106 @@ function renderYaziTmTheme(schemeRoles, name) {
 }
 
 function renderOpenCode() {
-  const pair = (dark, light) => ({ dark, light });
-  const rolePair = (name) => pair(roles[name], lightRoles[name]);
-  const output = {
-    $schema: "https://opencode.ai/theme.json",
-    defs: colors,
-    theme: {
-      primary: rolePair("focus"),
-      secondary: rolePair("accent"),
-      accent: rolePair("accent"),
-      error: rolePair("danger"),
-      warning: rolePair("accent"),
-      success: rolePair("success"),
-      info: rolePair("success"),
-      text: rolePair("foreground"),
-      textMuted: rolePair("foreground_muted"),
-      background: rolePair("background"),
-      backgroundPanel: rolePair("panel_bg"),
-      backgroundElement: rolePair("elevated_bg"),
-      border: rolePair("border"),
-      borderActive: rolePair("focus"),
-      borderSubtle: rolePair("border"),
-      diffAdded: pair("mint", "mint_light"),
-      diffRemoved: pair("signal", "signal_light"),
-      diffContext: rolePair("accent"),
-      diffHunkHeader: pair("violet", "violet_light"),
-      diffHighlightAdded: pair("mint", "mint_light"),
-      diffHighlightRemoved: pair("signal", "signal_light"),
-      diffAddedBg: pair("surface", "mint_tint"),
-      diffRemovedBg: pair("edge", "soft"),
-      diffContextBg: rolePair("background"),
-      diffLineNumber: rolePair("accent"),
-      diffAddedLineNumberBg: pair("surface", "mint_tint"),
-      diffRemovedLineNumberBg: pair("edge", "soft"),
-      markdownText: pair("text", "text_light"),
-      markdownHeading: rolePair("accent"),
-      markdownLink: pair("mint", "mint_light"),
-      markdownLinkText: pair("violet", "violet_light"),
-      markdownCode: pair("mint", "mint_light"),
-      markdownBlockQuote: rolePair("accent"),
-      markdownEmph: rolePair("accent"),
-      markdownStrong: pair("text", "text_light"),
-      markdownHorizontalRule: pair("edge", "violet_light"),
-      markdownListItem: pair("signal", "signal_light"),
-      markdownListEnumeration: pair("violet", "violet_light"),
-      markdownImage: pair("mint", "mint_light"),
-      markdownImageText: pair("violet", "violet_light"),
-      markdownCodeBlock: pair("muted", "edge"),
-      syntaxComment: pair("violet", "violet_light"),
-      syntaxKeyword: rolePair("accent"),
-      syntaxFunction: pair("mint", "mint_light"),
-      syntaxVariable: pair("text", "text_light"),
-      syntaxString: pair("mint", "mint_light"),
-      syntaxNumber: pair("signal", "signal_light"),
-      syntaxType: pair("mint", "mint_light"),
-      syntaxOperator: pair("violet", "violet_light"),
-      syntaxPunctuation: pair("muted", "edge"),
-    },
-  };
+  const mix = (from, to, amount) => `#${[1, 3, 5].map((offset) => {
+    const start = parseInt(from.slice(offset, offset + 2), 16);
+    const end = parseInt(to.slice(offset, offset + 2), 16);
+    return Math.round(start + (end - start) * amount).toString(16).padStart(2, "0");
+  }).join("")}`;
+  const steps = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-  return JSON.stringify(output, null, 2);
+  function mode(schemeRoles, light) {
+    const r = (name) => color(schemeRoles[name]);
+    const c = (dark, bright) => color(light ? bright : dark);
+    // Step 200 retains the original accent; higher steps approach the background.
+    const scale = (accent) => Object.fromEntries(steps.map((step) => [step,
+      step === 100 ? mix(accent, r("foreground"), 0.25)
+        : mix(accent, r("background"), (step - 200) / 700),
+    ]));
+    const added = c("mint", "mint_light");
+    const removed = c("signal", "signal_light");
+    const violet = c("violet", "violet_light");
+    const text = c("text", "text_light");
+    const muted = c("muted", "edge");
+    const diffBg = { added: c("surface", "mint_tint"), removed: c("edge", "soft") };
+    return {
+      hue: {
+        gray: Object.fromEntries(steps.map((step, index) => [step, [
+          r("foreground"), r("foreground"),
+          mix(r("foreground"), r("foreground_muted"), 0.5), r("foreground_muted"),
+          mix(r("foreground_muted"), r("elevated_bg"), 0.5), r("elevated_bg"),
+          r("panel_bg"), r("background"), r("background"),
+        ][index]])),
+        red: scale(removed), orange: "$hue.accent", yellow: "$hue.accent",
+        green: scale(added), cyan: "$hue.green", blue: "$hue.purple",
+        purple: scale(violet), accent: scale(r("accent")),
+        interactive: scale(r("focus")), neutral: "$hue.gray",
+      },
+      categorical: ["accent", "purple", "green", "red"],
+      text: {
+        base: "$hue.neutral.200", muted: "$hue.neutral.400",
+        action: {
+          primary: {
+            base: "$text.base", $disabled: "$text.muted",
+            $focused: r("background"), $selected: "$hue.interactive.200",
+          },
+          secondary: { base: "$text.muted", $hovered: "$text.base" },
+          destructive: { base: r("background"), $disabled: "$text.muted" },
+        },
+        formfield: {
+          base: "$text.base", $hovered: "$hue.interactive.200",
+          $focused: "$hue.interactive.200", $pressed: "$hue.interactive.200",
+          $disabled: "$text.muted", $selected: "$hue.interactive.200",
+        },
+        feedback: {
+          error: { base: r("danger") }, warning: { base: r("accent") },
+          success: { base: r("success") }, info: { base: r("success") },
+        },
+      },
+      background: {
+        base: "$hue.neutral.800",
+        raised: { base: "$hue.neutral.700", high: "$hue.neutral.600", max: "$hue.neutral.500" },
+        action: {
+          primary: {
+            base: "transparent", $hovered: "$background.raised.base",
+            $focused: "$hue.interactive.200", $selected: "transparent",
+          },
+          secondary: { base: "transparent" }, destructive: { base: r("danger") },
+        },
+        formfield: { base: "$background.base" },
+        feedback: Object.fromEntries(["error", "warning", "success", "info"].map((name) => [name, { base: "$background.base" }])),
+      },
+      border: { base: r("border") },
+      scrollbar: { base: r("focus") },
+      diff: {
+        text: { added, removed, context: r("accent"), hunkHeader: violet },
+        background: { ...diffBg, context: r("background") },
+        highlight: { added, removed },
+        lineNumber: { text: r("accent"), background: diffBg },
+      },
+      syntax: {
+        comment: violet, keyword: r("accent"), function: added, variable: text,
+        string: added, number: removed, type: added, operator: violet, punctuation: muted,
+      },
+      markdown: {
+        text, heading: r("accent"), link: added, linkText: violet, code: added,
+        blockQuote: r("accent"), emphasis: r("accent"), strong: text,
+        horizontalRule: c("edge", "violet_light"), listItem: removed,
+        listEnumeration: violet, image: added, imageText: violet, codeBlock: muted,
+      },
+      "@dialog": {
+        background: {
+          base: "$background.raised.base",
+          action: { primary: { $hovered: "$background.raised.high" } },
+        },
+      },
+    };
+  }
+
+  const { hue, ...base } = mode(roles, false);
+  return JSON.stringify({
+    $schema: "https://opencode.ai/theme.json",
+    base, dark: { hue }, light: mode(lightRoles, true),
+  }, null, 2);
 }
 
 function renderGtk() {
