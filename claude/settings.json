@@ -49,8 +49,9 @@
       "effortLevel": "xhigh"
     }
   },
+  "promptSuggestionEnabled": false,
   "showThinkingSummaries": true,
   "skipWorkflowUsageWarning": true,
-  "theme": "custom:hyprway-light",
-  "verbose": true
+  "theme": "custom:hyprway",
+  "verbose": false
 }
