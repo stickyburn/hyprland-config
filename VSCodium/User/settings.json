@@ -67,6 +67,7 @@
   },
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
   "editor.quickSuggestions": {
     "strings": "on"
   },
@@ -75,17 +76,18 @@
     "**/waybar/*.css": "gtk-css",
     "**/rofi/*.rasi": "gtk-css"
   },
+  "prettier.requireConfig": true,
   "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
@@ -93,7 +95,7 @@
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
-  "rust-analyzer.server.path": "/Users/stickyburn/.local/share/cargo/bin/rust-analyzer",
+  "rust-analyzer.server.path": "/home/lemonaid/.local/share/cargo/bin/rust-analyzer",
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
@@ -397,5 +399,8 @@
   "remote.SSH.remotePlatform": {
     "refyne": "linux",
     "runpod": "linux"
-  }
+  },
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.statusBar.visible": false,
+  "js/ts.updateImportsOnFileMove.enabled": "always"
 }
