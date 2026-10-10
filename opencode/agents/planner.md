@@ -1,7 +1,7 @@
 ---
 description: Plans coding changes and verification without implementing them.
 mode: subagent
-model: openai/gpt-6-astra#max
+model: openai/gpt-6-astra#xhigh
 permissions:
   - action: edit
     resource: "*"

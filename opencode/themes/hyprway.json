@@ -1,226 +1,463 @@
 {
   "$schema": "https://opencode.ai/theme.json",
-  "defs": {
-    "background": "#14111b",
-    "panel": "#181420",
-    "surface": "#22112A",
-    "edge": "#2a1d31",
-    "text": "#d8d0ea",
-    "muted": "#c4b6dd",
-    "soft": "#ffeef2",
-    "pink": "#ff91c3",
-    "signal": "#ff338f",
-    "violet": "#c79eff",
-    "mint": "#98e4a7",
-    "mint_tint": "#dffff8",
-    "background_light": "#eee9ff",
-    "text_light": "#1F1221",
-    "pink_light": "#a62d68",
-    "violet_light": "#7740aa",
-    "mint_light": "#197344",
-    "signal_light": "#bf1d68",
-    "lavender_light": "#e9defd"
-  },
-  "theme": {
-    "primary": {
-      "dark": "violet",
-      "light": "violet_light"
-    },
-    "secondary": {
-      "dark": "pink",
-      "light": "pink_light"
-    },
-    "accent": {
-      "dark": "pink",
-      "light": "pink_light"
-    },
-    "error": {
-      "dark": "signal",
-      "light": "signal_light"
-    },
-    "warning": {
-      "dark": "pink",
-      "light": "pink_light"
-    },
-    "success": {
-      "dark": "mint",
-      "light": "mint_light"
-    },
-    "info": {
-      "dark": "mint",
-      "light": "mint_light"
-    },
+  "base": {
+    "categorical": [
+      "accent",
+      "purple",
+      "green",
+      "red"
+    ],
     "text": {
-      "dark": "text",
-      "light": "text_light"
-    },
-    "textMuted": {
-      "dark": "muted",
-      "light": "edge"
+      "base": "$hue.neutral.200",
+      "muted": "$hue.neutral.400",
+      "action": {
+        "primary": {
+          "base": "$text.base",
+          "$disabled": "$text.muted",
+          "$focused": "#14111b",
+          "$selected": "$hue.interactive.200"
+        },
+        "secondary": {
+          "base": "$text.muted",
+          "$hovered": "$text.base"
+        },
+        "destructive": {
+          "base": "#14111b",
+          "$disabled": "$text.muted"
+        }
+      },
+      "formfield": {
+        "base": "$text.base",
+        "$hovered": "$hue.interactive.200",
+        "$focused": "$hue.interactive.200",
+        "$pressed": "$hue.interactive.200",
+        "$disabled": "$text.muted",
+        "$selected": "$hue.interactive.200"
+      },
+      "feedback": {
+        "error": {
+          "base": "#ff338f"
+        },
+        "warning": {
+          "base": "#ff91c3"
+        },
+        "success": {
+          "base": "#98e4a7"
+        },
+        "info": {
+          "base": "#98e4a7"
+        }
+      }
     },
     "background": {
-      "dark": "background",
-      "light": "background_light"
-    },
-    "backgroundPanel": {
-      "dark": "panel",
-      "light": "lavender_light"
-    },
-    "backgroundElement": {
-      "dark": "panel",
-      "light": "lavender_light"
+      "base": "$hue.neutral.800",
+      "raised": {
+        "base": "$hue.neutral.700",
+        "high": "$hue.neutral.600",
+        "max": "$hue.neutral.500"
+      },
+      "action": {
+        "primary": {
+          "base": "transparent",
+          "$hovered": "$background.raised.base",
+          "$focused": "$hue.interactive.200",
+          "$selected": "transparent"
+        },
+        "secondary": {
+          "base": "transparent"
+        },
+        "destructive": {
+          "base": "#ff338f"
+        }
+      },
+      "formfield": {
+        "base": "$background.base"
+      },
+      "feedback": {
+        "error": {
+          "base": "$background.base"
+        },
+        "warning": {
+          "base": "$background.base"
+        },
+        "success": {
+          "base": "$background.base"
+        },
+        "info": {
+          "base": "$background.base"
+        }
+      }
     },
     "border": {
-      "dark": "edge",
-      "light": "violet_light"
+      "base": "#2a1d31"
     },
-    "borderActive": {
-      "dark": "violet",
-      "light": "violet_light"
+    "scrollbar": {
+      "base": "#c79eff"
     },
-    "borderSubtle": {
-      "dark": "edge",
-      "light": "violet_light"
+    "diff": {
+      "text": {
+        "added": "#98e4a7",
+        "removed": "#ff338f",
+        "context": "#ff91c3",
+        "hunkHeader": "#c79eff"
+      },
+      "background": {
+        "added": "#22112A",
+        "removed": "#2a1d31",
+        "context": "#14111b"
+      },
+      "highlight": {
+        "added": "#98e4a7",
+        "removed": "#ff338f"
+      },
+      "lineNumber": {
+        "text": "#ff91c3",
+        "background": {
+          "added": "#22112A",
+          "removed": "#2a1d31"
+        }
+      }
     },
-    "diffAdded": {
-      "dark": "mint",
-      "light": "mint_light"
+    "syntax": {
+      "comment": "#c79eff",
+      "keyword": "#ff91c3",
+      "function": "#98e4a7",
+      "variable": "#d8d0ea",
+      "string": "#98e4a7",
+      "number": "#ff338f",
+      "type": "#98e4a7",
+      "operator": "#c79eff",
+      "punctuation": "#c4b6dd"
     },
-    "diffRemoved": {
-      "dark": "signal",
-      "light": "signal_light"
+    "markdown": {
+      "text": "#d8d0ea",
+      "heading": "#ff91c3",
+      "link": "#98e4a7",
+      "linkText": "#c79eff",
+      "code": "#98e4a7",
+      "blockQuote": "#ff91c3",
+      "emphasis": "#ff91c3",
+      "strong": "#d8d0ea",
+      "horizontalRule": "#2a1d31",
+      "listItem": "#ff338f",
+      "listEnumeration": "#c79eff",
+      "image": "#98e4a7",
+      "imageText": "#c79eff",
+      "codeBlock": "#c4b6dd"
     },
-    "diffContext": {
-      "dark": "pink",
-      "light": "pink_light"
+    "@dialog": {
+      "background": {
+        "base": "$background.raised.base",
+        "action": {
+          "primary": {
+            "$hovered": "$background.raised.high"
+          }
+        }
+      }
+    }
+  },
+  "dark": {
+    "hue": {
+      "gray": {
+        "100": "#d8d0ea",
+        "200": "#d8d0ea",
+        "300": "#cec3e4",
+        "400": "#c4b6dd",
+        "500": "#6e657f",
+        "600": "#181420",
+        "700": "#181420",
+        "800": "#14111b",
+        "900": "#14111b"
+      },
+      "red": {
+        "100": "#f55aa6",
+        "200": "#ff338f",
+        "300": "#dd2e7e",
+        "400": "#bc296e",
+        "500": "#9a245d",
+        "600": "#79204d",
+        "700": "#571b3c",
+        "800": "#36162c",
+        "900": "#14111b"
+      },
+      "orange": "$hue.accent",
+      "yellow": "$hue.accent",
+      "green": {
+        "100": "#a8dfb8",
+        "200": "#98e4a7",
+        "300": "#85c693",
+        "400": "#72a87f",
+        "500": "#5f8a6b",
+        "600": "#4d6b57",
+        "700": "#3a4d43",
+        "800": "#272f2f",
+        "900": "#14111b"
+      },
+      "cyan": "$hue.green",
+      "blue": "$hue.purple",
+      "purple": {
+        "100": "#cbabfa",
+        "200": "#c79eff",
+        "300": "#ad8ade",
+        "400": "#9476be",
+        "500": "#7a629d",
+        "600": "#614d7d",
+        "700": "#47395c",
+        "800": "#2e253c",
+        "900": "#14111b"
+      },
+      "accent": {
+        "100": "#f5a1cd",
+        "200": "#ff91c3",
+        "300": "#dd7fab",
+        "400": "#bc6c93",
+        "500": "#9a5a7b",
+        "600": "#794863",
+        "700": "#57364b",
+        "800": "#362333",
+        "900": "#14111b"
+      },
+      "interactive": {
+        "100": "#cbabfa",
+        "200": "#c79eff",
+        "300": "#ad8ade",
+        "400": "#9476be",
+        "500": "#7a629d",
+        "600": "#614d7d",
+        "700": "#47395c",
+        "800": "#2e253c",
+        "900": "#14111b"
+      },
+      "neutral": "$hue.gray"
+    }
+  },
+  "light": {
+    "hue": {
+      "gray": {
+        "100": "#1F1221",
+        "200": "#1F1221",
+        "300": "#251829",
+        "400": "#2a1d31",
+        "500": "#8a7e97",
+        "600": "#e9defd",
+        "700": "#e9defd",
+        "800": "#eee9ff",
+        "900": "#eee9ff"
+      },
+      "red": {
+        "100": "#971a56",
+        "200": "#bf1d68",
+        "300": "#c63a7e",
+        "400": "#cc5793",
+        "500": "#d374a9",
+        "600": "#da92be",
+        "700": "#e1afd4",
+        "800": "#e7cce9",
+        "900": "#eee9ff"
+      },
+      "orange": "$hue.accent",
+      "yellow": "$hue.accent",
+      "green": {
+        "100": "#1b5b3b",
+        "200": "#197344",
+        "300": "#37845f",
+        "400": "#569579",
+        "500": "#74a694",
+        "600": "#93b6af",
+        "700": "#b1c7ca",
+        "800": "#d0d8e4",
+        "900": "#eee9ff"
+      },
+      "cyan": "$hue.green",
+      "blue": "$hue.purple",
+      "purple": {
+        "100": "#613588",
+        "200": "#7740aa",
+        "300": "#8858b6",
+        "400": "#9970c2",
+        "500": "#aa88ce",
+        "600": "#bba1db",
+        "700": "#ccb9e7",
+        "800": "#ddd1f3",
+        "900": "#eee9ff"
+      },
+      "accent": {
+        "100": "#842656",
+        "200": "#a62d68",
+        "300": "#b0487e",
+        "400": "#bb6393",
+        "500": "#c57ea9",
+        "600": "#cf98be",
+        "700": "#d9b3d4",
+        "800": "#e4cee9",
+        "900": "#eee9ff"
+      },
+      "interactive": {
+        "100": "#613588",
+        "200": "#7740aa",
+        "300": "#8858b6",
+        "400": "#9970c2",
+        "500": "#aa88ce",
+        "600": "#bba1db",
+        "700": "#ccb9e7",
+        "800": "#ddd1f3",
+        "900": "#eee9ff"
+      },
+      "neutral": "$hue.gray"
     },
-    "diffHunkHeader": {
-      "dark": "violet",
-      "light": "violet_light"
+    "categorical": [
+      "accent",
+      "purple",
+      "green",
+      "red"
+    ],
+    "text": {
+      "base": "$hue.neutral.200",
+      "muted": "$hue.neutral.400",
+      "action": {
+        "primary": {
+          "base": "$text.base",
+          "$disabled": "$text.muted",
+          "$focused": "#eee9ff",
+          "$selected": "$hue.interactive.200"
+        },
+        "secondary": {
+          "base": "$text.muted",
+          "$hovered": "$text.base"
+        },
+        "destructive": {
+          "base": "#eee9ff",
+          "$disabled": "$text.muted"
+        }
+      },
+      "formfield": {
+        "base": "$text.base",
+        "$hovered": "$hue.interactive.200",
+        "$focused": "$hue.interactive.200",
+        "$pressed": "$hue.interactive.200",
+        "$disabled": "$text.muted",
+        "$selected": "$hue.interactive.200"
+      },
+      "feedback": {
+        "error": {
+          "base": "#bf1d68"
+        },
+        "warning": {
+          "base": "#a62d68"
+        },
+        "success": {
+          "base": "#197344"
+        },
+        "info": {
+          "base": "#197344"
+        }
+      }
     },
-    "diffHighlightAdded": {
-      "dark": "mint",
-      "light": "mint_light"
+    "background": {
+      "base": "$hue.neutral.800",
+      "raised": {
+        "base": "$hue.neutral.700",
+        "high": "$hue.neutral.600",
+        "max": "$hue.neutral.500"
+      },
+      "action": {
+        "primary": {
+          "base": "transparent",
+          "$hovered": "$background.raised.base",
+          "$focused": "$hue.interactive.200",
+          "$selected": "transparent"
+        },
+        "secondary": {
+          "base": "transparent"
+        },
+        "destructive": {
+          "base": "#bf1d68"
+        }
+      },
+      "formfield": {
+        "base": "$background.base"
+      },
+      "feedback": {
+        "error": {
+          "base": "$background.base"
+        },
+        "warning": {
+          "base": "$background.base"
+        },
+        "success": {
+          "base": "$background.base"
+        },
+        "info": {
+          "base": "$background.base"
+        }
+      }
     },
-    "diffHighlightRemoved": {
-      "dark": "signal",
-      "light": "signal_light"
+    "border": {
+      "base": "#7740aa"
     },
-    "diffAddedBg": {
-      "dark": "surface",
-      "light": "mint_tint"
+    "scrollbar": {
+      "base": "#7740aa"
     },
-    "diffRemovedBg": {
-      "dark": "edge",
-      "light": "soft"
+    "diff": {
+      "text": {
+        "added": "#197344",
+        "removed": "#bf1d68",
+        "context": "#a62d68",
+        "hunkHeader": "#7740aa"
+      },
+      "background": {
+        "added": "#dffff8",
+        "removed": "#ffeef2",
+        "context": "#eee9ff"
+      },
+      "highlight": {
+        "added": "#197344",
+        "removed": "#bf1d68"
+      },
+      "lineNumber": {
+        "text": "#a62d68",
+        "background": {
+          "added": "#dffff8",
+          "removed": "#ffeef2"
+        }
+      }
     },
-    "diffContextBg": {
-      "dark": "background",
-      "light": "background_light"
+    "syntax": {
+      "comment": "#7740aa",
+      "keyword": "#a62d68",
+      "function": "#197344",
+      "variable": "#1F1221",
+      "string": "#197344",
+      "number": "#bf1d68",
+      "type": "#197344",
+      "operator": "#7740aa",
+      "punctuation": "#2a1d31"
     },
-    "diffLineNumber": {
-      "dark": "pink",
-      "light": "pink_light"
+    "markdown": {
+      "text": "#1F1221",
+      "heading": "#a62d68",
+      "link": "#197344",
+      "linkText": "#7740aa",
+      "code": "#197344",
+      "blockQuote": "#a62d68",
+      "emphasis": "#a62d68",
+      "strong": "#1F1221",
+      "horizontalRule": "#7740aa",
+      "listItem": "#bf1d68",
+      "listEnumeration": "#7740aa",
+      "image": "#197344",
+      "imageText": "#7740aa",
+      "codeBlock": "#2a1d31"
     },
-    "diffAddedLineNumberBg": {
-      "dark": "surface",
-      "light": "mint_tint"
-    },
-    "diffRemovedLineNumberBg": {
-      "dark": "edge",
-      "light": "soft"
-    },
-    "markdownText": {
-      "dark": "text",
-      "light": "text_light"
-    },
-    "markdownHeading": {
-      "dark": "pink",
-      "light": "pink_light"
-    },
-    "markdownLink": {
-      "dark": "mint",
-      "light": "mint_light"
-    },
-    "markdownLinkText": {
-      "dark": "violet",
-      "light": "violet_light"
-    },
-    "markdownCode": {
-      "dark": "mint",
-      "light": "mint_light"
-    },
-    "markdownBlockQuote": {
-      "dark": "pink",
-      "light": "pink_light"
-    },
-    "markdownEmph": {
-      "dark": "pink",
-      "light": "pink_light"
-    },
-    "markdownStrong": {
-      "dark": "text",
-      "light": "text_light"
-    },
-    "markdownHorizontalRule": {
-      "dark": "edge",
-      "light": "violet_light"
-    },
-    "markdownListItem": {
-      "dark": "signal",
-      "light": "signal_light"
-    },
-    "markdownListEnumeration": {
-      "dark": "violet",
-      "light": "violet_light"
-    },
-    "markdownImage": {
-      "dark": "mint",
-      "light": "mint_light"
-    },
-    "markdownImageText": {
-      "dark": "violet",
-      "light": "violet_light"
-    },
-    "markdownCodeBlock": {
-      "dark": "muted",
-      "light": "edge"
-    },
-    "syntaxComment": {
-      "dark": "violet",
-      "light": "violet_light"
-    },
-    "syntaxKeyword": {
-      "dark": "pink",
-      "light": "pink_light"
-    },
-    "syntaxFunction": {
-      "dark": "mint",
-      "light": "mint_light"
-    },
-    "syntaxVariable": {
-      "dark": "text",
-      "light": "text_light"
-    },
-    "syntaxString": {
-      "dark": "mint",
-      "light": "mint_light"
-    },
-    "syntaxNumber": {
-      "dark": "signal",
-      "light": "signal_light"
-    },
-    "syntaxType": {
-      "dark": "mint",
-      "light": "mint_light"
-    },
-    "syntaxOperator": {
-      "dark": "violet",
-      "light": "violet_light"
-    },
-    "syntaxPunctuation": {
-      "dark": "muted",
-      "light": "edge"
+    "@dialog": {
+      "background": {
+        "base": "$background.raised.base",
+        "action": {
+          "primary": {
+            "$hovered": "$background.raised.high"
+          }
+        }
+      }
     }
   }
 }

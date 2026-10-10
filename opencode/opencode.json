@@ -6,7 +6,7 @@
       "model": "ollama-cloud/glm-5.3-flash"
     },
     "plan": {
-      "model": "ollama-cloud/glm-5.3-flash#max",
+      "model": "ollama-cloud/glm-5.3#max",
       "color": "#c79eff"
     },
     "build": {

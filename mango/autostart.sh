@@ -19,7 +19,7 @@ wireplumber >/dev/null 2>&1 &
 swaync >/dev/null 2>&1 &
 
 # wallpaper
-swaybg -i ~/Pictures/wallpapers/wildflower.png -m fill >/dev/null 2>&1 &
+swaybg -i ~/Pictures/wallpapers/te2r_GEN_upscale_GEN_upscale.jpg -m fill >/dev/null 2>&1 &
 
 # top bar
 waybar &
