@@ -58,7 +58,7 @@
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "diffEditor.ignoreTrimWhitespace": true,
-  "diffEditor.renderSideBySide": false,
+  "diffEditor.renderSideBySide": true,
   "diffEditor.useInlineViewWhenSpaceIsLimited": false,
   // LSP & formatting
   "editor.acceptSuggestionOnEnter": "smart",
