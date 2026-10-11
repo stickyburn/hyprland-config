@@ -1,6 +1,6 @@
 /* Generated from hyprway. */
 * {
-    background: #14111b;
+    background: #18111b;
     panel-bg: #181420;
     elevated-bg: #181420;
     selection-bg: #22112A;
